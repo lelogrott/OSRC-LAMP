@@ -1,0 +1,134 @@
+% Modelo LaTeX, de 2007, para confecção de TCC do BCC/DCC/CCT/UDESC (sem figuras)
+%   Agradecimentos ao autor André Körbes.
+%
+% Observação importante: 
+%   Não é fiel às normas (http://www.udesc.br/arquivos/id_submenu/533/manual_2011final.pdf),
+%   mas uma boa aproximação! Contribuições para seu aperfeiçoamento são muito bem-vindas. 
+%   Favor enviá-las a:
+%     Alexandre Gonçalves Silva <alexandre@joinville.udesc.br>
+% 
+% O PDF final gerado por este modelo pode ser obtido na base Pergamum da UDESC:
+%   http://www.pergamumweb.udesc.br/dados-bu/000000/000000000008/00000894.pdf
+
+
+\NeedsTeXFormat{LaTeX2e}
+%-----------------------------------------------------------
+\documentclass[a4paper,12pt]{monografia}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage[mathcal]{eucal}
+\usepackage{latexsym}
+\usepackage{isoaccent}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{bm}
+\usepackage[alf]{abntcite}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{textcase}
+\usepackage[portugues,noend,ruled]{algorithm2e}
+\usepackage{listings}
+\lstset{basicstyle=\tiny,
+        language=C++}
+
+%-----------------------------------------------------------
+%-----------------------------------------------------------
+\begin{document}
+
+%
+%----------------- Título e Dados do Autor -----------------
+\titulo{Valores de extinção para reconhecimento de faces em imagens digitais padronizadas}
+\autor{Camilla Heleno}
+\nome{Camilla}
+\ultimonome{Heleno}
+
+%
+%---------- Informe o Curso e Grau -----
+\bacharelado \curso{Ciência da Computação} \mes{Junho} \ano{2012} 
+\data{\today} % data da aprovação
+\cidade{Joinville}
+%
+%----------Informações sobre a Institução -----------------
+\instituicao{Universidade do Estado de Santa Catarina}
+\sigla{UDESC} \unidadeacademica{Centro de Ciências Tecnológicas}
+%
+%-------- Informações obtidas na Biblioteca ----------------
+%\CDD{536.7}
+%\CDU{536.21}
+%\areas{1.Análise Matemática - Teoria das
+%        Funçõees 2. Funções Analíticas - Fórmula de Taylor.}
+%\npaginas{45}  % total de páginas do trabalho
+%------Nomes do Orientador, 1o. Examinador e 2o. Examinador-
+\orientador{Alexandre Gonçalves Silva}
+
+\examinadorum{André Tavares da Silva}
+
+\examinadordois{Gilmário Barbosa dos Santos}
+
+\examinadortres{}
+
+%--------- Títulos do Orientador 1o. e 2o. Examinadores ----
+\ttorientador{Doutor}
+
+\ttexaminadorum{Doutor}
+
+\ttexaminadordois{Doutor}
+
+\ttexaminadortres{}
+
+\maketitle
+%---------------------- AGRADECIMENTO --------------
+\agradecimento{Agradecimentos}
+\input{agradecimentos}
+%\newpage
+%---------------------- EPÍGRAFE --------------
+%\begin{epigrafe}
+
+%\end{epigrafe}
+%--------Digite aqui o seu resumo em Português--------------
+\resumo{Resumo}
+\input{resumo}
+
+\noindent Palavras-chaves: processamento de imagens, reconhecimento de faces, valores de extinção
+%-----------Digite aqui o seu resumo em Inglês--------------
+\resumo{Abstract}
+\input{abstract}
+
+\noindent Keywords: image processing, face recognition, extinction values 
+%-----------------------------------------------------------
+
+\thispagestyle{empty} \listoffigures
+% lista de abreviações
+%\listofabbreviations{Lista de Abreviaturas}
+%\begin{table}[ht]
+%\begin{tabular}{ll}
+%	{\bf XML } & {\it eXtensible Markup Language} \\
+%\end{tabular}
+%\end{table}
+
+%\listoftables
+
+%----Sumário, lista de figura e de tabela ------------
+\tableofcontents 
+\thispagestyle{empty} 
+\listoftables \thispagestyle{empty}
+
+%---------------------
+%--------------Início do Conteúdo---------------------------
+\pagestyle{ruledheader}
+
+\input{introducao}
+\input{capitulo2}
+\input{capitulo3}
+\input{capitulo4}
+\input{capitulo5}
+\input{capitulo6}
+\input{conclusao}
+
+\renewcommand{\bibname}{Referências}
+\bibliographystyle{abnt-alf}
+\bibliography{tcc}
+
+\include{apendice}
+
+\end{document}

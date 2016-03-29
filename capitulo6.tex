@@ -1,0 +1,449 @@
+\chapter{Desenvolvimento do Projeto}
+
+Este capítulo tem por finalidade discutir os algoritmos propostos abordando a forma de implementação, as linguagens de programação utilizadas, as imagens de teste as quais servirão de entrada ao sistema final, o modelo genérico contendo as etapas seguidas pelas propostas desenvolvidas, definição das etapas de cada proposta e seus resultados.
+
+As linguagens de programação escolhidas para a implementação do algoritmo são C e Python e o desenvolvimento do projeto ocorre em ambiente Linux. Os códigos nas duas linguagens são ligados para que o resultado final desejado seja obtido.
+
+Bancos de imagens de faces são utilizados para testar o algoritmo proposto. Os inicialmente escolhidos pertencem à Universidade de Yale e à Universidade de Cambridge. O primeiro banco contém faces de 15 indivíduos distintos, cada um apresentando 11 imagens em níveis de cinza em diferentes expressões e direção da fonte de iluminação, além de objetos sobrepostos como óculos. O banco de imagens disponibilizado pela AT\&T, grupo da Universidade de Cambridge, apresenta imagens em níveis de cinza de 40 pessoas distintas, em condições semelhantes às do banco de imagens de Yale. Exemplos de imagens destes bancos são apresentados na figura \ref{fig:banco_faces}.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Banco de faces para testes. (a) Yale. (b) AT\&T.}
+    \subfigure[]{
+    \includegraphics[scale=0.50]{imagens/yalefaces.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=1.0]{imagens/atetfaces.png}
+    } \\
+	Fonte: \citeonline{yale2012} e \citeonline{atet2012}.    
+    \label{fig:banco_faces}
+\end{figure}
+
+Além destes dois grupos de imagens, um novo banco de faces\footnote{http://pics.psych.stir.ac.uk/2D\_face\_sets.htm}, denominado {\it Stirling Faces}, foi escolhido por sofrer menor interferência de ambiente. Composta por $35$ indivíduos, dos quais são selecionados $34$ (uma pessoa apresenta apenas faces em perfil), esta nova base é composta por imagens controladas, conforme o exemplo da figura \ref{fig:stirling_faces}.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Exemplos de faces para a terceira base adotada.}
+    \subfigure[]{
+    \includegraphics[scale=0.35]{imagens/figura35a.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.35]{imagens/figura35b.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.35]{imagens/figura35c.png}
+    } \\
+	Fonte: \citeonline{stirling2012}.   
+    \label{fig:stirling_faces}
+\end{figure}
+
+O modelo genérico proposto neste trabalho contém as etapas definidas na figura \ref{fig:modelo}. Conforme ilustrado, imagens de faces controladas servem de entrada ao sistema, etapas de pré-processamento, como detecção facial pelo algoritmo da biblioteca OpenCV, poderão ser aplicadas a estas entradas, os valores de extinção são definidos e descritos por formação de triângulos, diagramas de Voronoi, separação das regiões da face (olhos, nariz e boca) ou simplificação da imagem por transformação por extinção, sendo por fim realizada a comparação entre o descritor ou imagem gerados e os demais descritores/imagens de faces registrados em um banco por meio de uma métrica escolhida, como distância euclidiana e disposição geométrica, ou uma técnica conhecida, como o PCA, considerando um limiar mínimo de atributo e gerando resultado de aceitação caso reconheça ou negação caso contrário.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Modelo do sistema de reconhecimento de faces proposto.}
+    \includegraphics[scale=0.90]{imagens/modelo_2.png} \\
+    Fonte: Imagem gerada pela autora.
+    \label{fig:modelo}
+\end{figure}
+
+Alguns testes foram efetuados para verificar resultados iniciais da aplicação de valores de extinção em reconhecimento de faces por meio de uma imagem de entrada não processada. O resultado pode ser visualizado na figura \ref{fig:testes_iniciais} na qual os pontos pretos representam as extinções de valor igual ou maior ao limiar adotado em cada caso.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Valores de extinção em imagem de face. (a) Imagem de entrada. (b) Filtragem por atributo altura e limiar 20. (c)  Filtragem por atributo área e limiar 20. (d)  Filtragem por atributo volume e limiar 270.}
+    \subfigure[]{
+    \includegraphics[scale=0.47]{imagens/entrada.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.62]{imagens/altura.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.62]{imagens/area.png}
+    }   
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.62]{imagens/volume.png}
+    } \\
+	Fonte: Imagens geradas pela autora.   
+    \label{fig:testes_iniciais}
+\end{figure}
+
+A técnica escolhida para realizar a comparação com as propostas desenvolvidas é o PCA, por meio de testes do algoritmo com imagens originais e as processadas por extinção, e posterior avaliação de resultados.
+
+Três propostas iniciais de solução ao problema de reconhecimento facial utilizando valores de extinção foram desenvolvidas e serão explicadas a seguir.
+
+\section{Primeira proposta: Casamento de triângulos}
+
+O algoritmo desenvolvido é proposto e baseado em quatro passos principais: detecção da face na imagem, determinação dos pontos das extinções, geração de triângulos por meio destes pontos e comparação entre os triângulos para o reconhecimento.
+
+Na primeira fase, de detecção da face na imagem de entrada, procurou-se reduzir ruídos e partes de imagens as quais pudessem interferir ou dificultar o reconhecimento, gerando como imagem resultante apenas a face isolada. Considerando que o objetivo do trabalho é a representação e o reconhecimento da face e não sua localização e registro, foi adotada uma biblioteca que possui esta funcionalidade pronta, a fim de facilitar a implementação do reconhecimento. Assim, a biblioteca multiplataforma de Visão Computacional OpenCV foi escolhida, a qual disponibiliza em sua página oficial\footnote{http://opencv.willowgarage.com/wiki/FaceDetection} o código de detecção facial. Por meio deste programa, obtem-se como saída as coordenadas do centro do círculo criado ao redor da face e seu raio correspondente. Assim, foi realizado um corte nas faces de entrada, retornando apenas a imagem contida no interior deste círculo. O resultado deste passo pode ser visualizado na figura \ref{fig:deteccao_opencv}.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Detecção de faces com OpenCV. (a) Imagem de entrada (b) Face detectada.}
+    \subfigure[]{
+    \includegraphics[scale=0.6]{imagens/figura27a.jpg}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=1.0]{imagens/figura27b.jpeg}
+    } \\
+	Fonte: Imagens geradas pela autora.	
+	\label{fig:deteccao_opencv}
+\end{figure}
+
+Após a etapa de detecção de faces, foi necessário determinar os pontos que as caracterizariam, a fim de distinguí-las entre si. Assim, seguindo a temática deste trabalho, utilizou-se a técnica de valores de extinção para encontrar os pontos descritores das faces, os quais são caracterizados pelos centróides dos componentes conexos das maiores extinções. 
+
+O algoritmo utilizado na geração das $k$ maiores extinções foi baseado no trabalho desenvolvido por \citeonline{silva09}, disponível na página Adessowiki\footnote{http://parati.dca.fee.unicamp.br/adesso/}, no tópico {\it code}. O valor $k$ representa o número das maiores extinções as quais se deseja retornar. Neste trabalho, $k$ foi escolhido e adotado como 10, 15 e 30, e estes pontos gerados serão utilizados como características a serem comparadas no reconhecimento. A figura \ref{fig:extincoes_teste} apresenta o resultado da extinção de altura, área e volume para a face da figura \ref{fig:deteccao_opencv}.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Extinção de (a) altura (b) área (c) volume, retornando as coordenadas das quinze maiores extinções.}
+    \subfigure[]{
+    \includegraphics[scale=1.2]{imagens/figura28a.jpeg}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=1.2]{imagens/figura28b.jpeg}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=1.2]{imagens/figura28c.jpeg}
+    } \\
+	Fonte: Imagens geradas pela autora.
+	\label{fig:extincoes_teste}
+\end{figure}
+
+No próximo passo, foram gerados triângulos sem repetições e, a partir de suas coordenadas, seus lados foram calculados conforme as fórmulas de distância:
+
+\begin{equation}
+\left\{ 
+	\begin{array}{lll}
+		a = \sqrt{(xb - xa)^{2} + (yb - ya)^{2}} \\
+        b = \sqrt{(xc - xb)^{2} + (yc - yb)^{2}} \\
+		c = \sqrt{(xc - xa)^{2} + (yc - ya)^{2}}
+ 	\end{array}
+\right.
+\end{equation}
+
+Com isto, pode-se calcular as áreas correspondentes a cada triângulo definido:
+
+\begin{equation}
+AREA = \sqrt{(p(p-a)(p-b)(p-c))}
+\end{equation}
+
+Na qual $a$, $b$ e $c$ representam os 3 lados do triângulos obtidos pelo cálculo de distâncias, e $p$ o semi-perímetro calculado da seguinte forma:
+
+\begin{equation}
+p = \frac{a + b + c}{2}
+\end{equation}
+
+Para o cálculo dos ângulos internos dos triângulos utilizados no reconhecimento, tem-se a lei dos cossenos:
+
+\begin{equation}
+\left\{ 
+	\begin{array}{lll}
+		a^{2} = b^{2} + c^{2} - 2 \cdot b \cdot c \cdot cos(A) \\
+        b^{2} = a^{2} + c^{2} - 2 \cdot a \cdot c \cdot cos(B) \\
+		c^{2} = a^{2} + b^{2} - 2 \cdot a \cdot b \cdot cos(C)
+ 	\end{array}
+\right.
+\end{equation}
+
+Assim, por meio do cosseno dos ângulos é possível calcular os ângulos internos dos triângulos e montar a string que irá armazená-los em ordem crescente, concatenados e sem repetição.
+
+Por fim, na última etapa houve o desenvolvimento de um algoritmo de comparação dos dados, encontrando a correspondência entre as imagens processadas de entrada e treinamento. Para isto, foram realizadas comparações entre áreas, ângulos internos e coordenadas dos pontos dos triângulos. O resultado é a soma do número de áreas/ângulos internos/coordenadas iguais ou em um intervalo pequeno de diferença entre duas faces.
+
+\subsection{Resultados}
+
+Em testes iniciais realizados para verificar o correto funcionamento do algoritmo proposto e seu resultado, foram escolhidas duas fotos de cinco pessoas diferentes da base de dados de Yale. Após esta escolha, todas as imagens passaram por todas as etapas de processamento (detecção, extinção e triângulos), e definiu-se um script para realizar a comparação entre os resultados e verificar se o reconhecimento ocorreu corretamente.
+
+O resultado, entretanto, mostrou que não ocorre um reconhecimento adequado das faces. Duas imagens pertencentes a pessoas diferentes geram triângulos e áreas aproximadas e, por vezes, em maior número que imagens do mesmo indivíduo. Além disso, as coordenadas dos pontos, quando comparadas, apresentam um elevado número de faces com a mesma soma de resultado, referenciando várias faces diferentes de treinamento como iguais à face de entrada. Verificou-se, então, que extinções encontradas para duas imagens da mesma face podem se distinguir ou podem ser geradas extinções parecidas para faces diferentes. Isto ocorre principalmente por interferências de iluminação, as quais geram efeitos de brilho indesejados em partes da face. A figura \ref{fig:teste_extincao} mostra um exemplo de teste realizado, e a tabela \ref{tab:result_teste_extincao} apresenta seu resultado. Por meio deste exemplo é possível notar que, para faces diferentes, pode ocorrer uma correspondência maior que para faces da mesma pessoa, o que impossibilita o reconhecimento. A fim de tentar reduzir interferências de iluminação, foi realizado um pré-processamento, o qual não obteve sucesso.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Extinção de volume retornando as quinze maiores. (a) (c) (e) (g) Imagens de entrada (b) (d) (f) (h) Resultados da extinção.}
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30a.png}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30b.png}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30c.png}
+    }
+    \hspace{1mm} 
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30d.png}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30e.png}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30f.png}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30g.png}
+    }
+    \hspace{1mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.7]{imagens/figura30h.png}
+    } \\
+	Fonte: Imagens geradas pela autora.
+	\label{fig:teste_extincao}
+\end{figure}
+
+\begin{table}[ht]
+	\centering
+	\caption{Comparação entre os ângulos internos dos triângulos encontrados para as quatro faces da figura \ref{fig:teste_extincao}}
+	\begin{tabular}{|c|c|c|c|} \hline
+		{\bf Faces comparadas} & {\bf Número de ângulos internos parecidos/iguais} \\ \hline
+		{\bf (a) e (c)} & {24} \\ \hline
+		{\bf (a) e (e)} & {23} \\ \hline
+		{\bf (a) e (g)} & {20} \\ \hline
+		{\bf (c) e (e)} & {26} \\ \hline
+		{\bf (c) e (g)} & {18} \\ \hline
+		{\bf (e) e (g)} & {43} \\ \hline
+	\end{tabular} \\
+	Fonte: Tabela gerada pela autora.
+	\label{tab:result_teste_extincao}
+\end{table}
+
+Buscando uma solução para estes resultados, um novo processamento foi desenvolvido. Baseado em transformada de distâncias e diagrama de Voronoi, optou-se pela aplicação dos pontos gerados por extinção com base nestas duas técnicas. A implementação desenvolvida e o resultado obtido são apresentados na seção seguinte.
+
+\section{Segunda proposta: Médias do diagrama de Voronoi}
+
+Duas alternativas foram consideradas nesta implementação. A primeira assume a face apenas detectada, sem processamento inicial antes da geração das extinções, enquanto a segunda alternativa considera o processamento inicial da imagem pelo filtro de média para posterior aplicação da extinção.
+
+Fornecendo como entrada ao algoritmo implementado a imagem original detectada e sua correspondente imagem extinta, é efetuada inicialmente a negação da extinção e posteriormente aplicada à transformada de distância. Assim, são geradas bordas ao redor de cada ponto de extinção, correspondentes a cada valor de distância do centro dos pontos ao fundo e representadas por cores distintas. A figura \ref{fig:transformada_distancia} apresenta esse processo.
+
+\begin{figure}[ht]
+	\centering
+	\caption{Transformada de Distância. (a) Exemplo de extinção (b) Aplicação da tranformada.}
+    \subfigure[]{
+    \includegraphics[scale=1.5]{imagens/figura31a.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=1.5]{imagens/figura31b.png}
+    } \\
+    Fonte: Imagens geradas pela autora.
+    \label{fig:transformada_distancia}
+\end{figure}
+
+Realizada a transformada de distância, aplica-se watershed para a formação das regiões correspondentes a cada ponto. Para este processo, o qual gera um diagrama de Voronoi, utiliza-se o elemento estruturante em formato de cruz, e as regiões formadas para cada extinção da figura \ref{fig:transformada_distancia} são mostradas na figura \ref{fig:watershed_dist}
+
+\begin{figure}[ht]
+	\centering
+	\caption{Aplicação de Watershed à figura \ref{fig:transformada_distancia}(b)}
+	\includegraphics[scale=1.5]{imagens/figura32.png} \\
+	Fonte: Imagem gerada pela autora.
+    \label{fig:watershed_dist}
+\end{figure}
+
+Com a geração das áreas por meio de watershed, é possível calcular a média de níveis de cinza para cada uma delas, utilizando a imagem original detectada como base. Assim, gera-se uma lista ordenada correspondente às médias de valores dos pixels para cada região, a fim de compará-las às faces de treinamento. Estes passos, desde a detecção da face até o ponto de cálculo de médias, são aplicados às imagens de entrada e treinamento.
+
+Os testes realizados a fim de comparar a face de entrada às de treinamento seguiram duas linhas, a primeira utilizando as imagens detectadas sem processamento e a segunda fazendo uso das faces processadas pelo filtro de média. Para os dois casos, gera-se um arquivo contendo, a cada linha, o conjunto de médias extraídas para cada face de treinamento. Assim, processando a imagem de entrada, este arquivo é lido e armazenado em uma matriz. Além disso, compara-se a matriz com o conjunto de médias da entrada e um vetor acumulador é incrementado, na posição da face de treinamento, a cada correspondência encontrada.
+
+As faces escolhidas para realização dos testes pertencem à base de Yale. As entradas representam rostos em posição frontal sem expressão facial, e o grupo de treinamento apresenta duas faces detectadas nas seguintes posições: frontal com luz centralizada e com olhos fechados. A figura \ref{fig:faces_voronoi} apresenta exemplos destas faces.
+
+\begin{figure}[ht]
+	\centering
+	\caption{Exemplos de faces utilizadas na implementação alternativa. (a) Entrada (b) Treinamento com luz centralizada (c) Treinamento com olhos fechados.}
+    \subfigure[]{
+    \includegraphics[scale=0.9]{imagens/figura33a.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.96]{imagens/figura33b.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=1.0]{imagens/figura33c.png}
+    } \\
+	Fonte: Imagens geradas pela autora. 
+    \label{fig:faces_voronoi}
+\end{figure}
+
+Os resultados obtidos pela técnica apresentada nesta seção não foram positivos. Do conjunto de quinze imagens de entrada, para as faces detectadas sem processamento apenas três concluíram o reconhecimento correto, totalizando 20\% de acerto, enquanto que, para as faces processadas, quatro foram reconhecidas, somando 26\% de correto reconhecimento. A diferença de iluminação para imagens de uma mesma face continua apresentando problemas para esta técnica de reconhecimento, visto que este método utiliza a média de valores dos pixels para cada área gerada no diagrama de voronoi.
+
+Uma terceira alternativa foi desenvolvida, buscando isolar as áreas dos olhos, nariz e boca, além de realizar o cálculo dos ângulos dos triângulos, utilizado na primeira proposta, e a média dos pixels nestas regiões. Este método será definido a seguir.
+
+\section{Terceira proposta: Reconhecimento por olhos, nariz e boca}
+
+Considerando como entrada a imagem $f$, reconstruída pela maior extinção de volume, e a imagem original $of$, o algoritmo da terceira proposta segue os seguintes passos:
+
+\begin{enumerate}
+	\item Fechamento de buraco da imagem $f$, obtendo $g$, e subtração de $g$ por $f$;
+	\item Extração do maior valor de {\it pixel} da imagem, a fim de criar um limiar $L$, o qual representa 40\% deste valor;
+	\item Limiarização de $g$, extraindo valores maiores que 40\% de L;
+	\item Fechamento da imagem resultante do passo anterior por um elemento estruturante retangular;
+	\item Aplicação de abertura por área, a fim de remover pequenos ruídos da imagem;
+	\item Dilatação da imagem do passo anterior por um elemento estruturante em formato de disco;
+	\item Rotulação das regiões resultantes e medição da área de cada região;
+	\item Cálculo da média de níveis de cinza para cada região, baseada na imagem $of$, e extração de seus centróides a fim de calcular os ângulos dos triângulos formados por estas regiões, por meio do algoritmo apresentado na primeira proposta. 
+\end{enumerate}
+
+A figura \ref{fig:terceira_proposta} apresenta a aplicação destes passos para uma entrada.
+
+\begin{figure}[ht]
+	\centering
+	\caption{Passo-a-passo da terceira proposta. (a) Entrada (b) Fechamento de buraco (c) Subtração de (b) por (a) (d) Limiarização (e) Fechamento (f) Abertura por área (g) Dilatação (h) Rotulação.}
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/entrada_fechamento_buraco.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/fechamento_de_buraco.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/subtracao_fechamento_buraco.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/limiarizada.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/fechamento.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/abertura_area.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/dilatacao.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=0.8]{imagens/rotulacao.png}
+    } \\
+	Fonte: Imagens geradas pela autora.    
+    \label{fig:terceira_proposta}
+\end{figure}
+
+A idéia inicial deste algoritmo era utilizar ambos os dados gerados (triângulos e médias) para o reconhecimento. Entretanto, o cálculo de médias obteve resultados insatisfatórios, impossibilitando sua comparação. Os triângulos, por sua vez, resultaram no reconhecimento de mais de uma face para cada entrada, na qual cerca de 40\% não continha a face correta em seu conjunto. Além disso, após a geração de todas as imagens resultantes do processo, foi possível verificar a diferença de regiões encontradas para cada face, ou seja, para algumas eram selecionadas apenas um olho, para outras as sobrancelhas, entre outras variações. Portanto, como para cada face sua correspondência pode gerar regiões diferentes por este processo, o algoritmo torna-se inviável para esta aplicação.
+
+\section{Contribuições}
+
+Visto que as propostas definidas anteriormente apresentam resultados insatisfatórios, uma primeira solução foi desenvolvida, considerando a transformada da imagem original em uma simplificada por meio dos $7$ tipos de extinções, além de uma segunda contribuição, a qual busca aplicar reconstrução morfológica pela máxima extinção de volume e reconhecer por PCA.
+
+\subsection{Transformação de imagens por extinção}
+
+Nesta contribuição, o algoritmo de extinção utilizado para as implementações anteriores foi modificado a fim de retornar um novo índice normalizado, este criado a partir dos centróides das maiores extinções. Por exemplo, em uma normalização considerando o intervalo dos $100$ primeiros números inteiros não negativos, para a primeira coordenada ($0$, $0$) é atribuído índice $0$, até a última coordenada ($L-1$, $C-1$) a qual define-se índice $99$, sendo $L$ é o número de linhas e $C$ o número de colunas da imagem original.
+
+Desta forma, a imagem resultante deste processo contém em suas colunas os índices resultantes da normalização das coordenadas das $k$ maiores extinções, e cada uma de suas linhas representa o tipo de extinção \cite{goncalves08} utilizada: altura, área, volume, número de descendentes, altura da sub-árvore, altura e largura da caixa envolvente. Um exemplo numérico com os passos adotados nesta contribuição e sua aplicação em uma imagem de exemplo pode ser visto no primeiro ítem do apêndice deste trabalho.
+
+A base utilizada para os testes é a terceira apresentada neste trabalho. Assim, foram geradas $34$ imagens simplificadas de entrada e $68$ de treinamento, duas para cada indivíduo. A figura \ref{fig:quarta_proposta} mostra o resultado desta simplificação para uma imagem de entrada e duas de treinamento.
+
+\begin{figure}[ht]
+	\centering
+	\caption{Imagem simplificada por extinção (a) (c) (e) Imagens originais (b) (d) (f) Imagens simplificadas.}
+    \subfigure[]{
+    \includegraphics[scale=0.32]{imagens/figura36a.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=2.5]{imagens/figura36b_.png}
+    } \\
+    \subfigure[]{
+    \includegraphics[scale=0.32]{imagens/figura36c.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=2.5]{imagens/figura36d_.png}
+    } \\
+    \subfigure[]{
+    \includegraphics[scale=0.32]{imagens/figura36e.png}
+    }
+    \subfigure[]{
+    \includegraphics[scale=2.5]{imagens/figura36f_.png}
+    } \\
+    Fonte: Imagens geradas pela autora.
+    \label{fig:quarta_proposta}
+\end{figure}
+
+Após a geração de todas as imagens simplificadas, estas são aplicadas à técnica PCA. O algoritmo\footnote{http://code.google.com/p/pyfaces/} utilizado no reconhecimento é implementado na linguagem Python e possui duas áreas. A primeira consiste nas imagens de entrada a serem reconhecidas e a segunda ao grupo de imagens ao qual a amostra será comparada. Esta aplicação, portanto, utiliza a técnica de identificação para autenticação dos dados, isto é, compara a amostra com todas as imagens armazenadas em banco.
+
+A escolha do valor $k$ e o intervalo de normalização dos índices das coordenadas das extinções tiveram variações durante a execução dos testes. Os resultados obtidos para um valor $k$ menor, por exemplo $50$, gera maiores erros de reconhecimento, enquanto valores de $k$ maiores fornecem um reconhecimento mais efetivo. Além disso, o intervalo da normalização deve acompanhar o aumento de $k$.
+
+Assim, o valor $k$ que apresentou melhor resultado foi $200$, com normalização das coordenadas dos pontos de $0$ a $255$. Obtendo apenas $6$ reconhecimentos incorretos e uma taxa de acerto de $82,35$\%, este método se mostra eficaz pela criação de imagens simplicadas de dimensões $7$ $\times$ $200$, com necessidade de arquivos de apenas $1,4$ KB para cada face, o que auxilia o armazenamento em bancos com grande quantidade de dados. Além disso, o tempo de execução de algoritmos para imagens simplificadas é menor que para aquelas em maior tamanho, fato vantajoso quando há necessidade de reconhecimento com melhor desempenho.
+
+\subsection{Reconstrução das faces por extinção e aplicação no PCA}
+
+Uma outra possível aplicação de valores de extinção em reconhecimento facial é a utilização de filtragem das faces por esta técnica. Esta filtragem é caracterizada como reconstrução morfológica, descrita no capítulo 2.
+
+Assim, o algoritmo funciona de forma que, a partir das extinções encontradas, ocorre a reconstrução morfológica gerando uma imagem final simplificada. Testes foram realizados utilizando os três principais tipos de extinções (altura, área e volume), e atribuindo a $k$ os valores do conjunto \{1, 5, 10, 15\}. O resultado da reconstrução morfológica utilizando a maior extinção de altura, área e volume, aplicada à figura \ref{fig:deteccao_opencv}, pode ser vista na figura \ref{fig:reconstrucao_morf_tcc}.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Reconstrução morfológica de maior extinção por (a) Altura (b) Área (c) Volume.}
+    \subfigure[]{
+    \includegraphics[scale=0.5]{imagens/figura29a.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.5]{imagens/figura29b.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.6]{imagens/figura29c.png}
+    } \\
+	Fonte: Imagens geradas pela autora.
+	\label{fig:reconstrucao_morf_tcc}
+\end{figure}
+
+As imagens de entrada escolhidas e aplicadas no algoritmo PCA, o mesmo utilizado na quarta proposta, foram definidas como frontais e sem expressão facial, e consistiram em 55 imagens. As de treinamento, entretanto, variam de posição e expressão facial. Além disso, definiu-se para cada face de entrada um grupo de três imagens de treinamento, somando no total 165 figuras pertencentes aos bancos de Yale e At\&t.
+
+Os testes efetuados consistiram em separar as imagens em não-processadas e processadas, sendo estas divididas por tipo de extinção e valor $k$ escolhido. Assim, após a geração de resultados para todos os grupos definidos, a tabela \ref{tab:resultado_tcc} foi criada.
+
+\begin{table}[ht]
+	\centering
+	\caption{Resultado da aplicação das imagens reconstruídas à técnica PCA.}
+	\begin{tabular}{|c|c|c|c|} \hline
+		{\bf Extinção/Número} & {\bf Média AT\&T} & {\bf Média Yale} & {\bf Faces não reconhecidas} \\ \hline
+		{\bf Sem extinção} & {0,56} & {0,22} & {1} \\ \hline
+		{\bf Altura/1} & {0,59} & {0,22} & {4} \\ \hline
+		{\bf Altura/5} & {0,57} & {0,27} & {2} \\ \hline
+		{\bf Altura/10} & {0,57} & {0,24} & {2} \\ \hline
+		{\bf Altura/15} & {0,56} & {0,24} & {1} \\ \hline
+		{\bf Área/1} & {0,59} & {0,22} & {1} \\ \hline
+		{\bf Área/5} & {0,57} & {0,22} & {1} \\ \hline
+		{\bf Área/10} & {0,56} & {0,22} & {1} \\ \hline
+		{\bf Área/15} & {0,56} & {0,23} & {1} \\ \hline
+		{\bf Volume/1} & {0,59} & {0,22} & {1} \\ \hline
+		{\bf Volume/5} & {0,56} & {0,22} & {1} \\ \hline
+		{\bf Volume/10} & {0,56} & {0,22} & {1} \\ \hline
+		{\bf Volume/15} & {0,56} & {0,22} & {1} \\ \hline
+	\end{tabular} \\
+	Fonte: Tabela gerada pela autora.
+	\label{tab:resultado_tcc}
+\end{table}
+
+Efetuando uma análise desta tabela, é possível verificar o correto reconhecimento da maior parte das faces. Além disso, a média de distâncias entre os grupos sofreu pouca variação, confirmando a usabilidade da filtragem por extinção para auxiliar em uma técnica de reconhecimento de faces já existente. Assim, a maior vantagem da utilização de reconstrução morfológica por valores de extinção em reconhecimento facial é a alta taxa de compressão da imagem de entrada, diminuindo o espaço de armazenamento destas figuras e facilitando nos casos em que o banco de imagens é composto por uma grande quantidade de faces. A tabela \ref{tab:compressao_resultado} apresenta um comparativo entre imagens não processadas e reconstruídas pela máxima extinção de volume, ambas no formato JPG sem perdas, além da relatar a taxa de compressão obtida. Por meio desta tabela, gerada a partir de faces detectadas da terceira base citada nesta seção, é verificada uma média de 16\% de compressão.
+
+\begin{table}[ht]
+	\centering
+	\caption{Comparação da compressão de imagens originais e reconstruídas por extinção em formato JPEG.}
+	\begin{tabular}{|c|c|c|} \hline
+		{\bf Imagem Original} & {\bf Imagem reconstruída} & {\bf Taxa de compressão} \\ \hline
+		{19,5 KB} & {16,6 KB} & {14,87\%} \\ \hline
+		{19,8 KB} & {16,5 KB} & {16,67\%} \\ \hline
+		{25,2 KB} & {21,6 KB} & {14,29\%} \\ \hline
+		{19,8 KB} & {17,1 KB} & {13,64\%} \\ \hline
+		{25,9 KB} & {22,6 KB} & {12,74\%} \\ \hline
+		{22,6 KB} & {18,9 KB} & {16,37\%} \\ \hline
+		{21,5 KB} & {18,0 KB} & {16,28\%} \\ \hline
+		{24,3 KB} & {21,3 KB} & {12,34\%} \\ \hline
+		{20,9 KB} & {16,5 KB} & {21,05\%} \\ \hline
+		{24,6 KB} & {19,6 KB} & {20,32\%} \\ \hline
+		{21,5 KB} & {18,4 KB} & {14,42\%} \\ \hline
+		{23,5 KB} & {20,2 KB} & {14,04\%} \\ \hline
+		{21,7 KB} & {17,7 KB} & {18,43\%} \\ \hline
+		{21,8 KB} & {18,6 KB} & {14,68\%} \\ \hline
+		{26,8 KB} & {21,6 KB} & {19,40\%} \\ \hline
+	\end{tabular} \\
+	Fonte: Tabela gerada pela autora.
+	\label{tab:compressao_resultado}
+\end{table}

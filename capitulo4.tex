@@ -1,0 +1,74 @@
+\chapter{Sistemas Biométricos}
+\label{cap:sistemas_biometricos}
+
+A complexidade e sofisticação da visão inspiraram os primeiros cientistas e pesquisadores a buscar o seu funcionamento por anos. Desde o nascimento é possível reconhecer pessoas mais próximas, qualidade aperfeiçoada com o desenvolver da idade. Humanos e até mesmo animais com visão mais sofisticada como os primatas conseguem reconhecer formas e possuem mecanismos de reconhecimento de padrões. Estes processos de reconhecimento de formas e padrões realizados por seres vivos mais desenvolvidos permanecem sem entendimento esclarecido por parte dos pesquisadores \cite{doprado04}. 
+
+\citeonline{furtado02} define a biometria como uma ciência que permite a identificação humana por meio de suas características físicas, algumas das quais apontadas por pesquisadores como únicas a cada indivíduo. Acerca das características físicas humanas, incluem-se medidas ou proporções e outras particularidades mais complexas como impressões digitais. É possível considerar então, algumas partes diferenciáveis do corpo humano como senhas únicas e imutáveis a serem exploradas por sistemas biométricos.
+
+Um sistema biométrico apresenta duas formas principais de autenticar os dados do usuário \cite{almeida06}:
+
+\begin{itemize}
+	\item Verificação: O sistema recebe como entrada a identidade apresentada pelo indivíduo e sua informação biométrica característica do tipo de sistema utilizado. A partir destes dados há uma comparação com as informações gravadas no banco de dados referentes à identidade registrada, permitindo acesso ao usuário quando a comparação for verdadeira e bloqueando caso contrário.
+	\item Identificação: A informação biométrica do indivíduo é coletada e comparada às informações armazenadas no banco de dados. Caso o registro seja encontrado o sistema permite acesso ao usuário, caso contrário ocorre o bloqueio.
+\end{itemize}
+
+A segurança é uma das principais aplicações da biometria no cotidiano. A proteção de arquivos sigilosos ou materiais nocivos, que devem ter seu acesso limitado a determinados usuários, foi um incentivo ao desenvolvimento destes sistemas \cite{pradojunior05}. Além desta aplicabilidade, há outras citadas por \citeonline{reisjunior02} como vigilância de pedestres, auxílio à resolução de casos de polícia na procura de foragidos ou desaparecidos e desenvolvimento de aplicações de interação homem-máquina, na qual inclui-se o acesso virtual a páginas com login e senha e comércio eletrônico \cite{almeida06}, diminuindo o número de fraudes e ataques por {\it hackers}.
+
+\section{Histórico da Biometria}
+
+Em meados do ano de 1870 ocorre o primeiro registro do uso da biometria. Um sistema de medições de partes do corpo humano como diâmetro do crânio e braços ou comprimento do pé foi criado por Alphonse Bertillon. Estas medidas eram utilizadas de forma a identificar prisioneiros na década de 1920 nos EUA. Impressão digital e medições faciais foram as próximas características exploradas, técnica proposta em 1880 por pesquisadores através do uso quantitativo das entradas \cite{wayman05}.
+
+Apenas com o desenvolvimento da tecnologia de processamento de sinais por volta de 1960 que sistemas mais robustos foram criados, explorando informações da voz e impressões digitais. Após a década de 1970, outras técnicas biométricas baseadas em mãos, retina, face e íris foram propostas, tendo seu desenvolvimento pesquisado até os dias atuais.
+
+\section{Tipos de sistemas biométricos}
+\label{sec:tipos_biometria}
+
+Muitas informações únicas a cada ser humano, como as já citadas impressões digitais, retina, íris e face, podem ser utilizadas como entrada a sistemas biométricos. A questão a ser levantada quando se inicia o projeto deste tipo de sistema é qual a melhor característica a ser utilizada para que o reconhecimento seja atingido. \citeonline{almeida06} afirma que alguns critérios devem ser seguidos na escolha da característica, como ela existir em todos os indivíduos a serem analisados, haver unicidade desta informação para cada usuário e ser imutável no decorrer do tempo, além de poder ser medida e analisada. Já em relação ao sistema, este deve apresentar um bom desempenho, trabalhando com agilidade no reconhecimento, ser aceito pelos usuários e se prevenir de fraudes de identidade.
+
+Algumas das principais características possíveis de serem utilizadas em sistemas biométricos são mostradas na figura \ref{fig:tipos_biometria} e analisadas a seguir \cite{proenca06}:
+
+\begin{figure}[ht]
+\centering
+\caption{Características biométricas mais usuais e outras utilizadas com menor frequência em sistemas biométricos.}
+\includegraphics[scale=1.0]{imagens/figura26.png} \\
+Fonte: \citeonline{costa07}.
+\label{fig:tipos_biometria}
+\end{figure}
+
+\begin{itemize}
+	\item Íris: muitas características similares são encontradas nesta região como ligamentos, sulcos, anéis e corona. Para a obtenção de uma imagem ideal, utiliza-se luz infravermelha, fonte não sensitiva ao olho humano. A unicidade da íris, mesmo em casos de gêmeos, e sua rápida aquisição e processamento por máquinas são considerados pontos fortes deste método. Entretanto, a aceitabilidade pelos usuários ainda é fraca e seu custo elevado.
+	\item Retina: por meio do escaneamento da retina é possível medir padrões dos vasos sanguíneos na parte posterior do olho. Estes padrões são considerados únicos e menos suscetíveis a mudança ou replicação, fornecendo traços biométricos seguros. Apesar disto, o grau de intrusão e a aceitabilidade dos usuários além do custo elevado são desvantagens a serem consideradas.
+	\item Geometria das mãos: um vetor de características da mão do usuário é criado a partir de suas medições como largura e comprimento dos dedos, por exemplo. Como vantagens destes tipos de sistema tem-se o baixo custo, maior facilidade de utilização e menor interferência de fatores externos. Já as desvantagens são a variação do tamanho da mão desde a infância até a maioridade, utilização de objetos como anéis e similaridade maior entre indivíduos em comparação com outras características biométricas.
+	\item Impressão digital: baseia-se na singularidade dos padrões de bifurcações das pontas dos dedos. É uma técnica fácil e altamente reconhecida, utilizada largamente no cotidiano. Apresenta, no entanto, pontos negativos quanto a ruídos no dedo ou aparelho, sendo necessária higienização constante, além da necessidade de um aparelho específico para leitura de digitais, aumentando custos de aplicação.
+	\item Voz: sistemas baseados nesta característica trabalham não com imagens, como os anteriormente citados, mas com informações acústicas, sinais. É uma técnica que pode sofrer influências do ambiente e variações na voz do usuários, porém alavancada pelo apoio de pesquisadores de áreas de redes de telefonia.
+	\item Termograma facial: por meio de câmeras infravermelhas é possível obter termogramas da face. Pesquisas recentes apontam que o padrão de calor captado na imagem é único a cada pessoa. Este método tem como vantagens o fato de diminuir riscos de falsificação, independente de ter sido realizada cirurgia plástica no local, não ser invasivo e possibilitar o reconhecimento em ambientes com pouca iluminação. Porém, sofre influência direta do estado emocional do usuário e temperatura ambiente, além da sua posição e orientação na imagem.
+	\item Face: é um método menos intrusivo e mais facilmente realizado por humanos. De um modo geral, cerca de 10\% das entradas sofrem falsa rejeição, e 1\% das falsas identidades são aceitas. Este método será explorado no capítulo 5 e fornece a base deste trabalho.
+\end{itemize}
+
+\section{Vantagens e Desvantagens}
+\label{sec:vant_desv_biometria}
+
+Os sistemas biométricos têm evoluído gradativamente desde o início de seu desenvolvimento. O crescimento de pesquisas nesta área é um fator que impulsiona seu progresso. Em comparação a sistemas de login e senhas comuns dependentes de memorização de uma sequência de símbolos alfanuméricos, a biometria permite o uso de características humanas as quais não correm o risco de serem esquecidas ou roubadas, disponíveis a tempo integral e intransferíveis a outro indivíduo \cite{franke02}. 
+
+Apesar das numerosas qualidades desta técnica, algumas falhas devem ser levadas em consideração no momento de desenvolvimento e aplicação. \citeonline{pradojunior05} descreve algumas destas, como a falsa rejeição, em que o sistema rejeita o usuário que deveria permitir, a falsa aceitação, problema decorrente da autenticação errada de um sujeito não apto à admissão, e erro em registros, caso em que há mudanças no atributo físico do usuário que impede a autenticação correta.
+
+Além destes, alguns defeitos ou problemas que devem ser contornados são: a melhoria da precisão e velocidade de autenticação, a interferência de ruídos, solucionada ou amenizada por técnicas de processamento de imagens, o uso de sistemas biométricos voltados à verificação e não identificação, enquanto erros de autenticação (falsa rejeição e falsa aceitação) forem elevados, os casos de usuários deficientes inabilitados ao uso de sistemas biométricos agravado pelo custo de solução deste problema ao sistema, a violação de privacidade e intrusão de determinadas aplicações biométricas na captura de imagens ou dados de entrada para posterior processamento e a baixa segurança de alguns sistemas, resolvida pela identificação de mais de uma característica e criptografia de dados biométricos \cite{matyas02}. 
+
+\begin{table}[ht]
+\centering
+\caption{Análise das principais técnicas biométricas.}
+\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+{\footnotesize Técnica Biométrica} & {\footnotesize Universalidade} & {\footnotesize Singularidade} & {\footnotesize Mensurabilidade} & {\footnotesize Desempenho} & {\footnotesize Aceitabilidade} \\ \hline
+{\footnotesize Impressao Digital} & {\footnotesize Médio} & {\footnotesize Alto} & {\footnotesize Médio} & {\footnotesize Alto} & {\footnotesize Médio} \\ \hline
+{\footnotesize Face} & {\footnotesize Alto} & {\footnotesize Médio} & {\footnotesize Alto} & {\footnotesize Médio} & {\footnotesize Alto} \\ \hline
+{\footnotesize Íris} & {\footnotesize Alto} & {\footnotesize Alto} & {\footnotesize Médio} & {\footnotesize Alto} & {\footnotesize Baixo} \\ \hline
+{\footnotesize Retina} & {\footnotesize Alto} & {\footnotesize Alto} & {\footnotesize Baixo} & {\footnotesize Alto} & {\footnotesize Baixo} \\ \hline
+{\footnotesize Geometria da Mão} & {\footnotesize Médio} & {\footnotesize Baixo} & {\footnotesize Alto} & {\footnotesize Médio} & {\footnotesize Médio} \\ \hline
+{\footnotesize Voz} & {\footnotesize Médio} & {\footnotesize Médio} & {\footnotesize Médio} & {\footnotesize Baixo} & {\footnotesize Alto} \\ \hline
+{\footnotesize Assinatura} & {\footnotesize Baixo} & {\footnotesize Médio} & {\footnotesize Alto} & {\footnotesize Baixo} & {\footnotesize Alto} \\ \hline
+\end{tabular} \\
+Fonte: Tabela adaptada de \citeonline{almeida06}.
+\label{tab:analise_biometria}
+\end{table}
+
+A tabela \ref{tab:analise_biometria} apresenta uma análise comparativa das técnicas de biometria utilizadas recentemente. As principais características analisadas são a universalidade (característica biométrica presente em todas as pessoas, universal), singularidade (variação elevada de uma característica biométrica entre indivíduos diferentes), mensurabilidade (grau de medição da característica biométrica), desempenho (dos sistemas biométricos propostos até o momento) e aceitabilidade (grau de aceitação de usuários).

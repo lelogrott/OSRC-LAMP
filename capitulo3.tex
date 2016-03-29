@@ -1,0 +1,113 @@
+\chapter{Valores de Extinção}
+\label{cap:valores_extincao}
+
+Valores de extinção são uma técnica ainda não explorada na área de reconhecimento de faces. Antes de abordar essa aplicação, porém, é necessário definir o conceito de valores de extinção. Neste contexto, \citeonline{grimaud92} define o conceito de dinâmica, ampliado posteriormente por \citeonline{vachier95} em termos de valores de extinção.
+
+\section{Dinâmica}
+
+Considerando uma imagem em níveis de cinza representada topograficamente e a definição de extremos regionais, dinâmica \cite{grimaud92} consiste na medição de contraste das regiões de interesse da imagem, ou seja, a partir de um máximo regional deseja-se encontrar a menor altura a ser descida para alcançar um próximo máximo regional de maior altitude que o inicialmente examinado. A figura \ref{fig:dinamica} ilustra esta definição. $M_{i}$, $i \in \{1, 2, 3, 4, 5, 6\}$, são os máximos regionais da imagem e o objetivo é encontrar a dinâmica de $M_{2}$. $M_{1}$ e $M_{5}$ são os máximos com altitude maior que $M_{2}$, portanto é necessário determinar a altura a ser descida a partir destes. É possível visualizar que $h_{1}$, descida de $M_{1}$, é maior que $h_{2}$, descida de $M_{5}$. Portanto, a dinâmica de $M_{2}$ corresponde a $h_{2}$.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Dinâmica do máximo regional $M_{2}$.}
+    \includegraphics[scale=0.80]{imagens/figura12.png} \\
+    Fonte: \citeonline{silva08}.
+    \label{fig:dinamica}
+\end{figure}
+
+A dinâmica pode ser calculada de três maneiras principais \cite{silva08}:
+
+\begin{itemize}
+	\item Dinâmica de caminho entre dois pontos ({\it pixels}) de uma imagem em níveis de cinza, fornecida pela diferença entre os pontos de mais alta e baixa intensidade deste caminho;
+	\item Dinâmica entre dois pixels de uma imagem em níveis de cinza, representada pela menor dinâmica de caminhos entre eles;
+	\item Dinâmica de um máximo regional $M$, representada pela menor altura a ser descida para alcançar um próximo máximo regional maior que $M$.
+\end{itemize}
+
+Dinâmica, entretanto, limita-se ao constraste de alturas entre máximos regionais sem considerar outros atributos possíveis de medição. Valores de extinção surgem então para ampliar esta área de pesquisa.
+
+\section{Tipos de Valores de Extinção}
+
+O conceito de dinâmica, contraste de alturas entre máximos regionais, foi extendido para valores de extinção por \citeonline{vachier95}. Este considera não apenas a extinção de altura, como também de área e volume \cite{goncalves08}. Entretanto, antes de definir a extinção de área e volume é necessário conceituar atributos crescentes.
+
+Considerando uma imagem em representação topográfica, um atributo crescente \cite{silva09} pode ser definido como um elemento cujo valor em um nível inferior da imagem seja maior que no superior. Por exemplo, a área da base de uma montanha é maior que a área do topo desta montanha. Com isto, é possível estabelecer filtragem por atributo crescente. Seguindo o exemplo, a partir de um atributo de área $x$ é possível filtrar montanhas que apresentarem área inferior a $x$. Portanto, o maior valor de atributo que preserve o máximo analisado é considerado a extinção de um máximo regional.
+
+As extinções por atributos mais usuais são \cite{goncalves08}:
+
+\begin{itemize}
+	\item Extinção de área: consiste em filtrar regiões de máximos regionais com área menor ou igual à área do máximo analisado, a fim de mantê-lo ao final da filtragem;
+	\item Extinção de volume: consiste em filtrar regiões de máximos regionais com volume menor ou igual ao volume do máximo analisado, de forma a mantê-lo ao final da filtragem.
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+	\caption{Atributos crescentes dos máximos em parte de uma imagem topográfica.}
+    \includegraphics[scale=0.60]{imagens/figura13.png} \\
+    Fonte: \citeonline{silva08}.
+    \label{fig:atributos}
+\end{figure}
+
+\citeonline{goncalves08} definem ainda quatro novos atributos de valores de extinção, utilizados na última proposta deste trabalho, os dois últimos apresentados junto aos principais na figura \ref{fig:atributos}: 
+
+\begin{itemize}
+	\item Número de descendentes da sub-árvore: baseado no algoritmo de valores de extinção, o qual utiliza {\it Max-tree} \cite{goncalves08}, este atributo está relacionado ao número de nós existentes na sub-árvore em análise.   
+	\item Altura topológica da sub-árvore: considerando ainda a {\it Max-tree}, este atributo extrai o maior comprimento obtido entre o nó raiz e uma folha da sub-árvore.
+	\item Altura e largura da caixa envolvente: em relação a um componente de nível qualquer, estes atributos são representados pela diferença entre a maior e menor linha, para a altura, e a maior e menor coluna, para a largura.
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+	\caption{Imagem de entrada à filtragem pelo atributo altura. Da esquerda para a direita tem-se os máximos regionais $M_{1}$, $M_{2}$, $M_{3}$ e $M_{4}$}
+    \includegraphics[scale=0.70]{imagens/figura21a.eps} \\
+ 	Fonte: Imagem gerada pela autora.   
+    \label{fig:entrada_ext}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+	\caption{Etapas do algoritmo de filtragem por altura de tamanho $1$ para a figura \ref{fig:entrada_ext}. (a) Primeiras iterações. (b) Iterações intermediárias. (c) Últimas iterações.}
+    \subfigure[]{
+    \includegraphics[scale=0.24]{imagens/1.eps}
+    \includegraphics[scale=0.24]{imagens/2.eps}
+    \includegraphics[scale=0.24]{imagens/3.eps}
+    \includegraphics[scale=0.24]{imagens/4.eps}
+    \includegraphics[scale=0.24]{imagens/5.eps}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.24]{imagens/8.eps}
+    \includegraphics[scale=0.24]{imagens/9.eps}
+    \includegraphics[scale=0.24]{imagens/10.eps}
+    \includegraphics[scale=0.24]{imagens/11.eps}
+    \includegraphics[scale=0.24]{imagens/12.eps}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.24]{imagens/16.eps}
+    \includegraphics[scale=0.24]{imagens/17.eps}
+    \includegraphics[scale=0.24]{imagens/18.eps}
+    \includegraphics[scale=0.24]{imagens/19.eps}
+    \includegraphics[scale=0.24]{imagens/20.eps}
+    } \\
+	Fonte: Imagens geradas pela autora.   
+    \label{fig:passos_filtragem_altura}
+\end{figure}
+
+A figura \ref{fig:passos_filtragem_altura} exemplifica o processo de filtragem pelo atributo altura. Identificando os máximos regionais da figura \ref{fig:entrada_ext}, é possível determinar as extinções de altura a fim de eliminá-los da imagem de entrada. No algoritmo adotado, à cada nova iteração a imagem é reconstruída e os topos de relevo eliminados. As iterações terminam quando o máximo de maior altura for extraído, extinção dita infinita (consiste na altura máxima de filtragem para remover o último máximo regional da imagem). Para o exemplo adotado, os máximos regionais $M_{2}$, $M_{3}$ e $M_{4}$ são extintos após a iteração $15$, mostrada no primeiro quadro da imagem $(c)$. O máximo $M_{1}$ assumirá extinção infinita após a última iteração, esta de número $20$, representada pelo último quadro da mesma imagem anterior. De acordo com a execução de cada iteração do algoritmo, é possível visualizar a redução em uma unidade da altura de cada máximo. Isto é possível por meio da reconstrução morfológica, definida por um marcador da estrutura progressivamente dilatado e a intersecção deste resultado com a imagem original. Este último processo é apresentado na figura \ref{fig:reconstrucao}.
+
+\begin{figure}[ht]
+    \centering
+	\caption{Reconstrução morfológica da imagem $I$ pelo marcador $J$.}
+    \subfigure[]{
+    \includegraphics[scale=0.70]{imagens/figura22a.png}
+    }
+    \hspace{0mm}      
+    \subfigure[]{
+    \includegraphics[scale=0.70]{imagens/figura22b.png}
+    } \\
+    Fonte: \citeonline{marcuzzo07}.
+   \label{fig:reconstrucao}
+\end{figure}
+
+Um problema identificado na definição de extinções para máximos regionais é o caso de dois ou mais deles apresentarem o mesmo valor de extinção. Isso pode ser resolvido atribuindo-se diferenciações infinitesimais de níveis de cinza a cada um. Por exemplo, na figura \ref{fig:entrada_ext} os três últimos máximos regionais apresentam extinção $15$ por atributo altura. Neste caso, para resolver o problema pode-se definir extinção menor ao primeiro máximo, mediano ao segundo e maior ao terceiro, por exemplo $5$, $10$ e $15$ respectivamente.
+
+O uso de valores de extinção aplicado ao reconhecimento facial pode auxiliar na identificação de características as quais diferem entre faces humanas. Esta aplicação, ainda inexplorada, é o tema deste trabalho. O objetivo é encontrar a implementação de uma técnica que auxilie ou permita o reconhecimento de faces em imagens controladas.
