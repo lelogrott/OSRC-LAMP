@@ -338,7 +338,7 @@
 \def\ttexaminadordois#1{\gdef\@ttexaminadordois{#1}}
 \def\examinadortres#1{\gdef\@examinadortres{#1}}
 \def\ttexaminadortres#1{\gdef\@ttexaminadortres{#1}}
-\def\examinadorquatro#1{\gdef\@examinadorquatro{#1}}
+
 \def\ttexaminadorquatro#1{\gdef\@ttexaminadorquatro{#1}}
 \def\instituicao#1{\gdef\@instituicao{#1}}
 \def\sigla#1{\gdef\@sigla{#1}}%
@@ -363,12 +363,8 @@
              \vfill
              \rule{9.0cm}{0.1mm} \\
              {\@examinadordois \\ \footnotesize\@ttexaminadordois}\\
-             \vfill
-             \rule{9.0cm}{0.1mm} \\
-             {\@examinadortres \\ \footnotesize\@ttexaminadortres}\\
-             \vfill
-             \rule{9.0cm}{0.1mm} \\
-             {\@examinadorquatro \\ \footnotesize\@ttexaminadorquatro}}
+         
+}
 \def\assinaturadois{%
              \rule{9.0cm}{0.1mm} \\
              {\@orientador { - }{\@ttorientador } (orientador)}\\
@@ -378,9 +374,7 @@
              \vspace{2cm}
              \rule{9.0cm}{0.1mm} \\
              {\@examinadordois { - }\@ttexaminadordois}\\ 
-             \vspace{2cm}
-             \rule{9.0cm}{0.1mm} \\
-             {\@examinadortres { - }\@ttexaminadortres}
+            
 }
 \def\keywords#1{\gdef\@keywords{#1}}
 
@@ -921,7 +915,7 @@ Este Trabalho de Conclus\~{a}o de Curso foi julgado adequado para a obten\c{c}\~
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   \gdef\@chapapp{\appendixname}%
-  \gdef\thechapter{\@Alph\c@chapter}}
+  \gdef\thechapter{\@Alph\c@section}}
 \setlength\arraycolsep{5\p@}
 \setlength\tabcolsep{6\p@}
 \setlength\arrayrulewidth{.4\p@}
@@ -936,7 +930,7 @@ Este Trabalho de Conclus\~{a}o de Curso foi julgado adequado para a obten\c{c}\~
   \setcounter{chapter}{0}%
   \setcounter{section}{0}%
   \gdef\@chapapp{\appendixname}%
-  \gdef\thechapter{\@Roman\c@chapter}}
+  \gdef\thechapter{\@Roman\c@section}}
 \setlength\arraycolsep{5\p@}
 \setlength\tabcolsep{6\p@}
 \setlength\arrayrulewidth{.4\p@}

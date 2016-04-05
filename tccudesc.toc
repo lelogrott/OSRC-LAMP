@@ -1,0 +1,40 @@
+\select@language {brazilian}
+\contentsline {chapter}{Lista de Figuras}{5}
+\contentsline {chapter}{Lista de Tabelas}{6}
+\contentsline {chapter}{Lista de Siglas e Abreviaturas}{7}
+\contentsline {section}{\numberline {0.1}Introdu\c c\~ao}{10}
+\contentsline {section}{\numberline {0.2}Software Defined Network}{10}
+\contentsline {subsection}{\numberline {0.2.1}Arquitetura}{12}
+\contentsline {subsection}{\numberline {0.2.2}Data plane e Control plane}{13}
+\contentsline {subsubsection}{Open Shortest Path First}{14}
+\contentsline {subsubsection}{Control Plane}{14}
+\contentsline {subsubsection}{Data Plane control function}{15}
+\contentsline {subsubsection}{Coordinator}{15}
+\contentsline {subsubsection}{Virtualizer}{15}
+\contentsline {subsubsection}{Agent}{15}
+\contentsline {subsection}{\numberline {0.2.3}Management plane}{16}
+\contentsline {subsection}{\numberline {0.2.4}Data Plane}{16}
+\contentsline {subsection}{\numberline {0.2.5}Openflow}{16}
+\contentsline {subsection}{\numberline {0.2.6}Funcionamento do OpenFlow}{17}
+\contentsline {subsection}{\numberline {0.2.7}Principais benef\'{\i }cios do OpenFlow}{18}
+\contentsline {subsection}{\numberline {0.2.8}Exemplo de uso do OpenFlow}{18}
+\contentsline {section}{\numberline {0.3}Mininet}{19}
+\contentsline {subsection}{\numberline {0.3.1}Arquitetura}{19}
+\contentsline {subsection}{\numberline {0.3.2}Funcionamento}{20}
+\contentsline {subsection}{\numberline {0.3.3}API Python}{21}
+\contentsline {subsection}{\numberline {0.3.4}Desvantagens}{22}
+\contentsline {subsubsection}{Alternativas}{23}
+\contentsline {section}{\numberline {0.4}An\'alise}{24}
+\contentsline {subsection}{\numberline {0.4.1}Benchmarks da aplica\c c\~ao}{24}
+\contentsline {subsection}{\numberline {0.4.2}Benchmarks das redes simuladas}{25}
+\contentsline {subsection}{\numberline {0.4.3}Ambiente de testes}{26}
+\contentsline {subsubsection}{Topologia da rede de testes}{27}
+\contentsline {subsubsection}{Ambiente de simula\c c\~ao do \textit {Mininet}}{27}
+\contentsline {subsubsection}{Ambiente de simula\c c\~ao da rede tradicional virtualizado}{28}
+\contentsline {subsubsection}{Ambiente de simula\c c\~ao da rede tradicional n\~ao virtualizado}{28}
+\contentsline {subsection}{\numberline {0.4.4}Experimentos}{29}
+\contentsline {subsection}{\numberline {0.4.5}An\'alise dos resultados}{30}
+\contentsline {subsubsection}{An\'alise da taxa de transfer\^encia}{30}
+\contentsline {subsubsection}{An\'alise do tempo de inicializa\c c\~ao}{34}
+\contentsline {section}{\numberline {0.5}Conclus\~ao}{35}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{37}

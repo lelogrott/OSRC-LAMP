@@ -1,0 +1,23 @@
+\frametitle{Reintegrando o Branche}
+
+%\setbeamercolor{block title}{use=structure,fg=white,bg=purple!75!black}
+%\setbeamercolor{block body}{use=structure,fg=white,bg=black!20!black}
+    \begin{bash}{}
+    {\tiny
+    \begin{verbatim}
+    pwd
+    ~/teste-soft/trunk/frutas
+
+    svn merge --reintegrate ^/branches/copia-rafael/frutas
+    --- Merging differences between repository URLs into '.':
+    U    pera.c
+     U   .
+     --- Recording mergeinfo for merge between repository URLs into '.':
+      G   .
+
+    cat pera.c
+    A pera é uma fruta verde e doce
+    \end{verbatim}
+    }
+    \end{bash}
+

@@ -1,0 +1,290 @@
+\section{Software Defined Network}
+A informação viaja pelo mundo na forma de pacotes digitais, passando por vários roteadores e switches, quase sempre em redes \textit{IP}. Apesar de serem as mais adotadas, as redes \textit{IP} são \textit{complexas e difíceis de administrar}. Para conseguir configurar as redes com as políticas de alto nível desejadas, cada dispositivo de rede precisa ser configurado utilizando comandos de baixo nível e algumas vezes específicos do fornecedor. Além da complexidade da configuração, as redes precisam suportar e se adaptar às mudanças de carga. Por isso, é muito difícil cumprir com as políticas de rede desejadas. Para dificultar ainda mais, as redes atuais integram o \textit{Control Plane}(que decide como lidar com o tráfego de rede) e o \textit{Data Plane}(que encaminha o tráfego de acordo com as decisões tomadas pelo \textit{Control Plane}). 
+
+As redes estabelecem uma conexão baseada em um conjunto de critérios para identificar o menor, mais rápido ou mais seguro caminho (\textit{Control Plane}) e movem os dados através dessas conexões (\textit{Data Plane}). Quando o arcabouço de rede foi originalmente estabelecido, houve um considerável esforço em construir camadas no \textit{Data Plane}. Essas camadas o tornam simples, rápido e eficiente para efetuar mudanças dentro de uma camada, sem afetar as demais no mesmo plano. Infelizmente, não houve uma sistematização de camadas similar no \textit{Control Plane}. Ao invés disso, existem numerosos protocolos que decidem como estabelecer conexões, que foram criados ao passar dos anos, adicionando cada vez mais complexidade. Ao separar o \textit{Control Plane} do \textit{Data Plane}, o funcionamento do \textit{Control Plane} pode ser modificado sem afetar o que já funciona bem no \textit{Data Plane}.
+A premissa fundamental de \textit{Software Defined Networking} é separar a tomada de decisão no \textit{Control Plane} da execução dessas decisões no \textit{Data Plane}~\cite{newnorm}. A \textit{Open Network Foundation} (\textit{ONF}) define \textit{Software Defined Networking} (\textit{SDN}) como a separação física do plano de controle de rede (\textit{Control Plane}) do plano de encaminhamento (\textit{Data Plane}), no qual um plano de controle controla vários dispositivos. O plano de controle exerce controle direto sobre os elementos da rede (por exemplo, roteadores, switches) através de uma \textit{Application Programming Interface} bem definida (\textit{API}).
+
+Embora o termo \textit{SDN} tenha sido utilizado inicialmente para descrever o projeto \textit{OpenFlow} de Stanford, a sua definição expandiu para incluir uma gama muito mais ampla de tecnologias. Assim, para entendermos melhor a história do \textit{SDN}, apenas destacamos a evolução nas relações das ideias que evidenciam as características do \textit{SDN}, sem tentar encontrar uma relação direta entre os projetos. 
+Segundo~\cite{road}, a história pode ser dividida em três estágios, cada um com sua contribuição: (1) Redes Ativas (meados de 1990 ao começo de 2000), que introduziram funções programáveis na rede, na qual os roteadores intermediários podem processar os pacotes que passam através deles, e até mesmo modificar tais pacotes, ao invés de somente entregar pacotes de um ponto a outro como nas redes passivas. (2) Separação do \textit{Control Plane} e \textit{Data Plane} (perto de 2001 até 2007), que desenvolveu interfaces abertas entre o \textit{Control Plane} e o \textit{Data Plane} como por exemplo  o \textit{ForCES} (\textit{Forwarding and Control Element Separation}), uma interface padronizada pela \textit{Internet Engineering  Task  Force} (\textit{IETF}). (3) \textit{OpenFlow API} e sistemas operacionais de rede (por exemplo, \textit{OpenSwitch}).\\ 
+
+\subsection{Arquitetura}
+Com base nos dados apresentados pela \textit{The Open Networking Fundation} (ONF) \cite{onf:cpe}, que é a fundação responsável na padronização da SDN, podemos afirmar que a arquitetura de uma SDN consiste na dissociação do plano de controle e de dados, a centralização da inteligência e a monitoração do estado atual da rede, deixando abstrata a infraestrutura para a aplicação. A Figura \ref{fig:sdnArch} ilustra a arquitetura funcional de uma rede SDN.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{sdnARCH.png}
+\caption{Diagrama da arquitetura de uma SDN.}
+\label{fig:sdnArch}
+\end{figure}
+
+
+Como pode ser observado na Figura \ref{fig:sdnArch} a arquitetura ONF/SDN é definida através de 3 camadas, que são:
+\begin{itemize}
+  \item {\bf A Camada de Aplicação} consiste nas aplicações criadas pelo programador, esta camada consome os serviços de comunicação SDN. A comunicação entre a camada de aplicação e a camada de controle é feita através da \textit{Northbound API}.
+  \\
+  \item {\bf A Camada de Controle} fornece a funcionalidade de controle consolidada, que supervisiona o comportamento de fluxo da rede através de uma interface aberta.
+  \\
+  \item {\bf A Camada de Infraestrutura} consiste nos elementos da rede (do inglês \textit{Network Elements} ou NE) e dispositivos que oferecem a comutação e o encaminhamento de pacotes. A comunicação entre a camada de infraestrutura e a camada de controle é feita através da \textit{Northbound API}.
+\end{itemize}
+
+Seguindo esse modelo de camadas estabelecido pela ONF \cite{onf:cpe}, podemos caracterizar a arquitetura de SDN dentro dos seguinte atributos:
+
+\begin{itemize}
+  \item {\bf Inteligencia logicamente centralizada.} Na arquitetura SDN, o controle da rede é distribuído a partir do encaminhamento usando a interface já padronizada: Openflow. Através da inteligencia de rede centralizada, a tomada de decisão é facilmente baseada em uma visão global da rede, ao contrário das redes de hoje, que são construídas com base em sistemas autônomos, onde os nós não têm conhecimento do estado global da rede.
+  \\
+  \item {\bf Programabilidade.} Redes SDN são controladas através de funcionalidades de softwares, que podem ser fornecidos pelos vendedores, ou pelos próprios operadores de rede. Essa programabilidade permite que o paradigma de gestão possa ser substituídos por processos automatizados, influenciados pela rápida adoção da nuvem.
+  \\
+  \item {\bf Abstração} Em uma rede SDN, as aplicações que consomem serviços SDN são abstraídas para as tecnologias de rede subjacentes. Dispositivos de rede também sã abstraídos para a camada de controle, afim de garantir a portabilidade e futuro para investimentos em serviços de rede, onde o software de rede reside na camada de controle.
+  
+  \end{itemize}
+
+
+\subsection{Data plane e Control plane}
+
+Um \textit{Switch} ou \textit{router} constitui-se de duas partes principais: O \textit{Control plane} e o \textit{Data plane}~\cite{archoverview}.
+O \textit{Control Plane} é o componente responsável por controlar a maneira na qual o \textit{Switch} comunica-se com os seus vizinhos assim
+como decidir o próximo \textit{hop} de cada pacote recebido e prover informações para \textit{hosts} adjacentes.
+O \textit{Data Plane} recebe os pacotes e os reenvia conforme sua \textit{Forwarding table}, que foi construída com 
+informações recebidas do \textit{Control Plane}.
+
+\subsubsection{Open Shortest Path First}
+
+O \textit{Open Shortest Path First} (OSPF) é um protocolo utilizando pelo \textit{Control Plane},
+no modelo tradicional de rede, para rotear pacotes. As aplicações do \textit{OSPF} extendem-se para a construção
+automatizada da tabela de roteamento de uma \textit{SDN}, caso desejável.
+O OSPF utiliza uma tabela de vizinhança (Neighbor table), um \textit{Link state database} (LSD) e uma tabela de roteamento de IPs.
+
+
+Cada \textit{switch} da rede mantém um banco de dados idêntica descrevendo a topologia de rede, onde cada entrada
+do banco de dados corresponde ao estado de um outro \textit{switch} na rede. Este banco de dados é denominado de LSD. Cada \textit{switch}
+comunica seu estado aos demais através de \textit{flooding}. Para cada \textit{switch} adjacente na rede existe uma entrada em uma 
+tabela de vizinhança, a qual é utilizada para determinar os dispositivos alcançáveis e associar cada \textit{host} adjacente com um uma 
+porta física do dispositivo.
+
+Com a informação contida na LSD constrói-se um grafo direcionado que corresponde a topologia da rede e a direção de fluxo.
+Considerando que cada nó da rede possui o mesmo LSD, tem-se que cada nó possuirá a mesma representação de grafo. Tendo o grafo em mãos
+o \textit{switch} calcula uma arvore com os menores custos para cada nó da rede, tendo a si mesma como a raiz da arvore.
+
+\subsubsection{Control Plane}
+O \textit{Control plane} utiliza de um algoritmo de roteamento para estabelecer a maneira na qual é feito o \textit{fowarding} dos
+pacotes. No caso de de uma SDN, conforme já citado anteriormente,
+tem-se acesso ao \textit{Control plane} de forma a redefinir o trafego da rede. Os pacotes que 
+chegam no \textit{switch} podem ser dados a serem redirecionados ou informações relevantes ao \textit{control plane} oriundas 
+do \textit{management plane} ou de outro \textit{switch}. Para o caso de ser um pacote com destino outro que o \textit{switch} o pacote é
+redirecionado de acordo com a tabela de roteamento do \textit{data plane}, do contrario o pacote é interpretado pelo \textit{control plane}.
+
+De maneira geral o \textit{control plane} se comunica com outros \textit{switchs} na rede e usa as informações
+coletadas juntamente com as definições do \textit{management plane} para criar uma tabela de roteamento. As
+aplicações do \textit{control plane} utilizam significativamente menos recursos que o \textit{data plane} e não
+necessita de um tempo de resposta tão baixo.
+
+
+
+A especificação feita pela \textit{Open Networking Fundation} (ONF) considera o \textit{Control Plane} como
+sendo uma caixa preta, definido pelo seu comportamento externamente observável~\cite{archteture}.
+O fabricante do dispositivo de rede esta livre para decidir como os papéis do \textit{Data Plane} serão
+implementados. Quatro componentes básicos compõem o \textit{data plane}. O \textit{data plane control function} (DPCF),
+\textit{coordinator}, \textit{virtualizer}, e o agente.
+
+\subsubsection{Data Plane control function}
+
+O DPCF é responsavel por comandar os recursos disponíveis para dispositivo de rede e os usa
+conforme determinado pelo \textit{coordinator} ou o \textit{virtualizer}.
+
+\subsubsection{Coordinator}
+
+O \textit{coordinator} é o elemento da SDN que efetua os comandos emitidos pelo gerente da rede.
+O alcance do \textit{coordinator} é universal, já que a gerencia é realizada em cima do \textit{data}, 
+\textit{control} e \textit{application plane}.
+
+\subsubsection{Virtualizer}
+Um controlador SDN oferece serviços a suas aplicações por via de um modelo de informação de instancia que
+é derivado dos recursos da rede, politicas de gerenciamento e funções de suporte locais ou externas. A entidade funcional que suporta
+a instancia de modelo de informação denomina-se \textit{virtualizer}~\cite{archteture}.
+
+
+\subsubsection{Agent}
+O \textit{agent} do \textit{control plane} é a entidade abstrata que representa as capacidades do servidor e os recursos do cliente.
+Considerando a estrutura recursiva do SDN, o controlador em um nível $N$ representa os recursos e ações disponíveis em um nível $N+1$~\cite{archteture}.
+
+\subsection{Management plane}
+
+O \textit{management plane} consiste em uma interface direta ou indireta com o administrador da rede pela qual é feito
+o \textit{network shaping}. SSH, Telnet e SNMP são alguns protocolos utilizados para a comunicação com o \textit{management plane}.
+
+\subsection{Data Plane}
+O \textit{Data plane} é a parte critica do \textit{switch} onde grande parte do trabalho é realizado. O \textit{data plane} é 
+responsável por inspecionar os pacotes e envia-los para a interface de rede
+necessária para que o pacote em questão chegue ao seu destino~\cite{survey}. Dentro do \textit{data plane} existe uma tabela de roteamento que é 
+feita com informações providas pelo \textit{control plane} e o \textit{management plane}.
+
+A parte mais critica do \textit{switch} é \textit{data plane}, já que ali que esta a responsabilidade de inspecionar e chavear de 
+forma adequada cada pacote. Todo o \textit{Quality Of Service} (\textit{QOS}), filtragem, \textit{queuing}, encapsulamento, \textit{parsing} de cabeçalhos e \textit{policying}
+é executado no \textit{data plane}. 
+
+\section{Mininet}
+
+O Mininet é um emulador de SDN criado com o objetivo de impulsionar o desenvolvimento do OpenFlow~\cite{globalmininet}
+e capaz de criar redes e dispositivos virtuais em uma única máquina. A abordagem utilizada pelo Mininet para a emulação de prototipagem
+de redes utilizando-se dos recursos de virtualização providos pelo sistema operacional permite que sejam executadas redes com centenas de 
+dispositivos de rede~\cite{networkinalaptop}. Devido ao fato de que o Mininet utiliza de redes virtuais providas pelo Sistema Operacional,
+é possível implementar novas funcionalidades para a rede ou novos protocolos, testa-las em largas topologias e implantar o mesmo código
+em uma rede de produção.
+
+
+O Mininet é distribuídas sobre uma licença \textit{opensource} própia baseada na licença BSD~\cite{bsd}, a licença denomina-se de
+\textit{Mininet License}~\cite{mininetlicense}. O uso da licença BSD permite que pesquisadores e demais interessados copiem, modifiquem e 
+distribuam o código, promovendo assim o desenvolvimento do Mininet.
+
+\subsection{Arquitetura}
+
+O Mininet utiliza de recursos do sistema operacional para crias redes e dispositivos virtuais. Nos sistemas GNU/Linux utiliza-se \textit{network namespaces} para
+a criação das redes virtuais.  Isto prove flexibilidade e segurança, já que as redes criadas pelo Mininet estão logicamente isoladas da rede do sistema hospedeiro e 
+cada \textit{network namespace} possui sua própia copia do da \textit{stack} TCP/IP~\cite{networknamespace}.
+Isto ainda provê a possibilidade extra de integração do Mininet com redes reais~\cite{mininetproto}.
+
+A utilização do \textit{Linux Container Architecture} permite executar os dispositivos virtuais dentro de uma \textit{jail}, provendo assim 
+um isolamento do sistema hospedeiro. Recursos tais como CPU, Networking e RAM são providos através de um sistema de virtualização de recursos, proporcionando
+um controle fino da utilização de recursos e permitindo a imposição de limite no uso de tais recursos.
+
+\subsection{Funcionamento}
+
+Uma das maneiras de se interagir com o Mininet é através de um \textit{command line interface} (CLI) onde se é capaz de criar, interagir e customizar em tempo
+real protótipos de SDN. O Mininet deve ser executado em modo super usuário devido a sua interação com os recursos fornecidos pelo sistema.
+
+
+Por padrão, quando iniciado o Mininet cria uma rede de topologia denominada \textit{Minimal}. Uma rede \textit{Mininal} constitui-se de duas Máquinas Virtuais
+conectadas através de um único \textit{switch} \textit{Openflow} que é gerenciado por um controlador \textit{Openflow}. Topologias mais complexas estão também
+definidas nativamente no Mininet. As topologias são:
+
+\begin{description}
+    \item[Single] A topologia \textit{Single} consiste de um \textit{switch} \textit{Openflow} central e $k$ \textit{hosts}. É criado automaticamente um \textit{link}
+    entre o \textit{switch} e cada host. O $k$-ésimo \textit{host} esta conectado na $k$-ésima porta do \textit{switch};
+
+    \item[Reversed] A topologia \textit{Reversed} consiste de um \textit{switch Openflow} central e $k$ \textit{hosts} semelhante a topologias \textit{single}.
+    A diferença esta na ordem na qual os \textit{hosts} estão ligados ao \textit{switch}. O $k$-ésimo \textit{host} esta ligado na primeira porta e o primeiro host
+    é ligado a $k$-ésima porta.
+    
+    \item[Linear] Na topologia \textit{Linear} tem-se $k$ \textit{hosts} e $k$ \textit{switchs}. O $k$-ésimo \textit{host} é ligado ao $k$-ésimo \textit{switch} e
+    o \textit{switch} na $k$-ésima posição esta conectado aos \textit{switchs} na posição $(k-1)$ e $(k+1)$.
+    
+    \item[Tree] A topologia \textit{tree} contem $k$ \textit{hosts} cada um ligado a um \textit{switch} em um nível lógico $n$. Estes \textit{switchs} são ligados
+    dois a dois a um \textit{switch} de nível logico $n-1$, e assim sucessivamente até que tenha-se apenas um \textit{switch} no nível $1$. Uma topologia \textit{tree}
+    com $n$ níveis tem $k=2^n$ \textit{hosts}.
+
+\end{description}
+
+O \textit{Shell} interativo do \textit{Mininet} também permite a execução de comandos direcionados a um único \textit{host}.
+Isto permite o \textit{fine tuning} de um \textit{Host} de maneira semelhante a real, onde o administrador possui
+acesso direto (física ou remotamente), de tal forma que é possível executar rotinas de sistema ou até mesmo programas
+de terceiros. Um cenário plausível é a execução de um servidor \textit{Web} em um dos \textit{hosts} e simular o acesso
+simultâneo através de outros \textit{hosts} conectados a rede. Existem múltiplos comandos que são \textit{built-in} no 
+interpretador de comandos, estes comandos estão documentados na \textit{API mininet}~\cite{mininetapi}. Outros comandos
+disponíveis no sistema hospedeiro onde o \textit{Mininet} esta sendo executado e que estejam listados no \textit{PATH} do
+sistema podem ser executados adicionando o prefixo \textit{sh}.
+
+Para cada \textit{link} da rede tem-se ainda a possibilidade de ajustar diversos parâmetros para serem utilizados
+durante a simulação do enlace. Estão disponíveis o controle de latência de cada \textit{link} assim como do \textit{bandwidth}.
+O controle global pode ser realizado através de \textit{flags} durante a chamada do \textit{Mininet} ou interativamente
+dentro do \textit{Shell}. O controle individual esta disponível apenas através da \textit{API} \textit{Python} do \textit{Mininet}.
+
+\subsection{API Python}
+
+A implementação do \textit{Mininet} baseia-se principalmente em cima de \textit{Python} na versão 2.7, contendo apenas alguns
+pequenos módulos escrito em linguagem C. Ao passo que é possível interagir diretamente com o \textit{Mininet} através
+de seu \textit{Shell} interativo, a sua utilidade esta limitada a chamada de algumas rotinas de efeito global, como por
+exemplo alteração da latência, e a execução em alguma máquina virtualizada dos comandos disponíveis no \textit{Shell} do
+sistema operacional hospedeiro.
+
+Visando a construção de ambiente robusto e flexivel de simulação, o \textit{Mininet} provê uma \textit{API} em \textit{Python}
+para permitir a execução e automatização de tarefas. O \textit{Mininet} juntamente com a sua \textit{API Python} suporta a
+criação de topologias paramétricas com uma facilidade relativamente grande. A construção de topologias paramétricas
+permite que possam ser criadas topologias semelhante em estrutura porém variando em tamanho. O uso é feito criando-se
+um arquivo com extensão \textit{py} onde devera ser sobrecarregado o método \textit{\_\_main\_\_} e invocar os métodos
+\textit{addSwitch}, \textit{addHost} e \textit{addLink} para adicionar \textit{Switchs}, \textit{Hosts} e \textit{Links} a
+topologia. A maneira como o elementos da rede estão conectadas é determinado pelos argumentos passados a chamada de função.
+As topologias criadas com a \textit{API Python} podem variar desde topologias simples como estrela e anel até estruturas
+complexas baseadas em grafos.
+
+A \textit{API Python} ainda fornece outras funcionalidades além da criação de topologias paramétricas, o \textit{tunning}
+parâmetros de simulação do enlace. É possível simular latência, perda de pacotes e alterar a largura de banda dos \textit{links}
+de rede. Os principais parâmetros passiveis de ajuste são latência, que é dado em unidades de tempo, largura de banda em Mbits,
+tamanho máximo da fila em numero de pacotes e porcentagem de perda de pacotes.
+
+Finalmente, para obter-se o máximo de automatização, é possível realizar chamadas a comandos do \textit{Shell} do sistema
+hospedeiro. Como cada \textit{host} dentro do mininet é um \textit{Shell}, a execução de comandos se da passando uma
+\textit{string} de maneira igual ao que seria executado em uma situação real. A chamada é realizada utilizando-se do
+comando \textit{cmd}. É interessante ressaltar que o \textit{Mininet} não garante que os processos criados pela chamada
+do comando \textit{cmd} serão finalizados ao se encerrar o \textit{Mininet}. Cabe ao usuário gerenciar a abertura e 
+fechamento de processos. O \textit{Mininet} provê recursos para esperar algum processo encerrar através da chamada de
+função \textit{wait}, e possui também a capacidade de esperar por um tempo arbitrário por um processo através do uso da
+função \textit{wait}. Outro recurso provido pela \textit{API} é o redirecionamento de informação pelo \textit{stdin}, 
+\textit{stdout} e \textit{stderr}, além do uso de \textit{pipes}. Em conjunto com funcionalidades internas da \textit{API},
+tais como \textit{multipoll}, permitem que sejam monitorados o \textit{stdout} e \textit{stderr} de vários  processos em
+execução e reagir a determinadas saídas.
+
+\subsection{Desvantagens}
+
+Os recursos disponíveis virtualmente pelo \textit{Mininet} são todos executados via \textit{software}, o que impõe um limite
+artificial ao máximo de \textit{hosts} e \textit{links} disponíveis na topologia a ser simulada. Tendo em vista que todos os
+controladores virtuais competem pelo mesmo tempo de \textit{CPU} do sistema hospedeiro, em simulações relativamente grandes 
+e com alto uso fluxo pacotes pode ter um desempenho inferior ao esperado quando comparado a uma situação real. O mesmo pode
+vir a acontecer caso exista uma ou mais aplicações com alto consumo de tempo de \textit{CPU}, o que poderia vir a prejudicar
+o desempenho do enlace simulado. O \textit{Mininet} provê os recursos para compartilhar o ambiente de testes com terceiros,
+de tal forma que o teste ou simulação realizados podem ser reproduzidos por outras pessoas. No entanto, por motivos acima
+citados, resultados podem varias caso exista uma diferença de podem computacional entre o sistema hospedeiro de ambos os
+usuarios do \textit{Mininet}. 
+
+Outro ponto interessante de se destacar, é que apesar de cada máquina virtualizada pelo \textit{Mininet} roda isoladamente
+em um \textit{Linux Container}, porém todas estão sobre o mesmo \textit{PID} do sistema. Diversas aplicações não permitem a 
+execução de instancias simultâneas em um mesmo local. No caso do \textit{Mininet}, aplicações executando em um diferentes
+\textit{hosts} teriam o \textit{PID} do processo do simulador, de tal forma que alguns serviços se recusem a executar por
+identificar erradamente que já existe outra instancia em execução. O \textit{Mininet} provê recursos atravez de sua
+\textit{API} para evitar este problema.
+
+Existe ainda uma limitação extra imposta pela utilização extensiva de recursos do kernel do Linux que é a incapacidade de
+executar software limitados a sistemas Windows ou MacOS. Diversos recursos de \textit{containers}, \textit{quotas} e 
+\textit{network namespaces} utilizados pelo \textit{Mininet} são exclusivos para o kernel \textit{Linux} ou incompativel
+com a implementação de outros sistemas operacionais. Existe no entanto a possibilidade de se integrar o \textit{Mininet}
+com a rede física do sistema hospedeiro ou a de uma máquina virtual. Isto no entanto adiciona limites extras na 
+reprodutibilidade dos experimentos, já que o o protótipo deixara de ser autocontido no \textit{Mininet}.
+
+O modelo de sistema de arquivos utilizado pelo \textit{Mininet} pode vir a ser fonte de problemas, devido a sua estrutura
+compartilhada. O compartilhamento do sistema de arquivos provê diversas vantagens, como minimizar o uso de espaço em disco,
+evitar a copia de arquivos que são idênticos em uma ou mais máquinas virtualizadas e diminuir o trafego de rede ao
+compartilhar aquivos. No entanto, diversos serviços utilizam por padrão a configuração no diretório de sistema
+\textit{/etc}, o que impossibilita a execução de diversos serviços \textit{out-of-the-box}. Para evitar este problema
+é necessário criar diretórios unicamente para um \textit{host} em especifico através da \textit{API} provida pelo
+\textit{Mininet}. Outro problema que pode vir a acontecer, é ao se executar um mesmo \textit{script} em vários \textit{hosts}
+simultaneamente. Se o \textit{script} criar ou escrever em um mesmo arquivo, haverá colisão de arquivos, já que todos
+os \textit{hosts} estarão acessando o mesmo arquivo. Isto deve ser tratado criando um nome de arquivo único a cada execução
+ou através da utilização de pastas privadas para cada \textit{host}.
+
+\subsubsection{Alternativas}
+
+Considerando as limitações acima ditadas, em alguns casos é desejável que tenha-se alternativas ao \textit{Mininet} ou para
+comparação e validação do resultado ou para substituição total. Abaixo sera discutido brevemente duas alternativas
+ao \textit{Mininet}.
+
+\begin{description}
+    \item[Maxinet] Baseado no \textit{Mininet}, possui o objetivo de superar as limitações em relação ao
+    numero de dispositivos de rede que podem ser simulados. Segundo o autor~\cite{maxinet}, o \textit{Maxinet} tem
+    como propósito simular grandes redes de \textit{data-centers} e superar o desempenho do \textit{Mininet} através
+    da utilização de varios computadores trabalhando de forma distribuida. O \textit{Maxinet} contém \textit{built-in} um
+    gerador de trafego de rede, baseado em recentes analises de casos reais.
+    
+    \item[Mininet-Hifi] O \textit{Mininet-Hifi}~\cite{mininethifi} é um projeto com a finalidade de melhorar
+    a reprodutibilidade de testes realizados no \textit{Mininet}. Implementado de forma semelhante, utilizando 
+    \textit{containers}, o \textit{Mininet-Hifi} utiliza de recursos adicionais para melhorar a reprodutibilidade. 
+\end{description}
+
+\section{Análise}
+
+\subsection{Benchmarks da aplicação}
+Nesta seção será realizada descrito diversos testes realizados com o \textit{Mininet} com o objetivo de analizar o
+desempenho da aplicação sobre diferentes ambientes. 
+
+\subsection{Benchmarks das redes simuladas }
+\subsection{Ambiente de testes}
+\subsection{Experimentos}
+\subsection{Análise dos resultados}

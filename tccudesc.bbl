@@ -1,0 +1,126 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.45 }
+
+\bibitem[Antonenko e Smelyanskiy 2013]{globalmininet}
+\abntrefinfo{Antonenko e Smelyanskiy}{ANTONENKO; SMELYANSKIY}{2013}
+{ANTONENKO, V.; SMELYANSKIY, R. Global network modelling based on mininet
+  approach.
+2013.}
+
+\bibitem[Bash Reference Manual 2015]{time_man}
+\abntrefinfo{Bash\ldots}{BASH\ldots}{2015}
+{BASH Reference Manual. 2015.
+\url{https://www.gnu.org/software/bash/manual/bash.html}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[BSD License 2015]{bsd}
+\abntrefinfo{BSD\ldots}{BSD\ldots}{2015}
+{BSD License. 2015.
+\url{https://opensource.org/licenses/BSD-3-Clause}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[Feamster e Zegura 2011]{road}
+\abntrefinfo{Feamster e Zegura}{FEAMSTER; ZEGURA}{2011}
+{FEAMSTER, J.~R. N.; ZEGURA, E. \emph{The road to SDN: An intellectual history
+  of programmable networks}. [S.l.: s.n.], 2011.}
+
+\bibitem[free(1) - Linux manual page 2015]{free_man}
+\abntrefinfo{free(1)\ldots}{FREE(1)\ldots}{2015}
+{FREE(1) - Linux manual page. 2015.
+\url{http://linux.die.net/man/1/free}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[Handigol et al. 2012]{mininethifi}
+\abntrefinfo{Handigol et al.}{HANDIGOL et al.}{2012}
+{HANDIGOL, N. et al. Reproducible network experiments using container-based
+  emulation.
+p. 253--264, 2012.}
+
+\bibitem[ip-netns - Linux manual page 2015]{networknamespace}
+\abntrefinfo{ip-netns\ldots}{IP-NETNS\ldots}{2015}
+{IP-NETNS - Linux manual page. 2015.
+\url{http://man7.org/linux/man-pages/man8/ip-netns.8.html}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[Kreutz et al. 2014]{survey}
+\abntrefinfo{Kreutz et al.}{KREUTZ et al.}{2014}
+{KREUTZ, D. et al. Software-defined networking: {A} comprehensive survey.
+\emph{CoRR}, 2014.}
+
+\bibitem[Lantz, Heller e Mckeown 2010]{networkinalaptop}
+\abntrefinfo{Lantz, Heller e Mckeown}{LANTZ; HELLER; MCKEOWN}{2010}
+{LANTZ, B.; HELLER, B.; MCKEOWN, N. A network in a laptop, rapid prototyping
+  for software-defined networks.
+2010.}
+
+\bibitem[Linux Kernel Documentation 2015]{kernel_drop_caches}
+\abntrefinfo{Linux\ldots}{LINUX\ldots}{2015a}
+{LINUX Kernel Documentation. 2015.
+\url{https://www.kernel.org/doc/Documentation/sysctl/vm.txt}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[Linux Programmer's Manual, slab info 2015]{kernel_slab}
+\abntrefinfo{Linux\ldots}{LINUX\ldots}{2015b}
+{LINUX Programmer's Manual, slab info. 2015.
+\url{http://man7.org/linux/man-pages/man5/slabinfo.5.html}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[McKeown et al. 2008]{openflow:campusinovation}
+\abntrefinfo{McKeown et al.}{MCKEOWN et al.}{2008}
+{MCKEOWN, N. et al. Openflow: Enabling innovation in campus networks.
+\emph{SIGCOMM Comput. Commun. Rev.}, ACM, New York, NY, USA, v.~38, n.~2, p.
+  69--74, mar. 2008.
+ISSN 0146-4833.
+Dispon{\'\i}vel em: $<$http://doi.acm.org/10.1145/1355734.1355746$>$.}
+
+\bibitem[Mininet License 2015]{mininetlicense}
+\abntrefinfo{Mininet\ldots}{MININET\ldots}{2015a}
+{MININET License. 2015.
+\url{https://github.com/mininet/mininet/blob/master/LICENSE}.
+[Online; accessed 25-Outubro-2015].}
+
+\bibitem[Mininet Python API Reference Manual 2015]{mininetapi}
+\abntrefinfo{Mininet\ldots}{MININET\ldots}{2015b}
+{MININET Python API Reference Manual. 2015.
+\url{http://mininet.org/api/index.html}.
+[Online; accessed 28-Outubro-2015].}
+
+\bibitem[Oliveira et al. 2013]{mininetproto}
+\abntrefinfo{Oliveira et al.}{OLIVEIRA et al.}{2013}
+{OLIVEIRA, R. L.~S. de et al. Using mininet for emulation and prototyping
+  software-defined networks.
+2013.}
+
+\bibitem[ONF 2012]{newnorm}
+\abntrefinfo{ONF}{ONF}{2012}
+{ONF. \emph{Software-Defined Networking: The New Norm for Networks}. [S.l.:
+  s.n.], 2012.}
+
+\bibitem[ONF 2013]{archoverview}
+\abntrefinfo{ONF}{ONF}{2013}
+{ONF. \emph{SDN Architecture Overview}. [S.l.: s.n.], 2013.}
+
+\bibitem[ONF 2014]{archteture}
+\abntrefinfo{ONF}{ONF}{2014a}
+{ONF. \emph{SDN Architecture}. [S.l.: s.n.], 2014.}
+
+\bibitem[ONF 2014]{onf:cpe}
+\abntrefinfo{ONF}{ONF}{2014b}
+{ONF. \emph{SDN in the Campus Environment}. [S.l.: s.n.], 2014.}
+
+\bibitem[rsync(1) - Linux manual page 2015]{rsync_man}
+\abntrefinfo{rsync(1)\ldots}{RSYNC(1)\ldots}{2015}
+{RSYNC(1) - Linux manual page. 2015.
+\url{http://linux.die.net/man/1/rsync}.
+[Online; accessed 18-Novembro-2015].}
+
+\bibitem[Wette et al. 2014]{maxinet}
+\abntrefinfo{Wette et al.}{WETTE et al.}{2014}
+{WETTE, P. et al. Maxinet: Distributed emulation of software-defined networks.
+June 2014.}
+
+\end{thebibliography}

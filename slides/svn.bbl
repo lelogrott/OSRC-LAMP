@@ -1,0 +1,58 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.45 }
+
+\bibitem[Benson e Maltz 2010]{management}
+\abntrefinfo{Benson e Maltz}{BENSON; MALTZ}{2010}
+{BENSON, A.~A. T.; MALTZ, D. \emph{Unraveling the Complexity of the Network
+  Management}. [S.l.: s.n.], 2010.}
+
+\bibitem[Handigol et al. 2012]{mininethifi}
+\abntrefinfo{Handigol et al.}{HANDIGOL et al.}{2012}
+{HANDIGOL, N. et al. Reproducible network experiments using container-based
+  emulation.
+p. 253--264, 2012.}
+
+\bibitem[Kreutz et al. 2014]{survey}
+\abntrefinfo{Kreutz et al.}{KREUTZ et al.}{2014}
+{KREUTZ, D. et al. Software-defined networking: {A} comprehensive survey.
+\emph{CoRR}, 2014.}
+
+\bibitem[Lantz, Heller e Mckeown 2010]{networkinalaptop}
+\abntrefinfo{Lantz, Heller e Mckeown}{LANTZ; HELLER; MCKEOWN}{2010}
+{LANTZ, B.; HELLER, B.; MCKEOWN, N. A network in a laptop, rapid prototyping
+  for software-defined networks.
+2010.}
+
+\bibitem[Oliveira et al. 2013]{mininetproto}
+\abntrefinfo{Oliveira et al.}{OLIVEIRA et al.}{2013}
+{OLIVEIRA, R. L.~S. de et al. Using mininet for emulation and prototyping
+  software-defined networks.
+2013.}
+
+\bibitem[ONF 2012]{newnorm}
+\abntrefinfo{ONF}{ONF}{2012}
+{ONF. \emph{Software-Defined Networking: The New Norm for Networks}. [S.l.:
+  s.n.], 2012.}
+
+\bibitem[ONF 2013]{archoverview}
+\abntrefinfo{ONF}{ONF}{2013}
+{ONF. \emph{SDN Architecture Overview}. [S.l.: s.n.], 2013.}
+
+\bibitem[ONF 2014]{archteture}
+\abntrefinfo{ONF}{ONF}{2014a}
+{ONF. \emph{SDN Architecture}. [S.l.: s.n.], 2014.}
+
+\bibitem[ONF 2014]{onf:cpe}
+\abntrefinfo{ONF}{ONF}{2014b}
+{ONF. \emph{SDN in the Campus Environment}. [S.l.: s.n.], 2014.}
+
+\bibitem[Wette et al. 2014]{maxinet}
+\abntrefinfo{Wette et al.}{WETTE et al.}{2014}
+{WETTE, P. et al. Maxinet: Distributed emulation of software-defined networks.
+June 2014.}
+
+\end{thebibliography}

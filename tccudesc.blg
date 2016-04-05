@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: tccudesc.aux
+The style file: abnt-alf.bst
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Database file #1: bibliografia.bib
+Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=8) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abnt-alf.bst versão 1.45           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://abntex.codigolivre.org.br                        |
++---------------------------------------------------------+
+You've used 20 entries,
+            6476 wiz_defined-function locations,
+            1223 strings with 11258 characters,
+and the built_in function-call counts, 15811 in all, are:
+= -- 1728
+> -- 339
+< -- 1
++ -- 301
+- -- 103
+* -- 917
+:= -- 2067
+add.period$ -- 69
+call.type$ -- 20
+change.case$ -- 179
+chr.to.int$ -- 17
+cite$ -- 20
+duplicate$ -- 618
+empty$ -- 1177
+format.name$ -- 500
+if$ -- 4033
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 344
+newline$ -- 112
+num.names$ -- 55
+pop$ -- 496
+preamble$ -- 1
+purify$ -- 72
+quote$ -- 0
+skip$ -- 1402
+stack$ -- 1
+substring$ -- 574
+swap$ -- 217
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 63
+warning$ -- 0
+while$ -- 97
+width$ -- 0
+write$ -- 284

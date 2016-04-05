@@ -1,40 +1,29 @@
-\chapter{Introdução}
-\label{cap:introducao}
+\section{Introdução}
 
-Um sistema biométrico é aquele capaz de reconhecer a autenticidade de determinada característica física de um indivíduo, permitindo assim a diferenciação e identificação correta de usuários em determinado ambiente. Estes sistemas oferecem a possibilidade de, por exemplo, substituir o uso de documentos de identificação, necessários à efetuação de cadastros de pessoas em seu território ou em viagens, pela utilização de reconhecimento de características físicas, considerando a inexistência de dois indivíduos completamente iguais \cite{decampos01}. Os sistemas biométricos, portanto, buscam identificar características únicas que possuam alguma métrica a ser comparada \cite{marin03}.
+Atualmente, com a grande explosão de crescimento da Internet e do \textit{Cloud Computing}, as redes de computadores
+se tornaram cada vez mais complexas, demandando cada vez mais esforços para gerenciá-las. Com o objetivo de melhorar
+e faciliar o gerenciamento de grandes redes, um novo paradigma de rede foi introduzido, o \textit{Software Defined
+Network} (SDN). O \ac{SDN} caracteriza-se pela separação nítida do \textit{Data Plane} do \textit{Control Plane}.
+Tal separação permite que o administrador tenha o controle de sua rede através de uma camada de abstração, permitindo
+distribuir e controlar os recursos de sua rede de um ponto logicamente centralizado sem ter que acessar individualmente
+cada dispositivo de rede. O uso do \ac{SDN} deu ao administrador de redes a capacidade de alterar qualquer porção da
+rede assim que necessário, seja a alteração uma priorização, redirecionamento ou bloqueamento de pacotes em específico.
+Isto tornou-se essencial nos ambientes modernos de \textit{Cloud Computing} onde volumes inéditos de informação estão
+disponíveis.
 
-Pesquisas têm sido realizadas nesta área há anos, porém somente após o século XX, com a evolução da tecnologia, houve a possibilidade de automatizar sistemas de detecção e reconhecimento, o qual impulsionou a pesquisa neste campo, presente até os dias atuais \cite{almeida06}.
 
-% Acrescentar algo sobre impressões digitais
+Para que o uso do \ac{SDN} cresça, além da divulgação e acessibilidade, é necessario promover o desenvolvimento
+cientifico e tecnológico. Atualmente existe uma organização dedicada a promover o a promoção e adoção do \ac{SDN},
+a \textit{Open Networking Foundation} (ONF). A ONF foi responsável por apresentar e desenvolver o \textit{OpenFlow},
+protocolo que fornece uma abstração dos recursos de rede. O \textit{OpenFlow} é tido como a primeira padronização
+aberta de SDN e é considerada um elemento central no desenvolvimento.
 
-Algumas características humanas nas quais os sistemas biométricos se baseiam são a impressão digital, íris ou retina e face. Dentre estas, alguns autores como \citeonline{decampos01} relatam uma maior eficiência de reconhecimento baseado em íris e retina, por possuir um maior número de características individuais de cada ser humano se comparado às demais. Porém, estes sistemas apresentam deficiência quanto à forma de efetuar a aquisição da imagem, visto que o usuário não deve se movimentar e a luz emitida pelo aparelho causa desconforto, além de casos onde há a necessidade da utilização de colírios dilatadores de pupila. Neste contexto, a detecção e o reconhecimento de faces se destaca. Neste caso, técnicas de processamento de imagens e reconhecimento de padrões são usadas para a extração e interpretação das características faciais em imagens digitais, obtidas por sensores ópticos ou eletrônicos.
 
-A detecção e o reconhecimento humano de faces são ações diárias praticadas sem a percepção da complexidade que as envolve. Segundo \citeonline{reaes06}, com o passar dos anos os indivíduos estabelecem capacidades cada vez mais desenvolvidas de reconhecer as pessoas que os cercam, independente de mudanças em características superficiais como o crescimento da barba ou o uso de óculos. As máquinas não compartilham desta mesma agilidade na identificação de pessoas. Algumas ocultações resultantes de alterações na imagem facial fornecem dificuldades ao sistema de detecção e reconhecimento em realizar seu trabalho com precisão. Além disso, como aponta \citeonline{reisjunior02}, modificações superficiais na posição e orientação da face podem gerar interpretações errôneas por parte do sistema, além da interferência direta das condições do ambiente (iluminação e brilho, por exemplo) o qual se encontra o indivíduo.
+O SDN é uma tecnologia relativamente nova no mercado, e isto se traduz em preços elevados, muitas vezes proibitivos
+para universidades e outras instituições que promovem o desenvolvimento científico e tecnológico. Como alternativa
+ao uso de \textit{Hardware} compativel com SDN, existe a possibilidade da utilização de simuladores e emuladores
+tais como o \textit{Mininet}. No entanto é preciso conhecer suas capacidades e validar seus resultados. Este trabalho
+tem como objetivo comparar o desempenho fornececido pelo \textit{Mininet} com uma situação real de transferência de
+arquivos de médio porte.
 
-Algumas aplicações desta área de pesquisa são mencionadas, tais como a identificação de usuários em bancos ou aeroportos, monitoramento de tráfego de pessoas em ruas ou estabelecimentos, auxílio à polícia na busca de foragidos ou na descrição de retrato falado, localização de pessoas desaparecidas e, principalmente, em questões de segurança \cite{decampos01}. Assim, são desenvolvidos sistemas biométricos para a identificação de usuários, aplicados principalmente no controle de acesso a arquivos sigilosos ou materiais nocivos.
 
-O uso de valores de extinção, técnica que permite selecionar estruturas ou regiões de interesse, baseada na topografia de uma imagem, beneficia aplicações direcionadas à filtragem e segmentação de regiões. Este método, que usa como base os extremos regionais (máximos e mínimos valores de pixels em imagens em nível de cinza), associa um valor de extinção aos extremos, eliminando regiões que não são as de interesse \cite{vachier95}.
-
-Com base nisto, propõe-se a criação de um protótipo de reconhecimento de faces humanas presentes em imagens digitais compostas por rostos em posição frontal, identificando características singulares por meio da técnica de valores de extinção e utilizando um banco de imagens pré-existente. Assim, é possível determinar a criação de descritores ou imagens simplificadas por meio das extinções e representá-las para serem comparadas por uma métrica como distância, disposição geométrica ou um método de reconhecimento existente como o PCA. Portanto, a principal motivação deste trabalho é aplicar a técnica de valores de extinção, ainda não utilizada em reconhecimento facial, e obter resultados satisfatórios para representar sua aplicabilidade nesta área.
- 
-\section{Objetivos Gerais}
-
-Desenvolver uma técnica de reconhecimento de faces em imagens previamente capturadas auxiliada por valores de extinção.
-
-\section{Objetivos Específicos}
-
-\begin{itemize}
-	\item Determinar os extremos regionais e caracterizar os valores de extinção presentes na imagem.
-	\item Comparar por meio de distância, disposição geométrica ou método de reconhecimento existente as imagens de entrada e treinamento processadas.
-	\item Avaliar os resultados do algoritmo proposto e comparar com o resultado da técnica PCA ({\it Principal Component Analysis}).
-\end{itemize}
-
-\section{Estrutura do Trabalho}
-
-Este trabalho analisa os principais conceitos aplicados à técnica proposta, relata as soluções de reconhecimento de faces existentes e define um algoritmo mesclando valores de extinção a reconhecimento de faces.
-
-No capítulo 2 são definidos os conceitos básicos utilizados no trabalho. Imagens digitais, imagens em níveis de cinza, extremos regionais, processamento de imagens e reconhecimento de padrões são os principais. Outra definição importante que necessita de uma ênfase maior são valores de extinção, conceito tratado no capítulo 3 por meio da explicação de dinâmica, base da técnica, e dos tipos existentes.
-
-Os sistemas biométricos são discutidos no capítulo 4, apresentando um histórico da biometria, alguns tipos de sistemas biométricos e comparação entre eles, além de vantagens e desvantagens da utilização destes sistemas em aplicações do cotidiano. O reconhecimento de faces, ramificação da biometria, é apresentado no capítulo 5. Nele são definidas as etapas seguidas por um sistema de reconhecimento de faces, as principais abordagens e técnicas desta área, além de uma análise dos principais problemas detectados nos métodos estudados.
-
-O capítulo 6 define a forma de desenvolvimento do projeto, os bancos de imagens utilizados para futuros testes, o modelo de funcionamento com a técnica proposta, assim como testes iniciais em imagens sem algum processamento. Por fim, uma conclusão inicial é exposta no capítulo 7.

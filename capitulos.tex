@@ -1,0 +1,949 @@
+\section{Software Defined Network}
+A informação viaja pelo mundo na forma de pacotes digitais, passando por vários roteadores e switches, quase sempre em redes \textit{IP}.
+Apesar de serem as mais adotadas, as redes \textit{IP} são \textit{complexas e difíceis de administrar}. Para conseguir configurar as
+redes com as políticas de alto nível desejadas, cada dispositivo de rede precisa ser configurado utilizando comandos de baixo nível e
+algumas vezes específicos do fornecedor. Além da complexidade da configuração, as redes precisam suportar e se adaptar às mudanças de
+carga. Por isso, é muito difícil cumprir com as políticas de rede desejadas. Para dificultar ainda mais, as redes atuais integram o
+\textit{Control Plane}(que decide como lidar com o tráfego de rede) e o \textit{Data Plane}(que encaminha o tráfego de acordo com as
+decisões tomadas pelo \textit{Control Plane}). 
+
+As redes estabelecem uma conexão baseada em um conjunto de critérios para identificar o menor, mais rápido ou mais seguro caminho
+(\textit{Control Plane}) e movem os dados através dessas conexões (\textit{Data Plane}). Quando o arcabouço de rede foi originalmente
+estabelecido, houve um considerável esforço em construir camadas no \textit{Data Plane}. Essas camadas o tornam simples, rápido e
+eficiente para efetuar mudanças dentro de uma camada, sem afetar as demais no mesmo plano. Infelizmente, não houve uma sistematização
+de camadas similar no \textit{Control Plane}. Ao invés disso, existem numerosos protocolos que decidem como estabelecer conexões, que
+foram criados ao passar dos anos, adicionando cada vez mais complexidade. Ao separar o \textit{Control Plane} do \textit{Data Plane},
+o funcionamento do \textit{Control Plane} pode ser modificado sem afetar o que já funciona corretamente no \textit{Data Plane}.
+A premissa fundamental do \textit{Software Defined Networking} é separar a tomada de decisão no \textit{Control Plane} da execução
+dessas decisões no \textit{Data Plane}~\cite{newnorm}. A \textit{Open Network Foundation} (\textit{ONF}) define
+\textit{Software Defined Networking} (\textit{SDN}) como a separação física do plano de controle de rede (\textit{Control Plane})
+do plano de encaminhamento (\textit{Data Plane}), no qual um plano de controle controla vários dispositivos. O plano de controle
+exerce controle direto sobre os elementos da rede (por exemplo, roteadores, switches) através de uma
+\textit{Application Programming Interface} bem definida (\textit{API}).
+
+Embora o termo \textit{SDN} tenha sido utilizado inicialmente para descrever o projeto \textit{OpenFlow} de Stanford, a sua definição
+expandiu para incluir uma gama muito mais ampla de tecnologias. Assim, para entendermos melhor a história do \textit{SDN}, apenas
+destacamos a evolução nas relações das ideias que evidenciam as características do \textit{SDN}, sem tentar encontrar uma relação
+direta entre os projetos. Segundo~\cite{road}, a história pode ser dividida em três estágios, cada um com sua contribuição: (1)
+Redes Ativas (meados de 1990 ao começo de 2000), que introduziram funções programáveis na rede, na qual os roteadores intermediários
+podem processar os pacotes que passam através deles, e até mesmo modificar tais pacotes, ao invés de somente entregar pacotes de um
+ponto a outro como nas redes passivas. (2) Separação do \textit{Control Plane} e \textit{Data Plane} (perto de 2001 até 2007), que
+desenvolveu interfaces abertas entre o \textit{Control Plane} e o \textit{Data Plane} como por exemplo  o \textit{ForCES}
+(\textit{Forwarding and Control Element Separation}), uma interface padronizada pela \textit{Internet Engineering  Task  Force}
+(\textit{IETF}). (3) \textit{OpenFlow API} e sistemas operacionais de rede (por exemplo, \textit{OpenSwitch}).
+
+\subsection{Arquitetura}
+Com base nos dados apresentados pela \textit{The Open Networking Fundation} (ONF)~\cite{onf:cpe}, que é a fundação responsável
+na padronização da SDN, podemos afirmar que a arquitetura de uma SDN consiste na dissociação do plano de controle e de dados,
+a centralização da inteligência e a monitoração do estado atual da rede, deixando abstrata a infraestrutura para a aplicação.
+A Figura~\ref{fig:sdnArch} ilustra a arquitetura funcional de uma rede SDN.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.7]{sdnARCH.png}
+\caption{Diagrama da arquitetura de uma SDN.}
+\label{fig:sdnArch}
+\end{figure}
+
+
+Como pode ser observado na Figura~\ref{fig:sdnArch} a arquitetura ONF/SDN é definida através de 3 camadas, que são:
+
+
+\begin{itemize}
+  \item {\bf A Camada de Aplicação} consiste nas aplicações criadas pelo programador, esta camada consome os serviços de comunicação SDN\@.
+      A comunicação entre a camada de aplicação e a camada de controle é feita através da \textit{Northbound API}.
+  \item {\bf A Camada de Controle} fornece a funcionalidade de controle consolidada, que supervisiona o comportamento de fluxo da rede através
+      de uma interface aberta.
+  \item {\bf A Camada de Infraestrutura} consiste nos elementos da rede (do inglês \textit{Network Elements} ou NE) e dispositivos que oferecem
+      a comutação e o encaminhamento de pacotes. A comunicação entre a camada de infraestrutura e a camada de controle é feita através
+      da \textit{Northbound API}.
+\end{itemize}
+
+Seguindo esse modelo de camadas estabelecido pela ONF \cite{onf:cpe}, podemos caracterizar a arquitetura de SDN dentro dos seguinte atributos:
+
+\begin{itemize}
+  \item {\bf Inteligência logicamente centralizada.} Na arquitetura SDN, o controle da rede é distribuído a partir do encaminhamento usando a
+      interface já padronizada: Openflow. Através da inteligência de rede centralizada, a tomada de decisão é facilmente baseada em uma visão
+      global da rede, ao contrário das redes de hoje, que são construídas com base em sistemas autônomos, onde os nós não têm conhecimento do
+      estado global da rede.
+  \item {\bf Programabilidade.} Redes SDN são controladas através de funcionalidades de softwares, que podem ser fornecidos pelos vendedores,
+      ou pelos próprios operadores de rede. Essa programabilidade permite que o paradigma de gestão possa ser substituído por processos
+      automatizados, influenciados pela rápida adoção da nuvem.
+  \item {\bf Abstração} Em uma rede SDN, as aplicações que consomem serviços SDN são abstraídas para as tecnologias de rede subjacentes.
+      Dispositivos de rede também são abstraídos para a camada de controle, afim de garantir a portabilidade e futuro para investimentos
+      em serviços de rede, onde o software de rede reside na camada de controle.
+\end{itemize}
+
+\subsection{Data plane e Control plane}
+
+Um \textit{Switch} ou \textit{router} é constituído de duas partes principais: O \textit{Control plane} e o \textit{Data plane}~\cite{archoverview}.
+O \textit{Control Plane} é o componente responsável por controlar a maneira pela qual o \textit{Switch} se comunica com os seus vizinhos,
+e também por decidir o próximo \textit{hop} de cada pacote recebido e prover informações para \textit{hosts} adjacentes.
+O \textit{Data Plane} recebe os pacotes e os reenvia conforme sua \textit{Forwarding table}, que foi construída com 
+informações recebidas do \textit{Control Plane}.
+
+\subsubsection{Open Shortest Path First}
+
+O \textit{Open Shortest Path First} (OSPF) é um protocolo utilizado pelo \textit{Control Plane},
+no modelo tradicional de rede para rotear pacotes. As aplicações do \textit{OSPF} se extendem para a construção
+automatizada da tabela de roteamento de uma \textit{SDN}, caso desejável. O OSPF utiliza uma tabela de vizinhança
+(Neighbor table), um \textit{Link state database} (LSD) e uma tabela de roteamento de IPs.
+
+
+Cada \textit{switch} da rede mantém um banco de dados idêntico descrevendo a topologia de rede, onde cada entrada
+do banco de dados corresponde ao estado de um outro \textit{switch} na rede. Este banco de dados é denominado LSD\@. Cada \textit{switch}
+comunica seu estado aos demais através de \textit{flooding}. Para cada \textit{switch} adjacente na rede existe uma entrada em uma 
+tabela de vizinhança, a qual é utilizada para determinar os dispositivos alcançáveis e associar cada \textit{host} adjacente com um uma 
+porta física do dispositivo.
+
+Com a informação contida na LSD constrói-se um grafo direcionado que corresponde a topologia da rede e a direção de fluxo.
+Considerando que cada nó da rede possui o mesmo LSD, tem-se que cada nó possuirá a mesma representação de grafo. Tendo o grafo a disposição,
+o \textit{switch} calcula uma arvore com os menores custos para cada nó da rede, tendo a si mesma como a raiz da arvore.
+
+\subsubsection{Control Plane}
+O \textit{Control plane} utiliza um algoritmo de roteamento para estabelecer a maneira na qual é feito o \textit{fowarding} dos
+pacotes. No caso de uma SDN, conforme já citado anteriormente,
+tem-se acesso ao \textit{Control plane} de forma a redefinir o trafego da rede. Os pacotes que 
+chegam no \textit{switch} podem ser dados para serem redirecionados ou informações relevantes ao \textit{control plane} oriundas 
+do \textit{management plane} ou de outro \textit{switch}. Para o caso de ser um pacote com destino outro que o \textit{switch}, o pacote é
+redirecionado de acordo com a tabela de roteamento do \textit{data plane}, do contrario o pacote é interpretado pelo \textit{control plane}.
+
+De maneira geral o \textit{control plane} se comunica com outros \textit{switchs} na rede e usa as informações
+coletadas juntamente com as definições do \textit{management plane} para criar uma tabela de roteamento. As
+aplicações do \textit{control plane} utilizam significativamente menos recursos que o \textit{data plane} e não
+necessitam de um tempo de resposta tão baixo.
+
+A especificação feita pela \textit{Open Networking Fundation} (ONF) considera o \textit{Control Plane} como
+sendo uma caixa preta, definido pelo seu comportamento externamente observável~\cite{archteture}.
+O fabricante do dispositivo de rede esta livre para decidir como os papéis do \textit{Data Plane} serão
+implementados. Quatro componentes básicos compõem o \textit{data plane}. O \textit{data plane control function} (DPCF),
+\textit{coordinator}, \textit{virtualizer}, e o agente.
+
+\subsubsection{Data Plane control function}
+
+O DPCF é responsável por comandar os recursos disponíveis para um dispositivo de rede e os usa
+conforme determinado pelo \textit{coordinator} ou o \textit{virtualizer}.
+
+\subsubsection{Coordinator}
+
+O \textit{coordinator} é o elemento da SDN que efetua os comandos emitidos pelo gerente da rede.
+O alcance do \textit{coordinator} é universal, já que a gerência é realizada em cima do \textit{data plane}, 
+\textit{control plane} e do \textit{application plane}.
+
+\subsubsection{Virtualizer}
+Um controlador SDN oferece serviços às suas aplicações por via de um modelo de informação de instância que
+é derivado dos recursos da rede, políticas de gerenciamento e funções de suporte locais ou externas. A entidade funcional que suporta
+a instancia de modelo de informação é denomina \textit{virtualizer}~\cite{archteture}.
+
+\subsubsection{Agent}
+O \textit{agent} do \textit{control plane} é a entidade abstrata que representa as capacidades do servidor e os recursos do cliente.
+Considerando a estrutura recursiva do SDN, o controlador em um nível $N$ representa os recursos e ações disponíveis em um nível $N+1$~\cite{archteture}.
+
+\subsection{Management plane}
+
+O \textit{management plane} consiste em uma interface direta ou indireta com o administrador da rede pela qual é feito
+o \textit{network shaping}. SSH, Telnet e SNMP são exemplos de protocolos utilizados para a comunicação com o \textit{management plane}.
+
+\subsection{Data Plane}
+%O \textit{Data plane} é a parte critica do \textit{switch} onde grande parte do trabalho é realizado.
+O \textit{data plane} é responsável por inspecionar os pacotes e envia-los para a interface de rede
+necessária de mode que o pacote em questão chegue ao seu destino~\cite{survey}. Dentro do \textit{data plane} existe uma tabela de roteamento que é 
+feita com informações providas pelo \textit{control plane} e o \textit{management plane}.
+
+A parte mais crítica do \textit{switch} é o \textit{data plane}, já que ali que esta a responsabilidade de inspecionar e chavear de 
+forma adequada cada pacote. Todo o \textit{Quality Of Service} (\textit{QOS}), filtragem, \textit{queuing}, encapsulamento, \textit{parsing} de cabeçalhos e \textit{policying}
+é executado no \textit{data plane}. 
+
+\subsection{Openflow}
+
+
+O OpenFlow, proposto pela Universidade de Stanford é um protocolo implementado tanto nos dispositivos de infraestrutura de rede, quanto no controlador SDN. 
+O principal conceito por trás do OpenFlow é a criação de flow-tables (tabelas de fluxo) nos roteadores, onde um fluxo é constituído pela combinação de campos do cabeçalho do pacote a ser processado pelo dispositivo. Um modelo de flow-table, que ainda está sujeito a melhorias, é mostrado na Figura \ref{fig:tabela}. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.50]{tabela.png}
+\caption{Exemplo flwo-table.}
+\label{fig:tabela}
+\end{figure}
+
+Um switch Openflow é constituído de ao menos três partes: (1) Uma \textit{Flow Table}, que com uma ação associada a cada fluxo, guia o switch como processar o fluxo, (2) Um canal seguro, que conecta o switch ao controlador, aceitando comandos e pacotes que serão enviados entre o controlador e o próprio switch (3) O  \textit{Protocolo OpenFlow}, que providencia uma maneira padronizada para que o controlador se comunique com o switch \cite{openflow:campusinovation}.
+
+O canal seguro garante a segurança durante a troca de informações entre o switch e o controlador. É recomendado  como interface de acesso o protocolo SSL (Secure Socket Layer).
+
+Como protocolo, o OpenFlow é aberto (open soruce) e fica responsável por estabelecer a comunicação entre os dispositivos de rede e controladores.
+
+O Controlador é um software que pode rodar em um servidor qualquer e fica responsável por adicionar e remover entradas nas flow-tables, uma SDN pode conter inúmeros controladores para obter mais performance e robustez. Na Figura \ref{fig:rede}, podemos observar uma rede com OpenFlow.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.18]{rede.png}
+\caption{Exemplo flwo-table.}
+\label{fig:rede}
+\end{figure}
+
+\subsection{Funcionamento do OpenFlow}
+O pacote de dados, que chega a um equipamento OpenFlow, tem seus cabeçalhos comparados com as regras de entrada das flow-tables, se existir alguma regra em que o pacote se encaixe, então os contadores (utilizados para a remoção de fluxos inativos e obtenção de estatísticas) são atualizados e através da regra associada, é possível executar uma ação previamente estabelecida para o pacote, que define a forma como o pacote deve ser processado e para onde ele deve ser encaminhado. Caso o pacote não possua uma regra associada na tabela de fluxos, o seu tratamento fica sob responsabilidade do controlador SDN, esse que por sua vez pode instalar uma nova regra no \textit{switch} para que os próximos pacotes desse fluxo não precisem todos ser encaminhados ao controlador, ou ainda instalar um regra que obrigue o encaminhamento de todos os pacotes do mesmo fluxo ao controlador. Geralmente isso acontece com os pacotes de controle (ICMP, DNS, DHCP) ou protocolos de roteamento (OSPF, BGP).
+
+\subsection{Principais benefícios do OpenFlow}
+\begin{enumerate}
+  \item Os mais modernos routers e switches possuem flow-tables que implementam firewalls, NAT, QoS, entre outros serviços. Com a existência dessas flow-tables nos dispositivos de rede, não se faz necessário a troca de hardware para implementar um switch OpenFlow, uma simples troca de firmware é capaz de habilitar as funções necessárias.
+  
+  \item Com a separação do plano de controle e do plano de dados, é possível a utilização de controladores remotos para a rede, permitindo a possibilidade de terciarização do controle sobre o plano de dados.
+ 
+  \item O OpenFlow é totalmente compatível ao estado atual da internet. 
+\end{enumerate}
+\subsection{Exemplo de uso do OpenFlow}
+Com a possibilidade de programar redes através do protocolo OpenFlow, diversos experimentos podem ser executados, dentre eles podemos citar \cite{openflow:campusinovation}:
+\begin{itemize}
+    \item{\bf Novos protocolos de roteamento: }No OpenFlow, é possível implementar protocolos de roteamento para executarem no controlador da rede. Assim, quando um pacote chega ao \textit{switch} ele é encaminhado ao controlador, que por sua vez determinará o fluxo do pacote, instalando regras nas tabelas de fluxo dos switches pertencentes a rota do pacote, afim de que não seja necessário o encaminhamento de todos os pacotes do fluxo ao controlador.
+    
+    \item{\bf Mobilidade: }Um cliente WiFi da rede OpenFlow pode estar se movimentando na área de abrangência da infraestrutura WiFi. Assim, podem ser implementados mecanismos de \textit{handoff} no controlador, afim de que o controlador fique responsável por determinar a localidade do cliente dentro da infraestrutura e altere dinamicamente as tabelas de fluxo para criação de uma melhor rota e mudança de um \textit{acess point} para outro através do \textit{handoff}.
+    
+\end{itemize}
+
+
+\section{Mininet}
+
+O Mininet é um emulador de SDN criado com o objetivo de impulsionar o desenvolvimento do OpenFlow~\cite{globalmininet}
+e capaz de criar redes e dispositivos virtuais em uma única máquina. A abordagem utilizada pelo Mininet para a emulação de prototipagem
+de redes, utilizando os recursos de virtualização providos pelo sistema operacional permite que sejam executadas redes com centenas de 
+dispositivos de rede~\cite{networkinalaptop}. Devido ao fato de que o Mininet utiliza de redes virtuais providas pelo Sistema Operacional,
+é possível implementar novas funcionalidades para a rede ou novos protocolos, testa-las em largas topologias e implantar o mesmo código
+em uma rede de produção.
+
+
+O Mininet é distribuído sob uma licença \textit{opensource} própia baseada na licença BSD~\cite{bsd}, a licença é denomina
+\textit{Mininet License}~\cite{mininetlicense}. O uso da licença BSD permite que pesquisadores e demais interessados copiem, modifiquem e 
+distribuam o código, promovendo assim o desenvolvimento do Mininet.
+
+\subsection{Arquitetura}
+
+O Mininet utiliza recursos do sistema operacional para criar redes e dispositivos virtuais. Nos sistemas GNU/Linux, utiliza-se \textit{network namespaces} para
+a criação das redes virtuais.  Isto provê flexibilidade e segurança, já que as redes criadas pelo Mininet estão logicamente isoladas da rede do sistema hospedeiro e 
+cada \textit{network namespace} possui sua própia cópia da \textit{stack} TCP/IP~\cite{networknamespace}. Isso ainda provê a possibilidade extra de integração do
+Mininet com redes reais~\cite{mininetproto}.
+
+A utilização do \textit{Linux Container Architecture} permite executar os dispositivos virtuais dentro de uma \textit{jail}, provendo assim 
+um isolamento do sistema hospedeiro. Recursos tais como CPU, Networking e RAM são providos através de um sistema de virtualização destes, proporcionando
+um controle fino da utilização de recursos e permitindo a imposição de limite no uso de tais recursos.
+
+\subsection{Funcionamento}
+
+Uma das maneiras de se interagir com o Mininet é através de um \textit{command line interface} (CLI) onde se é capaz de criar, interagir e customizar em tempo
+real protótipos de \ac{SDN}. O Mininet deve ser executado em modo super usuário devido a sua interação com os recursos fornecidos pelo sistema.
+
+
+Por padrão, quando iniciado o Mininet cria uma rede de topologia denominada \textit{Minimal}. Uma rede \textit{Mininal} é constituido de duas Máquinas Virtuais
+conectadas através de um único \textit{switch} \textit{Openflow} que é gerenciado por um controlador \textit{Openflow}. Topologias mais complexas estão também
+definidas nativamente no Mininet. As topologias são:
+
+\begin{description}
+    \item[Single] A topologia \textit{Single} consiste de um \textit{switch} \textit{Openflow} central e $k$ \textit{hosts}. É criado automaticamente um \textit{link}
+    entre o \textit{switch} e cada host. O $k$-ésimo \textit{host} esta conectado na $k$-ésima porta do \textit{switch};
+
+    \item[Reversed] A topologia \textit{Reversed} consiste de um \textit{switch Openflow} central e $k$ \textit{hosts} semelhante a topologias \textit{single}.
+    A diferença esta na ordem na qual os \textit{hosts} estão ligados ao \textit{switch}. O $k$-ésimo \textit{host} esta ligado na primeira porta e o primeiro host
+    é ligado a $k$-ésima porta.
+
+    \item[Linear] Na topologia \textit{Linear} tem-se $k$ \textit{hosts} e $k$ \textit{switchs}. O $k$-ésimo \textit{host} é ligado ao $k$-ésimo \textit{switch} e
+    o \textit{switch} na $k$-ésima posição esta conectado aos \textit{switchs} na posição $(k-1)$ e $(k+1)$.
+
+    \item[Tree] A topologia \textit{tree} contém $k$ \textit{hosts} cada um ligado a um \textit{switch} em um nível lógico $n$. Estes \textit{switchs} são ligados
+    dois a dois a um \textit{switch} de nível logico $n-1$, e assim sucessivamente até que se tenha apenas um \textit{switch} no nível $1$. Uma topologia \textit{tree}
+    com $n$ níveis tem $k=2^n$ \textit{hosts}.
+
+\end{description}
+
+O \textit{Shell} interativo do \textit{Mininet} também permite a execução de comandos direcionados a um único \textit{host}.
+Isso permite o \textit{fine tuning} de um \textit{host} de maneira semelhante a real, onde o administrador possui
+acesso direto (física ou remotamente), de tal forma que é possível executar rotinas de sistema ou até mesmo programas
+de terceiros. Um cenário plausível é a execução de um servidor \textit{Web} em um dos \textit{hosts} e simular o acesso
+simultâneo através de outros \textit{hosts} conectados á rede. Existem múltiplos comandos que são \textit{built-in} no 
+interpretador de comandos, estes estão documentados na \textit{API mininet}~\cite{mininetapi}. Outros comandos
+disponíveis no sistema hospedeiro onde o \textit{Mininet} está sendo executado e que estejam listados no \textit{PATH} do
+sistema podem ser executados adicionando o prefixo \textit{sh}.
+
+Para cada \textit{link} da rede tem-se ainda a possibilidade de ajustar diversos parâmetros para serem utilizados
+durante a simulação do enlace. Estão disponíveis o controle de latência de cada \textit{link} assim como do \textit{bandwidth}.
+O controle global pode ser realizado através de \textit{flags} durante a chamada do \textit{Mininet} ou interativamente
+dentro do \textit{Shell}. O controle individual está disponível apenas através da \textit{API} \textit{Python} do \textit{Mininet}.
+
+\subsection{API Python}
+
+A implementação do \textit{Mininet} se baseia principalmente na linguagme \textit{Python} na versão 2.7, contendo apenas alguns
+pequenos módulos escrito em linguagem C. Ao passo que é possível interagir diretamente com o \textit{Mininet} através
+de seu \textit{Shell} interativo, a sua utilidade está limitada às chamadas de algumas rotinas de efeito global, como por
+exemplo alteração da latência, e a execução em alguma máquina virtualizada dos comandos disponíveis no \textit{Shell} do
+sistema operacional hospedeiro.
+
+Visando à construção de ambiente robusto e flexível de simulação, o \textit{Mininet} provê uma \textit{API} em \textit{Python}
+para permitir a execução e automatização de tarefas. O \textit{Mininet} juntamente com a sua \textit{API Python} suporta a
+criação de topologias paramétricas com uma facilidade relativamente grande. A construção de topologias paramétricas
+permite que possam ser criadas topologias semelhantes em estrutura porém variando em tamanho. O uso é feito criando-se
+um arquivo com extensão \textit{py} onde deverá ser sobrecarregado o método \textit{\_\_main\_\_} e invocar os métodos
+\textit{addSwitch}, \textit{addHost} e \textit{addLink} para adicionar \textit{Switchs}, \textit{Hosts} e \textit{Links} à
+topologia. A maneira como os elementos da rede estão conectados é determinado pelos argumentos passados à chamada de função.
+As topologias criadas com a \textit{API Python} podem variar desde topologias simples como estrela e anel até estruturas
+complexas baseadas em grafos.
+
+A \textit{API Python} ainda fornece outras funcionalidades além da criação de topologias paramétricas, o \textit{tunning} de
+parâmetros de simulação do enlace. É possível simular latência, perda de pacotes e alterar a largura de banda dos \textit{links}
+de rede. Os principais parâmetros sujeitos a ajuste são latência, que é dado em unidades de tempo, largura de banda em Mbits,
+tamanho máximo da fila em numero de pacotes e porcentagem de perda de pacotes.
+
+Finalmente, para se obter o máximo de automatização, é possível realizar chamadas a comandos do \textit{Shell} do sistema
+hospedeiro. Como cada \textit{host} dentro do mininet é um \textit{Shell}, a execução de comandos se dá passando uma
+\textit{string} de maneira igual ao que seria executado em uma situação real. A chamada é realizada utilizando-se do
+comando \textit{cmd}. É interessante ressaltar que o \textit{Mininet} não garante que os processos criados pela chamada
+do comando \textit{cmd} serão finalizados ao se encerrar o \textit{Mininet}. Cabe ao usuário gerenciar a abertura e 
+fechamento de processos. O \textit{Mininet} provê recursos para esperar algum processo encerrar através da chamada de
+função \textit{wait}, e possui também a capacidade de esperar por um tempo arbitrário por um processo através deta mesma
+função. Outro recurso provido pela \textit{API} é o redirecionamento de informação pelo \textit{stdin}, 
+\textit{stdout} e \textit{stderr}, além do uso de \textit{pipes}. Em conjunto com funcionalidades internas da \textit{API},
+tais como \textit{multipoll}, permitem que sejam monitorados o \textit{stdout} e \textit{stderr} de vários  processos em
+execução e reagir à determinadas saídas.
+
+\subsection{Desvantagens}
+
+Os recursos disponíveis virtualmente pelo \textit{Mininet} são todos executados via \textit{software}, o que impõe um limite
+artificial ao máximo de \textit{hosts} e \textit{links} disponíveis na topologia a ser simulada. Tendo em vista que todos os
+controladores virtuais competem pelo mesmo tempo de \textit{CPU} do sistema hospedeiro, em simulações relativamente grandes 
+e com alto fluxo de pacotes, pode apresenhtar um desempenho inferior ao esperado quando comparado a uma situação real. O mesmo pode
+vir a acontecer caso exista uma ou mais aplicações com alto consumo de tempo de \textit{CPU}, o que poderia vir a prejudicar
+o desempenho do enlace simulado. O \textit{Mininet} provê os recursos para compartilhar o ambiente de testes com terceiros,
+de tal forma que o teste ou simulação realizados podem ser reproduzidos por outras pessoas. No entanto, por motivos 
+supracitados, resultados podem varias caso exista uma diferença de poder computacional entre o sistema hospedeiro de ambos os
+usuários do \textit{Mininet}. 
+
+Outro ponto interessante de se destacar, é que apesar de cada máquina virtualizada pelo \textit{Mininet} rodar isoladamente
+em um \textit{Linux Container}, todas estão sobre o mesmo \textit{PID} do sistema. Isto não é benéfico pois diversas aplicações
+não permitem a execução de instâncias simultâneas em um mesmo local. No caso do \textit{Mininet}, aplicações executando em diferentes
+\textit{hosts} teriam o \textit{PID} do processo do simulador, consequentemente alguns servições pode se recusar a executar por
+identificar erroneamente a existencia de instância em execução. O \textit{Mininet} provê recursos atravéz de sua
+\textit{API} para evitar esse problema.
+
+Existe ainda uma limitação extra imposta pela utilização extensiva de recursos do kernel do Linux que é a incapacidade de
+executar software limitados a sistemas Windows ou MacOS. Diversos recursos de \textit{containers}, \textit{quotas} e 
+\textit{network namespaces} utilizados pelo \textit{Mininet} são exclusivos para o kernel \textit{Linux} ou incompatível
+com a implementação de outros sistemas operacionais. Existe no entanto a possibilidade de se integrar o \textit{Mininet}
+com a rede física do sistema hospedeiro ou com a de uma máquina virtual. Isto no entanto adiciona limites extras na 
+reprodutibilidade dos experimentos, já que o o protótipo deixara de ser autocontido no \textit{Mininet}.
+
+O modelo de sistema de arquivos utilizado pelo \textit{Mininet} pode vir a ser fonte de problemas, devido a sua estrutura
+compartilhada. O compartilhamento do sistema de arquivos fornece diversas vantagens, como minimizar o uso de espaço em disco,
+evitar a copia de arquivos que são idênticos em uma ou mais máquinas virtualizadas e diminuir o trafego de rede ao
+compartilhar aquivos. No entanto, diversos serviços utilizam por padrão a configuração no diretório de sistema
+\textit{/etc}, o que impossibilita a execução de diversos serviços \textit{out-of-the-box}. Para evitar esse problema,
+é necessário criar diretórios unicamente para um \textit{host} em específico através da \textit{API} provida pelo
+\textit{Mininet}. Outro potencial problema, é ao se executar um mesmo \textit{script} em vários \textit{hosts}
+simultaneamente. Se o \textit{script} criar ou escrever em um mesmo arquivo, haverá colisão de arquivos, já que todos
+os \textit{hosts} estarão acessando o mesmo arquivo. Isso deve ser tratado criando-se um nome de arquivo único a cada execução
+ou através da utilização de pastas privadas para cada \textit{host}.
+
+\subsubsection{Alternativas}
+
+Considerando as limitações acima ditadas, em alguns casos é desejável que se tenha alternativas ao \textit{Mininet} para
+comparação e validação do resultado ou para substituição total. Abaixo sera discutido brevemente duas alternativas
+ao \textit{Mininet}.
+
+\begin{description}
+    \item[Maxinet] Baseado no \textit{Mininet}, possui o objetivo de superar as limitações em relação ao
+    número de dispositivos de rede que podem ser simulados. Segundo o autor~\cite{maxinet}, o \textit{Maxinet} tem
+    como propósito simular grandes redes de \textit{data-centers} e superar o desempenho do \textit{Mininet} através
+    da utilização de vários computadores trabalhando de forma distribuída. O \textit{Maxinet} contém \textit{built-in} um
+    gerador de trafego de rede, baseado em recentes análises de casos reais.
+
+    \item[Mininet-Hifi] O \textit{Mininet-Hifi}~\cite{mininethifi} é um projeto com a finalidade de melhorar
+    a reprodutibilidade de testes realizados no \textit{Mininet}. Implementado de forma semelhante, utilizando 
+    \textit{containers}, o \textit{Mininet-Hifi} utiliza de recursos adicionais para melhorar a reprodutibilidade. 
+\end{description}
+
+\section{Análise}
+
+Nesta seção será descrito os testes utilizados como critérios de análise do \textit{Mininet} seguido da análise em sí.
+A primeira subseção consiste da descrição do \textit{Benchmark} em relação ao consumo de recursos da máquina onde o
+\textit{Mininet} está em execução. Em seguida ocorre a descrição dos critérios de avaliação visando à análise do desempenho
+do \textit{Mininet} na transmissão de dados de tamanho médio. Depois ocorre a descrição do ambiente de testes onde
+o \textit{Mininet} será executado assim como o ambiente físico de testes que será utilizado como objeto de comparação
+ao \textit{Mininet}. Finalmente é discutido e apresentado os testes em uma subseção própia e é realizada a análise
+dos resultados em uma subseção final.
+
+
+\subsection{Benchmarks da aplicação}
+
+%Nesta seção será realizada descrito diversos testes realizados com o \textit{Mininet} com o objetivo de analizar o
+%custo de execução da aplicação sobre diferentes ambientes de uso.
+
+Um dos primeiros passos deste trabalho consistiu de se medir o tempo necessário para a inicialização do \textit{Mininet}.
+Apesar de que os tempos de \textit{boot} não possuem um impacto direto no desempenho do \textit{Mininet}, o tempo necessário
+para a inicialização do \textit{Mininet} pode ser um fator importante na execução de múltiplos casos de teste ou em
+grandes cenários.
+
+
+O primeiro critério de avaliação foi o tempo necessário para criar a topologia especificada. Foram realizados
+uma série de testes de maneira automatizada utilizando às topologias paramétricas do \textit{Mininet}.
+As topologias utilizadas foram \textit{Single},\textit{Reversed}, \textit{Linear} e \textit{Tree}, que correspondem
+às topologias disponíveis por padrão.
+
+
+Mediu-se o tempo necessário para a criação de cada topologia utilizando o comando time~\cite{time_man} disponível nos
+sistemas \textit{GNU/Linux} e na família \textit{BSD}. Os testes da topologia \textit{Single}, \textit{Linear} e 
+\textit{Reversed} foram testados utilizando-se os mesmos parâmetros de testes. O teste consistiu na criação das
+topologias mencionadas utilizando-se um valor $n$ como parâmetro para a topologia paramétrica. O valor de $n$
+iniciou em $1$, seguido de $32$ com um incremento de $32$ até atingir $n = 1024$. Para a topologia \textit{Tree} os
+valores de $n$ foram organizados de maneira diferenciada devido à natureza da topologia. Considerando um único
+\textit{host} por nó folha, uma árvore de $k$ níveis possui $2^k$ \textit{hosts}. Foram criados topologias em árvore
+variando de $1$ até $10$ níveis, de tal forma que quando $n = 10$ tem-se $1024$ \textit{hosts}, fazendo assim com que
+ao final do teste de cada topologia tenha-se o mesmo número de \textit{hosts} criados.
+
+
+Ao mesmo tempo que se mediu o tempo necessário para a criação das topologias no \textit{Mininet}, mediu-se o consumo de
+\textit{RAM} do sistema onde o \textit{Mininet} estava em execução. A medição foi executada utilizando o comando de sistema
+\textit{free}~\cite{free_man}, que é capaz de mostrar o consumo total de \textit{RAM} do sistema. Antes, e imediatamente após
+a execução do \textit{Mininet}.
+
+
+\subsection{Benchmarks das redes simuladas}
+
+
+O teste de performance consistiu na transferência de arquivos entre diferentes \textit{hosts} virtuais dentro do
+\textit{Mininet}.
+
+%gerador de números aleatórios
+
+Os arquivos foram criados com conteudo aleatório utilizando-se o \textit{Pseudo-Random Number Generator} (PRNG)
+do sistema operacional onde os testes foram realizados. Utilizou-se 9 arquivos de conteudo aleatório com tamanho
+variando de 8 Megabytes até 1024 Megabytes. Os tamanhos de cada arquivos estão disponíveis na tabela~\ref{tab_size_file}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Nome do arquivo & Tamanho  \\ \hline
+        file\_8         & $8   $ Megabytes \\
+        file\_16        & $16  $ Megabytes \\
+        file\_32        & $32  $ Megabytes \\
+        file\_64        & $64  $ Megabytes \\
+        file\_128       & $128 $ Megabytes \\
+        file\_256       & $256 $ Megabytes \\
+        file\_512       & $512 $ Megabytes \\
+        file\_768       & $768 $ Megabytes \\
+        file\_1024      & $1024$ Megabytes \\ \hline
+    \end{tabular}
+    \caption{Tamanho dos arquivos de teste}
+    \label{tab_size_file}
+\end{table}
+
+
+Com o objetivo de eliminar interferência de fatores externos à transferência dos arquivos de testes, todos os arquivos
+antes de serem copiados foram indicados ao sistema operacional como candidato a ser armazenado no cache de I/O.
+Para aumentar as chances de que o arquivo seja se fato carregado no cache limpou-se toda a memória reservada ao
+cache. A limpeza foi realizada setando a variável drop\_caches do \textit{kernel} Linux acessada em \textit{/proc/sys/vm/drop\_caches }
+para o valor $3$. Conforme a documentação do kernel Linux~\cite{kernel_drop_caches} marcando a variável drop\_caches
+para o valor $3$ faz com que os \textit{slab objects}~\cite{kernel_slab} e \textit{pagecache} sejam limpos.
+
+
+Para transferir os arquivos de teste entre os \textit{hosts} utilizou-se o \textit{rsync}, \textit{software} capaz de
+copiar e sincronizar arquivos locais e remotos. Para transferir os arquivos para um local remoto foi configurado um túnel
+\textit{ssh} entre os locais de origem e destino. Esta mesma configuração foi utlizada nos 3 ambientes de testes.
+
+
+Como critério de avaliação mediu-se o tempo necessário para a transferência dos arquivos de testes entre dois \textit{hosts}
+da rede. A medida de tempo foi realizada pelo própio \textit{software} responsável pela tranferencia dos arquivos.
+A transferência foi efetuata utilizando \textit{rsync}~\cite{rsync_man}. Outro critério de avaliação utilizado foi o
+monitoramento da taxa de transferência. O monitoramento foi efetuado capturando a saida padrão do \textit{rsync} e
+salvando-o em um arquivo temporário para análise posterior.
+
+
+\subsection{Ambiente de testes}
+
+
+Os testes consistiram da execução de ambos os \textit{benchmarks} especificados. Cada \textit{benchmark} foi realizado
+em três ambientes distintos com o objetivo de coletar dados para realizar um comparativo entre o ambiente real e o ambiente simulado.
+
+
+\subsubsection{Topologia da rede de testes}
+
+
+A topologia da rede onde os testes foram realizadas trata-se da topologia \textit{Single} disponível por padrão
+no \textit{Mininet}. Conforme já citado, a topologia consiste de $k$ roteadores conectados em linha, onde o
+$k-$\textit{\'esimo} roteador está conectado com o $(k+1)-$\textit{\'esimo} roteador e cada roteador está conectado com $n$
+\textit{hosts}. No caso do ambiente utilizado para os testes $k = 3$ e $n = 1$. A figura~\ref{fig_topo} contém uma
+representação visual da topologia escolhida.
+
+%\begin{figure}[h]
+%    \centering
+%    \begin{tikzpicture}
+%        %\draw [help lines] (0,0) grid (8,8);
+%        % nodes %
+%        \node[text centered] at (2,2) (s1) {$S1$};
+%        \node[text centered] at (4,2) (s2) {$S2$};
+%        \node[text centered] at (6,2) (s3) {$S3$};
+%
+%        \node[text centered] at (2,0) (h1) {$H1$};
+%        \node[text centered] at (6,0) (h2) {$H2$};
+%
+%        \draw[-, line width = 1] (s2) -- node[above,font=\footnotesize]{$ $} (s1);
+%        \draw[-, line width = 1] (s2) -- node[above,font=\footnotesize]{$ $} (s3);
+%
+%        \draw[-, line width = 1] (s1) -- node[above,font=\footnotesize]{$ $} (h1);
+%        \draw[-, line width = 1] (s3) -- node[above,font=\footnotesize]{$ $} (h2);
+%        \label{fig_topo}
+%    \end{tikzpicture}
+%    \caption{Topologia da rede do ambiente de testes}
+%\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        %\draw [help lines] (0,0) grid (8,8);
+        % nodes %
+        \node[text centered] at (4,2) (s1) {$S1$};
+
+        \node[text centered] at (2,0) (h1) {$H1$};
+        \node[text centered] at (6,0) (h2) {$H2$};
+
+        \draw[-, line width = 1] (s1) -- node[above,font=\footnotesize]{$ $} (h1);
+        \draw[-, line width = 1] (s1) -- node[above,font=\footnotesize]{$ $} (h2);
+        \label{fig_topo}
+    \end{tikzpicture}
+    \caption{Topologia da rede do ambiente de testes}
+\end{figure}
+
+
+\subsubsection{Ambiente de simulação do \textit{Mininet}}
+
+
+O primeiro ambiente de teste foi o simulador \textit{Mininet}. Utilizou-se a configuração padrão do \textit{Mininet}
+disponível no site do projeto. Com a finalidade de facilitata a reprodutibilidade do experimento optou-se pela
+utilização do \textit{Mininet} dentro de uma máquina virtual disponibilizada pela própia equipe desenvolvedora do
+\textit{Mininet}.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Aspecto                    & Medida                        \\ \hline
+        Número de Nucleos da CPU   & $1$                           \\
+        Arquitetura                & x86\_64                       \\
+        CPU                        & Intel(R) Core(TM) i5-3570K    \\
+        CPU Clock                  & 3430 MHz                      \\
+        RAM disponível             & $2000$ Megabytes              \\
+        SWAP disponível            & $1024$ Megabytes              \\
+        SO virtualizado            & Ubuntu 14.04 Trusty Tahr LTS  \\ \hline
+    \end{tabular}
+    \caption{Configuração da máquina virtual para o teste \textit{Mininet}}
+    \label{tab_config_vm}
+\end{table}
+
+
+A imagem que foi utilizada para a virtualização não sofreu edição prévia antes ou durante os testes. A configuração
+da máquina virtual está disponível na tabela~\ref{tab_config_vm}.
+
+
+Conforme já citado, o \textit{Mininet} utiliza um sistema de arquivos compartilhado entre todos os seus \textit{hosts}
+virtuais. No caso do \textit{benchmark} de cópia de dados, o arquivo foi lido e escrito para um mesmo disco,
+situação na qual este processo pode agir como um \textit{bootleneck} no \textit{benchmark}.
+
+
+\subsubsection{Ambiente de simulação da rede tradicional virtualizado}
+
+
+A segundo ambiente de testes foi uma rede tradiconal virtualizada. Por rede tradicional entende-se como
+rede onde não ocorre a separação entre o \textit{control plane} e \textit{data plane}. Optou-se pela utilização
+dos recursos de virtualização com o objetivo de ter um terceiro item para utilizar como comparativo.
+
+As redes foram virtualizadas em uma nuvem baseada em \textit{OpenStack}. Utilizou-se duas máquinas virtuais operando
+com configurações idênticas. As redes foram construídas utilizando os recursos de virtualização de rede do
+\textit{OpenStack} assim como os roteadores virtuais para interligar as redes.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Aspecto                    & Medida                        \\ \hline
+        Número de Nucleos da CPU   & $1$                           \\
+        Arquitetura                & x86\_64                       \\
+        CPU                        & Intel(R) Xeon(TM) E312xx      \\
+        CPU Clock                  & 2100 MHz                      \\
+        RAM disponível             & $8000$ Megabytes              \\
+        SWAP disponível            & $8192$ Megabytes              \\
+        SO virtualizado            & Ubuntu 14.10 Utopic Unicorn   \\ \hline
+    \end{tabular}
+    \caption{Configuração da máquina virtual para o teste de rede tradicional}
+    \label{tab_config_vm}
+\end{table}
+
+
+\subsubsection{Ambiente de simulação da rede tradicional não virtualizado}
+
+
+O terceiro ambiente de testes foram máquinas físicas operando em uma rede de produção, algo próximo de
+uma situação real. Ambos os \textit{hosts} são máquinas idênticas com configurações conforme a tabela~\ref{tab_config_real}.
+De maneira semelhante ao ambiente do \textit{Mininet}, o ambiente físico também possui um sistema de arquivos
+compartilhado entre os \textit{hosts}. O compartilhamento é feito via rede através do \ac{NFS}. Se por um lado
+isso possui um impacto negativo no desempenho, por outro se aproxima do ambiente do \textit{Mininet}.
+Esta configuração foi escolhida por motivos de acesso e disponibilidade de \textit{hardware}.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Aspecto                    & Medida                              \\ \hline
+        Número de Núcleos da CPU   & $4$                                 \\
+        Arquitetura                & x86\_64                             \\
+        CPU                        & AMD Phenom(tm) II X4 B93 Processor  \\
+        CPU Clock                  & 2800 MHz                            \\
+        RAM disponível             & $4000$ Megabytes                    \\
+        SWAP disponível            & $4096$ Megabytes                    \\
+        SO virtualizado            & Linux Mint 17 Quiana                \\ \hline
+    \end{tabular}
+    \caption{Configuração da máquina física para o teste de rede tradicional}
+    \label{tab_config_real}
+\end{table}
+
+
+\subsection{Experimentos}
+
+Esta subseção é dedicada à apresentação dos resultados dos testes realizados. A análise dos resultados é realizada
+na seção seguinte. Os \textit{benchmarks} relativos à taxa de transferências foram executados cada um de maneira
+automática fazendo o uso de \textit{Shell Script}.
+
+Nos gráficos das figuras~\ref{fig:mininet256},~\ref{fig:mininet512},~\ref{fig:mininet768},~\ref{fig:mininet1024},~\ref{fig:openstack256},~\ref{fig:openstack512},~\ref{fig:openstack768},~\ref{fig:openstack1024},~\ref{fig:real256},~\ref{fig:real512},~\ref{fig:real768} e~\ref{fig:real1024},
+está representado no eixo x o tempo de transferencia em segundos e no eixo y
+a taxa de transferência em Kilobytes por segundo. A curva em vermelho representa os dados crus, enquanto que
+a curva em verde representa os dados suavizados, com o objetivo de eliminar ruídos visuais e facilitar a interpretação.
+
+
+%\subsubsection{Testes no Mininet}
+%
+%Os resultados relativos a taxa de transferência de arquivos de $256$, $512$, $768$ e $1024$
+%estão disponíveis nas figuras~\ref{fig:mininet256},~\ref{fig:mininet512},~\ref{fig:mininet768} e~\ref{fig:mininet1024}
+%respectivamente.
+%
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_mininet/taxa_256}
+%
+        \caption{Taxa de transferência de arquivo de 256 Megabytes no Mininet}
+        \label{fig:mininet256}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_mininet/taxa_512}
+%
+        \caption{Taxa de transferência de arquivo de 512 Megabytes no Mininet}
+        \label{fig:mininet512}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_mininet/taxa_768}
+%
+        \caption{Taxa de transferência de arquivo de 768 Megabytes no Mininet}
+        \label{fig:mininet768}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_mininet/taxa_1024}
+%
+        \caption{Taxa de transferência de arquivo de 1024 Megabytes no Mininet}
+        \label{fig:mininet1024}
+    \end{minipage}
+\end{figure}
+
+%\subsection{Testes no OpenStack}
+%
+%
+%Os resultados relativos a taxa de transferência de arquivos de $256$, $512$, $768$ e $1024$
+%estão disponíveis nas figuras~\ref{fig:openstack256},~\ref{fig:openstack512},~\ref{fig:openstack768} e~\ref{fig:openstack1024}
+%respectivamente.
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_openstack/taxa_256}
+%
+        \caption{Taxa de transferência de arquivo de 256 Megabytes no OpenStack}
+        \label{fig:openstack256}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_openstack/taxa_512}
+%
+        \caption{Taxa de transferência de arquivo de 512 Megabytes no OpenStack}
+        \label{fig:openstack512}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_openstack/taxa_768}
+%
+        \caption{Taxa de transferência de arquivo de 768 Megabytes no OpenStack}
+        \label{fig:openstack768}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_openstack/taxa_1024}
+%
+        \caption{Taxa de transferência de arquivo de 1024 Megabytes no OpenStack}
+        \label{fig:openstack1024}
+    \end{minipage}
+\end{figure}
+
+
+%\subsection{Testes no ambiente físico}
+%
+%
+%Os resultados relativos a taxa de transferência de arquivos de $256$, $512$, $768$ e $1024$
+%estão disponíveis nas figuras~\ref{fig:real256},~\ref{fig:real512},~\ref{fig:real768} e~\ref{fig:real1024}
+%respectivamente.
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_real/taxa_256}
+%
+        \caption{Taxa de transferência de arquivo de 256 Megabytes no ambiente físico}
+        \label{fig:real256}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_real/taxa_512}
+%
+        \caption{Taxa de transferência de arquivo de 512 Megabytes no ambiente físico}
+        \label{fig:real512}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_real/taxa_768}
+%
+        \caption{Taxa de transferência de arquivo de 768 Megabytes no ambiente físico}
+        \label{fig:real768}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/data_cp_real/taxa_1024}
+%
+        \caption{Taxa de transferência de arquivo de 1024 Megabytes no ambiente físico}
+        \label{fig:real1024}
+    \end{minipage}
+\end{figure}
+
+
+\subsection{Análise dos resultados}
+
+
+\subsubsection{Análise da taxa de transferência}
+
+Ao se analisar as taxas de transferências do \textit{OpenStack} notou-se um desempenho significativamente menor do que o esperado.
+Apesar da causa não ter sido encontrada durante o desenvolvimento deste trabalho, especula-se que o motivo é um limite arbitrário
+na velocidade da rede configurado pelos administradores da nuvem.
+
+
+Observou-se uma taxa de transferência média conforme a tabela~\ref{tab_taxa_media}. O desempenho inferior do \textit{OpenStack} é
+visível, portanto seus valores serão desconsiderados para este trabalho, já que não se pode identificar a causa da perda de
+performance para se obter o esperado em uma rede física. Utilizar-se-á portanto os resultados da rede real como comparativo ao
+desempenho do \textit{Mininet}.
+
+
+A primeira coisa que se notou foi o fato de que as transferências no \textit{Mininet} foram levemente superiores a do ambiente
+físico. O \textit{Mininet} manteve uma taxa de transferência média de $6.90$ MB/s nos testes realizados, enquanto que a rede física
+manteve uma taxa de $6.625$ MB/s. Uma diferença de aproximadamente $4.25\%$. Essa diferença por si só não é conclusiva.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Tamanho do arquivo & Real         &  Mininet      &  OpenStack   \\ \hline
+        256  Megabytes     & $6.17$ MB/s  &  $6.67$ MB/s  &  $2.57$ MB/s \\
+        512  Megabytes     & $6.07$ MB/s  &  $7.15$ MB/s  &  $2.26$ MB/s \\
+        768  Megabytes     & $7.62$ MB/s  &  $6.61$ MB/s  &  $2.36$ MB/s \\
+        1024 Megabytes     & $6.64$ MB/s  &  $7.17$ MB/s  &  $2.10$ MB/s \\ \hline
+    \end{tabular}
+    \caption{Taxa de transferência média}
+    \label{tab_taxa_media}
+\end{table}
+
+
+Observando-se o desvio padrão nota-se que o ambiente real obteve um valor de aproximadamente uma ordem de magnitude maior quando
+comparado ao \textit{Mininet}. Isso é facilmente explicado pelo fato de que a rede simulada no \textit{Mininet} é uma
+rede isolada onde apenas os \textit{benchmarks} estavam consumindo recursos computacionais significativos. Já para a rede
+física, os testes foram realizados em uma rede de produção, onde ocorria uma demanda maior por recursos computacionais.
+Outro aspecto interessante é o fato de que no \textit{Mininet} a taxa de transferência não se aproximou do seu limite
+teórico de $100$ Mbits/s, porém se manteve estável próximo do valor médio de taxa de transmissão, o que é visível baseado
+no desvio padrão relativamente baixo quando comparado ao do ambiente real. O ambiente físico, por sua vez,
+chegou diversas vezes próximo do seu limite teórico, porém teve também quedas abruptas nas quais ficou abaixo da taxa
+de transmissão de $2$ MB/s.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Tamanho do arquivo & Real         &  Mininet    \\ \hline
+        256  Megabytes     & $4.26$       &  $0.560$    \\
+        512  Megabytes     & $3.76$       &  $0.594$    \\
+        768  Megabytes     & $2.47$       &  $0.645$    \\
+        1024 Megabytes     & $2.95$       &  $0.549$    \\ \hline
+    \end{tabular}
+    \caption{Desvio padrão da taxa de transferência}
+    \label{tab_taxa_desvio}
+\end{table}
+
+
+Nas figuras~\ref{fig:taxa_real} e~\ref{fig:taxa_mininet} tem-se um gráfico comparativo lado a lado entre o ambiente simulado
+do \textit{Mininet} e o ambiente físico. Uma simples comparação visual confirma o que se concluiu no paragrafo anterior. Na
+figura~\ref{fig:taxa_mininet} é visível a maior média das taxas de transferências e também uma menor variação entre as taxas
+para diferentes casos. Já para o ambiente físico, apresentado na figura~\ref{fig:taxa_real}, a dispersão das taxas de transferências
+é evidente. É possível notar que entre uma transferência e outra houve uma variação de aproximadamente $1.5$ MB/s.
+
+Apesar do desempenho superior do \textit{Mininet}, é plausível especular que o fato da rede física utilizada para os testes
+não estar isolada afetou os resultados negativamente. Foram observados taxas de transmissões no ambiente físico próximas do
+limite teórico da rede, o que indica que o desempenho poderia ter sido superior caso não fosse pelas bruscas quedas de velocidade
+de transferência. Existem suspeitas de que o desempenho do \textit{Mininet} poderia ter sido superior ao registrado, levando em conta
+que o ambiente foi virtualizado e que os \textit{hosts virtuais} estavam utilizando um sistema de arquivos compartilhado. Porém, por
+motivos de reprodutibilidade, optou-se por utilizar o ambiente virtualizado que funciona \textit{out of the box}.
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/taxa_real}
+%
+        \caption{Taxa, média e desvio padrão de transferência no ambiente físico}
+        \label{fig:taxa_real}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/taxa_mininet}
+%
+        \caption{Taxa, média e desvio padrão de transferência no ambiente Mininet}
+        \label{fig:taxa_mininet}
+    \end{minipage}
+\end{figure}
+
+
+Com o objetivo de eliminar interferências externas, os testes foram realizados múltiplas vezes. Na grande maioria dos casos os
+resultados foram iguais. No caso do ambiente de rede física houve um único teste na qual a taxa de transferência ficou abaixo
+de $2$ MB/s. Esse resultado fpra descartado já que se considerou que algum fator externo influenciou a rede do ambiente de testes
+ou alguma das máquinas onde se realizou os testes. No \textit{Mininet} observou-se também um comportamento anormal diversas vezes.
+Em diversos testes a velocidade de transferência subtamente caía para aproximadamente $500$ KB/s e se mantinha constante neste valor
+até o término da simulação. Na figura~\ref{fig:zoera} é possível visualizar este comportamento. Após aproximadamente 2 minutos de
+transferência ocorreu a queda de velocidade. Nota-se que a taxa se mantem aproximadamente constante. Durante esse periodo de
+anormalidade, a taxa de transferência média foi de 495.2 KB/s e a variação média foi de apenas 29.6 KB/s. Em diversas ocorrências
+desse fenômeno foram encontrados valores semelhantes. Não encontrou-se a causa deste comportamento. Testes com o \textit{iperf}
+demonstraram que a rede estava configurada conforme o esperado. Também notou-se que não ocorreram quedas significativas de
+desempenho ao utilizar-se o \textit{iperf}.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.75\textwidth]{data/data_cp_mininet/taxa_1024_hue}
+    \caption{Comportamento anormal no Mininet}
+    \label{fig:zoera}
+\end{figure}
+
+
+\subsubsection{Análise do tempo de inicialização}
+
+
+Analisando-se a figura~\ref{fig:boot_mem} tem-se os resultados dos testes de consumo de \ac{RAM} pelo \textit{Mininet}.
+Nota-se que o consumo de \ac{RAM} para a simulação de pequenas redes facilmente ultrapassa a marca dos 400 Megabytes.
+Isto porém não se apresenta como um problema quando levado em comparação a alta disponibilidade de \ac{RAM} que se tem nos
+computadores modernos. No entanto, para topologias maiores, chegou-se ao limite de \ac{RAM} disponível no sistema
+ao se ter uma topologia do tipo Linear com $800$ \textit{hosts} e $800$ roteadores simulados. O teste seguiu até se
+obter $1024$ roteadores e $1024$ \textit{hosts} na rede, apesar da utilização de \textit{SWAP}, não houve perdas consideráveis
+no tempo de inicialização, conforme mostra a figura~\ref{fig:boot_time}. Para a rede de topologia do tipo \textit{Single},
+atingiu-se a marca de $1024$ \textit{hosts} virtuais sem esgotar os recursos da máquina, isso é facilmente explicado pelo
+fato de haver apenas um único roteador na infraestrutura simulada.
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/initialization_times/mem}
+%
+        \caption{Consumo de RAM pelo Mininet}
+        \label{fig:boot_mem}
+    \end{minipage}
+%
+    \begin{minipage}[b]{0.49\linewidth}
+        \centering
+%
+        \includegraphics[width=\textwidth]{data/initialization_times/time}
+%
+        \caption{Tempos de boot do Mininet}
+        \label{fig:boot_time}
+    \end{minipage}
+\end{figure}
+
+
+Relativo ao tempo necessário para a inicialização do \textit{Mininet}, nota-se que a topologia do tipo \textit{Single}
+possui um custo consideravelmente baixo quando comparado com as demais topologias testadas. Isto ocorre pelo fato de que
+a topologia em questão é constituida de um único \textit{switch} e múltiplos \textit{hosts} conectados ao \textit{switch}.
+Já para as topologias linear e em árvore, nota-se um crescimento polinomial no tempo necessário para se inicializar o
+\textit{Mininet}. Essa diferença se deve provalmente a um custo maior em criar \textit{switches} virtuais e os \textit{links}
+do que os \textit{hosts}.
+
+
+\section{Conclusão}
+
+Durante este trabalho atingiu-se parcialmente o seu objetivo de análisar e comparar o desempenho do \textit{Mininet}.
+O \textit{Mininet} obteve um desempenho médio $4.45\%$ superior ao ambiente físico e uma variação média de apenas $17\%$
+da variação média do ambiente físico. No entanto não foi possível determinar a causa de algumas anomalias detectadas.
+No caso do \textit{Mininet} não foi possível isolar a causa da súbita queda de performance. Para o cenário do
+\textit{OpenStack} optou-se por descartar os resultados obtidos, tendo em vista que os dados apresentaram um limite
+superior na taxa de transmissão, que se mostrou inadequada para a comparação com os demais ambientes. Nos testes
+do ambiente físico não foi possível determinar se algum fator externo os influenciou, tendo em vista
+que a taxa de transferência chegou perto de seu limite teórico varias vezes porém sofreu múltiplas quedas de
+velocidade. Não obstante, o trabalho cumpriu seus objetivos, mesmo que de maneira parcial, e foram obtidos os resultados esperados.
+O \textit{Mininet} mostrou-se uma ferramenta capaz de cumprir seus objetivos e teve um comportamento equiparável com
+os resultados obtidos dos testes em uma rede física.
+
+
