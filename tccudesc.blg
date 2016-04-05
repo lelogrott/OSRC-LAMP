@@ -1,64 +1,64 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tccudesc.aux
 The style file: abnt-alf.bst
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia.bib
-Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
-Reallocated singl_function (elt_size=8) to 100 items from 50.
-Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=8) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 +---------------------------------------------------------+
 | Estilo bibliográfico abnt-alf.bst versão 1.45           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 20 entries,
+You've used 21 entries,
             6476 wiz_defined-function locations,
-            1223 strings with 11258 characters,
-and the built_in function-call counts, 15811 in all, are:
-= -- 1728
-> -- 339
-< -- 1
-+ -- 301
-- -- 103
-* -- 917
-:= -- 2067
-add.period$ -- 69
-call.type$ -- 20
-change.case$ -- 179
-chr.to.int$ -- 17
-cite$ -- 20
-duplicate$ -- 618
-empty$ -- 1177
-format.name$ -- 500
-if$ -- 4033
+            1234 strings with 11596 characters,
+and the built_in function-call counts, 16795 in all, are:
+= -- 1806
+> -- 381
+< -- 5
++ -- 317
+- -- 115
+* -- 1000
+:= -- 2199
+add.period$ -- 74
+call.type$ -- 21
+change.case$ -- 193
+chr.to.int$ -- 21
+cite$ -- 21
+duplicate$ -- 667
+empty$ -- 1234
+format.name$ -- 561
+if$ -- 4268
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 344
-newline$ -- 112
-num.names$ -- 55
-pop$ -- 496
+missing$ -- 362
+newline$ -- 119
+num.names$ -- 60
+pop$ -- 512
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 77
 quote$ -- 0
-skip$ -- 1402
+skip$ -- 1449
 stack$ -- 1
-substring$ -- 574
-swap$ -- 217
-text.length$ -- 1
+substring$ -- 605
+swap$ -- 246
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 63
 warning$ -- 0
-while$ -- 97
+while$ -- 105
 width$ -- 0
-write$ -- 284
+write$ -- 305
