@@ -23,7 +23,6 @@
 \usepackage{listings}
 \usepackage{acronym}
 \usepackage{bm}
-\usepackage{comment}
 
 \usepackage{stmaryrd}
 

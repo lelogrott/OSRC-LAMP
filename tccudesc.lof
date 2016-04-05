@@ -1,24 +1,4 @@
 \select@language {brazilian}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama da arquitetura de uma SDN.}}{13}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Exemplo flwo-table.}}{17}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo flwo-table.}}{17}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Topologia da rede do ambiente de testes}}{27}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Taxa de transfer\^encia de arquivo de 256 Megabytes no Mininet}}{30}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Taxa de transfer\^encia de arquivo de 512 Megabytes no Mininet}}{30}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Taxa de transfer\^encia de arquivo de 768 Megabytes no Mininet}}{30}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Taxa de transfer\^encia de arquivo de 1024 Megabytes no Mininet}}{30}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Taxa de transfer\^encia de arquivo de 256 Megabytes no OpenStack}}{31}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Taxa de transfer\^encia de arquivo de 512 Megabytes no OpenStack}}{31}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Taxa de transfer\^encia de arquivo de 768 Megabytes no OpenStack}}{31}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Taxa de transfer\^encia de arquivo de 1024 Megabytes no OpenStack}}{31}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Taxa de transfer\^encia de arquivo de 256 Megabytes no ambiente f\'{\i }sico}}{32}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Taxa de transfer\^encia de arquivo de 512 Megabytes no ambiente f\'{\i }sico}}{32}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Taxa de transfer\^encia de arquivo de 768 Megabytes no ambiente f\'{\i }sico}}{32}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Taxa de transfer\^encia de arquivo de 1024 Megabytes no ambiente f\'{\i }sico}}{32}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Taxa, m\'edia e desvio padr\~ao de transfer\^encia no ambiente f\'{\i }sico}}{34}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Taxa, m\'edia e desvio padr\~ao de transfer\^encia no ambiente Mininet}}{34}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Comportamento anormal no Mininet}}{35}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Consumo de RAM pelo Mininet}}{35}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Tempos de boot do Mininet}}{35}
+\addvspace {10\p@ }

@@ -1,0 +1,30 @@
+\chapter{Introdução}
+\label{cap:introducao}
+
+Atualmente, com a grande explosão de crescimento da Internet e do \textit{Cloud Computing}, as redes de computadores
+se tornaram cada vez mais complexas, demandando cada vez mais esforços para gerenciá-las. Com o objetivo de melhorar
+e faciliar o gerenciamento de grandes redes, um novo paradigma de rede foi introduzido, o \textit{Software Defined
+Network} (SDN). O \ac{SDN} caracteriza-se pela separação nítida do \textit{Data Plane} do \textit{Control Plane}.
+Tal separação permite que o administrador tenha o controle de sua rede através de uma camada de abstração, permitindo
+distribuir e controlar os recursos de sua rede de um ponto logicamente centralizado sem ter que acessar individualmente
+cada dispositivo de rede. O uso do \ac{SDN} deu ao administrador de redes a capacidade de alterar qualquer porção da
+rede assim que necessário, seja a alteração uma priorização, redirecionamento ou bloqueamento de pacotes em específico.
+Isto tornou-se essencial nos ambientes modernos de \textit{Cloud Computing} onde volumes inéditos de informação estão
+disponíveis.
+
+
+Para que o uso do \ac{SDN} cresça, além da divulgação e acessibilidade, é necessario promover o desenvolvimento
+cientifico e tecnológico. Atualmente existe uma organização dedicada a promover o a promoção e adoção do \ac{SDN},
+a \textit{Open Networking Foundation} (ONF). A ONF foi responsável por apresentar e desenvolver o \textit{OpenFlow},
+protocolo que fornece uma abstração dos recursos de rede. O \textit{OpenFlow} é tido como a primeira padronização
+aberta de SDN e é considerada um elemento central no desenvolvimento.
+
+
+O SDN é uma tecnologia relativamente nova no mercado, e isto se traduz em preços elevados, muitas vezes proibitivos
+para universidades e outras instituições que promovem o desenvolvimento científico e tecnológico. Como alternativa
+ao uso de \textit{Hardware} compativel com SDN, existe a possibilidade da utilização de simuladores e emuladores
+tais como o \textit{Mininet}. No entanto é preciso conhecer suas capacidades e validar seus resultados. Este trabalho
+tem como objetivo comparar o desempenho fornececido pelo \textit{Mininet} com uma situação real de transferência de
+arquivos de médio porte.
+
+

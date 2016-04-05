@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  5 APR 2016 03:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  5 APR 2016 03:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,6 +307,10 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write4
+
+Excluding comment 'comment')
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup11
@@ -349,7 +353,7 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 \pgf@yb=\dimen130
 \pgf@xc=\dimen131
 \pgf@yc=\dimen132
-\w@pgf@writea=\write4
+\w@pgf@writea=\write5
 \r@pgf@reada=\read1
 \c@pgf@counta=\count124
 \c@pgf@countb=\count125
@@ -626,8 +630,8 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-\@indexfile=\write5
-\openout5 = `tccudesc.idx'.
+\@indexfile=\write6
+\openout6 = `tccudesc.idx'.
 
 
 Writing index file tccudesc.idx
@@ -635,25 +639,21 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazilian'.
-(./tccudesc.aux
-
-LaTeX Warning: Label `tab_config_vm' multiply defined.
-
-)
+(./tccudesc.aux)
 \openout1 = `tccudesc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count162
@@ -720,25 +720,25 @@ e
 ABD: EveryShipout initializing macros [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 67.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 66.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 66.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 67.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 66.
-LaTeX Font Info:    Try loading font information for U+stmry on input line 66.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 67.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1] [1] [1
 
@@ -751,264 +751,122 @@ although it is yet undefined on input line 1.
 ] (./abstract.tex) [4
 
 ] (./tccudesc.lof)
-\tf@lof=\write6
-\openout6 = `tccudesc.lof'.
+\tf@lof=\write7
+\openout7 = `tccudesc.lof'.
 
  [5
 
 ]
 (./tccudesc.lot)
-\tf@lot=\write7
-\openout7 = `tccudesc.lot'.
+\tf@lot=\write8
+\openout8 = `tccudesc.lot'.
 
  (./acronimos.tex [6
 
 ]) [7
 
-] (./tccudesc.toc [8
+] (./tccudesc.toc)
+\tf@toc=\write9
+\openout9 = `tccudesc.toc'.
 
-])
-\tf@toc=\write8
-\openout8 = `tccudesc.toc'.
+ [8
 
- [9]
+]
 (./introducao.tex
 Cap\'{\i }tulo 1.
-) (./capitulos.tex [10
+) (./capitulos.tex
+Overfull \hbox (2.67061pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 Introdu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao 
+in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+
+Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
+\OT1/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
+ []
+
+[9
 
 ]
 Cap\'{\i }tulo 2.
-[11
+Excluding 'comment' comment. [10
 
-] <sdnARCH.png, id=54, 642.4pt x 401.5pt>
-File: sdnARCH.png Graphic file (type png)
- <use sdnARCH.png>
-Package pdftex.def Info: sdnARCH.png used on input line 44.
-(pdftex.def)             Requested size: 449.67694pt x 281.04808pt.
+]
+Cap\'{\i }tulo 3.
+) (./tccudesc.bbl [11
 
+]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Empty `thebibliography' environment on input line 8.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
- [12] [13 <./sdnARCH.png>] [14] [15] <tabela.png, id=70, 737.75626pt x 163.6112
-5pt>
-File: tabela.png Graphic file (type png)
- <use tabela.png>
-Package pdftex.def Info: tabela.png used on input line 166.
-(pdftex.def)             Requested size: 368.87723pt x 81.80542pt.
+) (./anexo.tex) (./apendice.tex) [12
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[16] <rede.png, id=76, 1472.50125pt x 1194.4625pt>
-File: rede.png Graphic file (type png)
- <use rede.png>
-Package pdftex.def Info: rede.png used on input line 181.
-(pdftex.def)             Requested size: 265.03879pt x 214.99397pt.
- [17 <./tabela.png (PNG copy)> <./rede.png>] [18] [19] [20]
-Overfull \hbox (13.50755pt too wide) in paragraph at lines 268--272
-[]\OT1/cmr/m/n/12 Para cada \OT1/cmr/m/it/12 link \OT1/cmr/m/n/12 da rede tem-s
-e ainda a pos-si-bi-li-dade de ajus-tar di-ver-sos par^ametros
- []
-
-[21] [22] [23] [24] [25] [26]
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 508.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 508.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[27]
-Package acronym Info: Label `acro:NFS' newly defined as it shall be overridden
-although it is yet undefined on input line 588.
- [28] <data/data_cp_mininet/taxa_256.png, id=118, 803.0pt x 602.25pt>
-File: data/data_cp_mininet/taxa_256.png Graphic file (type png)
-
-<use data/data_cp_mininet/taxa_256.png>
-Package pdftex.def Info: data/data_cp_mininet/taxa_256.png used on input line 6
-34.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_mininet/taxa_512.png, id=119, 803.0pt x 602.25pt>
-File: data/data_cp_mininet/taxa_512.png Graphic file (type png)
-
-<use data/data_cp_mininet/taxa_512.png>
-Package pdftex.def Info: data/data_cp_mininet/taxa_512.png used on input line 6
-43.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_mininet/taxa_768.png, id=120, 803.0pt x 602.25pt>
-File: data/data_cp_mininet/taxa_768.png Graphic file (type png)
-
-<use data/data_cp_mininet/taxa_768.png>
-Package pdftex.def Info: data/data_cp_mininet/taxa_768.png used on input line 6
-55.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_mininet/taxa_1024.png, id=121, 803.0pt x 602.25pt>
-File: data/data_cp_mininet/taxa_1024.png Graphic file (type png)
-
-<use data/data_cp_mininet/taxa_1024.png>
-Package pdftex.def Info: data/data_cp_mininet/taxa_1024.png used on input line 
-664.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_openstack/taxa_256.png, id=122, 803.0pt x 602.25pt>
-File: data/data_cp_openstack/taxa_256.png Graphic file (type png)
-
-<use data/data_cp_openstack/taxa_256.png>
-Package pdftex.def Info: data/data_cp_openstack/taxa_256.png used on input line
- 684.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_openstack/taxa_512.png, id=123, 803.0pt x 602.25pt>
-File: data/data_cp_openstack/taxa_512.png Graphic file (type png)
-
-<use data/data_cp_openstack/taxa_512.png>
-Package pdftex.def Info: data/data_cp_openstack/taxa_512.png used on input line
- 693.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_openstack/taxa_768.png, id=124, 803.0pt x 602.25pt>
-File: data/data_cp_openstack/taxa_768.png Graphic file (type png)
-
-<use data/data_cp_openstack/taxa_768.png>
-Package pdftex.def Info: data/data_cp_openstack/taxa_768.png used on input line
- 705.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_openstack/taxa_1024.png, id=125, 803.0pt x 602.25pt>
-File: data/data_cp_openstack/taxa_1024.png Graphic file (type png)
-
-<use data/data_cp_openstack/taxa_1024.png>
-Package pdftex.def Info: data/data_cp_openstack/taxa_1024.png used on input lin
-e 714.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_real/taxa_256.png, id=126, 803.0pt x 602.25pt>
-File: data/data_cp_real/taxa_256.png Graphic file (type png)
-
-<use data/data_cp_real/taxa_256.png>
-Package pdftex.def Info: data/data_cp_real/taxa_256.png used on input line 735.
-
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_real/taxa_512.png, id=127, 803.0pt x 602.25pt>
-File: data/data_cp_real/taxa_512.png Graphic file (type png)
-
-<use data/data_cp_real/taxa_512.png>
-Package pdftex.def Info: data/data_cp_real/taxa_512.png used on input line 744.
-
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_real/taxa_768.png, id=128, 803.0pt x 602.25pt>
-File: data/data_cp_real/taxa_768.png Graphic file (type png)
-
-<use data/data_cp_real/taxa_768.png>
-Package pdftex.def Info: data/data_cp_real/taxa_768.png used on input line 756.
-
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/data_cp_real/taxa_1024.png, id=129, 803.0pt x 602.25pt>
-File: data/data_cp_real/taxa_1024.png Graphic file (type png)
-
-<use data/data_cp_real/taxa_1024.png>
-Package pdftex.def Info: data/data_cp_real/taxa_1024.png used on input line 765
-.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
- [29] [30 <./data/data_cp_mininet/taxa_256.png> <./data/data_cp_mininet/taxa_51
-2.png> <./data/data_cp_mininet/taxa_768.png> <./data/data_cp_mininet/taxa_1024.
-png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31 <./data/data_cp_openstack/taxa_256.png> <./data/data_cp_openstack/taxa_512.
-png> <./data/data_cp_openstack/taxa_768.png> <./data/data_cp_openstack/taxa_102
-4.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[32 <./data/data_cp_real/taxa_256.png> <./data/data_cp_real/taxa_512.png> <./da
-ta/data_cp_real/taxa_768.png> <./data/data_cp_real/taxa_1024.png>]
-<data/taxa_real.png, id=142, 803.0pt x 602.25pt>
-File: data/taxa_real.png Graphic file (type png)
- <use data/taxa_real.png>
-Package pdftex.def Info: data/taxa_real.png used on input line 854.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
-
-<data/taxa_mininet.png, id=143, 803.0pt x 602.25pt>
-File: data/taxa_mininet.png Graphic file (type png)
-
-<use data/taxa_mininet.png>
-Package pdftex.def Info: data/taxa_mininet.png used on input line 863.
-(pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
- [33]
-<data/data_cp_mininet/taxa_1024_hue.png, id=147, 803.0pt x 602.25pt>
-File: data/data_cp_mininet/taxa_1024_hue.png Graphic file (type png)
-
-<use data/data_cp_mininet/taxa_1024_hue.png>
-Package pdftex.def Info: data/data_cp_mininet/taxa_1024_hue.png used on input l
-ine 886.
-(pdftex.def)             Requested size: 341.43306pt x 256.07692pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package acronym Info: Label `acro:RAM' newly defined as it shall be overridden
-although it is yet undefined on input line 895.
-<data/initialization_times/mem.png, id=148, 642.4pt x 481.8pt>
-File: data/initialization_times/mem.png Graphic file (type png)
-
-<use data/initialization_times/mem.png>
-Package pdftex.def Info: data/initialization_times/mem.png used on input line 9
-11.
-(pdftex.def)             Requested size: 223.0721pt x 167.30186pt.
-
-<data/initialization_times/time.png, id=149, 642.4pt x 481.8pt>
-File: data/initialization_times/time.png Graphic file (type png)
-
-<use data/initialization_times/time.png>
-Package pdftex.def Info: data/initialization_times/time.png used on input line 
-920.
-(pdftex.def)             Requested size: 223.0721pt x 167.30186pt.
- [34 <./data/taxa_real.png> <./data/taxa_mininet.png>] [35 <./data/data_cp_mini
-net/taxa_1024_hue.png> <./data/initialization_times/mem.png> <./data/initializa
-tion_times/time.png>]) (./tccudesc.bbl
-[36] [37
-
-]) (./anexo.tex) (./apendice.tex) [38] (./tccudesc.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./tccudesc.aux) ) 
 Here is how much of TeX's memory you used:
- 16996 strings out of 493304
- 294122 string characters out of 6139871
- 396799 words of memory out of 5000000
- 19972 multiletter control sequences out of 15000+600000
- 20973 words of font info for 83 fonts, out of 8000000 for 9000
+ 16560 strings out of 493304
+ 285600 string characters out of 6139871
+ 392678 words of memory out of 5000000
+ 19567 multiletter control sequences out of 15000+600000
+ 14953 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,11n,97p,1119b,696s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmtt12.pfb>
-Output written on tccudesc.pdf (41 pages, 1657884 bytes).
+ 49i,5n,97p,797b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+>
+Output written on tccudesc.pdf (15 pages, 61050 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 68 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
