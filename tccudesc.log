@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  5 APR 2016 03:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  5 APR 2016 03:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -772,60 +772,68 @@ although it is yet undefined on input line 1.
 \openout8 = `tccudesc.toc'.
 
  [9]
-(./introducao.tex) (./capitulos.tex [10] [11]
-<sdnARCH.png, id=54, 642.4pt x 401.5pt>
+(./introducao.tex
+Cap\'{\i }tulo 1.
+) (./capitulos.tex [10
+
+]
+Cap\'{\i }tulo 2.
+[11
+
+] <sdnARCH.png, id=54, 642.4pt x 401.5pt>
 File: sdnARCH.png Graphic file (type png)
  <use sdnARCH.png>
-Package pdftex.def Info: sdnARCH.png used on input line 43.
+Package pdftex.def Info: sdnARCH.png used on input line 44.
 (pdftex.def)             Requested size: 449.67694pt x 281.04808pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
- [12 <./sdnARCH.png>]
-[13] [14] [15] <tabela.png, id=71, 737.75626pt x 163.61125pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+ [12] [13 <./sdnARCH.png>] [14] [15] <tabela.png, id=70, 737.75626pt x 163.6112
+5pt>
 File: tabela.png Graphic file (type png)
  <use tabela.png>
-Package pdftex.def Info: tabela.png used on input line 165.
+Package pdftex.def Info: tabela.png used on input line 166.
 (pdftex.def)             Requested size: 368.87723pt x 81.80542pt.
 
-[16 <./tabela.png (PNG copy)>] <rede.png, id=76, 1472.50125pt x 1194.4625pt>
-File: rede.png Graphic file (type png)
 
-<use rede.png>
-Package pdftex.def Info: rede.png used on input line 180.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] <rede.png, id=76, 1472.50125pt x 1194.4625pt>
+File: rede.png Graphic file (type png)
+ <use rede.png>
+Package pdftex.def Info: rede.png used on input line 181.
 (pdftex.def)             Requested size: 265.03879pt x 214.99397pt.
- [17 <./rede.png>] [18] [19] [20]
-Overfull \hbox (13.50755pt too wide) in paragraph at lines 267--271
+ [17 <./tabela.png (PNG copy)> <./rede.png>] [18] [19] [20]
+Overfull \hbox (13.50755pt too wide) in paragraph at lines 268--272
 []\OT1/cmr/m/n/12 Para cada \OT1/cmr/m/it/12 link \OT1/cmr/m/n/12 da rede tem-s
 e ainda a pos-si-bi-li-dade de ajus-tar di-ver-sos par^ametros
  []
 
-[21] [22] [23] [24]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[25] [26]
+[21] [22] [23] [24] [25] [26]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 507.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 508.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 507.
- [27]
-Package acronym Info: Label `acro:NFS' newly defined as it shall be overridden
-although it is yet undefined on input line 587.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 508.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28] <data/data_cp_mininet/taxa_256.png, id=118, 803.0pt x 602.25pt>
+[27]
+Package acronym Info: Label `acro:NFS' newly defined as it shall be overridden
+although it is yet undefined on input line 588.
+ [28] <data/data_cp_mininet/taxa_256.png, id=118, 803.0pt x 602.25pt>
 File: data/data_cp_mininet/taxa_256.png Graphic file (type png)
 
 <use data/data_cp_mininet/taxa_256.png>
 Package pdftex.def Info: data/data_cp_mininet/taxa_256.png used on input line 6
-33.
+34.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_mininet/taxa_512.png, id=119, 803.0pt x 602.25pt>
@@ -833,7 +841,7 @@ File: data/data_cp_mininet/taxa_512.png Graphic file (type png)
 
 <use data/data_cp_mininet/taxa_512.png>
 Package pdftex.def Info: data/data_cp_mininet/taxa_512.png used on input line 6
-42.
+43.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_mininet/taxa_768.png, id=120, 803.0pt x 602.25pt>
@@ -841,7 +849,7 @@ File: data/data_cp_mininet/taxa_768.png Graphic file (type png)
 
 <use data/data_cp_mininet/taxa_768.png>
 Package pdftex.def Info: data/data_cp_mininet/taxa_768.png used on input line 6
-54.
+55.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_mininet/taxa_1024.png, id=121, 803.0pt x 602.25pt>
@@ -849,7 +857,7 @@ File: data/data_cp_mininet/taxa_1024.png Graphic file (type png)
 
 <use data/data_cp_mininet/taxa_1024.png>
 Package pdftex.def Info: data/data_cp_mininet/taxa_1024.png used on input line 
-663.
+664.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_openstack/taxa_256.png, id=122, 803.0pt x 602.25pt>
@@ -857,7 +865,7 @@ File: data/data_cp_openstack/taxa_256.png Graphic file (type png)
 
 <use data/data_cp_openstack/taxa_256.png>
 Package pdftex.def Info: data/data_cp_openstack/taxa_256.png used on input line
- 683.
+ 684.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_openstack/taxa_512.png, id=123, 803.0pt x 602.25pt>
@@ -865,7 +873,7 @@ File: data/data_cp_openstack/taxa_512.png Graphic file (type png)
 
 <use data/data_cp_openstack/taxa_512.png>
 Package pdftex.def Info: data/data_cp_openstack/taxa_512.png used on input line
- 692.
+ 693.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_openstack/taxa_768.png, id=124, 803.0pt x 602.25pt>
@@ -873,7 +881,7 @@ File: data/data_cp_openstack/taxa_768.png Graphic file (type png)
 
 <use data/data_cp_openstack/taxa_768.png>
 Package pdftex.def Info: data/data_cp_openstack/taxa_768.png used on input line
- 704.
+ 705.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_openstack/taxa_1024.png, id=125, 803.0pt x 602.25pt>
@@ -881,14 +889,14 @@ File: data/data_cp_openstack/taxa_1024.png Graphic file (type png)
 
 <use data/data_cp_openstack/taxa_1024.png>
 Package pdftex.def Info: data/data_cp_openstack/taxa_1024.png used on input lin
-e 713.
+e 714.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/data_cp_real/taxa_256.png, id=126, 803.0pt x 602.25pt>
 File: data/data_cp_real/taxa_256.png Graphic file (type png)
 
 <use data/data_cp_real/taxa_256.png>
-Package pdftex.def Info: data/data_cp_real/taxa_256.png used on input line 734.
+Package pdftex.def Info: data/data_cp_real/taxa_256.png used on input line 735.
 
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
@@ -896,7 +904,7 @@ Package pdftex.def Info: data/data_cp_real/taxa_256.png used on input line 734.
 File: data/data_cp_real/taxa_512.png Graphic file (type png)
 
 <use data/data_cp_real/taxa_512.png>
-Package pdftex.def Info: data/data_cp_real/taxa_512.png used on input line 743.
+Package pdftex.def Info: data/data_cp_real/taxa_512.png used on input line 744.
 
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
@@ -904,7 +912,7 @@ Package pdftex.def Info: data/data_cp_real/taxa_512.png used on input line 743.
 File: data/data_cp_real/taxa_768.png Graphic file (type png)
 
 <use data/data_cp_real/taxa_768.png>
-Package pdftex.def Info: data/data_cp_real/taxa_768.png used on input line 755.
+Package pdftex.def Info: data/data_cp_real/taxa_768.png used on input line 756.
 
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
@@ -912,72 +920,80 @@ Package pdftex.def Info: data/data_cp_real/taxa_768.png used on input line 755.
 File: data/data_cp_real/taxa_1024.png Graphic file (type png)
 
 <use data/data_cp_real/taxa_1024.png>
-Package pdftex.def Info: data/data_cp_real/taxa_1024.png used on input line 764
+Package pdftex.def Info: data/data_cp_real/taxa_1024.png used on input line 765
 .
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
- [29 <./data/data_cp_mininet/taxa_256.png> <./data/data_cp_mininet/taxa_512.png
->] [30 <./data/data_cp_mininet/taxa_768.png> <./data/data_cp_mininet/taxa_1024.
-png> <./data/data_cp_openstack/taxa_256.png> <./data/data_cp_openstack/taxa_512
-.png>]
+ [29] [30 <./data/data_cp_mininet/taxa_256.png> <./data/data_cp_mininet/taxa_51
+2.png> <./data/data_cp_mininet/taxa_768.png> <./data/data_cp_mininet/taxa_1024.
+png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31 <./data/data_cp_openstack/taxa_768.png> <./data/data_cp_openstack/taxa_1024
-.png> <./data/data_cp_real/taxa_256.png> <./data/data_cp_real/taxa_512.png>]
-[32 <./data/data_cp_real/taxa_768.png> <./data/data_cp_real/taxa_1024.png>]
+[31 <./data/data_cp_openstack/taxa_256.png> <./data/data_cp_openstack/taxa_512.
+png> <./data/data_cp_openstack/taxa_768.png> <./data/data_cp_openstack/taxa_102
+4.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32 <./data/data_cp_real/taxa_256.png> <./data/data_cp_real/taxa_512.png> <./da
+ta/data_cp_real/taxa_768.png> <./data/data_cp_real/taxa_1024.png>]
 <data/taxa_real.png, id=142, 803.0pt x 602.25pt>
 File: data/taxa_real.png Graphic file (type png)
  <use data/taxa_real.png>
-Package pdftex.def Info: data/taxa_real.png used on input line 853.
+Package pdftex.def Info: data/taxa_real.png used on input line 854.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
 
 <data/taxa_mininet.png, id=143, 803.0pt x 602.25pt>
 File: data/taxa_mininet.png Graphic file (type png)
 
 <use data/taxa_mininet.png>
-Package pdftex.def Info: data/taxa_mininet.png used on input line 862.
+Package pdftex.def Info: data/taxa_mininet.png used on input line 863.
 (pdftex.def)             Requested size: 223.0721pt x 167.30554pt.
- [33 <./data/taxa_real.png> <./data/taxa_mininet.png>] <data/data_cp_mininet/ta
-xa_1024_hue.png, id=147, 803.0pt x 602.25pt>
+ [33]
+<data/data_cp_mininet/taxa_1024_hue.png, id=147, 803.0pt x 602.25pt>
 File: data/data_cp_mininet/taxa_1024_hue.png Graphic file (type png)
 
 <use data/data_cp_mininet/taxa_1024_hue.png>
 Package pdftex.def Info: data/data_cp_mininet/taxa_1024_hue.png used on input l
-ine 885.
+ine 886.
 (pdftex.def)             Requested size: 341.43306pt x 256.07692pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package acronym Info: Label `acro:RAM' newly defined as it shall be overridden
-although it is yet undefined on input line 894.
- [34 <./data/data_cp_mininet/taxa_1024_hue.png>] <data/initialization_times/mem
-.png, id=152, 642.4pt x 481.8pt>
+although it is yet undefined on input line 895.
+<data/initialization_times/mem.png, id=148, 642.4pt x 481.8pt>
 File: data/initialization_times/mem.png Graphic file (type png)
 
 <use data/initialization_times/mem.png>
 Package pdftex.def Info: data/initialization_times/mem.png used on input line 9
-10.
+11.
 (pdftex.def)             Requested size: 223.0721pt x 167.30186pt.
 
-<data/initialization_times/time.png, id=153, 642.4pt x 481.8pt>
+<data/initialization_times/time.png, id=149, 642.4pt x 481.8pt>
 File: data/initialization_times/time.png Graphic file (type png)
 
 <use data/initialization_times/time.png>
 Package pdftex.def Info: data/initialization_times/time.png used on input line 
-919.
+920.
 (pdftex.def)             Requested size: 223.0721pt x 167.30186pt.
- [35 <./data/initialization_times/mem.png> <./data/initialization_times/time.pn
-g>]) (./tccudesc.bbl [36] [37
+ [34 <./data/taxa_real.png> <./data/taxa_mininet.png>] [35 <./data/data_cp_mini
+net/taxa_1024_hue.png> <./data/initialization_times/mem.png> <./data/initializa
+tion_times/time.png>]) (./tccudesc.bbl
+[36] [37
 
-])
-(./anexo.tex) (./apendice.tex) [38] (./tccudesc.aux)
+]) (./anexo.tex) (./apendice.tex) [38] (./tccudesc.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16990 strings out of 493304
- 294025 string characters out of 6139871
- 395799 words of memory out of 5000000
- 19966 multiletter control sequences out of 15000+600000
- 20367 words of font info for 81 fonts, out of 8000000 for 9000
+ 16996 strings out of 493304
+ 294122 string characters out of 6139871
+ 396799 words of memory out of 5000000
+ 19972 multiletter control sequences out of 15000+600000
+ 20973 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,11n,97p,1119b,696s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
@@ -989,7 +1005,7 @@ st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb>
-Output written on tccudesc.pdf (41 pages, 1658248 bytes).
+Output written on tccudesc.pdf (41 pages, 1657884 bytes).
 PDF statistics:
  200 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
