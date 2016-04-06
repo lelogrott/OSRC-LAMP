@@ -20,14 +20,21 @@
 
 \subsection{PHP}
 
-O PHP conhecido atualmente é um sucessor de um produto chamado PHP/FI, criado em 1994 por Rasmus Lerdof. Porém não demorou muito para que esta linguagem necessita-se de uma 
-reformulação, sendo lançado em 1998, o PHP 3.0 foi a primeira versão que contém traços do PHP de hoje em dia. Um outro ponto que veio com o PHP 3.0 foi o suporte a programação 
-orientada a objeto. Porém essa versão tinha muita dificuldade em processar aplicações complexas, foi com base nessa premissa que o PHP 4.0 foi desenvolvido, o qual aumentou de 
-forma altíssima a performance, acabou sendo lançada em Maio de 2000. Contudo as melhorias não pararam e em Julho de 2004 foi lançado o PHP 5.0, principalmente para melhorar seu
-antecessor e acrescentar dezenas de outros recursos.
+O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s binários escritos na linguagem de
+programação C, usados para rastrear as visitas ao seu \texit{site}. Com o tempo, otimizações foram sendo feitas e funcionalidades adicionadas.
+Sendo lançado em 1998, o PHP 3.0 foi a primeira versão que contém traços do PHP de hoje em dia, incluindo o suporte a programação orientada a
+objeto. Porém essa versão tinha muita dificuldade em processar aplicações complexas, foi com base nessa premissa que o PHP 4.0 
+foi desenvolvido, o qual aumentou de forma altíssima a performance, acabou sendo lançada em Maio de 2000. Contudo as melhorias não pararam e em Julho de 2004 foi lançado o PHP 5.0,
+principalmente para melhorar seu antecessor e acrescentar dezenas de novos recursos.
 
-Como linguagem de programação nas aplicações LAMP, temos uma que se sobressae, sendo o PHP, que significa ``Hypertext Preprocessor'', é amplamente utilizada, interpretada e muito 
-eficaz para se utilizar junto com desenvolvimento web, pois podemos mesclá-lo dentro do código HTML. 
+Usado principalmente para desenvolvimento web, é um script open source de uso geral. Podemos especificar em quais áreas os scripts PHP são mais utilizados, como:
+\begin{itemize}
+ \item \textbf{Scripts no lado do servidor.} Podendo acessar os resultados do seu programa com um navegador web.
+ \item \textbf{Scripts de linha de comando.} Executar os scripts sem um servidor ou navegador, apenas necessita de um interpretador PHP.
+ \item \textbf{Escrever aplicações desktop.} Não é a melhor linguagem para se desenvolver aplicações desktop, porém para um programador experiente o PHP tem alguns recursos
+ avançados que permitem escrever esse sistema.
+\end{itemize}
+
 
 \section{APLICABILIDADE}
 

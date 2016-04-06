@@ -8,7 +8,6 @@
 \acro{PHP}[PHP]{Hypertext Preprocessor}
 \acro{HTTP}[HTTP]{HyperText Transfer Protocol}
 \acro{SQL}[SQL]{Structured Query Language}
-\acro{CGI}[CGI]{Common Gateway Interface}
 \begin{comment}
 \acro{CLI}[CLI]{Command Line Interface}
 \acro{CPU}[CPU]{Central Processing Unit}
