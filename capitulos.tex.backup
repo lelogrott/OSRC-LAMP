@@ -11,8 +11,28 @@
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
 
 \subsection{Linux}
-testse tesets testsetsetse tasesadfasdfasdf as dasdfas
 
+Linux poderia ser descrito como um sistema operacional similar a 
+qualquer outro, como Windows e OS X. Porém tem algo que o destaca, 
+desde sua origem em 1991, e que é o motivo do sistema ter crescido e ganhado
+uma grande força na computação, atualmente presente em lugares desde a bolsa
+de valores de Nova York e supercomputadores  à telefones celulares e computadores
+pessoais, o Linux é um software livre desenvolvido de maneira
+colaborativa \cite{WhatI30:online}. Mais de 1.000 desenvolvedores
+de pelo menos 100 diferentes companhias, contribuíram para cada
+versão do kernel sob a licensa \ac{GPL} que é baseada em quatro
+liberdades \cite{Whati7:online}:
+
+\begin{itemize}
+ \item A liberdade de executar o programa como quiser, para qualquer propósito;
+ \item A liberdade para estudar como o programa funciona, e alterá-lo para que ele execute como você queira. Ter acesso ao código fonte é necessário para tal;
+ \item A liberdade para redistribuir cópias para ajudar o próximo; e
+ \item A liberdade para distribuir cópias de suas versões modificadas para outros. Fazendo isso você concede à comunidade a chance de se beneficiarem de suas alterações. Ter acesso ao código fonte é necessário para tal.
+\end{itemize}
+
+Por esses motivos o Linux tem sido bem-sucedido, particularmente como plataforma de servidor: 
+até mesmo em organizações que confiam veemente em sistemas operacionais
+comerciais como Microsoft Windows, o Linux aparece frequentemente em papeis infraestruturais, como em \textit{gateways} \ac{SMTP}
 
 \cite{bauer2005linux}
 
@@ -22,10 +42,6 @@ testse tesets testsetsetse tasesadfasdfasdf as dasdfas
 
 
 \subsection{MySQL}
-O banco de dados MySQL foi projetado com base no mSQL, o qual tinha muitos problemas, como 
-não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
-de um novo banco de dados foi aumentando e com base nesse conceito foi desenvolvido o que
-hoje conhecemos como MySQL.
 
 O \ac{BD} MySQL, foi projetado com base no mSQL, o qual tinha muitos problemas, como 
 não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
@@ -62,6 +78,7 @@ ajudam a proteger são descritas abaixo \cite{MySQL10:online}:
 \end{itemize}
 
 
+
 \subsection{PHP}
 
 O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s binários escritos na linguagem de
@@ -82,6 +99,8 @@ Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open
 Uma característica é a escalabilidade que o \ac{PHP} possui, podendo ser utilizado na maioria
 dos sistemas operacionais e servidores \textit{web}. Com isso ele vem sendo aplicado cada
 vez mais, por suas várias extensões que facilitam a conectividade com diversos banco de dados.
+
+
 
 \section{APLICABILIDADE}
 
