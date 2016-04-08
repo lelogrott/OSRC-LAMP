@@ -5,4 +5,10 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{1.45 }
 
+\bibitem[Bauer 2005]{bauer2005linux}
+\abntrefinfo{Bauer}{BAUER}{2005}
+{BAUER, M. \emph{Linux server security}. Sebastapol, CA Cambridge: O'Reilly,
+  2005.
+ISBN 978-0-596-00670-9.}
+
 \end{thebibliography}
