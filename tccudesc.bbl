@@ -5,6 +5,12 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{1.45 }
 
+\bibitem[ASF]{http:apache}
+\abntrefinfo{ASF}{ASF}{}
+{ASF. \emph{The Apache HTTP Server Project}.
+\url{https://httpd.apache.org/}.
+(Accessed on 04/08/2016).}
+
 \bibitem[Bauer 2005]{bauer2005linux}
 \abntrefinfo{Bauer}{BAUER}{2005}
 {BAUER, M. \emph{Linux server security}. Sebastapol, CA Cambridge: O'Reilly,

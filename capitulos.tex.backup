@@ -13,7 +13,7 @@
 \subsection{Linux}
 
 Linux poderia ser descrito como um sistema operacional similar a 
-qualquer outro, como Windows e OS X. Porém tem algo que o destaca, 
+qualquer outro, como Windows e OS X. Porém tem algo que o destaca dos demais, 
 desde sua origem em 1991, e que é o motivo do sistema ter crescido e ganhado
 uma grande força na computação, atualmente presente em lugares desde a bolsa
 de valores de Nova York e supercomputadores  à telefones celulares e computadores
@@ -32,13 +32,14 @@ liberdades \cite{Whati7:online}:
 
 Por esses motivos o Linux tem sido bem-sucedido, particularmente como plataforma de servidor: 
 até mesmo em organizações que confiam veemente em sistemas operacionais
-comerciais como Microsoft Windows, o Linux aparece frequentemente em papeis infraestruturais, como em \textit{gateways} \ac{SMTP}
-
-\cite{bauer2005linux}
-
+comerciais como Microsoft Windows, o Linux aparece frequentemente em papeis infraestruturais, como em \textit{gateways} de \ac{SMTP} e servidores \ac{DNS}
+devido a sua confiança, segurança, baixo custo e a qualidade execepcional das aplicações do servidor \cite{bauer2005linux}.
 
 
 \subsection{Apache}
+
+Atuando como servidor \ac{HTTP} no sistema \ac{LAMP}, o Apache é o servidor \textit{web}
+mais popular na Internet desde Abril de 1996 \cite{http:apache}.
 
 
 \subsection{MySQL}
