@@ -116,6 +116,24 @@ vez mais em servidores LAMP, por suas várias extensões que facilitam a conectivi
 \section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
 \label{sec:fundamentos}
 
+Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuirem rotinas 
+parecidas, possuem objetivos distintos. Ataques maliciosos são realizados para roubar informações, causar indisponibilidade de serviços
+(\ac{DoS}) ou qualquer outro evento indesejado ao responsável pelo servidor. Já um teste de penetração consiste em um processo 
+autorizado, programado e sistemático onde se faz uso de vulnerabilitades conhecidas para realizar tentativas de invasão à um servidor,
+rede ou conteúdos de aplicações.
+
+Testes de penetração podem ser executados de mais de uma maneira para propor mais de um ponto de vista sob a mesma organização. 
+Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos \cite{sans:2002}.
+
+\begin{description}
+      \item[Teste  interno de penetração] Realizado com o objetivo de identificar vulnerabilidades com acesso
+      físico ou exposição a engenharia social. Servem para determinar quais vulnerabilidades existem no sistema interno, 
+      acessível somente à pessoas autorizadas com acesso a rede interna da organização.
+
+      \item[Teste externo de penetração] Realizado com o objetivo de identificar vulnerabilidades presentes através de
+      conexões que foram estabelecidas através da conexão entre a organização e a Internet (através do \textit{firewall} ou \textit{gateway}).
+\end{description}
+
 \section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:frameworks}
 

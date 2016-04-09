@@ -57,6 +57,12 @@ ISBN 978-0-596-00670-9.}
 \url{https://www.linux.com/learn/what-linux-overview-linux-operating-system}.
 (Accessed on 04/09/2016).}
 
+\bibitem[SANS 2002]{sans:2002}
+\abntrefinfo{SANS}{SANS}{2002}
+{SANS. \emph{Penetration Testing - Is it right for you?} 2002.
+\url{https://www.sans.org/reading-room/whitepapers/testing/penetration-testing-you-265}.
+(Accessed on 04/09/2016).}
+
 \bibitem[Standards e Technology 2008]{NIST:online}
 \abntrefinfo{Standards e Technology}{STANDARDS; TECHNOLOGY}{2008}
 {STANDARDS, N.~I. of; TECHNOLOGY. \emph{Technical Guide to Information Security

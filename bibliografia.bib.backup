@@ -78,3 +78,20 @@ year = {2001},
 note = {(Accessed on 04/08/2016)}
 }
 
+@misc{NIST:online,
+author = {National Institute of Standards and Technology},
+title = {Technical Guide to Information Security Testing and Assessment},
+howpublished = {\url{http://csrc.nist.gov/publications/nistpubs/800-115/SP800-115.pdf}},
+month = {september},
+year = {2008},
+note = {(Accessed on 04/08/2016)}
+}
+
+@misc{sans:2002,
+author = {SANS, },
+title = {Penetration Testing - Is it right for you?},
+howpublished = {\url{https://www.sans.org/reading-room/whitepapers/testing/penetration-testing-you-265}},
+month = {},
+year = {},
+note = {(Accessed on 04/09/2016)}
+}

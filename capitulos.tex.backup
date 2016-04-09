@@ -116,11 +116,29 @@ vez mais em servidores LAMP, por suas várias extensões que facilitam a conectivi
 \section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
 \label{sec:fundamentos}
 
+Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuirem rotinas 
+parecidas, possuem objetivos distintos. Ataques maliciosos são realizados para roubar informações, causar indisponibilidade de serviços
+(\ac{DoS}) ou qualquer outro evento indesejado ao responsável pelo servidor. Já um teste de penetração consiste em um processo 
+autorizado, programado e sistemático onde se faz uso de vulnerabilitades conhecidas para realizar tentativas de invasão à um servidor,
+rede ou conteúdos de aplicações \cite{sans:2002}.
+
+Testes de penetração podem ser executados de mais de uma maneira para propor mais de um ponto de vista sob a mesma organização. 
+Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos. São eles
+
+\begin{description}
+      \item[Teste  interno de penetração] Realizado com o objetivo de identificar vulnerabilidades com acesso
+      físico ou exposição a engenharia social. Servem para determinar quais vulnerabilidades existem no sistema interno, 
+      acessível somente à pessoas autorizadas com acesso a rede interna da organização.
+
+      \item[Teste externo de penetração] Realiza 
+  \end{description}
+
 \section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:frameworks}
 
 \section{NORMAS, RECOMENDAÇÕES E BOAS PRÁTICAS PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:normas}
+
 
 Vulnerabilidade pode ser definida como um erro no \textit{software} que permita ao \textit{hacker} ganhar acesso ao sistema ou a rede interna \cite{CVE-F22:online}. Primeiramente 
 monitoramos com qual frequência determinada vulnerabilidade pode ocorrer, e o quão prejudicial é para o programa. Quando descobrimos alguma vulnerabilidade com os testes realizados,
@@ -138,6 +156,9 @@ sistema, identificando, como por exemplo: versões de \textit{softwares} desatual
 Contudo, mesmo com esses facilitadores, ainda temos alguns problemas a serem vencidos, como quando pequenos riscos de vulnerabilidade são analisados de uma forma isolada, porém 
 quando observados como um conjunto podem trazer um grande problema ao sistema, isso pode ser dito como uma das principais falhas desses escaneadores, pois conseguem apenas analisar 
 ameaças indíviduais e não em um escopo específico.
+
+Outro meio de se prevenir contra ataques pode ser feito com uma simples revisão do código fonte quando está sendo implementado, não apenas no seu estado final. Também é viável realizar 
+testes unitários para verificar a consistência presente no código.
 
 
 \begin{comment}
