@@ -44,6 +44,12 @@ ISBN 978-0-596-00670-9.}
 \url{http://dev.mysql.com/doc/refman/5.7/en/security-guidelines.html}.
 (Accessed on 04/09/2016).}
 
+\bibitem[OpenVAS 2016]{OpenV32:online}
+\abntrefinfo{OpenVAS}{OPENVAS}{2016}
+{OPENVAS. \emph{OpenVAS - About OpenVAS Software}. 2016.
+\url{http://www.openvas.org/software.html}.
+(Accessed on 04/09/2016).}
+
 \bibitem[PHP 2016]{PHP:O35:online}
 \abntrefinfo{PHP}{PHP}{2016}
 {PHP. \emph{PHP: O que o PHP pode fazer? - Manual}. March 2016.
@@ -69,5 +75,11 @@ ISBN 978-0-596-00670-9.}
   Testing and Assessment}. september 2008.
 \url{http://csrc.nist.gov/publications/nistpubs/800-115/SP800-115.pdf}.
 (Accessed on 04/08/2016).}
+
+\bibitem[Subgraph 2014]{About78:online}
+\abntrefinfo{Subgraph}{SUBGRAPH}{2014}
+{SUBGRAPH. \emph{About Vega}. 2014.
+\url{https://subgraph.com/vega/documentation/about-vega/index.en.html}.
+(Accessed on 04/09/2016).}
 
 \end{thebibliography}

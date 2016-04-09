@@ -119,7 +119,7 @@ vez mais em servidores LAMP, por suas várias extensões que facilitam a conectivi
 Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuirem rotinas 
 parecidas, possuem objetivos distintos. Ataques maliciosos são realizados para roubar informações, causar indisponibilidade de serviços
 (\ac{DoS}) ou qualquer outro evento indesejado ao responsável pelo servidor. Já um teste de penetração consiste em um processo 
-autorizado, programado e sistemático onde se faz uso de vulnerabilidades conhecidas para realizar tentativas de invasão à um servidor,
+autorizado, programado e sistemático onde se faz uso de vulnerabilitades conhecidas para realizar tentativas de invasão à um servidor,
 rede ou conteúdos de aplicações.
 
 Testes de penetração podem ser executados de mais de uma maneira para propor mais de um ponto de vista sob a mesma organização. 
@@ -137,15 +137,34 @@ Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos
 \section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:frameworks}
 
+\textit{Frameworks} para análise de vulnerabilidades são ferramentas para facilitar a detecção de vulnerabilidades em determinado sistema/página \textit{web}.
+
+Uma delas é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{website}, podendo verificar mais de 6.000 testes. Alguns dos principais problemas que podem
+ser achados são: Arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
+
+Outra ferramenta que pode ser citada é o \textit{Vega}, com objetivos semelhantes ao \textit{Nikto}, porém com dois modos de operação \cite{About78:online}: 
+\begin{itemize}
+ \item \textbf{\textit{Scanner} automático:} rastreia automaticamente por \textit{websites}, extraindo links, e executa módulos em possíveis pontos de vulnerabilidades.
+ \item \textbf{\textit{Proxy de interceptação:}} permite análises detalhados sobre a interação navegador-aplicação.
+\end{itemize}
+
+Pode-se citar ainda o OpenVAS, uma ferramenta para varredura e gerenciamento de vulnerabilidades. Podendo ser subdividido em duas arquiteturas \cite{OpenV32:online}:
+\begin{itemize}
+ \item \textbf{Rastreados OpenVAS:} executa os testes de vulnerabilidades.
+ \item \textbf{Gerenciador OpenVAS:} consolida a varredura de vulnerabilidade em uma solução completa de gerenciamento de vulnerabilidade.
+\end{itemize}
+
+
+
 \section{NORMAS, RECOMENDAÇÕES E BOAS PRÁTICAS PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:normas}
 
 
-Vulnerabilidade pode ser definida como um erro no \textit{software} que permita ao \textit{hacker} ganhar acesso ao sistema ou a rede interna \cite{CVE-F22:online}. Primeiramente 
-monitoramos com qual frequência determinada vulnerabilidade pode ocorrer, e o quão prejudicial é para o programa. Quando descobrimos alguma vulnerabilidade com os testes realizados,
-podemos verificar em algum banco de dados de vulnerabilidades, sendo o \ac{CVE} uma boa fonte para conhecer um pouco mais sobre o problema encontrado. 
+Vulnerabilidade pode ser definida como um erro no \textit{software} que permita ao \textit{hacker} ganhar acesso ao sistema ou a rede interna \cite{CVE-F22:online}. Primeiro monitora-se
+com qual frequência determinada vulnerabilidade pode ocorrer, e o quão prejudicial é para o programa. Quando é descoberto alguma vulnerabilidade com os testes realizados,
+verifica-se em algum banco de dados de vulnerabilidades, sendo o \ac{CVE} uma boa fonte para conhecer um pouco mais sobre o problema encontrado. 
 
-Temos também os chamados escaneadores de vulnerabilidade, os quais são \textit{softwares} que ajudam na identificação de possíveis problemas que podem facilitar a corrupção do 
+Existem também os escaneadores de vulnerabilidade, os quais são \textit{softwares} que ajudam na identificação de possíveis problemas que podem facilitar a corrupção do 
 sistema, identificando, como por exemplo: versões de \textit{softwares} desatualizadas, configurações falhas. Segundo \cite{NIST:online}, esses escaneadores podem:
 
 \begin{itemize}
@@ -154,7 +173,7 @@ sistema, identificando, como por exemplo: versões de \textit{softwares} desatual
  \item \textbf{Fornecer informações sobre como diminuir as vulnerabilidades descobertas.}
 \end{itemize}
 
-Contudo, mesmo com esses facilitadores, ainda temos alguns problemas a serem vencidos, como quando pequenos riscos de vulnerabilidade são analisados de uma forma isolada, porém 
+Contudo, mesmo com esses facilitadores, ainda existem alguns problemas a serem vencidos, como quando pequenos riscos de vulnerabilidade são analisados de uma forma isolada, porém 
 quando observados como um conjunto podem trazer um grande problema ao sistema, isso pode ser dito como uma das principais falhas desses escaneadores, pois conseguem apenas analisar 
 ameaças indíviduais e não em um escopo específico.
 
