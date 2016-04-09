@@ -11,6 +11,9 @@
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
 
 \subsection{Linux}
+testse tesets testsetsetse tasesadfasdfasdf as dasdfas
+
+
 \cite{bauer2005linux}
 
 
@@ -19,6 +22,41 @@
 
 
 \subsection{MySQL}
+
+O \ac{BD} MySQL, foi projetado com base no mSQL, o qual tinha muitos problemas, como 
+não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
+de um novo \ac{BD} foi aumentando e com base nesse conceito foi desenvolvido o que
+hoje conhecemos como MySQL.
+
+Um \ac{BD} pode ser definido como uma coleção de dados. Porém para conseguir acessar
+os dados armazenados nesse sistema, teve-se a necessidade de criar algum tipo de gerenciador,
+sendo o MySQL um dos mais usados. Algumas características \cite{MySQL69:online} desse sistema podem ser vistas abaixo:
+
+\begin{itemize}
+ \item \textbf{Banco de dados relacional:} a principal diferença desse tipo de \ac{BD} para os outros
+ é que os dados são guardados em pequenas tabelas de uma forma que seu acesso seja da forma mais eficiente
+ o possível.
+ \item \textbf{\textit{Open Source:}} esse termo corresponde que qualquer pessoa pode modificar o 
+ \textit{software} do jeito que preferir, podendo ajustá-lo conforme a sua necessidade.
+ \item \textbf{Rápido, confiável, escalável e fácil de usar:} como foi criado para atender a grandes
+ quantidades de dados de uma forma mais rápida que seus concorrentes, foi apenas lógico que se tornasse
+ um dos mais rápidos \ac{BD}. Portanto começou a ser utilizado em grande escala, consequentemente a 
+ segurança foi aumentando juntamente com sua escalabilidade para atender a demanda de usuários. 
+\end{itemize}
+
+Contudo, mesmo com medidas de seguranças sendo tomadas, precisamos ainda tomar algumas atitudes para 
+dificultar que seu \ac{BD} seja acessado por pessoas não autorizadas, alguns métodos básicos que 
+ajudam a proteger são descritas abaixo \cite{MySQL10:online}:
+
+\begin{itemize}
+ \item Não prover acesso a ninguém para a tabela usuário do \ac{BD} MySQL.
+ \item Não guardar senhas sem algum tipo de função \textit{hash} (algoritmo usado para transformar 
+ sua senha para uma \textit{string} ilegível.
+ \item Crie senhas aleátorias, porém de fácil memorização.
+ \item Invista em um \textit{firewall}, protegem pelo menos 50\% dos ataques feitos contra seu \textit{software}.
+ \item Sempre criptografe os dados que precisam ser enviados pela internet.
+\end{itemize}
+
 
 
 \subsection{PHP}
@@ -30,7 +68,7 @@ objeto. Porém essa versão tinha muita dificuldade em processar aplicações comple
 e 5.0 (Julho de 2004), principalmente para melhorar seu antecessor e acrescentar dezenas de novos recursos.
 
 Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open source} de uso geral. Podemos especificar em quais áreas os 
-\textit{scripts} \ac{PHP} são mais utilizados, como:
+\textit{scripts} \ac{PHP} são mais utilizados \cite{PHP:O35:online}, como:
 \begin{itemize}
  \item \textbf{Scripts no lado do servidor.} Podendo acessar os resultados do seu programa com um navegador web.
  \item \textbf{Scripts de linha de comando.} Executar os scripts sem um servidor ou navegador, apenas necessita de um interpretador PHP.
@@ -38,6 +76,9 @@ Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open
  avançados que permitem escrever esse sistema.
 \end{itemize}
 
+Uma característica é a escalabilidade que o \ac{PHP} possui, podendo ser utilizado na maioria
+dos sistemas operacionais e servidores \textit{web}. Com isso ele vem sendo aplicado cada
+vez mais, por suas várias extensões que facilitam a conectividade com diversos banco de dados.
 
 \section{APLICABILIDADE}
 

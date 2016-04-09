@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {2.3.1}Linux}{10}
 \contentsline {subsection}{\numberline {2.3.2}Apache}{10}
 \contentsline {subsection}{\numberline {2.3.3}MySQL}{10}
-\contentsline {subsection}{\numberline {2.3.4}PHP}{10}
-\contentsline {section}{\numberline {2.4}APLICABILIDADE}{11}
-\contentsline {chapter}{\numberline {3}Conclus\~ao}{12}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{13}
+\contentsline {subsection}{\numberline {2.3.4}PHP}{11}
+\contentsline {section}{\numberline {2.4}APLICABILIDADE}{12}
+\contentsline {chapter}{\numberline {3}Conclus\~ao}{13}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{14}
