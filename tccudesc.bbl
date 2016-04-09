@@ -17,6 +17,12 @@
   2005.
 ISBN 978-0-596-00670-9.}
 
+\bibitem[CVE 2016]{CVE-F22:online}
+\abntrefinfo{CVE}{CVE}{2016}
+{CVE. \emph{CVE - Frequently Asked Questions}. 2016.
+\url{http://cve.mitre.org/about/faqs.html}.
+(Accessed on 04/08/2016).}
+
 \bibitem[FSF 2016]{Whati7:online}
 \abntrefinfo{FSF}{FSF}{2016}
 {FSF. \emph{What is free software? - GNU Project - Free Software Foundation}.
@@ -50,5 +56,12 @@ ISBN 978-0-596-00670-9.}
   Linux.com | The source for Linux information}. April 2009.
 \url{https://www.linux.com/learn/what-linux-overview-linux-operating-system}.
 (Accessed on 04/09/2016).}
+
+\bibitem[Standards e Technology 2008]{NIST:online}
+\abntrefinfo{Standards e Technology}{STANDARDS; TECHNOLOGY}{2008}
+{STANDARDS, N.~I. of; TECHNOLOGY. \emph{Technical Guide to Information Security
+  Testing and Assessment}. september 2008.
+\url{http://csrc.nist.gov/publications/nistpubs/800-115/SP800-115.pdf}.
+(Accessed on 04/08/2016).}
 
 \end{thebibliography}

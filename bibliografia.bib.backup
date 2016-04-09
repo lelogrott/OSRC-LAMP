@@ -51,11 +51,30 @@ month = {January},
 year = {2016},
 note = {(Accessed on 04/08/2016)}
 }
-@misc{netcraft:2016,
-author = {Netcraft},
-title = {Web Server Survey | Netcraft},
-howpublished = {\url{http://news.netcraft.com/archives/category/web-server-survey/}},
-month = {March},
+@misc{http:apache,
+author = {ASF},
+title = {The Apache HTTP Server Project},
+howpublished = {\url{https://httpd.apache.org/}},
+month = {},
+year = {},
+note = {(Accessed on 04/08/2016)}
+}
+
+@misc{CVE-F22:online,
+author = {CVE},
+title = {CVE - Frequently Asked Questions},
+howpublished = {\url{http://cve.mitre.org/about/faqs.html}},
+month = {},
 year = {2016},
 note = {(Accessed on 04/08/2016)}
 }
+
+@misc{https65:online,
+author = {SANS Institute},
+title = {https://www.sans.org/reading-room/whitepapers/basics/vulnerability-assessment-421},
+howpublished = {\url{https://www.sans.org/reading-room/whitepapers/basics/vulnerability-assessment-421}},
+month = {},
+year = {2001},
+note = {(Accessed on 04/08/2016)}
+}
+

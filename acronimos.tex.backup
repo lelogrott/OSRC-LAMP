@@ -2,12 +2,19 @@
 \addcontentsline{toc}{chapter}{Lista de Siglas e Abreviaturas}
 \begin{acronym}
 
-\acro{LAMP}[LAMP]{Linux Apache MySQL PHP}
+\acro{ASP}[ASP]{Apache Software Foundation}
+\acro{BD}[BD]{Banco de dados}
+\acro{CGI}[CGI]{Common Gateway Interface}
+\acro{DNS}[DNS]{Domain Name System}
 \acro{GNU}[GNU]{Gnu Not Unix}
-\acro{UDESC}[UDESC]{Universidade do Estado de Santa Catarina}
-\acro{PHP}[PHP]{Hypertext Preprocessor}
+\acro{GPL}[GPL]{General Public License}
 \acro{HTTP}[HTTP]{HyperText Transfer Protocol}
+\acro{LAMP}[LAMP]{Linux Apache MySQL PHP}
+\acro{PHP}[PHP]{Hypertext Preprocessor}
+\acro{SMTP}[SMTP]{Simple Mail Transfer Protocol}
 \acro{SQL}[SQL]{Structured Query Language}
+
+\acro{UDESC}[UDESC]{Universidade do Estado de Santa Catarina}
 \begin{comment}
 \acro{CLI}[CLI]{Command Line Interface}
 \acro{CPU}[CPU]{Central Processing Unit}

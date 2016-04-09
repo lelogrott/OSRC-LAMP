@@ -5,12 +5,19 @@
 \label{sec:lamp}
 
 
-\section{HISTÓRICO}
-\label{sec:historico}
+\subsection{HISTÓRICO}
+\label{subsec:historico}
+
+
+\subsection{APLICABILIDADE}
+\label{subsec:aplicabilidade}
+
 
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
+\label{sec:componentes}
 
 \subsection{Linux}
+\label{subsec:linux}
 
 Linux poderia ser descrito como um sistema operacional similar a 
 qualquer outro, como Windows e OS X. Porém tem algo que o destaca dos demais, 
@@ -35,19 +42,22 @@ até mesmo em organizações que confiam veemente em sistemas operacionais
 comerciais como Microsoft Windows, o Linux aparece frequentemente em papeis infraestruturais, como em \textit{gateways} de \ac{SMTP} e servidores \ac{DNS}
 devido a sua confiança, segurança, baixo custo e a qualidade execepcional das aplicações do servidor \cite{bauer2005linux}.
 
-
 \subsection{Apache}
+\label{subsec:apache}
 
 Atuando como servidor \ac{HTTP} no sistema \ac{LAMP}, o Apache é o servidor \textit{web}
 mais popular na Internet desde Abril de 1996 \cite{http:apache}.
-
+O Apache é um projeto de código livre (sob a licensa \ac{GPL}) da \ac{ASP}, o qual tem como 
+objetivo manter um seguro, eficiente e extensível servidor que provê
+serviços \ac{HTTP} de acordo com os padrões \ac{HTTP} atuais.
 
 \subsection{MySQL}
+\label{subsec:mysql}
 
 O \ac{BD} MySQL, foi projetado com base no mSQL, o qual tinha muitos problemas, como 
 não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
 de um novo \ac{BD} foi aumentando e com base nesse conceito foi desenvolvido o que
-hoje conhecemos como MySQL.
+hoje conhecemos como MySQL, por isso é o \ac{BD} do servidor LAMP.
 
 Um \ac{BD} pode ser definido como uma coleção de dados. Porém para conseguir acessar
 os dados armazenados nesse sistema, teve-se a necessidade de criar algum tipo de gerenciador,
@@ -81,6 +91,7 @@ ajudam a proteger são descritas abaixo \cite{MySQL10:online}:
 
 
 \subsection{PHP}
+\label{subsec:php}
 
 O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s binários escritos na linguagem de
 programação C, usados para rastrear as visitas ao seu \textit{site}. Com o tempo, otimizações foram sendo feitas e funcionalidades adicionadas.
@@ -99,11 +110,35 @@ Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open
 
 Uma característica é a escalabilidade que o \ac{PHP} possui, podendo ser utilizado na maioria
 dos sistemas operacionais e servidores \textit{web}. Com isso ele vem sendo aplicado cada
-vez mais, por suas várias extensões que facilitam a conectividade com diversos banco de dados.
+vez mais em servidores LAMP, por suas várias extensões que facilitam a conectividade com diversos banco de dados.
 
 
+\section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
+\label{sec:fundamentos}
 
-\section{APLICABILIDADE}
+\section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
+\label{sec:frameworks}
+
+\section{NORMAS, RECOMENDAÇÕES E BOAS PRÁTICAS PARA ANÁLISE DE VULNERABILIDADES}
+\label{sec:normas}
+
+Vulnerabilidade pode ser definida como um erro no \textit{software} que permita ao \textit{hacker} ganhar acesso ao sistema ou a rede interna \cite{CVE-F22:online}. Primeiramente 
+monitoramos com qual frequência determinada vulnerabilidade pode ocorrer, e o quão prejudicial é para o programa. Quando descobrimos alguma vulnerabilidade com os testes realizados,
+podemos verificar em algum banco de dados de vulnerabilidades, sendo o \ac{CVE} uma boa fonte para conhecer um pouco mais sobre o problema encontrado. 
+
+Temos também os chamados escaneadores de vulnerabilidade, os quais são \textit{softwares} que ajudam na identificação de possíveis problemas que podem facilitar a corrupção do 
+sistema, identificando, como por exemplo: versões de \textit{softwares} desatualizadas, configurações falhas. Segundo \cite{NIST:online}, esses escaneadores podem:
+
+\begin{itemize}
+ \item \textbf{Verificar políticas de segurança.}
+ \item \textbf{Prover informações sobre alvos para testes de penetração.}
+ \item \textbf{Fornecer informações sobre como diminuir as vulnerabilidades descobertas.}
+\end{itemize}
+
+Contudo, mesmo com esses facilitadores, ainda temos alguns problemas a serem vencidos, como quando pequenos riscos de vulnerabilidade são analisados de uma forma isolada, porém 
+quando observados como um conjunto podem trazer um grande problema ao sistema, isso pode ser dito como uma das principais falhas desses escaneadores, pois conseguem apenas analisar 
+ameaças indíviduais e não em um escopo específico.
+
 
 \begin{comment}
 
