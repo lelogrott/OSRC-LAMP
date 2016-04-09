@@ -22,6 +22,10 @@ testse tesets testsetsetse tasesadfasdfasdf as dasdfas
 
 
 \subsection{MySQL}
+O banco de dados MySQL foi projetado com base no mSQL, o qual tinha muitos problemas, como 
+não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
+de um novo banco de dados foi aumentando e com base nesse conceito foi desenvolvido o que
+hoje conhecemos como MySQL.
 
 O \ac{BD} MySQL, foi projetado com base no mSQL, o qual tinha muitos problemas, como 
 não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
@@ -56,7 +60,6 @@ ajudam a proteger são descritas abaixo \cite{MySQL10:online}:
  \item Invista em um \textit{firewall}, protegem pelo menos 50\% dos ataques feitos contra seu \textit{software}.
  \item Sempre criptografe os dados que precisam ser enviados pela internet.
 \end{itemize}
-
 
 
 \subsection{PHP}
