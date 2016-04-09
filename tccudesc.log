@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  8 APR 2016 19:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  9 APR 2016 06:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -875,18 +875,19 @@ Overfull \hbox (38.56935pt too wide) in paragraph at lines 11--11
  []
 
 Package acronym Info: Label `acro:PHP' newly defined as it shall be overridden
-although it is yet undefined on input line 26.
+although it is yet undefined on input line 32.
 Package acronym Info: Label `acro:CGI' newly defined as it shall be overridden
-although it is yet undefined on input line 26.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+although it is yet undefined on input line 32.
+[10
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 41.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
- [10
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
 
-]
 Excluding 'comment' comment. [11]
 Cap\'{\i }tulo 3.
 ) (./tccudesc.bbl [12
@@ -897,7 +898,7 @@ Cap\'{\i }tulo 3.
 Here is how much of TeX's memory you used:
  16590 strings out of 493304
  286155 string characters out of 6139871
- 392679 words of memory out of 5000000
+ 392678 words of memory out of 5000000
  19594 multiletter control sequences out of 15000+600000
  14953 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -907,7 +908,7 @@ cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on tccudesc.pdf (16 pages, 82341 bytes).
+Output written on tccudesc.pdf (16 pages, 82863 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream
