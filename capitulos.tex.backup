@@ -11,6 +11,9 @@
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
 
 \subsection{Linux}
+testse tesets testsetsetse tasesadfasdfasdf as dasdfas
+
+
 \cite{bauer2005linux}
 
 
@@ -19,8 +22,12 @@
 
 
 \subsection{MySQL}
+O banco de dados MySQL foi projetado com base no mSQL, o qual tinha muitos problemas, como 
+não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
+de um novo banco de dados foi aumentando e com base nesse conceito foi desenvolvido o que
+hoje conhecemos como MySQL.
 
-
+Teste GITTT
 \subsection{PHP}
 
 O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s binários escritos na linguagem de
@@ -38,6 +45,9 @@ Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open
  avançados que permitem escrever esse sistema.
 \end{itemize}
 
+Uma característica é a escalabilidade que o \ac{PHP} possui, podendo ser utilizado na maioria
+dos sistemas operacionais e servidores \textit{web}. Com isso ele vem sendo aplicado cada
+vez mais, por suas várias extensões que facilitam a conectividade com diversos banco de dados.
 
 \section{APLICABILIDADE}
 
