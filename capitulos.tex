@@ -40,6 +40,7 @@ necessários para gerar o arquivo PHP dependem de quem o visitante é - nome dele,
 da conta, histórico de pedidos - elementos que precisam ser armazenados e resgatados o
 tempo todo. O banco de dados mantém essas informações com a segurança requisitada. 
 
+\end{itemize}
 
 \subsection{HISTÓRICO}
 \label{subsec:historico}
@@ -61,6 +62,10 @@ razões monetárias, utilizavam softwares de código aberto em suas páginas da web.
 
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
 \label{sec:componentes}
+
+Para garantir o bom funcionamento do sistema, é necessário a boa comunicação e integração entre todos os componentes do \ac{LAMP}.
+Apesar de serem serviços independentes, juntos eles constituem um servidor \textit{web} capaz de executar \textit{scripts} (do lado do servidor) 
+e armazenar dados. Detalhes dos componentes do sistema se darão a seguir.
 
 \subsection{Linux}
 \label{subsec:linux}
@@ -103,11 +108,11 @@ serviços \ac{HTTP} de acordo com os padrões \ac{HTTP} atuais.
 O \ac{BD} MySQL, foi projetado com base no mSQL, o qual tinha muitos problemas, como 
 não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
 de um novo \ac{BD} foi aumentando e com base nesse conceito foi desenvolvido o que
-hoje conhecemos como MySQL, por isso é o \ac{BD} do servidor LAMP.
+hoje conhecemos como MySQL, um \ac{SGBD} que viabiliza programação em \ac{SQL} presente no servidor \ac{LAMP}.
 
 Um \ac{BD} pode ser definido como uma coleção de dados. Porém para conseguir acessar
 os dados armazenados nesse sistema, teve-se a necessidade de criar algum tipo de gerenciador,
-sendo o MySQL um dos mais usados. Algumas características \cite{MySQL69:online} desse sistema podem ser vistas abaixo:
+sendo o MySQL um dos mais usados. Algumas características desse sistema podem ser vistas abaixo \cite{MySQL69:online}:
 
 \begin{itemize}
  \item \textbf{Banco de dados relacional:} a principal diferença desse tipo de \ac{BD} para os outros
@@ -122,8 +127,8 @@ sendo o MySQL um dos mais usados. Algumas características \cite{MySQL69:online} 
 \end{itemize}
 
 Contudo, mesmo com medidas de seguranças sendo tomadas, precisamos ainda tomar algumas atitudes para 
-dificultar que seu \ac{BD} seja acessado por pessoas não autorizadas, alguns métodos básicos que 
-ajudam a proteger são descritas abaixo \cite{MySQL10:online}:
+dificultar que o \ac{BD} seja acessado por pessoas não autorizadas, alguns métodos básicos que 
+ajudam a proteger são descritos abaixo \cite{MySQL10:online}:
 
 \begin{itemize}
  \item Não prover acesso a ninguém para a tabela usuário do \ac{BD} MySQL.
@@ -162,10 +167,10 @@ vez mais em servidores LAMP, por suas várias extensões que facilitam a conectivi
 \section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
 \label{sec:fundamentos}
 
-Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuirem rotinas 
+Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuírem rotinas 
 parecidas, possuem objetivos distintos. Ataques maliciosos são realizados para roubar informações, causar indisponibilidade de serviços
 (\ac{DoS}) ou qualquer outro evento indesejado ao responsável pelo servidor. Já um teste de penetração consiste em um processo 
-autorizado, programado e sistemático onde se faz uso de vulnerabilitades conhecidas para realizar tentativas de invasão à um servidor,
+autorizado, programado e sistemático onde se faz uso de vulnerabilidades conhecidas para realizar tentativas de invasão a um servidor,
 rede ou conteúdos de aplicações.
 
 Testes de penetração podem ser executados de mais de uma maneira para propor mais de um ponto de vista sob a mesma organização. 
@@ -183,35 +188,47 @@ Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos
 \section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:frameworks}
 
-\textit{Frameworks} para análise de vulnerabilidades são ferramentas para facilitar a detecção de vulnerabilidades em determinado sistema/página \textit{web}.
+\textit{Frameworks} para análise de vulnerabilidades são ferramentas para facilitar a detecção de vulnerabilidades em determinado 
+sistema/página \textit{web}.
 
-Uma delas é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{website}, podendo verificar mais de 6.000 testes. Alguns dos principais problemas que podem
-ser achados são: Arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
+Uma deles é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{website}, podendo verificar:
+mais de 6.000 ameaças em potencial localizadas em arquivos ou programas, mais de 1.200 versões desatualizadas de servidores
+ e mais de 270 problemas em servidores específicos \cite{Nikto57:online}. Alguns dos principais problemas que podem
+ser achados são: arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
 
-Outra ferramenta que pode ser citada é o \textit{Vega}, com objetivos semelhantes ao \textit{Nikto}, porém com dois modos de operação \cite{About78:online}: 
+Outra ferramenta que pode ser citada é o \textit{Vega}, com objetivos semelhantes ao \textit{Nikto}, 
+porém com dois modos de operação \cite{About78:online}: 
+
 \begin{itemize}
- \item \textbf{\textit{Scanner} automático:} rastreia automaticamente por \textit{websites}, extraindo links, e executa módulos em possíveis pontos de vulnerabilidades.
- \item \textbf{\textit{Proxy de interceptação:}} permite análises detalhados sobre a interação navegador-aplicação.
+ \item \textbf{\textit{Scanner} automático:} rastreia automaticamente por \textit{websites}, extraindo \textit{links},
+ e executa módulos em possíveis pontos de vulnerabilidades.
+ \item \textbf{\textit{Proxy} de interceptação:} permite análises detalhadas sobre a interação navegador-aplicação.
 \end{itemize}
 
-Pode-se citar ainda o OpenVAS, uma ferramenta para varredura e gerenciamento de vulnerabilidades. Podendo ser subdividido em duas arquiteturas \cite{OpenV32:online}:
-\begin{itemize}
- \item \textbf{Rastreados OpenVAS:} executa os testes de vulnerabilidades.
- \item \textbf{Gerenciador OpenVAS:} consolida a varredura de vulnerabilidade em uma solução completa de gerenciamento de vulnerabilidade.
-\end{itemize}
+Pode-se citar ainda o OpenVAS, uma ferramenta para varredura e gerenciamento de vulnerabilidades. Podendo ser subdividido em duas
+arquiteturas \cite{OpenV32:online}:
 
+\begin{description}
+ \item [Rastreados OpenVAS] executa os testes de vulnerabilidades.
+ \item [Gerenciador OpenVAS] consolida a varredura de vulnerabilidade em uma solução completa de gerenciamento de vulnerabilidade.
+\end{description}
 
 
 \section{NORMAS, RECOMENDAÇÕES E BOAS PRÁTICAS PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:normas}
 
 
-Vulnerabilidade pode ser definida como um erro no \textit{software} que permita ao \textit{hacker} ganhar acesso ao sistema ou a rede interna \cite{CVE-F22:online}. Primeiro monitora-se
-com qual frequência determinada vulnerabilidade pode ocorrer, e o quão prejudicial é para o programa. Quando é descoberto alguma vulnerabilidade com os testes realizados,
-verifica-se em algum banco de dados de vulnerabilidades, sendo o \ac{CVE} uma boa fonte para conhecer um pouco mais sobre o problema encontrado. 
+Vulnerabilidade pode ser definida como um erro no \textit{software} que permite que uma pessoa não autorizada ganhe acesso ao sistema
+ou a rede interna \cite{CVE-F22:online}. Primeiro monitora-se
+com qual frequência determinada vulnerabilidade pode ocorrer, e o quão prejudicial é para o programa.
+Quando é descoberto alguma vulnerabilidade com os testes realizados,
+ocorre a verificação em um banco de dados de vulnerabilidades, sendo o \ac{CVE} uma boa fonte para conhecer 
+um pouco mais sobre o problema encontrado. 
 
-Existem também os escaneadores de vulnerabilidade, os quais são \textit{softwares} que ajudam na identificação de possíveis problemas que podem facilitar a corrupção do 
-sistema, identificando, como por exemplo: versões de \textit{softwares} desatualizadas, configurações falhas. Segundo \cite{NIST:online}, esses escaneadores podem:
+Existem também os escaneadores de vulnerabilidade, os quais são \textit{softwares} que ajudam na identificação de possíveis
+problemas que podem facilitar a corrupção do 
+sistema, identificando, como por exemplo: versões de \textit{softwares} desatualizadas, configurações falhas. Segundo \cite{NIST:online},
+esses escaneadores podem:
 
 \begin{itemize}
  \item \textbf{Verificar políticas de segurança.}
@@ -219,12 +236,13 @@ sistema, identificando, como por exemplo: versões de \textit{softwares} desatual
  \item \textbf{Fornecer informações sobre como diminuir as vulnerabilidades descobertas.}
 \end{itemize}
 
-Contudo, mesmo com esses facilitadores, ainda existem alguns problemas a serem vencidos, como quando pequenos riscos de vulnerabilidade são analisados de uma forma isolada, porém 
-quando observados como um conjunto podem trazer um grande problema ao sistema, isso pode ser dito como uma das principais falhas desses escaneadores, pois conseguem apenas analisar 
-ameaças indíviduais e não em um escopo específico.
+Contudo, esses escaneadores atuam de forma local. Ao identificar de maneira isolada cada falha e vulnerabilidade
+muitas vezes não passam a proporção real do problema, que se daria em um único contexto com todas as falhas identificadas. Ou seja,
+várias pequenas vulnerabilidades podem, juntas, proporcionar um grande risco ao servidor.
 
-Outro meio de se prevenir contra ataques pode ser feito com uma simples revisão do código fonte quando está sendo implementado, não apenas no seu estado final. Também é viável realizar 
-testes unitários para verificar a consistência presente no código.
+Outro meio de se prevenir contra ataques pode ser feito com uma simples revisão dos códigos fontes quando estes estão sendo implementados,
+não apenas nos seus estados finais. Também é viável realizar 
+testes unitários para verificar sua consistência.
 
 
 \begin{comment}
