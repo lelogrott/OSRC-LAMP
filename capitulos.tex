@@ -19,26 +19,8 @@ um visitante entrando em um site pelo seu browser, que irá enviar um pedido para
 onde todos os componentes LAMP estão instalados e sendo executados. Nesse servidor, alguns
 comandos serão executados, devolvendo para o browser um arquivo em HTML.
 
-\begin{itemize}
- \item \textbf{\textit{L - Linux:}} 
-O servidor web é um tipo de computador, logo ele necessita de um sistema operacional,
-que será a base na qual todos os outros componentes serão executados. Esse sistema operacional
-é uma distribuição Linux.
- \item \textbf{\textit{A - Apache}} 
-Para receber e manipular todos os pedidos do visitante precisa-se de um servidor web - o Apache.
-Se o visitante faz a requisição de um arquivo, é o Apache que procura no servidor pelo o arquivo
-e o envia de volta para o browser do visitante.
- \item \textbf{\textit{P - PHP:}}
-PHP é uma linguagem de programação utilizada parar gerar páginas dinâmicas. Quando um visitante
-faz a requisição de um arquivo em PHP, o Apache não apenas pega esse arquivo e envia de volta
-para o browser como ele faz com outros tipos de arquivos. Em vez disso, ele primeiro envia o
-arquivo para o PHP, que executa o código no arquivo e gera um arquivo HTML para a página web.
-O HTML gerado pelo PHP volta para o Apache e depois para o browser do visitante.
- \item \textbf{\textit{M - MySQL:}}
-MySQL é um SGBD usado para armazenar as informações de um site. Frequentemente os dados
-necessários para gerar o arquivo PHP dependem de quem o visitante é - nome dele, número
-da conta, histórico de pedidos - elementos que precisam ser armazenados e resgatados o
-tempo todo. O banco de dados mantém essas informações com a segurança requisitada. 
+
+Mais detalhes serão vistos no tópico \ref{sec:componentes}
 
 
 \subsection{HISTÓRICO}
@@ -51,7 +33,7 @@ server-side como Perl estavam disponíveis gratuitamente, mas conseguir um banco 
 só foi possível mais tarde, no final daquele ano, com o lançamento de Postgre95.
 
 Ainda em meados de 1995, o servidor HTTP Apache e PHP foram lançados, tornando o conjunto de aplicações LAPP
-(Linux Apache PostgreSQL e Perl) possível. Finalmente em 1996, MySQL foi lançado e, com ele, o conjunto LAMP
+(Linux Apache, PostgreSQL e PHP) possível. Finalmente em 1996, MySQL foi lançado e, com ele, o conjunto LAMP
 completo fez-se possível. A popularidade do LAMP cresceu rapidamente nos anos 90, já que muitas empresas, por
 razões monetárias, utilizavam softwares de código aberto em suas páginas da web.
 
