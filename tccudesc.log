@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  11 APR 2016 19:18
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.10)  11 APR 2016 18:34
+>>>>>>> d6eaa1bbb44360edd73f431b05749d96eefce732
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -838,15 +842,27 @@ n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
 [10
 
 ]
+<<<<<<< HEAD
 Cap\'{\i }tulo 2.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
+=======
+Chapter 2.
+[11
+
+]
+Overfull \hbox (38.56935pt too wide) in paragraph at lines 44--44
+[]\OT1/cmr/bx/n/17.28 FUNCIONAMENTO E COM-PO-NENTES B[]ASICOS 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
+>>>>>>> d6eaa1bbb44360edd73f431b05749d96eefce732
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
- [11
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
 
+<<<<<<< HEAD
 ]
 Overfull \hbox (38.56935pt too wide) in paragraph at lines 63--63
 []\OT1/cmr/bx/n/17.28 FUNCIONAMENTO E COM-PO-NEN-TES B[]ASICOS 
@@ -876,10 +892,51 @@ Overfull \hbox (52.32939pt too wide) in paragraph at lines 217--217
 [17] Excluding 'comment' comment. [18]
 Cap\'{\i }tulo 3.
 ) (./tccudesc.bbl [19
+=======
+Overfull \hbox (22.36818pt too wide) in paragraph at lines 68--72
+[]\U/cmr/m/n/12 Por esses mo-tivos o Linux tem sido bem-sucedido, par-tic-u-lar
+-mente como plataforma
+ []
 
-] [20
+[12] [13] [14]
+Overfull \hbox (20.04718pt too wide) in paragraph at lines 144--144
+[]\OT1/cmr/bx/n/17.28 FUNDAMENTA[][]AO DE ATAQUE E SOLU[][]OES 
+ []
 
+
+Overfull \hbox (13.10727pt too wide) in paragraph at lines 165--165
+[]\OT1/cmr/bx/n/17.28 FRAMEWORKS E SOLU[][]OES PARA AN[]ALISE
+ []
+
+[15]
+Overfull \hbox (4.06493pt too wide) in paragraph at lines 176--177
+[]\OT1/cmr/bx/it/12 Proxy de in-ter-cepta^^Xc~ao: \U/cmr/m/n/12 per-mite an^^Sa
+lises de-tal-ha-dos so-bre a in-tera^^Xc~ao navegador-
+ []
+
+>>>>>>> d6eaa1bbb44360edd73f431b05749d96eefce732
+
+Overfull \hbox (52.32939pt too wide) in paragraph at lines 187--187
+[]\OT1/cmr/bx/n/17.28 NORMAS, RECOMENDA[][]OES E BOAS PR[]ATICAS
+ []
+
+<<<<<<< HEAD
 ]) (./anexo.tex) (./apendice.tex) [21]
+=======
+[16]
+Overfull \hbox (2.47894pt too wide) in paragraph at lines 204--207
+\U/cmr/m/n/12 prob-lema ao sis-tema, isso pode ser dito como uma das prin-ci-pa
+is fal-has desses es-caneadores,
+ []
+
+Excluding 'comment' comment. [17]
+Chapter 3.
+) (./tccudesc.bbl [18
+
+] [19
+
+]) (./anexo.tex) (./apendice.tex) [20]
+>>>>>>> d6eaa1bbb44360edd73f431b05749d96eefce732
 (./tccudesc.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -891,18 +948,27 @@ Here is how much of TeX's memory you used:
  409685 words of memory out of 5000000
  20679 multiletter control sequences out of 15000+600000
  14869 words of font info for 56 fonts, out of 8000000 for 9000
+<<<<<<< HEAD
  16 hyphenation exceptions out of 8191
  48i,13n,97p,797b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+=======
+ 14 hyphenation exceptions out of 8191
+ 48i,13n,97p,797b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> d6eaa1bbb44360edd73f431b05749d96eefce732
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+<<<<<<< HEAD
 Output written on tccudesc.pdf (24 pages, 116047 bytes).
+=======
+Output written on tccudesc.pdf (23 pages, 114168 bytes).
+>>>>>>> d6eaa1bbb44360edd73f431b05749d96eefce732
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

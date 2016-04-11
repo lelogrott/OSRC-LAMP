@@ -5,15 +5,17 @@
 \acro{ASP}[ASP]{Apache Software Foundation}
 \acro{BD}[BD]{Banco de dados}
 \acro{CGI}[CGI]{Common Gateway Interface}
+\acro{CVE}[CVE]{Common Vulnerabilities and Exposures}
 \acro{DNS}[DNS]{Domain Name System}
+\acro{DoS}[DoS]{Denial of Service}
 \acro{GNU}[GNU]{Gnu Not Unix}
 \acro{GPL}[GPL]{General Public License}
 \acro{HTTP}[HTTP]{HyperText Transfer Protocol}
 \acro{LAMP}[LAMP]{Linux Apache MySQL PHP}
 \acro{PHP}[PHP]{Hypertext Preprocessor}
+\acro{SGBD}[SGBD]{Sistema de Gerenciamento de Banco de Dados}
 \acro{SMTP}[SMTP]{Simple Mail Transfer Protocol}
 \acro{SQL}[SQL]{Structured Query Language}
-
 \acro{UDESC}[UDESC]{Universidade do Estado de Santa Catarina}
 \begin{comment}
 \acro{CLI}[CLI]{Command Line Interface}
