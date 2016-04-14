@@ -14,7 +14,7 @@ já que tais componentes são de código aberto e não têm custo. \ac{LAMP} pode ser
 e \textbf{P}HP (linguagem de programação), que também pode se referir a Perl ou Python, apesar
 de não ser muito comum (mais detalhes serão vistos no tópico \ref{sec:componentes}).
 
-Uma exemplo do funcionamento de cada componente do \ac{LAMP} em um servidor \textit{web} se dá por
+Um exemplo do funcionamento de cada componente do \ac{LAMP} em um servidor \textit{web} se dá por
 um visitante entrando em um \textit{site} pelo seu navegador, o qual irá enviar um pedido para o servidor,
 onde todos os componentes \ac{LAMP} estão instalados e sendo executados. Este servidor pode então prover ao usuário, interação com 
 banco de dados através de \textit{scripts} \ac{PHP} através de formulários enviados ao navegador pelo protocolo \ac{HTTP}.
@@ -25,18 +25,28 @@ banco de dados através de \textit{scripts} \ac{PHP} através de formulários envia
 
 O conceito principal em volta do \ac{LAMP} (um servidor \textit{web} sem custo) foi possível no início de
 1995 quando a \ac{CERN} httpd introduziu o conceito de \ac{CGI}, que tornou possível aos servidores
-executar códigos para criar páginas dinâmicas. Linux, \ac{CERN} httpd e linguagens de programação do lado do servidor
+executar códigos para criar páginas dinâmicas \cite{CGI:online}. Linux, \ac{CERN} httpd e linguagens de programação do lado do servidor
 como Perl estavam disponíveis gratuitamente, mas conseguir um banco de dados gratuito
 só foi possível mais tarde, com o lançamento de Postgre95.
 
 Ainda em meados de 1995, o servidor \ac{HTTP} Apache e \ac{PHP} foram lançados, compondo então o conjunto de aplicações \ac{LAPP}.
 Finalmente em 1996, MySQL foi lançado e, com ele, o conjunto \ac{LAMP} completo fez-se possível. A popularidade do \ac{LAMP}
 cresceu rapidamente nos anos 90, já que muitas empresas, por razões monetárias, utilizavam \textit{softwares} de código aberto
-em suas páginas \texit{web}.
+em suas páginas \textit{web}.
 
 \subsection{APLICABILIDADE}
 \label{subsec:aplicabilidade}
 
+Sistemas \ac{LAMP} podem ser encontrados em diversos níveis de aplicações. Quem utiliza um sistema operacional com kernel Linux em seu computador pessoal
+e deseja desenvolver uma aplicação \textit{web}
+pode fazê-la através da instalação dos componentes faltantes, ou seja, o Apache como servidor \ac{HTTP}, MySQL como banco de dados local e \ac{PHP} como linguagem de \textit{script}
+de servidor local. Após essas configurações o sistema está pronto para exibir \textit{web sites} criados localmente, os quais poderam conter formulários a serem processados e enviados
+a outro servidor ou armazenados na própria máquina. Com o ajuste de alguns detalhes (configurações de \textit{firewall} e permissões), este \textit{site} desenvolvido localmente
+pode se tornar acessível à usuários externos, fazendo com que o sistema se assemelhe à um servidor contratado.
+
+Não se limitando a projetos de desenvolvimento local, o \ac{LAMP} se encontra frequentemente em servidores providos por \ac{InP}s, onde a principal diferença de um sistema local
+é a falta de interface gráfica, para alguns usuários experientes isso não é um problema e então a instalação dos componentes se dá de forma muito parecida,
+através de linhas de comando.
 
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
 \label{sec:componentes}

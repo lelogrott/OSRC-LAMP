@@ -88,10 +88,37 @@ note = {(Accessed on 04/08/2016)}
 }
 
 @misc{sans:2002,
-author = {SANS, },
+author = {SANS},
 title = {Penetration Testing - Is it right for you?},
 howpublished = {\url{https://www.sans.org/reading-room/whitepapers/testing/penetration-testing-you-265}},
 month = {},
-year = {},
+year = {2002},
 note = {(Accessed on 04/09/2016)}
+}
+
+@misc{About78:online,
+author = {Subgraph},
+title = {About Vega},
+howpublished = {\url{https://subgraph.com/vega/documentation/about-vega/index.en.html}},
+month = {},
+year = {2014},
+note = {(Accessed on 04/09/2016)}
+}
+
+@misc{OpenV32:online,
+author = {OpenVAS},
+title = {OpenVAS - About OpenVAS Software},
+howpublished = {\url{http://www.openvas.org/software.html}},
+month = {},
+year = {2016},
+note = {(Accessed on 04/09/2016)}
+}
+
+@misc{Nikto57:online,
+author = {SULLO, Chris and LODGE, David},
+title = {Nikto2 | CIRT.net},
+howpublished = {\url{https://www.cirt.net/Nikto2}},
+month = {},
+year = {},
+note = {(Accessed on 04/11/2016)}
 }
