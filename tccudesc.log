@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  14 APR 2016 01:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.26)  14 APR 2016 01:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -726,13 +726,13 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 67.
 ] Excluding 'comment' comment.) [7
 
 ]
-(./tccudesc.toc [8
-
-])
+(./tccudesc.toc)
 \tf@toc=\write8
 \openout8 = `tccudesc.toc'.
 
- [9] (./introducao.tex
+ [8
+
+] (./introducao.tex
 Cap\'{\i }tulo 1.
 ) (./capitulos.tex
 Overfull \hbox (2.67061pt too wide) in paragraph at lines 4--1
@@ -794,58 +794,58 @@ Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
  in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
  []
 
-[10
+[9
 
 ]
 Cap\'{\i }tulo 2.
-[11
+[10
 
 ]
-Overfull \hbox (38.56935pt too wide) in paragraph at lines 51--51
+Overfull \hbox (38.56935pt too wide) in paragraph at lines 48--48
 []\OT1/cmr/bx/n/17.28 FUNCIONAMENTO E COM-PO-NEN-TES B[]ASICOS 
  []
 
-[12]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
+[11]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 70.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
- [13] [14]
-Overfull \hbox (20.04718pt too wide) in paragraph at lines 155--155
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
+ [12] [13]
+Overfull \hbox (20.04718pt too wide) in paragraph at lines 152--152
 []\OT1/cmr/bx/n/17.28 FUNDAMENTA[][]AO DE ATA-QUE E SOLU[][]OES 
  []
 
-[15]
-Overfull \hbox (13.10727pt too wide) in paragraph at lines 176--176
+[14]
+Overfull \hbox (13.10727pt too wide) in paragraph at lines 173--173
 []\OT1/cmr/bx/n/17.28 FRAMEWORKS E SOLU[][]OES PARA AN[]ALISE
  []
 
-[16]
-Overfull \hbox (1.81564pt too wide) in paragraph at lines 193--194
+
+Overfull \hbox (1.81564pt too wide) in paragraph at lines 190--191
 []\OT1/cmr/bx/it/12 Proxy \OT1/cmr/bx/n/12 de in-ter-cepta^^Xc~ao: \OT1/cmr/m/n
 /12 per-mite an^^Salises de-ta-lha-das so-bre a in-tera^^Xc~ao navegador-
  []
 
-
-Overfull \hbox (52.32939pt too wide) in paragraph at lines 205--205
+[15]
+Overfull \hbox (52.32939pt too wide) in paragraph at lines 202--202
 []\OT1/cmr/bx/n/17.28 NORMAS, RECOMENDA[][]OES E BOAS PR[]ATICAS
  []
 
-[17] Excluding 'comment' comment. [18]
+[16] Excluding 'comment' comment. [17]
 Cap\'{\i }tulo 3.
-) (./tccudesc.bbl [19
+) (./tccudesc.bbl [18
 
-] [20
+] [19
 
-]) (./anexo.tex) (./apendice.tex) [21]
+]) (./anexo.tex) (./apendice.tex) [20]
 (./tccudesc.aux) ) 
 Here is how much of TeX's memory you used:
- 16104 strings out of 493304
- 277819 string characters out of 6139871
+ 16103 strings out of 493304
+ 277802 string characters out of 6139871
  380204 words of memory out of 5000000
- 19126 multiletter control sequences out of 15000+600000
+ 19125 multiletter control sequences out of 15000+600000
  15481 words of font info for 59 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,13n,97p,797b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -857,10 +857,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tccudesc.pdf (24 pages, 136091 bytes).
+Output written on tccudesc.pdf (23 pages, 136031 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
