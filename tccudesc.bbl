@@ -30,6 +30,12 @@ ISBN 978-0-596-00670-9.}
 \url{http://www.gnu.org/philosophy/free-sw.en.html}.
 (Accessed on 04/08/2016).}
 
+\bibitem[Group 2016]{PHP:H3:online}
+\abntrefinfo{Group}{GROUP}{2016}
+{GROUP, T.~P. \emph{PHP: Historia do PHP - Manual}. 2016.
+\url{http://php.net/manual/pt_BR/history.php.php}.
+(Accessed on 04/20/2016).}
+
 \bibitem[MySQL 2013]{MySQL69:online}
 \abntrefinfo{MySQL}{MYSQL}{2013a}
 {MYSQL. \emph{MySQL :: MySQL 5.7 Reference Manual :: 1.3.1 What is MySQL?}
@@ -43,6 +49,13 @@ ISBN 978-0-596-00670-9.}
   Guidelines}. April 2013.
 \url{http://dev.mysql.com/doc/refman/5.7/en/security-guidelines.html}.
 (Accessed on 04/09/2016).}
+
+\bibitem[MySQL 2016]{MySQL14:online}
+\abntrefinfo{MySQL}{MYSQL}{2016}
+{MYSQL. \emph{MySQL :: MySQL 5.7 Reference Manual :: 1.3.3 History of MySQL}.
+  2016.
+\url{http://dev.mysql.com/doc/refman/5.7/en/history.html}.
+(Accessed on 04/20/2016).}
 
 \bibitem[OpenVAS 2016]{OpenV32:online}
 \abntrefinfo{OpenVAS}{OPENVAS}{2016}
