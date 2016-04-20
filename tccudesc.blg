@@ -11,6 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "ongoi15:online"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
@@ -21,44 +22,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 14 entries,
+You've used 16 entries,
             6476 wiz_defined-function locations,
-            1240 strings with 11147 characters,
-and the built_in function-call counts, 9032 in all, are:
-= -- 758
-> -- 244
+            1251 strings with 11448 characters,
+and the built_in function-call counts, 10218 in all, are:
+= -- 840
+> -- 274
 < -- 0
-+ -- 129
-- -- 80
-* -- 533
-:= -- 1309
-add.period$ -- 68
-call.type$ -- 14
-change.case$ -- 117
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 435
-empty$ -- 783
-format.name$ -- 370
-if$ -- 2124
++ -- 139
+- -- 90
+* -- 603
+:= -- 1475
+add.period$ -- 78
+call.type$ -- 16
+change.case$ -- 133
+chr.to.int$ -- 15
+cite$ -- 16
+duplicate$ -- 495
+empty$ -- 899
+format.name$ -- 416
+if$ -- 2404
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 243
-newline$ -- 92
-num.names$ -- 70
-pop$ -- 332
+missing$ -- 277
+newline$ -- 104
+num.names$ -- 80
+pop$ -- 374
 preamble$ -- 1
-purify$ -- 44
+purify$ -- 50
 quote$ -- 0
-skip$ -- 557
+skip$ -- 629
 stack$ -- 1
-substring$ -- 227
-swap$ -- 178
+substring$ -- 269
+swap$ -- 202
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 77
+while$ -- 89
 width$ -- 0
-write$ -- 218
+write$ -- 248
+(There was 1 warning)

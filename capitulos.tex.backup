@@ -4,9 +4,6 @@
 \section{LAMP}
 \label{sec:lamp}
 
-\subsection{CONCEITO}
-\label{subsec:conceito}
-
 \ac{LAMP} é conjunto de soluções em forma de uma lista dos componentes centrais usados na
 implementação uma aplicação web. Seu uso é predominante entre pequenas e médias empresas,
 já que tais componentes são de código aberto e não têm custo. \ac{LAMP} pode ser definido pelo seus componentes, sendo eles:
@@ -14,7 +11,7 @@ já que tais componentes são de código aberto e não têm custo. \ac{LAMP} pode ser
 e \textbf{P}HP (linguagem de programação), que também pode se referir a Perl ou Python, apesar
 de não ser muito comum (mais detalhes serão vistos no tópico \ref{sec:componentes}).
 
-Uma exemplo do funcionamento de cada componente do \ac{LAMP} em um servidor \textit{web} se dá por
+Um exemplo do funcionamento de cada componente do \ac{LAMP} em um servidor \textit{web} se dá por
 um visitante entrando em um \textit{site} pelo seu navegador, o qual irá enviar um pedido para o servidor,
 onde todos os componentes \ac{LAMP} estão instalados e sendo executados. Este servidor pode então prover ao usuário, interação com 
 banco de dados através de \textit{scripts} \ac{PHP} através de formulários enviados ao navegador pelo protocolo \ac{HTTP}.
@@ -32,11 +29,21 @@ só foi possível mais tarde, com o lançamento de Postgre95.
 Ainda em meados de 1995, o servidor \ac{HTTP} Apache e \ac{PHP} foram lançados, compondo então o conjunto de aplicações \ac{LAPP}.
 Finalmente em 1996, MySQL foi lançado e, com ele, o conjunto \ac{LAMP} completo fez-se possível. A popularidade do \ac{LAMP}
 cresceu rapidamente nos anos 90, já que muitas empresas, por razões monetárias, utilizavam \textit{softwares} de código aberto
-em suas páginas \texit{web}.
+em suas páginas \textit{web}.
 
 \subsection{APLICABILIDADE}
 \label{subsec:aplicabilidade}
 
+Sistemas \ac{LAMP} podem ser encontrados em diversos níveis de aplicações. Quem utiliza um sistema operacional com kernel Linux em seu computador pessoal
+e deseja desenvolver uma aplicação \textit{web}
+pode fazê-la através da instalação dos componentes faltantes, ou seja, o Apache como servidor \ac{HTTP}, MySQL como banco de dados local e \ac{PHP} como linguagem de \textit{script}
+de servidor local. Após essas configurações o sistema está pronto para exibir \textit{web sites} criados localmente, os quais poderam conter formulários a serem processados e enviados
+a outro servidor ou armazenados na própria máquina. Com o ajuste de alguns detalhes (configurações de \textit{firewall} e permissões), este \textit{site} desenvolvido localmente
+pode se tornar acessível à usuários externos, fazendo com que o sistema se assemelhe à um servidor contratado.
+
+Não se limitando a projetos de desenvolvimento local, o \ac{LAMP} se encontra frequentemente em servidores providos por \ac{InP}s, onde a principal diferença de um sistema local
+é a falta de interface gráfica, para alguns usuários experientes isso não é um problema e então a instalação dos componentes se dá de forma muito parecida,
+através de linhas de comando.
 
 \section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
 \label{sec:componentes}
@@ -84,29 +91,32 @@ serviços \ac{HTTP} de acordo com os padrões \ac{HTTP} atuais.
 \label{subsec:mysql}
 
 O \ac{BD} MySQL, foi projetado com base no mSQL, o qual tinha muitos problemas, como 
-não ser rápido e flexível o suficiente para o uso dos usuários, com isso a necessidade
+não ser rápido e flexível o suficiente para o uso dos usuários \cite{MySQL14:online}, com isso a necessidade
 de um novo \ac{BD} foi aumentando e com base nesse conceito foi desenvolvido o que
-hoje conhecemos como MySQL, um \ac{SGBD} que viabiliza programação em \ac{SQL} presente no servidor \ac{LAMP}.
+hoje é conhecido como MySQL, um \ac{SGBD} que viabiliza programação em \ac{SQL} presente no servidor \ac{LAMP}, 
+o qual se comunica com perfeição com a linguagem de programação presente no \ac{LAMP} (PHP), com isso 
+veio a ser adotado como principal \ac{BD} nos servidores.
 
-Um \ac{BD} pode ser definido como uma coleção de dados. Porém para conseguir acessar
+Um \ac{BD} pode ser definido como uma coleção de dados, para conseguir acessar
 os dados armazenados nesse sistema, teve-se a necessidade de criar algum tipo de gerenciador,
-sendo o MySQL um dos mais usados. Algumas características desse sistema podem ser vistas abaixo \cite{MySQL69:online}:
+sendo o MySQL um dos mais usados. Algumas características desse sistema\cite{MySQL69:online}:
 
 \begin{itemize}
  \item \textbf{Banco de dados relacional:} a principal diferença desse tipo de \ac{BD} para os outros
  é que os dados são guardados em pequenas tabelas de uma forma que seu acesso seja da forma mais eficiente
- o possível.
+ o possível, obtendo um tempo menor de resposta com o servidor e com isso passou a ganhar espaço no mercado.
  \item \textbf{\textit{Open Source:}} esse termo corresponde que qualquer pessoa pode modificar o 
- \textit{software} do jeito que preferir, podendo ajustá-lo conforme a sua necessidade.
+ \textit{software} do jeito que preferir, podendo ajustá-lo conforme a sua necessidade, sendo perfeito
+ para programadores experientes que precisam adaptá-los a seus critérios.
  \item \textbf{Rápido, confiável, escalável e fácil de usar:} como foi criado para atender a grandes
  quantidades de dados de uma forma mais rápida que seus concorrentes, foi apenas lógico que se tornasse
  um dos mais rápidos \ac{BD}. Portanto começou a ser utilizado em grande escala, consequentemente a 
  segurança foi aumentando juntamente com sua escalabilidade para atender a demanda de usuários. 
 \end{itemize}
 
-Contudo, mesmo com medidas de seguranças sendo tomadas, precisamos ainda tomar algumas atitudes para 
-dificultar que o \ac{BD} seja acessado por pessoas não autorizadas, alguns métodos básicos que 
-ajudam a proteger são descritos abaixo \cite{MySQL10:online}:
+Mesmo com a segurança presente, precisamos ainda tomar algumas atitudes para 
+dificultar que o \ac{BD} seja acessado por pessoas não autorizadas. Alguns métodos básicos que 
+ajudam a proteger seu \ac{BD}\cite{MySQL10:online}:
 
 \begin{itemize}
  \item Não prover acesso a ninguém para a tabela usuário do \ac{BD} MySQL.
@@ -117,19 +127,20 @@ ajudam a proteger são descritos abaixo \cite{MySQL10:online}:
  \item Sempre criptografe os dados que precisam ser enviados pela internet.
 \end{itemize}
 
-
+Portanto, seguindo algumas boas práticas de segurança relativamente simples, têm-se um \ac{BD} protegido e qualquer
+pessoa não autorizada não poderá acessá-lo.
 
 \subsection{PHP}
 \label{subsec:php}
 
 O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s binários escritos na linguagem de
-programação C, usados para rastrear as visitas ao seu \textit{site}. Com o tempo, otimizações foram sendo feitas e funcionalidades adicionadas.
+programação C, usados para rastrear as visitas ao seu \textit{site}\cite{PHP:H3:online}. Com o tempo, otimizações foram sendo feitas e funcionalidades adicionadas.
 Sendo lançado em 1998, o \ac{PHP} 3.0 foi a primeira versão que contém traços do \ac{PHP} de hoje em dia, incluindo o suporte a programação orientada a
 objeto. Porém essa versão tinha muita dificuldade em processar aplicações complexas, foi com base nessa premissa que foram lançadas as versões 4.0
 e 5.0 (Julho de 2004), principalmente para melhorar seu antecessor e acrescentar dezenas de novos recursos.
 
-Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open source} de uso geral. Podemos especificar em quais áreas os 
-\textit{scripts} \ac{PHP} são mais utilizados \cite{PHP:O35:online}, como:
+Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open source} de uso geral. As principais áreas que 
+\textit{scripts} \ac{PHP} são mais utilizados \cite{PHP:O35:online}:
 \begin{itemize}
  \item \textbf{Scripts no lado do servidor.} Podendo acessar os resultados do seu programa com um navegador web.
  \item \textbf{Scripts de linha de comando.} Executar os scripts sem um servidor ou navegador, apenas necessita de um interpretador PHP.
@@ -137,9 +148,14 @@ Usado principalmente para desenvolvimento \textit{web}, é um \textit{script open
  avançados que permitem escrever esse sistema.
 \end{itemize}
 
+Com as características destacadas acima, pode-se perceber o quão viável o \ac{PHP} é como linguagem de programação dos servidores \ac{LAMP}, sendo principalmente
+por seus \textit{scripts} no lado do servidor, os quais retornam informações de uma forma rápida, eficiente e de fácil acesso.
+
 Uma característica é a escalabilidade que o \ac{PHP} possui, podendo ser utilizado na maioria
-dos sistemas operacionais e servidores \textit{web}. Com isso ele vem sendo aplicado cada
-vez mais em servidores LAMP, por suas várias extensões que facilitam a conectividade com diversos banco de dados.
+dos sistemas operacionais e servidores \textit{web} \cite{ongoi15:online}. Portanto, pelas características descrita, ele vem sendo aplicado cada
+vez mais em servidores LAMP, por suas várias extensões que facilitam a conectividade com diversos banco de dados e sua fácil integração com servidores \textit{web}. 
+Logo, observa-se o porquê do \ac{PHP} ser aplicado em tantas aplicações, seja por seu fácil entendimento, sua maneira simples de programar ou até mesmo sua eficiente
+integração com os demais componentes do \ac{LAMP}.
 
 
 \section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
