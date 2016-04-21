@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.10)  21 APR 2016 15:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  21 APR 2016 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tccudesc.tex
 (./tccudesc.tex
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 2 languages loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 3 languages loaded.
 (./monografia.cls
 Document Class: monografia 2001/04/21 v1.4e Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -84,7 +84,7 @@ LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2009/07/02 v2.20.1
+Package: amsthm 2015/03/04 v2.20.2
 \thm@style=\toks19
 \thm@bodyfont=\toks20
 \thm@headfont=\toks21
@@ -122,33 +122,23 @@ File: babel.def 2014/09/25 3.9l Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-
-! Package babel Error: Unknown option `brazilian'. Either you misspelled it
-(babel)                or the language definition file brazilian.ldf was not fo
-und.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.299 \ProcessOptions*
-                      
-Valid options are: shorthands=, KeepShorthandsActive,
-activeacute, activegrave, noconfigs, safe=, main=, math=
-headfoot=, strings=, config=, hyphenmap=, or a language name.
-
-) (./appendix.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+\l@brazilian = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+(./appendix.sty
 Package: appendix 2002/08/06 v1.2 extra appendix facilities
 \c@@pps=\count101
 \c@@ppsavesec=\count102
 \c@@ppsaveapp=\count103
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks25
 \inpenc@posthook=\toks26
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2014/04/30 v1.2b Input encoding file
+File: latin1.def 2015/03/17 v1.2c Input encoding file
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
@@ -168,8 +158,8 @@ Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen115
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count106
 \calc@Cskip=\skip51
 ) (./abntex-abrev.sty
@@ -214,17 +204,17 @@ Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks28
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -232,7 +222,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -263,15 +253,15 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \lst@maxwidth=\dimen121
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count120
 \lst@skipnumbers=\count121
 \lst@framebox=\box29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2014/09/06 1.5e listings configuration
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2014/09/06 1.5e (Carsten Heinz)
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (./acronym.sty
 Package: acronym 2000/05/21 v1.6 Support for acronyms
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
@@ -280,8 +270,8 @@ Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
 \symboldletters=\mathgroup8
 \symboldsymbols=\mathgroup9
 \symboldlasy=\mathgroup10
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 137.
-LaTeX Info: Redefining \bm on input line 203.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
 ) (./comment.sty
 \CommentStream=\write3
 
@@ -571,11 +561,11 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 Package: tkz-graph 2011/06/01 ctan v 1.00 base for graphs
 
 (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
 \et@xins=\count141
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
@@ -583,7 +573,7 @@ Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
 \XKV@tempa@toks=\toks43
 )
 \XKV@depth=\count142
-File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -630,13 +620,13 @@ Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file not used.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/09/06 1.5e listings language file
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2014/09/06 1.5e listings language file
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 \@indexfile=\write5
 \openout5 = `tccudesc.idx'.
@@ -784,7 +774,7 @@ LaTeX Font Warning: Font shape `U/stmry/m/n' undefined
  [8
 
 ] (./introducao.tex
-Chapter 1.
+Cap\'{\i }tulo 1.
 ) (./capitulos.tex
 Overfull \hbox (2.67061pt too wide) in paragraph at lines 4--1
 \U/cmr/m/n/12 Introdu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in
@@ -848,65 +838,60 @@ n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
 [9
 
 ]
-Chapter 2.
+Cap\'{\i }tulo 2.
 [10
 
 ]
 Overfull \hbox (38.56935pt too wide) in paragraph at lines 50--50
-[]\OT1/cmr/bx/n/17.28 FUNCIONAMENTO E COM-PO-NENTES B[]ASICOS 
+[]\OT1/cmr/bx/n/17.28 FUNCIONAMENTO E COM-PO-NEN-TES B[]ASICOS 
  []
 
 [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
-
-Overfull \hbox (22.36818pt too wide) in paragraph at lines 78--82
-[]\U/cmr/m/n/12 Por esses mo-tivos o Linux tem sido bem-sucedido, par-tic-u-lar
--mente como plataforma
- []
-
-[12] [13]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
+ [12] [13]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 139.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 147.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 139.
- [14]
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 147.
 
-LaTeX Warning: Citation `ongoi15:online' on page 15 undefined on input line 158
+[14]
+
+LaTeX Warning: Citation `ongoi15:online' on page 15 undefined on input line 166
 .
 
 
-Overfull \hbox (20.04718pt too wide) in paragraph at lines 164--164
-[]\OT1/cmr/bx/n/17.28 FUNDAMENTA[][]AO DE ATAQUE E SOLU[][]OES 
- []
-
-
-Overfull \hbox (13.10727pt too wide) in paragraph at lines 185--185
-[]\OT1/cmr/bx/n/17.28 FRAMEWORKS E SOLU[][]OES PARA AN[]ALISE
+Overfull \hbox (20.04718pt too wide) in paragraph at lines 172--172
+[]\OT1/cmr/bx/n/17.28 FUNDAMENTA[][]AO DE ATA-QUE E SOLU[][]OES 
  []
 
 [15]
-Overfull \hbox (1.81564pt too wide) in paragraph at lines 202--203
-[]\OT1/cmr/bx/it/12 Proxy \OT1/cmr/bx/n/12 de in-ter-cepta^^Xc~ao: \U/stmry/m/n
-/12 per-mite an^^Salises de-tal-hadas so-bre a in-tera^^Xc~ao navegador-
+Overfull \hbox (13.10727pt too wide) in paragraph at lines 193--193
+[]\OT1/cmr/bx/n/17.28 FRAMEWORKS E SOLU[][]OES PARA AN[]ALISE
  []
 
 
-Overfull \hbox (52.32939pt too wide) in paragraph at lines 214--214
+Overfull \hbox (1.81564pt too wide) in paragraph at lines 210--211
+[]\OT1/cmr/bx/it/12 Proxy \OT1/cmr/bx/n/12 de in-ter-cepta^^Xc~ao: \U/stmry/m/n
+/12 per-mite an^^Salises de-ta-lha-das so-bre a in-tera^^Xc~ao navegador-
+ []
+
+[16]
+Overfull \hbox (52.32939pt too wide) in paragraph at lines 222--222
 []\OT1/cmr/bx/n/17.28 NORMAS, RECOMENDA[][]OES E BOAS PR[]ATICAS
  []
 
-[16] Excluding 'comment' comment. [17]
-Chapter 3.
-) (./tccudesc.bbl [18
+[17] Excluding 'comment' comment. [18]
+Cap\'{\i }tulo 3.
+) (./tccudesc.bbl [19
 
-] [19
+] [20
 
-]) (./anexo.tex) (./apendice.tex) [20]
+]) (./anexo.tex) (./apendice.tex) [21]
 (./tccudesc.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -916,13 +901,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17900 strings out of 495020
- 329789 string characters out of 6181324
- 408415 words of memory out of 5000000
- 20665 multiletter control sequences out of 15000+600000
+ 17944 strings out of 494976
+ 330591 string characters out of 6180335
+ 409685 words of memory out of 5000000
+ 20735 multiletter control sequences out of 15000+600000
  20095 words of font info for 78 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 48i,14n,97p,797b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 16 hyphenation exceptions out of 8191
+ 48i,14n,97p,797b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
@@ -934,10 +919,10 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt12.pfb>
-Output written on tccudesc.pdf (23 pages, 158048 bytes).
+Output written on tccudesc.pdf (24 pages, 159075 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

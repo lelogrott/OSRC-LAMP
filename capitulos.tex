@@ -57,15 +57,17 @@ e armazenar dados. Detalhes dos componentes do sistema se darão a seguir.
 \subsection{Linux}
 \label{subsec:linux}
 
-Linux poderia ser descrito como um sistema operacional similar a 
-qualquer outro, como Windows e OS X. Porém tem algo que o destaca dos demais, 
-desde sua origem em 1991, e que é o motivo do sistema ter crescido e ganhado
+Linux é o \textit{kernel} atuante como base de diversos \ac{SO}s de software livre, tais como Arch, Fedora, Debian e outros. 
+Como \textit{kernel} de diversas distribuições, o Linux é o núcleo do \ac{SO} atuando em baixo nível, permitindo o bom gerenciamento 
+do \ac{SO} sobre o \textit{hardware} \cite{kernel:online}.
+
+Desde sua origem em 1991, sistemas Linux vem crescendo e ganhando
 uma grande força na computação, atualmente presente em lugares desde a bolsa
 de valores de Nova York e supercomputadores  à telefones celulares e computadores
 pessoais, o Linux é um software livre desenvolvido de maneira
 colaborativa \cite{WhatI30:online}. Mais de 1.000 desenvolvedores
 de pelo menos 100 diferentes companhias, contribuíram para cada
-versão do kernel sob a licensa \ac{GPL} que é baseada em quatro
+versão do \textit{kernel} sob a licensa \ac{GPL} que é baseada em quatro
 liberdades \cite{Whati7:online}:
 
 \begin{itemize}
@@ -80,6 +82,9 @@ até mesmo em organizações que confiam veemente em sistemas operacionais
 comerciais como Microsoft Windows, o Linux aparece frequentemente em papeis infraestruturais, como em \textit{gateways} de \ac{SMTP} e servidores \ac{DNS}
 devido a sua confiança, segurança, baixo custo e a qualidade execepcional das aplicações do servidor \cite{bauer2005linux}.
 
+No acrônimo \ac{LAMP} o componente Linux é o primeiro a aparecer. Sendo a base do sistema, todos os outros componentes (Apache, MySQL e PHP) são executados
+sob \textit{kernel} Linux, constituindo assim um serviço gratuito disponibilizado através da integração de um conjunto de \textit{softwares} livres.
+
 \subsection{Apache}
 \label{subsec:apache}
 
@@ -88,6 +93,14 @@ mais popular na Internet desde Abril de 1996 \cite{http:apache}.
 O Apache é um projeto de código livre (sob a licensa \ac{GPL}) da \ac{ASP}, o qual tem como 
 objetivo manter um seguro, eficiente e extensível servidor que provê
 serviços \ac{HTTP} de acordo com os padrões \ac{HTTP} atuais.
+
+Como segundo componente do acrônimo LAMP, o servidor Apache é o provedor de serviços \ac{HTTP}. Sendo capaz de aceitar requisições \ac{HTTP}, é este componente 
+o responsável por responder ao \textit{browser} uma requisição de página \textit{web}, por exemplo. Solicitações também podem ser efetuadas através de execuções de
+\textit{scripts} \ac{PHP}. Páginas mais complexas, consequentemente, são resultados de sistemas mais complexos, a busca e amostragem de dados em uma 
+página \textit{web} não se dá pelo retorno imediato do servidor à aplicação solicitante, dependendo também da execução de um \textit{script} 
+solicitando um certo conjunto de dados ao banco de dados local através de consultas em
+\ac{SQL} executadas pelo \ac{SGBD} MySQL, terceiro componente do acrônimo.
+
 
 \subsection{MySQL}
 \label{subsec:mysql}

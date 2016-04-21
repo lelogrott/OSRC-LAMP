@@ -7,7 +7,7 @@
 
 \bibitem[ASF]{http:apache}
 \abntrefinfo{ASF}{ASF}{}
-{ASF. \emph{The Apache HTTP Server Project}.
+{ASF, A. S.~F. \emph{The Apache HTTP Server Project}.
 \url{https://httpd.apache.org/}.
 (Accessed on 04/08/2016).}
 
@@ -35,6 +35,12 @@ ISBN 978-0-596-00670-9.}
 {GROUP, T.~P. \emph{PHP: Historia do PHP - Manual}. 2016.
 \url{http://php.net/manual/pt_BR/history.php.php}.
 (Accessed on 04/20/2016).}
+
+\bibitem[LIP 2004]{kernel:online}
+\abntrefinfo{LIP}{LIP}{2004}
+{LIP, T. L. I.~P. \emph{Kernel Definition}. May 2004.
+\url{http://www.linfo.org/kernel.html}.
+(Accessed on 04/21/2016).}
 
 \bibitem[MySQL 2013]{MySQL69:online}
 \abntrefinfo{MySQL}{MYSQL}{2013a}
@@ -79,7 +85,7 @@ ISBN 978-0-596-00670-9.}
 \bibitem[Robinson 2013]{CGI:online}
 \abntrefinfo{Robinson}{ROBINSON}{2013}
 {ROBINSON, D. \emph{{The Common Gateway Interface (CGI) Version 1.1}}. RFC
-  Editor, mar. 2013.
+  Editor, March 2013.
 RFC 3875.
  (Request for Comments, 3875).
 Dispon{\'\i}vel em: $<$https://rfc-editor.org/rfc/rfc3875.txt$>$.}

@@ -5,15 +5,15 @@
 \label{sec:lamp}
 
 \ac{LAMP} é conjunto de soluções em forma de uma lista dos componentes centrais usados na
-implementação uma aplicação web. Seu uso é predominante entre pequenas e médias empresas,
+implementação de uma aplicação web. Seu uso é predominante entre pequenas e médias empresas,
 já que tais componentes são de código aberto e não têm custo. \ac{LAMP} pode ser definido pelo seus componentes, sendo eles:
 \textbf{L}inux (sistema operacional), \textbf{A}pache (serividor web), \textbf{M}ySQL(software de banco de dados)
 e \textbf{P}HP (linguagem de programação), que também pode se referir a Perl ou Python, apesar
-de não ser muito comum (mais detalhes serão vistos no tópico \ref{sec:componentes}).
+de não ser muito comum (mais detalhes na Seção \ref{sec:componentes}).
 
-Um exemplo do funcionamento de cada componente do \ac{LAMP} em um servidor \textit{web} se dá por
+Um exemplo do funcionamento de cada componente do \ac{LAMP}, em um servidor \textit{web}, se dá por
 um visitante entrando em um \textit{site} pelo seu navegador, o qual irá enviar um pedido para o servidor,
-onde todos os componentes \ac{LAMP} estão instalados e sendo executados. Este servidor pode então prover ao usuário, interação com 
+no qual todos os componentes \ac{LAMP} estão instalados e sendo executados. Este servidor pode então prover ao usuário, interação com 
 banco de dados através de \textit{scripts} \ac{PHP} através de formulários enviados ao navegador pelo protocolo \ac{HTTP}.
 
 
@@ -21,7 +21,7 @@ banco de dados através de \textit{scripts} \ac{PHP} através de formulários envia
 \label{subsec:historico}
 
 O conceito principal em volta do \ac{LAMP} (um servidor \textit{web} sem custo) foi possível no início de
-1995 quando a \ac{CERN} httpd introduziu o conceito de \ac{CGI}, que tornou possível aos servidores
+1995 quando a \ac{CERN} introduziu o conceito de \ac{CGI}, que tornou possível aos servidores
 executar códigos para criar páginas dinâmicas \cite{CGI:online}. Linux, \ac{CERN} httpd e linguagens de programação do lado do servidor
 como Perl estavam disponíveis gratuitamente, mas conseguir um banco de dados gratuito
 só foi possível mais tarde, com o lançamento de Postgre95.
@@ -29,7 +29,9 @@ só foi possível mais tarde, com o lançamento de Postgre95.
 Ainda em meados de 1995, o servidor \ac{HTTP} Apache e \ac{PHP} foram lançados, compondo então o conjunto de aplicações \ac{LAPP}.
 Finalmente em 1996, MySQL foi lançado e, com ele, o conjunto \ac{LAMP} completo fez-se possível. A popularidade do \ac{LAMP}
 cresceu rapidamente nos anos 90, já que muitas empresas, por razões monetárias, utilizavam \textit{softwares} de código aberto
-em suas páginas \textit{web}.
+em suas páginas \textit{web}. Essa popularidade inicial contribuiu para que o LAMP fosse amplamente utilizado. Assim, se uma
+falha é encontrada nele, uma grande quantidade de usuários são afetados.
+
 
 \subsection{APLICABILIDADE}
 \label{subsec:aplicabilidade}
@@ -55,15 +57,17 @@ e armazenar dados. Detalhes dos componentes do sistema se darão a seguir.
 \subsection{Linux}
 \label{subsec:linux}
 
-Linux poderia ser descrito como um sistema operacional similar a 
-qualquer outro, como Windows e OS X. Porém tem algo que o destaca dos demais, 
-desde sua origem em 1991, e que é o motivo do sistema ter crescido e ganhado
+Linux é o \textit{kernel} atuante como base de diversos \ac{SO}s de software livre, tais como Arch, Fedora, Debian e outros. 
+Como \textit{kernel} de diversas distribuições, o Linux é o núcleo do \ac{SO} atuando em baixo nível, permitindo o bom gerenciamento 
+do \ac{SO} sobre o \textit{hardware} \cite{kernel:online}.
+
+Desde sua origem em 1991, sistemas Linux vem crescendo e ganhando
 uma grande força na computação, atualmente presente em lugares desde a bolsa
 de valores de Nova York e supercomputadores  à telefones celulares e computadores
 pessoais, o Linux é um software livre desenvolvido de maneira
 colaborativa \cite{WhatI30:online}. Mais de 1.000 desenvolvedores
 de pelo menos 100 diferentes companhias, contribuíram para cada
-versão do kernel sob a licensa \ac{GPL} que é baseada em quatro
+versão do \textit{kernel} sob a licensa \ac{GPL} que é baseada em quatro
 liberdades \cite{Whati7:online}:
 
 \begin{itemize}
@@ -78,6 +82,9 @@ até mesmo em organizações que confiam veemente em sistemas operacionais
 comerciais como Microsoft Windows, o Linux aparece frequentemente em papeis infraestruturais, como em \textit{gateways} de \ac{SMTP} e servidores \ac{DNS}
 devido a sua confiança, segurança, baixo custo e a qualidade execepcional das aplicações do servidor \cite{bauer2005linux}.
 
+No acrônimo \ac{LAMP} o componente Linux é o primeiro a aparecer. Sendo a base do sistema, todos os outros componentes (Apache, MySQL e PHP) são executados
+sob \textit{kernel} Linux, constituindo assim um serviço gratuito disponibilizado através da integração de um conjunto de \textit{softwares} livres.
+
 \subsection{Apache}
 \label{subsec:apache}
 
@@ -86,6 +93,19 @@ mais popular na Internet desde Abril de 1996 \cite{http:apache}.
 O Apache é um projeto de código livre (sob a licensa \ac{GPL}) da \ac{ASP}, o qual tem como 
 objetivo manter um seguro, eficiente e extensível servidor que provê
 serviços \ac{HTTP} de acordo com os padrões \ac{HTTP} atuais.
+
+Como segundo componente do acrônimo LAMP, o servidor Apache é o provedor de serviços \ac{HTTP}. Sendo capaz de aceitar requisições \ac{HTTP}, é este componente 
+o responsável por responder ao \textit{browser} uma requisição de página \textit{web}, por exemplo. Solicitações também podem ser efetuadas através de execuções de
+\textit{scripts} \ac{PHP}. Páginas mais complexas, consequentemente, são resultados de sistemas mais complexos, a busca e amostragem de dados em uma 
+página \textit{web} pode se dar através da seguinte ordem de eventos:
+\begin{itemize}
+ \item 
+\end{itemize}
+
+
+resultado do retorno ao Apache da execução de um \textit{script} \ac{PHP} solicitando um certo conjunto de dados ao banco de dados local através de consultas em
+\ac{SQL} executadas pelo \ac{SGBD} MySQL, terceiro componente do acrônimo.
+
 
 \subsection{MySQL}
 \label{subsec:mysql}
@@ -116,7 +136,7 @@ sendo o MySQL um dos mais usados. Algumas características desse sistema\cite{MyS
 
 Mesmo com a segurança presente, precisamos ainda tomar algumas atitudes para 
 dificultar que o \ac{BD} seja acessado por pessoas não autorizadas. Alguns métodos básicos que 
-ajudam a proteger seu \ac{BD}\cite{MySQL10:online}:
+ajudam a proteger seu \ac{BD} \cite{MySQL10:online}:
 
 \begin{itemize}
  \item Não prover acesso a ninguém para a tabela usuário do \ac{BD} MySQL.
@@ -133,7 +153,8 @@ pessoa não autorizada não poderá acessá-lo.
 \subsection{PHP}
 \label{subsec:php}
 
-O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s binários escritos na linguagem de
+O \ac{PHP} foi criado em 1994 por Rasmus Lerdof, o projeto inicial era um simples conjunto de \ac{CGI}s\footnote{Uma maneira padrão para um servidor \textit{web} passar a
+solitação do usuário para uma aplicação e receber dados para enviar ao usuário.} binários escritos na linguagem de
 programação C, usados para rastrear as visitas ao seu \textit{site}\cite{PHP:H3:online}. Com o tempo, otimizações foram sendo feitas e funcionalidades adicionadas.
 Sendo lançado em 1998, o \ac{PHP} 3.0 foi a primeira versão que contém traços do \ac{PHP} de hoje em dia, incluindo o suporte a programação orientada a
 objeto. Porém essa versão tinha muita dificuldade em processar aplicações complexas, foi com base nessa premissa que foram lançadas as versões 4.0
