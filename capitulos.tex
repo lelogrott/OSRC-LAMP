@@ -213,14 +213,25 @@ do processo.
 
 \section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:frameworks}
-
 \textit{Frameworks} para análise de vulnerabilidades são ferramentas para facilitar a detecção de vulnerabilidades em determinado 
-sistema/página \textit{web}.
+sistema/página \textit{web}, também conseguindo prever a efetividade das medidas tomadas para combater as vulnerabilidades encontradas
+pelos frameworks. Porém, para se obter a máxima eficiência destas ferramentas, precisa-se seguir alguns passos para a
+análise de vulnerabilidades \cite{Vulne27:online}:
 
-Uma deles é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{website}, podendo verificar:
+\begin{itemize}
+ \item \textbf{Conduzir avaliação:} consiste em dois objetivos principais, 
+o de planejamento (coletar informações, definir escopo) e o método de 
+aplicar a análise de vulnerabilidades (entrevistar administradores e escanear a segurança.)
+ \item \textbf{Identificar exposições:} revisar os dados coletados na fase anterior
+e classificá-los de acordo com seu nível de perigo, e assim propor soluções.
+ \item \textbf{Endereçar exposições:} tentar resolver as exposições identificadas
+na fase anterior.
+\end{itemize}
+
+Uma dessas ferramentas é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{websites}, podendo verificar:
 mais de 6.000 ameaças em potencial localizadas em arquivos ou programas, mais de 1.200 versões desatualizadas de servidores
- e mais de 270 problemas em servidores específicos \cite{Nikto57:online}. Alguns dos principais problemas que podem
-ser achados são: arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
+ e mais de 270 problemas em servidores específicos \cite{Nikto57:online}. Alguns dos principais problemas frequentemente detectados
+são: arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
 
 Outra ferramenta que pode ser citada é o \textit{Vega}, com objetivos semelhantes ao \textit{Nikto}, 
 porém com dois modos de operação \cite{About78:online}: 
@@ -238,6 +249,7 @@ arquiteturas \cite{OpenV32:online}:
  \item [Rastreados OpenVAS] executa os testes de vulnerabilidades.
  \item [Gerenciador OpenVAS] consolida a varredura de vulnerabilidade em uma solução completa de gerenciamento de vulnerabilidade.
 \end{description}
+
 
 
 \section{NORMAS, RECOMENDAÇÕES E BOAS PRÁTICAS PARA ANÁLISE DE VULNERABILIDADES}

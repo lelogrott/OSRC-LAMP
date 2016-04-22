@@ -115,6 +115,13 @@ Dispon{\'\i}vel em: $<$https://rfc-editor.org/rfc/rfc3875.txt$>$.}
 \url{http://searchenterpriselinux.techtarget.com/definition/LAMP}.
 (Accessed on 04/21/2016).}
 
+\bibitem[SANS 2001]{Vulne27:online}
+\abntrefinfo{SANS}{SANS}{2001}
+{SANS. \emph{Vulnerability Assessments: The Pro-active Steps to Secure Your
+  Organization}. 2001.
+\url{https://www.sans.org/reading-room/whitepapers/threats/vulnerability-assessments-pro-active-steps-secure-organization-453}.
+(Accessed on 04/22/2016).}
+
 \bibitem[SANS 2002]{sans:2002}
 \abntrefinfo{SANS}{SANS}{2002}
 {SANS. \emph{Penetration Testing - Is it right for you?} 2002.
