@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.10)  21 APR 2016 20:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.4.10)  22 APR 2016 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,65 +854,65 @@ LaTeX Warning: Citation `RouseLamp' on page 10 undefined on input line 17.
 
 
 LaTeX Warning: Citation `BrownFuncionamento' on page 10 undefined on input line
- 22.
+ 23.
 
 
 LaTeX Warning: Citation `PostgreeHistorico' on page 10 undefined on input line 
-32.
+35.
 
 [10
 
 ]
 
-LaTeX Warning: Citation `GeipelEmpresas' on page 11 undefined on input line 37.
+LaTeX Warning: Citation `GeipelEmpresas' on page 11 undefined on input line 40.
 
 
 
-Overfull \hbox (38.56935pt too wide) in paragraph at lines 55--55
+Overfull \hbox (38.56935pt too wide) in paragraph at lines 58--58
 []\OT1/cmr/bx/n/17.28 FUNCIONAMENTO E COM-PO-NENTES B[]ASICOS 
  []
 
 [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
 
-Overfull \hbox (22.36818pt too wide) in paragraph at lines 85--89
+Overfull \hbox (22.36818pt too wide) in paragraph at lines 88--92
 []\U/cmr/m/n/12 Por esses mo-tivos o Linux tem sido bem-sucedido, par-tic-u-lar
 -mente como plataforma
  []
 
 [12] [13]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 159.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 159.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 162.
  [14]
 
-LaTeX Warning: Citation `ongoi15:online' on page 15 undefined on input line 178
+LaTeX Warning: Citation `ongoi15:online' on page 15 undefined on input line 181
 .
 
 
-Overfull \hbox (20.04718pt too wide) in paragraph at lines 184--184
+Overfull \hbox (20.04718pt too wide) in paragraph at lines 187--187
 []\OT1/cmr/bx/n/17.28 FUNDAMENTA[][]AO DE ATAQUE E SOLU[][]OES 
  []
 
 [15]
-Overfull \hbox (13.10727pt too wide) in paragraph at lines 205--205
+Overfull \hbox (13.10727pt too wide) in paragraph at lines 208--208
 []\OT1/cmr/bx/n/17.28 FRAMEWORKS E SOLU[][]OES PARA AN[]ALISE
  []
 
 [16]
-Overfull \hbox (1.81564pt too wide) in paragraph at lines 222--223
+Overfull \hbox (1.81564pt too wide) in paragraph at lines 225--226
 []\OT1/cmr/bx/it/12 Proxy \OT1/cmr/bx/n/12 de in-ter-cepta^^Xc~ao: \U/stmry/m/n
 /12 per-mite an^^Salises de-tal-hadas so-bre a in-tera^^Xc~ao navegador-
  []
 
 
-Overfull \hbox (52.32939pt too wide) in paragraph at lines 234--234
+Overfull \hbox (52.32939pt too wide) in paragraph at lines 237--237
 []\OT1/cmr/bx/n/17.28 NORMAS, RECOMENDA[][]OES E BOAS PR[]ATICAS
  []
 
@@ -950,7 +950,7 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt12.pfb>
-Output written on tccudesc.pdf (24 pages, 159634 bytes).
+Output written on tccudesc.pdf (24 pages, 159743 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
