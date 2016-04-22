@@ -44,11 +44,13 @@ falha é encontrada nele, uma grande quantidade de usuários são afetados.
 Sistemas \ac{LAMP} podem ser encontrados em diversos níveis de aplicações. Quem utiliza um sistema operacional com kernel Linux em seu computador pessoal
 e deseja desenvolver uma aplicação \textit{web}
 pode fazê-la através da instalação dos componentes faltantes, ou seja, o Apache como servidor \ac{HTTP}, MySQL como banco de dados local e \ac{PHP} como linguagem de \textit{script}
-de servidor local. Após essas configurações o sistema está pronto para exibir \textit{web sites} criados localmente, os quais poderam conter formulários a serem processados e enviados
+de servidor local. Após essas configurações, o sistema está pronto para exibir \textit{web sites} criados localmente, os quais poderão conter formulários a 
+serem processados e enviados
 a outro servidor ou armazenados na própria máquina. Com o ajuste de alguns detalhes (configurações de \textit{firewall} e permissões), este \textit{site} desenvolvido localmente
 pode se tornar acessível à usuários externos, fazendo com que o sistema se assemelhe à um servidor contratado.
 
-Não se limitando a projetos de desenvolvimento local, o \ac{LAMP} se encontra frequentemente em servidores providos por \ac{InP}s, onde a principal diferença de um sistema local
+Não se limitando a projetos de desenvolvimento local, o \ac{LAMP} se encontra frequentemente em servidores providos por \ac{InP}s, nos quais a principal
+diferença de um sistema local
 é a falta de interface gráfica, para alguns usuários experientes isso não é um problema e então a instalação dos componentes se dá de forma muito parecida,
 através de linhas de comando.
 
@@ -57,7 +59,7 @@ através de linhas de comando.
 
 Para garantir o bom funcionamento do sistema, é necessário a boa comunicação e integração entre todos os componentes do \ac{LAMP}.
 Apesar de serem serviços independentes, juntos eles constituem um servidor \textit{web} capaz de executar \textit{scripts} (do lado do servidor) 
-e armazenar dados. Detalhes dos componentes do sistema se darão a seguir.
+e armazenar dados. Detalhes dos componentes do sistema são descritos nas seções \ref{subsec:linux} à \ref{subsec:php}.
 
 \subsection{Linux}
 \label{subsec:linux}
@@ -121,7 +123,7 @@ veio a ser adotado como principal \ac{BD} nos servidores.
 
 Um \ac{BD} pode ser definido como uma coleção de dados, para conseguir acessar
 os dados armazenados nesse sistema, teve-se a necessidade de criar algum tipo de gerenciador,
-sendo o MySQL um dos mais usados. Algumas características desse sistema\cite{MySQL69:online}:
+sendo o MySQL um dos mais usados. Algumas características desse sistema \cite{MySQL69:online}:
 
 \begin{itemize}
  \item \textbf{Banco de dados relacional:} a principal diferença desse tipo de \ac{BD} para os outros
@@ -181,7 +183,7 @@ Logo, observa-se o porquê do \ac{PHP} ser aplicado em tantas aplicações, seja po
 integração com os demais componentes do \ac{LAMP}.
 
 
-\section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
+\section{FUNDAMENTAÇÃO DE ATAQUES E SOLUÇÕES}
 \label{sec:fundamentos}
 
 Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuírem rotinas 
@@ -191,7 +193,7 @@ autorizado, programado e sistemático onde se faz uso de vulnerabilidades conheci
 rede ou conteúdos de aplicações.
 
 Testes de penetração podem ser executados de mais de uma maneira para propor mais de um ponto de vista sob a mesma organização. 
-Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos \cite{sans:2002}.
+Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos \cite{sans:2002}:
 
 \begin{description}
       \item[Teste  interno de penetração] Realizado com o objetivo de identificar vulnerabilidades com acesso
@@ -201,6 +203,10 @@ Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos
       \item[Teste externo de penetração] Realizado com o objetivo de identificar vulnerabilidades presentes através de
       conexões que foram estabelecidas através da conexão entre a organização e a Internet (através do \textit{firewall} ou \textit{gateway}).
 \end{description}
+
+Testes de penetração são um método de segurança ofensiva, na qual ocorre a reprodução de uma tentativa real de invasão para que assim sejam identificadas
+vulnerabilidades na segurança do sistema. Para a execução dos testes existem ferramentas (ou \textit{frameworks}) com configurações predefinidas para auxiliar no decorrer
+do processo.
 
 \section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
 \label{sec:frameworks}

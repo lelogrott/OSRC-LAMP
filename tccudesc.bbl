@@ -17,6 +17,12 @@
   2005.
 ISBN 978-0-596-00670-9.}
 
+\bibitem[Brown 2005]{BrownFuncionamento}
+\abntrefinfo{Brown}{BROWN}{2005}
+{BROWN, M. \emph{Understanding LAMP}. 2005.
+\url{http://www.serverwatch.com/tutorials/article.php/3567741/Understanding-LAMP.htm}.
+(Accessed on 04/21/2016).}
+
 \bibitem[CVE 2016]{CVE-F22:online}
 \abntrefinfo{CVE}{CVE}{2016}
 {CVE. \emph{CVE - Frequently Asked Questions}. 2016.
@@ -29,6 +35,13 @@ ISBN 978-0-596-00670-9.}
   January 2016.
 \url{http://www.gnu.org/philosophy/free-sw.en.html}.
 (Accessed on 04/08/2016).}
+
+\bibitem[Geipel 2010]{GeipelEmpresas}
+\abntrefinfo{Geipel}{GEIPEL}{2010}
+{GEIPEL, M.~M. \emph{Dynamics of Communities and Code in Open Source Software}.
+  2010.
+\url{http://searchenterpriselinux.techtarget.com/definition/LAMP}.
+(Accessed on 04/21/2016).}
 
 \bibitem[Group 2016]{PHP:H3:online}
 \abntrefinfo{Group}{GROUP}{2016}
@@ -75,6 +88,12 @@ ISBN 978-0-596-00670-9.}
 \url{http://php.net/manual/pt_BR/intro-whatcando.php}.
 (Accessed on 04/09/2016).}
 
+\bibitem[PostgreSQL 2010]{PostgreeHistorico}
+\abntrefinfo{PostgreSQL}{POSTGRESQL}{2010}
+{POSTGRESQL. \emph{PostgreSQL 8.1.23 Documentation}. 2010.
+\url{http://www.postgresql.org/docs/8.1/interactive/history.html}.
+(Accessed on 04/21/2016).}
+
 \bibitem[Proffitt 2009]{WhatI30:online}
 \abntrefinfo{Proffitt}{PROFFITT}{2009}
 {PROFFITT, B. \emph{What Is Linux: An Overview of the Linux Operating System |
@@ -89,6 +108,12 @@ ISBN 978-0-596-00670-9.}
 RFC 3875.
  (Request for Comments, 3875).
 Dispon{\'\i}vel em: $<$https://rfc-editor.org/rfc/rfc3875.txt$>$.}
+
+\bibitem[Rouse 2008]{RouseLamp}
+\abntrefinfo{Rouse}{ROUSE}{2008}
+{ROUSE, M. \emph{LAMP (Linux, Apache, MySQL, PHP)}. December 2008.
+\url{http://searchenterpriselinux.techtarget.com/definition/LAMP}.
+(Accessed on 04/21/2016).}
 
 \bibitem[SANS 2002]{sans:2002}
 \abntrefinfo{SANS}{SANS}{2002}

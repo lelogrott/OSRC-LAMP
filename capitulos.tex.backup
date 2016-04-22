@@ -1,6 +1,11 @@
 \chapter{Conceitos}
 \label{cap:conceitos}
 
+Para que se possa ter uma maior compreensão das vulnerabilidades de um sistema, primeiro
+deve-se conhecer o mesmo. Para isso, nesse capítulo, serão apresentados os conceitos e
+definições básicas para compreensão de como o ambiente \ac{LAMP} funciona.
+
+
 \section{LAMP}
 \label{sec:lamp}
 
@@ -9,12 +14,12 @@ implementação de uma aplicação web. Seu uso é predominante entre pequenas e médi
 já que tais componentes são de código aberto e não têm custo. \ac{LAMP} pode ser definido pelo seus componentes, sendo eles:
 \textbf{L}inux (sistema operacional), \textbf{A}pache (serividor web), \textbf{M}ySQL(software de banco de dados)
 e \textbf{P}HP (linguagem de programação), que também pode se referir a Perl ou Python, apesar
-de não ser muito comum (mais detalhes na Seção \ref{sec:componentes}).
+de não ser muito comum \cite{RouseLamp} (mais detalhes na Seção \ref{sec:componentes}).
 
 Um exemplo do funcionamento de cada componente do \ac{LAMP}, em um servidor \textit{web}, se dá por
 um visitante entrando em um \textit{site} pelo seu navegador, o qual irá enviar um pedido para o servidor,
 no qual todos os componentes \ac{LAMP} estão instalados e sendo executados. Este servidor pode então prover ao usuário, interação com 
-banco de dados através de \textit{scripts} \ac{PHP} através de formulários enviados ao navegador pelo protocolo \ac{HTTP}.
+banco de dados através de \textit{scripts} \ac{PHP} através de formulários enviados ao navegador pelo protocolo \ac{HTTP} \cite{BrownFuncionamento}.
 
 
 \subsection{HISTÓRICO}
@@ -24,12 +29,12 @@ O conceito principal em volta do \ac{LAMP} (um servidor \textit{web} sem custo) 
 1995 quando a \ac{CERN} introduziu o conceito de \ac{CGI}, que tornou possível aos servidores
 executar códigos para criar páginas dinâmicas \cite{CGI:online}. Linux, \ac{CERN} httpd e linguagens de programação do lado do servidor
 como Perl estavam disponíveis gratuitamente, mas conseguir um banco de dados gratuito
-só foi possível mais tarde, com o lançamento de Postgre95.
+só foi possível mais tarde, com o lançamento de Postgre95 \cite{PostgreeHistorico}.
 
 Ainda em meados de 1995, o servidor \ac{HTTP} Apache e \ac{PHP} foram lançados, compondo então o conjunto de aplicações \ac{LAPP}.
 Finalmente em 1996, MySQL foi lançado e, com ele, o conjunto \ac{LAMP} completo fez-se possível. A popularidade do \ac{LAMP}
 cresceu rapidamente nos anos 90, já que muitas empresas, por razões monetárias, utilizavam \textit{softwares} de código aberto
-em suas páginas \textit{web}. Essa popularidade inicial contribuiu para que o LAMP fosse amplamente utilizado. Assim, se uma
+em suas páginas \textit{web} \cite{GeipelEmpresas}. Essa popularidade inicial contribuiu para que o LAMP fosse amplamente utilizado. Assim, se uma
 falha é encontrada nele, uma grande quantidade de usuários são afetados.
 
 
@@ -39,11 +44,13 @@ falha é encontrada nele, uma grande quantidade de usuários são afetados.
 Sistemas \ac{LAMP} podem ser encontrados em diversos níveis de aplicações. Quem utiliza um sistema operacional com kernel Linux em seu computador pessoal
 e deseja desenvolver uma aplicação \textit{web}
 pode fazê-la através da instalação dos componentes faltantes, ou seja, o Apache como servidor \ac{HTTP}, MySQL como banco de dados local e \ac{PHP} como linguagem de \textit{script}
-de servidor local. Após essas configurações o sistema está pronto para exibir \textit{web sites} criados localmente, os quais poderam conter formulários a serem processados e enviados
+de servidor local. Após essas configurações, o sistema está pronto para exibir \textit{web sites} criados localmente, os quais poderão conter formulários a 
+serem processados e enviados
 a outro servidor ou armazenados na própria máquina. Com o ajuste de alguns detalhes (configurações de \textit{firewall} e permissões), este \textit{site} desenvolvido localmente
 pode se tornar acessível à usuários externos, fazendo com que o sistema se assemelhe à um servidor contratado.
 
-Não se limitando a projetos de desenvolvimento local, o \ac{LAMP} se encontra frequentemente em servidores providos por \ac{InP}s, onde a principal diferença de um sistema local
+Não se limitando a projetos de desenvolvimento local, o \ac{LAMP} se encontra frequentemente em servidores providos por \ac{InP}s, nos quais a principal
+diferença de um sistema local
 é a falta de interface gráfica, para alguns usuários experientes isso não é um problema e então a instalação dos componentes se dá de forma muito parecida,
 através de linhas de comando.
 
@@ -52,7 +59,7 @@ através de linhas de comando.
 
 Para garantir o bom funcionamento do sistema, é necessário a boa comunicação e integração entre todos os componentes do \ac{LAMP}.
 Apesar de serem serviços independentes, juntos eles constituem um servidor \textit{web} capaz de executar \textit{scripts} (do lado do servidor) 
-e armazenar dados. Detalhes dos componentes do sistema se darão a seguir.
+e armazenar dados. Detalhes dos componentes do sistema são descritos nas seções \ref{subsec:linux} à \ref{subsec:php}.
 
 \subsection{Linux}
 \label{subsec:linux}
@@ -96,14 +103,11 @@ serviços \ac{HTTP} de acordo com os padrões \ac{HTTP} atuais.
 
 Como segundo componente do acrônimo LAMP, o servidor Apache é o provedor de serviços \ac{HTTP}. Sendo capaz de aceitar requisições \ac{HTTP}, é este componente 
 o responsável por responder ao \textit{browser} uma requisição de página \textit{web}, por exemplo. Solicitações também podem ser efetuadas através de execuções de
-\textit{scripts} \ac{PHP}. Páginas mais complexas, consequentemente, são resultados de sistemas mais complexos, a busca e amostragem de dados em uma 
-página \textit{web} pode se dar através da seguinte ordem de eventos:
-\begin{itemize}
- \item 
-\end{itemize}
+\textit{scripts} \ac{PHP}. 
 
-
-resultado do retorno ao Apache da execução de um \textit{script} \ac{PHP} solicitando um certo conjunto de dados ao banco de dados local através de consultas em
+Páginas mais complexas, consequentemente, são resultados de sistemas mais complexos. A busca e amostragem de dados em uma 
+página \textit{web} não se dá pelo retorno imediato do servidor à aplicação solicitante, dependendo também da execução de um \textit{script} 
+solicitando um certo conjunto de dados ao banco de dados local através de consultas em
 \ac{SQL} executadas pelo \ac{SGBD} MySQL, terceiro componente do acrônimo.
 
 
@@ -119,7 +123,7 @@ veio a ser adotado como principal \ac{BD} nos servidores.
 
 Um \ac{BD} pode ser definido como uma coleção de dados, para conseguir acessar
 os dados armazenados nesse sistema, teve-se a necessidade de criar algum tipo de gerenciador,
-sendo o MySQL um dos mais usados. Algumas características desse sistema\cite{MySQL69:online}:
+sendo o MySQL um dos mais usados. Algumas características desse sistema \cite{MySQL69:online}:
 
 \begin{itemize}
  \item \textbf{Banco de dados relacional:} a principal diferença desse tipo de \ac{BD} para os outros
@@ -179,7 +183,7 @@ Logo, observa-se o porquê do \ac{PHP} ser aplicado em tantas aplicações, seja po
 integração com os demais componentes do \ac{LAMP}.
 
 
-\section{FUNDAMENTAÇÃO DE ATAQUE E SOLUÇÕES}
+\section{FUNDAMENTAÇÃO DE ATAQUES E SOLUÇÕES}
 \label{sec:fundamentos}
 
 Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuírem rotinas 
@@ -189,7 +193,7 @@ autorizado, programado e sistemático onde se faz uso de vulnerabilidades conheci
 rede ou conteúdos de aplicações.
 
 Testes de penetração podem ser executados de mais de uma maneira para propor mais de um ponto de vista sob a mesma organização. 
-Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos \cite{sans:2002}.
+Para tal, existem dois tipos de testes (não exclusivos) que podem ser conduzidos \cite{sans:2002}:
 
 \begin{description}
       \item[Teste  interno de penetração] Realizado com o objetivo de identificar vulnerabilidades com acesso
