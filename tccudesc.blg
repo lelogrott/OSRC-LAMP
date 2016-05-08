@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tccudesc.aux
 The style file: abnt-alf.bst
@@ -22,45 +22,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 22 entries,
+You've used 25 entries,
             6476 wiz_defined-function locations,
-            1285 strings with 12402 characters,
-and the built_in function-call counts, 13700 in all, are:
-= -- 1078
-> -- 364
+            1299 strings with 12740 characters,
+and the built_in function-call counts, 15479 in all, are:
+= -- 1201
+> -- 409
 < -- 0
-+ -- 169
-- -- 120
-* -- 809
-:= -- 1963
-add.period$ -- 108
-call.type$ -- 22
-change.case$ -- 181
-chr.to.int$ -- 21
-cite$ -- 22
-duplicate$ -- 675
-empty$ -- 1237
-format.name$ -- 554
-if$ -- 3226
-int.to.chr$ -- 1
++ -- 186
+- -- 135
+* -- 914
+:= -- 2212
+add.period$ -- 123
+call.type$ -- 25
+change.case$ -- 205
+chr.to.int$ -- 22
+cite$ -- 25
+duplicate$ -- 765
+empty$ -- 1411
+format.name$ -- 623
+if$ -- 3646
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 379
-newline$ -- 140
-num.names$ -- 110
-pop$ -- 500
+missing$ -- 430
+newline$ -- 158
+num.names$ -- 125
+pop$ -- 563
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 77
 quote$ -- 0
-skip$ -- 845
+skip$ -- 951
 stack$ -- 1
-substring$ -- 371
-swap$ -- 274
+substring$ -- 434
+swap$ -- 310
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 123
+while$ -- 141
 width$ -- 0
-write$ -- 338
+write$ -- 383
 (There was 1 warning)

@@ -49,6 +49,18 @@ ISBN 978-0-596-00670-9.}
 \url{http://php.net/manual/pt_BR/history.php.php}.
 (Accessed on 04/20/2016).}
 
+\bibitem[Kali 2016]{Vega9:online}
+\abntrefinfo{Kali}{KALI}{2016a}
+{KALI. \emph{Vega | Penetration Testing Tools}. 2016.
+\url{http://tools.kali.org/web-applications/vega}.
+(Accessed on 05/08/2016).}
+
+\bibitem[Kali 2016]{Whati87:online}
+\abntrefinfo{Kali}{KALI}{2016b}
+{KALI. \emph{What is Kali Linux ? | Kali Linux}. 2016.
+\url{http://docs.kali.org/introduction/what-is-kali-linux}.
+(Accessed on 05/08/2016).}
+
 \bibitem[LIP 2004]{kernel:online}
 \abntrefinfo{LIP}{LIP}{2004}
 {LIP, T. L. I.~P. \emph{Kernel Definition}. May 2004.
@@ -136,10 +148,16 @@ Dispon{\'\i}vel em: $<$https://rfc-editor.org/rfc/rfc3875.txt$>$.}
 (Accessed on 04/08/2016).}
 
 \bibitem[Subgraph 2014]{About78:online}
-\abntrefinfo{Subgraph}{SUBGRAPH}{2014}
+\abntrefinfo{Subgraph}{SUBGRAPH}{2014a}
 {SUBGRAPH. \emph{About Vega}. 2014.
 \url{https://subgraph.com/vega/documentation/about-vega/index.en.html}.
 (Accessed on 04/09/2016).}
+
+\bibitem[Subgraph 2014]{VegaV22:online}
+\abntrefinfo{Subgraph}{SUBGRAPH}{2014b}
+{SUBGRAPH. \emph{Vega Vulnerability Scanner}. 2014.
+\url{https://subgraph.com/vega/}.
+(Accessed on 05/08/2016).}
 
 \bibitem[SULLO e LODGE]{Nikto57:online}
 \abntrefinfo{SULLO e LODGE}{SULLO; LODGE}{}

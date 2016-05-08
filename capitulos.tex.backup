@@ -216,7 +216,7 @@ do processo.
 \textit{Frameworks} para análise de vulnerabilidades são ferramentas para facilitar a detecção de vulnerabilidades em determinado 
 sistema/página \textit{web}, também conseguindo prever a efetividade das medidas tomadas para combater as vulnerabilidades encontradas
 pelos frameworks. Porém, para se obter a máxima eficiência destas ferramentas, precisa-se seguir alguns passos para a
-análise de vulnerabilidades:
+análise de vulnerabilidades \cite{Vulne27:online}:
 
 \begin{itemize}
  \item \textbf{Conduzir avaliação:} consiste em dois objetivos principais, 
@@ -228,10 +228,10 @@ e classificá-los de acordo com seu nível de perigo, e assim propor soluções.
 na fase anterior.
 \end{itemize}
 
-Uma dessas ferramentas é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{website}, podendo verificar:
+Uma dessas ferramentas é o \textit{Nikto}, o qual é uma ferramenta de segurança específica para \textit{websites}, podendo verificar:
 mais de 6.000 ameaças em potencial localizadas em arquivos ou programas, mais de 1.200 versões desatualizadas de servidores
- e mais de 270 problemas em servidores específicos \cite{Nikto57:online}. Alguns dos principais problemas que podem
-ser achados são: arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
+ e mais de 270 problemas em servidores específicos \cite{Nikto57:online}. Alguns dos principais problemas frequentemente detectados
+são: arquivos perigosos, serviços mal configurados, \textit{scripts} vulneráveis, entre outros.
 
 Outra ferramenta que pode ser citada é o \textit{Vega}, com objetivos semelhantes ao \textit{Nikto}, 
 porém com dois modos de operação \cite{About78:online}: 
@@ -282,6 +282,66 @@ Outro meio de se prevenir contra ataques pode ser feito com uma simples revisão 
 não apenas nos seus estados finais. Também é viável realizar 
 testes unitários para verificar sua consistência.
 
+
+\chapter{LAMP * KALI}
+\label{lampkali}
+
+Neste capítulo será apresentado as principais vulnerabilidades em sistemas \ac{LAMP}, bem como os principais ataques realizados. Estes 
+ataques/vulnerabilidades serão analisadas com a ajuda do sistema operacional KALI, baseada em distribuição Linux, o qual é especializado em realizar
+testes de intrusão. Portanto, algumas ferramentas serão descritas e futuramente usadas para a realização de testes.
+
+\section{LAMP}
+
+
+
+\subsection{VULNERABILIDADES}
+\subsubsection{Ameaças em potencial}
+\subsection{MÉTODOS DE EXPLORAÇÃO}
+
+
+
+\subsection{PRINCIPAIS ATAQUES}
+
+SQL Injection
+
+Cross-site Scripting (XSS)
+
+\section{KALI}
+
+O sistema operacional KALI Linux é uma distribuição Linux especializada em testes de intrusão. Com isso, o sistema possui muitas funcionalidades para que possa 
+ser um dos melhores sistemas para a realização de testes de penetração \cite{Whati87:online}, como:
+
+\begin{itemize}
+ \item \textbf{Mais de 600 ferramentas para testes de penetrações.}
+ \item \textbf{\textit{Open source} e gratuito.}
+ \item \textbf{Desenvolvido por um pequeno grupo, utilizando protocolos seguros.}
+ \item \textbf{Suporte a múltiplos idiomas.}
+ \item \textbf{Completamente customizável.}
+\end{itemize}
+
+Com todas essas características percebe-se o quão poderoso o Kali Linux pode ser quando utilizado por pessoas que necessitam realizar testes de penetração. Porém, como o sistema
+foi desenvolvido para necessidades específicas, usuários que não conhecem/utilizam distribuições Linux podem ter dificuldades com relação as ferramentas, pois mesmo ele sendo 
+\textit{open source} não são todos os usuários que podem contribuir para o seu desenvolvimento (questões de segurança).
+
+
+
+\subsection{ORGANIZAÇÃO}
+\subsection{FERRAMENTAS PARA ANÁLISE DO LAMP}
+
+Ferramentas para análise do \ac{LAMP} são acessórios que facilitam ao se procurar por vulnerabilidades. Nesta seção apresentar-se-á algumas dessas ferramentas, descrevendo-as 
+e informando algumas características específicas, todas as ferramentas aqui apresentadas estão disponibilizadas sem custo e nativamente quando instalado o sistema operacional 
+Kali Linux.
+
+Uma ferramenta que será utilizada para a análise do \ac{LAMP} será o \textit{Vega}, o qual é gratuito e \textit{open source}, sua especialidade consiste em análise de vulnerabilidade
+em servidores \textit{web}. Neste acessório têm-se incluido um escaneador automático, o qual possui a função de realizar testes rápidos, as vulnerabilidades que o \textit{Vega} pode 
+encontrar: XSS (\textit{cross-site scripting}, SQL injection, dentre outras \cite{Vega9:online, VegaV22:online}.
+
+
+
+
+
+
+\subsection{TÉCNICAS X MÉTODOS X FERRAMENTAS}
 
 \begin{comment}
 
