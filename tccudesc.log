@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.3)  8 MAY 2016 19:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.3)  8 MAY 2016 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -848,13 +848,13 @@ Overfull \hbox (52.32939pt too wide) in paragraph at lines 255--255
 Cap\'{\i }tulo 3.
 [21
 
-] Excluding 'comment' comment. [22]
+] [22] Excluding 'comment' comment. [23]
 Cap\'{\i }tulo 4.
-) (./tccudesc.bbl [23
+) (./tccudesc.bbl [24
 
-] [24
+] [25
 
-] [25]) (./anexo.tex) (./apendice.tex) [26]
+] [26]) (./anexo.tex) (./apendice.tex) [27]
 (./tccudesc.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -864,13 +864,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16141 strings out of 495004
- 278325 string characters out of 6180663
- 375130 words of memory out of 5000000
- 18924 multiletter control sequences out of 15000+600000
+ 16146 strings out of 495004
+ 278432 string characters out of 6180663
+ 376130 words of memory out of 5000000
+ 18929 multiletter control sequences out of 15000+600000
  20095 words of font info for 78 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 49i,13n,97p,797b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,13n,97p,797b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
@@ -882,10 +882,10 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt12.pfb>
-Output written on tccudesc.pdf (29 pages, 169707 bytes).
+Output written on tccudesc.pdf (30 pages, 172579 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 148 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

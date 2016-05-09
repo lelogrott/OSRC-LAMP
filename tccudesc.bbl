@@ -94,6 +94,12 @@ ISBN 978-0-596-00670-9.}
 \url{http://www.openvas.org/software.html}.
 (Accessed on 04/09/2016).}
 
+\bibitem[OWASP 2016]{SQLIn46:online}
+\abntrefinfo{OWASP}{OWASP}{2016}
+{OWASP. \emph{SQL Injection - OWASP}. 2016.
+\url{https://www.owasp.org/index.php/SQL_Injection}.
+(Accessed on 05/08/2016).}
+
 \bibitem[PHP 2016]{PHP:O35:online}
 \abntrefinfo{PHP}{PHP}{2016}
 {PHP. \emph{PHP: O que o PHP pode fazer? - Manual}. March 2016.

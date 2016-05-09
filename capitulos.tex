@@ -302,7 +302,24 @@ testes de intrusão. Portanto, algumas ferramentas serão descritas e futuramente 
 
 \subsection{PRINCIPAIS ATAQUES}
 
-SQL Injection
+Ataques direcionados a servidores baseados em \ac{LAMP} tem como objetivo explorar as vulnerabilidades das aplicações. Geralmente ataques são confundidos com vulnerabilidades, porém
+os mesmos não são sinônimos, ataque é algo que o atacante realiza e não uma falha do sistema. Alguns dos principais ataques serão apresentados, bem como sua descrição e os problemas
+que são causados caso o sistema seja afetado por esses ataques.
+
+Um dos principais ataques é conhecido como \ac{SQL} \textit{injection}, o qual consiste em inserir uma consulta \ac{SQL} do cliente para a aplicação. Se o ataque for bem-sucedido 
+o atacante conseguirá acessar e modificar informações do \ac{BD}, o qual guarda todos os dados referentes ao sistema, com isso pode-se arruinar todo a aplicação.
+
+Portanto, as consequências são graves. Pode-se citar algumas delas quando o sistema for comprometido \cite{SQLIn46:online}, como:
+
+\begin{itemize}
+ \item \textbf{Confidenciabilidade:} como os \ac{BD} guardam informações sobre tudo, perca de confidenciabilidade é um problema frequente.
+ \item \textbf{Autenticação:} se os comandos \ac{SQL} que são usados para verificar senhas são mal escritos, há a possibilidade do atacante se conectar ao sistema como outro usuário.
+ \item \textbf{Autorização:} se a informação de autorização está no \ac{BD}, então é possível que o atacante mude essa informação a ser favor.
+ \item \textbf{Integridade:} se é possível a leitura de informações restristas, então o atacante também conseguirá mudar ou até mesmo deletar informações com o ataque de \ac{SQL} \textit{injection}.
+\end{itemize}
+
+Com isso, percebe-se o grave prejuízo do sistema vulnerável ao ataque de \ac{SQL} \textit{injection}, com perdas de informações importantes e até mesmo o comprometimento total do sistema
+uma vez que o atacante tem acesso ao \ac{BD} da aplicação.
 
 Cross-site Scripting (XSS)
 

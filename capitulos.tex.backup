@@ -302,6 +302,12 @@ testes de intrusão. Portanto, algumas ferramentas serão descritas e futuramente 
 
 \subsection{PRINCIPAIS ATAQUES}
 
+Ataques direcionados a servidores baseados em \ac{LAMP} tem como objetivo explorar as vulnerabilidades das aplicações. Geralmente ataques são confundidos com vulnerabilidades, porém
+os mesmos não são sinônimos, ataque é algo que o atacante realiza e não uma falha do sistema. Alguns dos principais ataques serão apresentados, bem como sua descrição e os problemas
+que são causados caso o sistema seja afetado por esses ataques.
+
+Um dos principais ataques é conhecido como \ac{SQL} \textit{injection}, o qual consiste em inserir uma consulta \ac{SQL} do cliente para a aplicação. Se o ataque for bem sucedido
+
 SQL Injection
 
 Cross-site Scripting (XSS)
@@ -335,6 +341,17 @@ Kali Linux.
 Uma ferramenta que será utilizada para a análise do \ac{LAMP} será o \textit{Vega}, o qual é gratuito e \textit{open source}, sua especialidade consiste em análise de vulnerabilidade
 em servidores \textit{web}. Neste acessório têm-se incluido um escaneador automático, o qual possui a função de realizar testes rápidos, as vulnerabilidades que o \textit{Vega} pode 
 encontrar: XSS (\textit{cross-site scripting}, SQL injection, dentre outras \cite{Vega9:online, VegaV22:online}.
+
+Algumas características que esta ferramenta apresenta:
+
+\begin{itemize}
+ \item \textbf{Escaneador automático.}
+ \item \textbf{Interceptador de \textit{proxy}.}
+ \item \textbf{Escaneador de \textit{proxy}.}
+\end{itemize}
+
+Portanto, percebe-se que caso o objetivo seja procurar por vulnerabilidades em relação a \textit{websites} utilizando \ac{LAMP}, o \textit{Vega} é uma ferramenta
+simples, fácil de usar e que cumpre seu objetivo com perfeição.
 
 
 
