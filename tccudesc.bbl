@@ -94,8 +94,14 @@ ISBN 978-0-596-00670-9.}
 \url{http://www.openvas.org/software.html}.
 (Accessed on 04/09/2016).}
 
+\bibitem[OWASP 2016]{Cross69:online}
+\abntrefinfo{OWASP}{OWASP}{2016a}
+{OWASP. \emph{Cross-site Scripting (XSS) - OWASP}. 4 2016.
+\url{https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29}.
+(Accessed on 06/24/2016).}
+
 \bibitem[OWASP 2016]{SQLIn46:online}
-\abntrefinfo{OWASP}{OWASP}{2016}
+\abntrefinfo{OWASP}{OWASP}{2016b}
 {OWASP. \emph{SQL Injection - OWASP}. 2016.
 \url{https://www.owasp.org/index.php/SQL_Injection}.
 (Accessed on 05/08/2016).}
@@ -145,6 +151,13 @@ Dispon{\'\i}vel em: $<$https://rfc-editor.org/rfc/rfc3875.txt$>$.}
 {SANS. \emph{Penetration Testing - Is it right for you?} 2002.
 \url{https://www.sans.org/reading-room/whitepapers/testing/penetration-testing-you-265}.
 (Accessed on 04/09/2016).}
+
+\bibitem[sqlmap 2016]{sqlma32:online}
+\abntrefinfo{sqlmap}{SQLMAP}{2016}
+{SQLMAP. \emph{sqlmap: automatic SQL injection and database takeover tool}.
+  2016.
+\url{http://sqlmap.org/}.
+(Accessed on 06/24/2016).}
 
 \bibitem[Standards e Technology 2008]{NIST:online}
 \abntrefinfo{Standards e Technology}{STANDARDS; TECHNOLOGY}{2008}

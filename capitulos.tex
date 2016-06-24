@@ -283,7 +283,7 @@ não apenas nos seus estados finais. Também é viável realizar
 testes unitários para verificar sua consistência.
 
 
-\chapter{LAMP * KALI}
+\chapter{LAMP \& KALI}
 \label{lampkali}
 
 Neste capítulo será apresentado as principais vulnerabilidades em sistemas \ac{LAMP}, bem como os principais ataques realizados. Estes 
@@ -306,6 +306,8 @@ Ataques direcionados a servidores baseados em \ac{LAMP} tem como objetivo explor
 os mesmos não são sinônimos, ataque é algo que o atacante realiza e não uma falha do sistema. Alguns dos principais ataques serão apresentados, bem como sua descrição e os problemas
 que são causados caso o sistema seja afetado por esses ataques.
 
+\subsubsection{SQL Injection}
+
 Um dos principais ataques é conhecido como \ac{SQL} \textit{injection}, o qual consiste em inserir uma consulta \ac{SQL} do cliente para a aplicação. Se o ataque for bem-sucedido 
 o atacante conseguirá acessar e modificar informações do \ac{BD}, o qual guarda todos os dados referentes ao sistema, com isso pode-se arruinar todo a aplicação.
 
@@ -321,7 +323,41 @@ Portanto, as consequências são graves. Pode-se citar algumas delas quando o sist
 Com isso, percebe-se o grave prejuízo do sistema vulnerável ao ataque de \ac{SQL} \textit{injection}, com perdas de informações importantes e até mesmo o comprometimento total do sistema
 uma vez que o atacante tem acesso ao \ac{BD} da aplicação.
 
-Cross-site Scripting (XSS)
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{imagens/sql-injection.png}
+\caption{Como é um ataque de \ac{SQL} Injection. Fonte: owasp.org}
+\label{fig:sql-injection}
+\end{figure}
+
+Na fig.~\ref{fig:sql-injection} têm-se como os atacantes conseguem se infiltrar no sistema e assim roubar dados dos usuários.
+
+\subsubsection{Cross-site Scripting (XSS)}
+
+Outra vulnerabilidade utilizada pelos atacantes para conseguir infiltrar em seu sistema é o Cross-site Scripting. Sendo que o atacante pode injetar \textit{scripts} maliciosos 
+dentro de seu sistema e conseguir com que o \textit{browser} execute esse script por parte do cliente (\textit{client-side script}). Um exemplo deste tipo de ataque pode ser vista em 
+uma página qualquer que possui campo de login e senha, sendo estes dados, quando inseridos pelos usuários, enviados a um \ac{BD} e assim o atacando consegue visualizar o login e senha do 
+usuário.
+
+Um ataque pode ser caracterizado como \ac{XSS} segundo \cite{Cross69:online} quando:
+
+\begin{itemize}
+ \item Dados entram na aplicação \textit{Web} por uma fonte de dado não confiável, geralmente por uma requisição \textit{web}.
+ \item Os dados que são incluídos em contexto dinâmico e que foram enviados por um usuário sem que tenha sido validado para conteúdo malicioso.
+\end{itemize}
+
+Muitas vezes atacantes utilizam de códigos JavaScript para conseguirem se infiltrar em sistemas com vulnerabilidade e assim roubar dados de usuários e até mesmo dos própios 
+proprietários do sistema.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/Diagram-Describing-Blind-XSS-Attack.png}
+\caption{Como é realizado um ataque \ac{XSS}. Fonte: acunetix.com}
+\label{fig:XSS}
+\end{figure}
+
+Na fig.~\ref{fig:XSS} têm-se um exemplo da arquitetura de um ataque \ac{XSS}.
+
 
 \section{KALI}
 
@@ -341,13 +377,13 @@ foi desenvolvido para necessidades específicas, usuários que não conhecem/utiliz
 \textit{open source} não são todos os usuários que podem contribuir para o seu desenvolvimento (questões de segurança).
 
 
-
-\subsection{ORGANIZAÇÃO}
 \subsection{FERRAMENTAS PARA ANÁLISE DO LAMP}
 
 Ferramentas para análise do \ac{LAMP} são acessórios que facilitam ao se procurar por vulnerabilidades. Nesta seção apresentar-se-á algumas dessas ferramentas, descrevendo-as 
 e informando algumas características específicas, todas as ferramentas aqui apresentadas estão disponibilizadas sem custo e nativamente quando instalado o sistema operacional 
 Kali Linux.
+
+\subsubsection{Vega}
 
 Uma ferramenta que será utilizada para a análise do \ac{LAMP} será o \textit{Vega}, o qual é gratuito e \textit{open source}, sua especialidade consiste em análise de vulnerabilidade
 em servidores \textit{web}. Neste acessório têm-se incluido um escaneador automático, o qual possui a função de realizar testes rápidos, as vulnerabilidades que o \textit{Vega} pode 
@@ -364,12 +400,36 @@ Algumas características que esta ferramenta apresenta:
 Portanto, percebe-se que caso o objetivo seja procurar por vulnerabilidades em relação a \textit{websites} utilizando \ac{LAMP}, o \textit{Vega} é uma ferramenta
 simples, fácil de usar e que cumpre seu objetivo com perfeição.
 
+\subsubsection{sqlmap}
 
+Outra ferramenta que será utilizada para testes e posteriormente apresentado resultados na seção \label{ataques} será o \textit{sqlmap}, o qual é uma ferramenta \textit{open source}
+especializada em \ac{SQL} injection e que automatiza o processo de detecção e exploração. Segundo \cite{sqlma32:online}, esta ferramenta possui algumas 
+funcionalidades/características:
 
+\begin{itemize}
+ \item Suporte para diferentes Banco de Dados.
+ \item Suporte para diferentes técnicas de \ac{SQL} \textit{injection}.
+ \item Suporte para enumerar usuários, \textit{password hashes}, tabelas e colunas do \ac{BD}.
+ \item Suporte para derrubar tabelas do \ac{BD}.
+\end{itemize}
 
-
+Entretanto, mesmo com esta ferramenta proporcionando várias funcionalidades, necessita-se de um bom conhecimento para a realização de um ataque. 
 
 \subsection{TÉCNICAS X MÉTODOS X FERRAMENTAS}
+
+
+
+\chapter{ATAQUES E ANÁLISE}
+\label{ataques}
+
+\section{AMBIENTE DE TESTES E PLANO DE TESTES}
+
+
+\section{SESSÃO DE ATAQUES}
+
+\section{ANÁLISE DOS RESULTADOS}
+
+\section{SOLUÇÕES PROPOSTAS}
 
 \begin{comment}
 
@@ -401,7 +461,7 @@ simples, fácil de usar e que cumpre seu objetivo com perfeição.
 
 
 
-\chapter{Conclusão}
+\chapter{CONCLUSÃO}
 
 Conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
  conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão

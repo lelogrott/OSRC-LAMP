@@ -29,6 +29,7 @@
 \newacro {SO}{Sistema Operacional}
 \newacro {SQL}{Structured Query Language}
 \newacro {UDESC}{Universidade do Estado de Santa Catarina}
+\newacro {XSS}{Cross Site Scripting}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{10}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -83,7 +84,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}NORMAS, RECOMENDA\c C\~OES E BOAS PR\'ATICAS PARA AN\'ALISE DE VULNERABILIDADES}{19}}
 \newlabel{sec:normas}{{2.5}{19}}
 \citation{SQLIn46:online}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}LAMP * KALI}{21}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}LAMP \& KALI}{21}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{lampkali}{{3}{21}}
@@ -92,16 +93,34 @@
 \@writefile{toc}{\contentsline {subsubsection}{Amea\c cas em potencial}{21}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}M\'ETODOS DE EXPLORA\c C\~AO}{21}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}PRINCIPAIS ATAQUES}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{SQL Injection}{21}}
+\citation{Cross69:online}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Como \'e um ataque de SQL Injection. Fonte: owasp.org}}{22}}
+\newlabel{fig:sql-injection}{{3.1}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{Cross-site Scripting (XSS)}{22}}
 \citation{Whati87:online}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}KALI}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Como \'e realizado um ataque XSS. Fonte: acunetix.com}}{23}}
+\newlabel{fig:XSS}{{3.2}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}KALI}{23}}
 \citation{Vega9:online}
 \citation{VegaV22:online}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}ORGANIZA\c C\~AO}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}FERRAMENTAS PARA AN\'ALISE DO LAMP}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}T\'ECNICAS X M\'ETODOS X FERRAMENTAS}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}FERRAMENTAS PARA AN\'ALISE DO LAMP}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{Vega}{24}}
+\citation{sqlma32:online}
+\@writefile{toc}{\contentsline {subsubsection}{sqlmap}{25}}
+\newlabel{ataques}{{3.2.1}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}T\'ECNICAS X M\'ETODOS X FERRAMENTAS}{25}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}ATAQUES E AN\'ALISE}{26}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ataques}{{4}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}AMBIENTE DE TESTES E PLANO DE TESTES}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}SESS\~AO DE ATAQUES}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}AN\'ALISE DOS RESULTADOS}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}SOLU\c C\~OES PROPOSTAS}{26}}
 \bibstyle{abnt-alf}
 \bibdata{bibliografia}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclus\~ao}{24}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}CONCLUS\~AO}{27}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{http:apache}{ASF}
@@ -152,7 +171,7 @@
 \bibcite{MySQL10:online++EXPL}{MySQL}
 \bibcite{MySQL10:online++IMPL}{MYSQL}
 \bibcite{MySQL10:online++YEAR}{2013b}
-\@writefile{toc}{\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{25}}
+\@writefile{toc}{\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{28}}
 \bibcite{MySQL14:online}{MySQL 2016}
 \bibcite{MySQL14:online++EXPL}{MySQL}
 \bibcite{MySQL14:online++IMPL}{MYSQL}
@@ -161,10 +180,14 @@
 \bibcite{OpenV32:online++EXPL}{OpenVAS}
 \bibcite{OpenV32:online++IMPL}{OPENVAS}
 \bibcite{OpenV32:online++YEAR}{2016}
+\bibcite{Cross69:online}{OWASP 2016}
+\bibcite{Cross69:online++EXPL}{OWASP}
+\bibcite{Cross69:online++IMPL}{OWASP}
+\bibcite{Cross69:online++YEAR}{2016a}
 \bibcite{SQLIn46:online}{OWASP 2016}
 \bibcite{SQLIn46:online++EXPL}{OWASP}
 \bibcite{SQLIn46:online++IMPL}{OWASP}
-\bibcite{SQLIn46:online++YEAR}{2016}
+\bibcite{SQLIn46:online++YEAR}{2016b}
 \bibcite{PHP:O35:online}{PHP 2016}
 \bibcite{PHP:O35:online++EXPL}{PHP}
 \bibcite{PHP:O35:online++IMPL}{PHP}
@@ -193,6 +216,10 @@
 \bibcite{sans:2002++EXPL}{SANS}
 \bibcite{sans:2002++IMPL}{SANS}
 \bibcite{sans:2002++YEAR}{2002}
+\bibcite{sqlma32:online}{sqlmap 2016}
+\bibcite{sqlma32:online++EXPL}{sqlmap}
+\bibcite{sqlma32:online++IMPL}{SQLMAP}
+\bibcite{sqlma32:online++YEAR}{2016}
 \bibcite{NIST:online}{Standards e Technology 2008}
 \bibcite{NIST:online++EXPL}{Standards e Technology}
 \bibcite{NIST:online++IMPL}{STANDARDS; TECHNOLOGY}
