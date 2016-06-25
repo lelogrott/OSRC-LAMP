@@ -459,7 +459,7 @@ são eles: \url{www.testphp.vulnweb.com} e \url{www.hackthissite.org}.
 Também foram realizados testes com auxílio de ferramentas específicas para cada tipo de ataque (comentado em \ref{principaisataques}). 
 
 
-\section{SESSÃO DE ATAQUES}
+\section{SESSÃO DE ATAQUES}\label{sec:attack}
 
 Viabilizada por ferramentas \textit{open-source} já citadas em \ref{ferramentas}, a sessão de ataques seguiu a seguinte ordem lógica: 
 \begin{enumerate}
@@ -623,42 +623,63 @@ com \textit{scripts} de outra origem que não o servidor de \url{www.hackthissite
 
 \section{ANÁLISE DOS RESULTADOS}
 
-A detecção das vulnerabilidades pelo \textit{Vega} permitem a manipulação do banco de dados (vide \ref{subsec:sql_injection}) e a inserção
-de \textit{scripts} maliciosos e de origem desconhecida (vide \ref{subsec:xss}) por atacantes que podem se prover de acesso de escrita e leitura
-para dados que não deveria ter permissão (\textit{SQL })
+Os ataques realizados em \ref{sec:attack} foram bem sucedidos, a manipulação de dados (vide \ref{subsec:sql_injection}) se mostrou 100\% efetiva
+e a inserção de \textit{scripts} de outra origem (\ac{XSS}) (vide \ref{subsec:xss}) obteve 82\% de sucesso em seus casos de teste 
+(figura \ref{fig:math_hack}).
 
-Vega has detected a possible SQL injection vulnerability. These vulnerabilities are present when externally-supplied input is used to 
-construct a SQL query. If precautions are not taken, the externally-supplied input (usually a GET or POST parameter) can modify the 
-query string such that it performs unintented actions. These actions include gaining unauthorized read or write access to the data 
-stored in the database, as well as modifying the logic of the application.
-IMPACT
+A detecção das vulnerabilidades pelo \textit{Vega} garantem a possível manipulação do banco de dados (vide \ref{subsec:sql_injection}) e inserção
+de \textit{scripts} maliciosos de origem desconhecida (vide \ref{subsec:xss}) por atacantes que podem se prover de acesso de escrita e leitura
+para dados que não deveriam ter permissão (\textit{SQL Injection}) ou então manipular o conteúdo do site, suas funções e aparência, manipular a
+aplicação sem conhecimento do usuário, retransmitir \textit{cookies} e outras funcionalidades.
 
-Vega has detected a possible SQL injection vulnerability.
-These vulnerabilities can be exploited by remote attackers to gain unauthorized read or write access to the underlying database.
-Exploitation of SQL injection vulnerabilities can also allow for attacks against the logic of the application.
-Attackers may be able to obtain unauthorized access to the server hosting the database.
-
-
-DISCUSSION
-
-Cross-site scripting (XSS) is a class of vulnerabilities affecting web applications that can result in security controls implemented 
-in browsers being circumvented. When a browser visits a page on a website, script code originating in the website domain can access and 
-manipulate the DOM (document object model), a representation of the page and its properties in the browser. Script code from another website 
-can not. This is known as the "same origin policy", a critical control in the browser security model. Cross-site scripting vulnerabilities 
-occur when a lack of input validation permits users to inject script code into the target website such that it runs in the browser of another 
-user who is visiting the same website. This would circumvent the browser same-origin policy because the browser has no way to distinguish 
-authentic script code from inauthentic, apart from its origin.
-
-IMPACT
-
-The precise impact depends greatly on the application.
-XSS is generally a threat to web applications which have authenticated users or are otherwise security sensitive.
-Malicious code may be able to manipulate the content of the site, changing its appearance and/or function for another user.
-This includes modifying the behavior of the web application (such as redirecting forms, etc).
-The code may also be able to perform actions within the application without user knowledge.
-Script code can also obtain and retransmit cookie values if they haven't been set HttpOnly.
 
 \section{SOLUÇÕES PROPOSTAS}
+
+Algumas boas práticas podem ajudar a solucionar problemas com vulnerabilidades. Para \textit{SQL Injection} tem-se alguns tópicos chave 
+\cite{sqlin2}:
+
+\begin{itemize}
+ \item O desenvolvedor deve avaliar o pedido e resposta contra o código para verificar manualmente se há ou não uma vulnerabilidade presente.
+ \item A melhor defesa contra vulnerabilidades de \textit{SQL Injection} é utilizar instruções parametrizadas.
+ \item Filtrar a entrada pode impedir essas vulnerabilidades. Variáveis de tipos \textit{string} devem ser filtradas para caracteres de escape,
+ e tipos numéricos devem ser verificados para garantir que eles são válidos.
+ \item O uso de procedimentos armazenados pode simplificar consultas complexas e permitir configurações de controle de acesso mais restritivas.
+ \item Configurar controles de acesso de banco de dados pode limitar o impacto das vulnerabilidades exploradas. Esta é uma estratégia atenuante
+ que pode ser utilizada em ambientes em que o código não é modificável.
+ \item Um mapeamento objeto-relacional elimina a necessidade de SQL.
+\end{itemize}
+
+O mesmo é encontrado para prevenção de problemas relacionados à vulnerabilidades em \ac{XSS} \cite{xss2}:
+
+\begin{itemize}
+ \item O desenvolvedor deve identificar como os dados não confiáveis estão sendo emitidos para o cliente sem filtragem adequada.
+ \item Existem várias técnicas específicas de linguagem / plataforma para a filtragem de dados não confiáveis.
+\end{itemize}
+
+Regras para prevenção de \ac{XSS}:
+
+\begin{enumerate}
+ \item[\textbf{Regra \#0:}] Nunca insira dados não confiáveis, com exceção de locais permitidos.
+ A primeira regra é negar tudo - não coloque dados não confiáveis em seu documento HTML a menos que seja dentro de um dos campos definidos da 
+ Regra \#1 à Regra \#5. Isso inclui "contextos aninhados" como um URL dentro de um javascript - as regras de codificação para esses locais são
+ complicadas e perigosas. Mais importante, nunca aceitar qualquer código \textit{JavaScript} real a partir de uma fonte não confiável e,
+ em seguida, executá-lo.
+ 
+ \item[\textbf{Regra \#1:}] Quando você quiser colocar dados não confiáveis diretamente no corpo HTML em algum lugar (isso inclui dentro de tags
+ normais como div, p, b, td, etc.), saiba que a maioria dos frameworks web tem um método de escape para HTML em certos contextos.
+ No entanto, isto não é absolutamente suficiente para outros contextos HTML. É necessária a implementação das demais regras aqui também.
+ 
+ \item[\textbf{Regra \#2:}] Nunca coloque dados não confiáveis em valores de atributos típicos como largura, nome, valor, etc.
+ Isso não deve ser usado para os atributos complexos como \textit{href, src, style,} ou qualquer um dos manipuladores de eventos como 
+ \textit{onmouseover}. É extremamente importante que os atributos manipuladores de eventos sigam a Regra #3.
+Com exceção de caracteres alfanuméricos, escapar todos os caracteres com valores ASCII inferior a 256 com o & # xhh; 
+formato (ou uma entidade chamada, se disponível) para evitar a mudança fora do atributo. 
+A razão pela qual esta regra é tão ampla é que os desenvolvedores frequentemente deixar atributos sem aspas. 
+atributos adequadamente citados só pode ser escapou com a citação correspondente. atributos não cotadas pode ser 
+quebrado fora de com muitos caracteres, incluindo [espaço]% * +, - /; <=> ^ E |. 
+ 
+\end{enumerate}
+
 
 \begin{comment}
 

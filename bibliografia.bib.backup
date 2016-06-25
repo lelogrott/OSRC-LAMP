@@ -52,7 +52,7 @@ year = {2016},
 note = {(Accessed on 04/08/2016)}
 }
 @misc{http:apache,
-author = {ASF},
+author = {ASF, Apache Software Foundation},
 title = {The Apache HTTP Server Project},
 howpublished = {\url{https://httpd.apache.org/}},
 month = {},
@@ -121,4 +121,172 @@ howpublished = {\url{https://www.cirt.net/Nikto2}},
 month = {},
 year = {},
 note = {(Accessed on 04/11/2016)}
+}
+
+@misc{PHP:H3:online,
+author = {The PHP Group},
+title = {PHP: Historia do PHP - Manual},
+howpublished = {\url{http://php.net/manual/pt_BR/history.php.php}},
+month = {},
+year = {2016},
+note = {(Accessed on 04/20/2016)}
+}
+
+@misc{ongoi83:online,
+author = {Tim Bray},
+title = {Comparing Frameworks},
+howpublished = {\url{http://www.tbray.org/ongoing/When/200x/2006/11/10/Comparing-Frameworks}},
+month = {Maio},
+year = {2007},
+note = {(Accessed on 04/20/2016)}
+}
+
+@misc{MySQL14:online,
+author = {MySQL},
+title = {MySQL :: MySQL 5.7 Reference Manual :: 1.3.3 History of MySQL},
+howpublished = {\url{http://dev.mysql.com/doc/refman/5.7/en/history.html}},
+month = {},
+year = {2016},
+note = {(Accessed on 04/20/2016)}
+}
+
+@misc{CGI:online,
+	series =	{Request for Comments},
+	number=		3875,
+	howpublished=	{RFC 3875},
+	publisher =	{RFC Editor},
+	doi =		{10.17487/rfc3875},
+	url =		{https://rfc-editor.org/rfc/rfc3875.txt},
+	author=		{David Robinson},
+	title=		{{The Common Gateway Interface (CGI) Version 1.1}},
+	pagetotal =	{36},
+	year =		{2013},
+	month =		{March},
+	day =		{20},
+	abstract =	{The Common Gateway Interface (CGI) is a simple interface for running external programs, software or gateways under an information server in a platform-independent manner. Currently, the supported information servers are HTTP servers.},
+}
+
+@misc{Kernel:online,
+author = {LIP, The Linux Information Project},
+title = {Kernel Definition},
+howpublished = {\url{http://www.linfo.org/kernel.html}},
+month = {May},
+year = {2004},
+note = {(Accessed on 04/21/2016)}
+}
+
+@misc{RouseLamp,
+author = {Margaret Rouse},
+title = {LAMP (Linux, Apache, MySQL, PHP)},
+howpublished = {\url{http://searchenterpriselinux.techtarget.com/definition/LAMP}},
+month = {December},
+year = {2008},
+note = {(Accessed on 04/21/2016)}
+}
+
+@misc{GeipelEmpresas,
+author = {Markus Michel Geipel},
+title = {Dynamics of Communities and Code in Open Source Software},
+howpublished = {\url{http://searchenterpriselinux.techtarget.com/definition/LAMP}},
+year = {2010},
+note = {(Accessed on 04/21/2016)}
+}
+
+@misc{PostgreeHistorico,
+author = {PostgreSQL},
+title = {PostgreSQL 8.1.23 Documentation},
+howpublished = {\url{http://www.postgresql.org/docs/8.1/interactive/history.html}},
+year = {2010},
+note = {(Accessed on 04/21/2016)}
+}
+
+
+@misc{BrownFuncionamento,
+author = {Martin Brown},
+title = {Understanding LAMP},
+howpublished = {\url{http://www.serverwatch.com/tutorials/article.php/3567741/Understanding-LAMP.htm}},
+year = {2005},
+note = {(Accessed on 04/21/2016)}
+}
+
+@misc{Vulne27:online,
+author = {SANS},
+title = {Vulnerability Assessments: The Pro-active Steps to Secure Your Organization},
+howpublished = {\url{https://www.sans.org/reading-room/whitepapers/threats/vulnerability-assessments-pro-active-steps-secure-organization-453}},
+month = {},
+year = {2001},
+note = {(Accessed on 04/22/2016)}
+}
+
+@misc{Whati87:online,
+author = {Kali},
+title = {What is Kali Linux ? | Kali Linux},
+howpublished = {\url{http://docs.kali.org/introduction/what-is-kali-linux}},
+month = {},
+year = {2016},
+note = {(Accessed on 05/08/2016)}
+}
+
+@misc{Vega9:online,
+author = {Kali},
+title = {Vega | Penetration Testing Tools},
+howpublished = {\url{http://tools.kali.org/web-applications/vega}},
+month = {},
+year = {2016},
+note = {(Accessed on 05/08/2016)}
+}
+
+@misc{VegaV22:online,
+author = {Subgraph},
+title = {Vega Vulnerability Scanner},
+howpublished = {\url{https://subgraph.com/vega/}},
+month = {},
+year = {2014},
+note = {(Accessed on 05/08/2016)}
+}
+
+@misc{SQLIn46:online,
+author = {OWASP},
+title = {SQL Injection - OWASP},
+howpublished = {\url{https://www.owasp.org/index.php/SQL_Injection}},
+month = {},
+year = {2016},
+note = {(Accessed on 05/08/2016)}
+}
+
+@misc{Cross69:online,
+author = {OWASP},
+title = {Cross-site Scripting (XSS) - OWASP},
+howpublished = {\url{https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29}},
+month = {4},
+year = {2016},
+note = {(Accessed on 06/24/2016)}
+}
+
+@misc{sqlma32:online,
+author = {sqlmap},
+title = {sqlmap: automatic SQL injection and database takeover tool},
+howpublished = {\url{http://sqlmap.org/}},
+month = {},
+year = {2016},
+note = {(Accessed on 06/24/2016)}
+}
+
+@misc{OWASP38:online,
+author = {OWASP},
+title = {OWASP Vulnerable Web Applications Directory Project - OWASP},
+howpublished = {\url{https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project#tab=On-Line_apps}},
+month = {January},
+year = {2016}
+note = {(Accessed on 06/25/2016)}
+}
+
+
+@misc{SQLIn:online,
+author = {OWASP},
+title = {SQL Injection Prevention Cheat Sheet - OWASP},
+howpublished = {\url{https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet}},
+month = {May},
+year = {2016},
+note = {(Accessed on 06/25/2016)}
 }

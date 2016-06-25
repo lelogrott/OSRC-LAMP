@@ -635,8 +635,55 @@ aplicação sem conhecimento do usuário, retransmitir \textit{cookies} e outras fu
 
 \section{SOLUÇÕES PROPOSTAS}
 
+Algumas boas práticas podem ajudar a solucionar problemas com vulnerabilidades. Para \textit{SQL Injection} tem-se alguns tópicos chave 
+\cite{sqlin2}:
 
+\begin{itemize}
+ \item O desenvolvedor deve avaliar o pedido e resposta contra o código para verificar manualmente se há ou não uma vulnerabilidade presente.
+ \item A melhor defesa contra vulnerabilidades de \textit{SQL Injection} é utilizar instruções parametrizadas.
+ \item Filtrar a entrada pode impedir essas vulnerabilidades. Variáveis de tipos \textit{string} devem ser filtradas para caracteres de escape,
+ e tipos numéricos devem ser verificados para garantir que eles são válidos.
+ \item O uso de procedimentos armazenados pode simplificar consultas complexas e permitir configurações de controle de acesso mais restritivas.
+ \item Configurar controles de acesso de banco de dados pode limitar o impacto das vulnerabilidades exploradas. Esta é uma estratégia atenuante
+ que pode ser utilizada em ambientes em que o código não é modificável.
+ \item Um mapeamento objeto-relacional elimina a necessidade de SQL.
+\end{itemize}
 
+O mesmo é encontrado para prevenção de problemas relacionados à vulnerabilidades em \ac{XSS} \cite{xss2}:
+
+\begin{itemize}
+ \item O desenvolvedor deve identificar como os dados não confiáveis estão sendo emitidos para o cliente sem filtragem adequada.
+ \item Existem várias técnicas específicas de linguagem / plataforma para a filtragem de dados não confiáveis.
+\end{itemize}
+
+Algumas regras para prevenção de \ac{XSS}:
+
+\begin{enumerate}
+ \item[\textbf{Regra \#0:}] Nunca insira dados não confiáveis, com exceção de locais permitidos.
+ A primeira regra é negar tudo - não coloque dados não confiáveis em seu documento HTML. Isso inclui "contextos aninhados" como um URL dentro de um javascript - as regras de codificação para esses locais são
+ complicadas e perigosas. Mais importante, nunca aceitar qualquer código \textit{JavaScript} real a partir de uma fonte não confiável e,
+ em seguida, executá-lo.
+ 
+ \item[\textbf{Regra \#1:}] Quando você quiser colocar dados não confiáveis diretamente no corpo HTML em algum lugar (isso inclui dentro de tags
+ normais como div, p, b, td, etc.), saiba que a maioria dos frameworks web tem um método de escape para HTML em certos contextos.
+ No entanto, isto não é absolutamente suficiente para outros contextos HTML. É necessária a implementação das demais regras aqui também.
+ 
+ \item[\textbf{Regra \#2:}] Nunca coloque dados não confiáveis em valores de atributos típicos como largura, nome, valor, etc.
+ Isso não deve ser usado para os atributos complexos como \textit{href, src, style,} ou qualquer um dos manipuladores de eventos como 
+ \textit{onmouseover}. É extremamente importante que os atributos manipuladores de eventos sigam a Regra \#3.
+Com exceção de caracteres alfanuméricos, escapar todos os caracteres com valores ASCII inferior a 256 para evitar a mudança fora do atributo.
+ 
+ \item[\textbf{Regra \#3:}] Com relação a códigos \textit{JavaScript} - ambos os blocos de \textit{script} e atributos de manipulador de eventos.
+ O único lugar seguro para colocar dados não confiáveis para este código está dentro de um "valor de dado" entre aspas. 
+ Incluir dados não confiáveis dentro de qualquer outro contexto é bastante perigoso, pois é extremamente fácil de mudar para um contexto
+ de execução com caracteres incluindo (mas não limitado a) ponto e vírgula, iguais, espaço, mais, e muitos outros, assim use com cuidado.
+ 
+ \item[\textbf{Regra \#4:}] Esta regra é para quando você quiser colocar dados não confiáveis em um arquivo de estilo ou uma \textit{tag} de estilo.
+ CSS é surpreendentemente poderoso, e pode ser usado por vários ataques. Portanto, é importante que você use somente dados não confiáveis
+ em um valor de propriedade e não em outros lugares dentro de dados de estilo. Você deve ficar longe de colocar dados não confiáveis 
+ em propriedades complexas como \textit{url}, comportamento e personalizado.
+ 
+\end{enumerate}
 
 
 \begin{comment}

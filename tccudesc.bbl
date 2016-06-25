@@ -112,6 +112,19 @@ ISBN 978-0-596-00670-9.}
 \url{https://www.owasp.org/index.php/SQL_Injection}.
 (Accessed on 05/08/2016).}
 
+\bibitem[OWASP 2016]{sqlin2}
+\abntrefinfo{OWASP}{OWASP}{2016d}
+{OWASP. \emph{SQL Injection Prevention Cheat Sheet - OWASP}. May 2016.
+\url{https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet}.
+(Accessed on 06/25/2016).}
+
+\bibitem[OWASP 2016]{xss2}
+\abntrefinfo{OWASP}{OWASP}{2016e}
+{OWASP. \emph{XSS (Cross Site Scripting) Prevention Cheat Sheet - OWASP}. March
+  2016.
+\url{https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet}.
+(Accessed on 06/25/2016).}
+
 \bibitem[PHP 2016]{PHP:O35:online}
 \abntrefinfo{PHP}{PHP}{2016}
 {PHP. \emph{PHP: O que o PHP pode fazer? - Manual}. March 2016.
