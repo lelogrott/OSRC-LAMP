@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tccudesc.aux
 The style file: abnt-alf.bst
@@ -11,6 +11,11 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia.bib
+I was expecting a `,' or a `}'---line 561 of file bibliografia.bib
+ : 
+ : note = {(Accessed on 06/25/2016)}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "ongoi15:online"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -22,45 +27,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 28 entries,
+You've used 29 entries,
             6476 wiz_defined-function locations,
-            1313 strings with 13101 characters,
-and the built_in function-call counts, 17220 in all, are:
-= -- 1320
-> -- 454
+            1317 strings with 13294 characters,
+and the built_in function-call counts, 17749 in all, are:
+= -- 1353
+> -- 469
 < -- 0
-+ -- 202
-- -- 150
-* -- 1017
-:= -- 2456
-add.period$ -- 138
-call.type$ -- 28
-change.case$ -- 229
++ -- 208
+- -- 155
+* -- 1049
+:= -- 2531
+add.period$ -- 142
+call.type$ -- 29
+change.case$ -- 236
 chr.to.int$ -- 24
-cite$ -- 28
-duplicate$ -- 855
-empty$ -- 1580
-format.name$ -- 692
-if$ -- 4057
-int.to.chr$ -- 4
+cite$ -- 29
+duplicate$ -- 882
+empty$ -- 1632
+format.name$ -- 715
+if$ -- 4182
+int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 481
-newline$ -- 176
-num.names$ -- 140
-pop$ -- 626
+missing$ -- 497
+newline$ -- 181
+num.names$ -- 145
+pop$ -- 646
 preamble$ -- 1
-purify$ -- 86
+purify$ -- 89
 quote$ -- 0
-skip$ -- 1058
+skip$ -- 1095
 stack$ -- 1
-substring$ -- 485
-swap$ -- 346
+substring$ -- 492
+swap$ -- 356
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 158
+while$ -- 163
 width$ -- 0
-write$ -- 428
-(There was 1 warning)
+write$ -- 442
+(There was 1 error message)

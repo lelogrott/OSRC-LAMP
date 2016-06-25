@@ -100,8 +100,14 @@ ISBN 978-0-596-00670-9.}
 \url{https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29}.
 (Accessed on 06/24/2016).}
 
-\bibitem[OWASP 2016]{SQLIn46:online}
+\bibitem[OWASP 2016]{OWASP38:online}
 \abntrefinfo{OWASP}{OWASP}{2016b}
+{OWASP. \emph{OWASP Vulnerable Web Applications Directory Project - OWASP}.
+  January 2016.
+\url{https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project#tab=On-Line_apps}.}
+
+\bibitem[OWASP 2016]{SQLIn46:online}
+\abntrefinfo{OWASP}{OWASP}{2016c}
 {OWASP. \emph{SQL Injection - OWASP}. 2016.
 \url{https://www.owasp.org/index.php/SQL_Injection}.
 (Accessed on 05/08/2016).}

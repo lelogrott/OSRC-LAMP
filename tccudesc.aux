@@ -115,33 +115,54 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Exemplo de funcionamento do XSSer. Fonte: owasp.org}}{25}}
 \newlabel{fig:xsser}{{3.3}{25}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}T\'ECNICAS X M\'ETODOS X FERRAMENTAS}{25}}
+\citation{OWASP38:online}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}ATAQUES E AN\'ALISE}{26}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ataques}{{4}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}AMBIENTE DE TESTES E PLANO DE TESTES}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}SESS\~AO DE ATAQUES}{26}}
+\newlabel{sec:attack}{{4.2}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}An\'alise de Vulnerabilidade com \textit  {Vega}}{26}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Vulnerabilidades do site: hackthissite.org. Fonte: Pr\'oprio autor}}{27}}
 \newlabel{fig:vega_hack}{{4.1}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Vulnerabilidades do site:testphp.vulnweb.com. Fonte: Pr\'oprio autor}}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Vulnerabilidades do site: testphp.vulnweb.com. Fonte: Pr\'oprio autor}}{27}}
 \newlabel{fig:vega_acuart}{{4.2}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Nome das colunas de um BD. Fonte: Pr\'oprio autor}}{28}}
-\newlabel{fig:XSS}{{4.3}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Ataques de \textit  {SQL Injection}}{27}}
+\newlabel{subsec:sql_injection}{{4.2.2}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Endere\c co vulner\'avel em testphp.vulnweb.com. Fonte: Pr\'oprio autor}}{28}}
+\newlabel{fig:vega_sqlinjection_acuart}{{4.3}{28}}
+\newlabel{lst:db_disponivel}{{4.1}{28}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}Comando para retornar a lista de bancos dispon\'{\i }veis}{28}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Nome dos BD. Fonte: Pr\'oprio autor}}{28}}
-\newlabel{fig:XSS}{{4.4}{28}}
+\newlabel{fig:sqlmap_dbnames}{{4.4}{28}}
+\newlabel{lst:tables}{{4.2}{28}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}Comando para retornar a lista de tabelas}{28}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Nome das tabelas no BD. Fonte: Pr\'oprio autor}}{29}}
-\newlabel{fig:XSS}{{4.5}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces . Fonte: Pr\'oprio autor}}{29}}
-\newlabel{fig:XSS}{{4.6}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces . Fonte: Pr\'oprio autor}}{30}}
-\newlabel{fig:XSS}{{4.7}{30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces . Fonte: Pr\'oprio autor}}{30}}
-\newlabel{fig:XSS}{{4.8}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}AN\'ALISE DOS RESULTADOS}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}SOLU\c C\~OES PROPOSTAS}{30}}
+\newlabel{fig:sqlmap_tablenames2}{{4.5}{29}}
+\newlabel{lst:columns}{{4.3}{29}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}Comando para retornar as colunas da tabela users}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Nome das colunas de um BD. Fonte: Pr\'oprio autor}}{29}}
+\newlabel{fig:sqlmap_columnsnames}{{4.6}{29}}
+\newlabel{lst:dump_uname}{{4.4}{30}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}Comando para retornar os valores da coluna \textit  {uname}}{30}}
+\newlabel{lst:dump_pass}{{4.5}{30}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}Comando para retornar os valores da coluna \textit  {pass}}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces \textit  {Dump} do campo \textit  {uname} da tabela \textit  {users} com \textit  {sqlmap}. Fonte: Pr\'oprio autor}}{30}}
+\newlabel{fig:dump_uname}{{4.7}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces \textit  {Dump} do campo \textit  {pass} da tabela \textit  {users} com \textit  {sqlmap}. Fonte: Pr\'oprio autor}}{30}}
+\newlabel{fig:dump_pass}{{4.8}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Ataques de \textit  {Cross Site Scripting}}{31}}
+\newlabel{subsec:xss}{{4.2.3}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces \textit  {Scripts} inseridos em testes com \textit  {XSSer}. Fonte: Pr\'oprio autor}}{31}}
+\newlabel{fig:xss_hack}{{4.9}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Dados estat\'{\i }sticos dos testes com \textit  {XSSer}. Fonte: Pr\'oprio autor}}{32}}
+\newlabel{fig:math_hack}{{4.10}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}AN\'ALISE DOS RESULTADOS}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}SOLU\c C\~OES PROPOSTAS}{32}}
 \bibstyle{abnt-alf}
 \bibdata{bibliografia}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}CONCLUS\~AO}{31}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}CONCLUS\~AO}{33}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{http:apache}{ASF}
@@ -192,7 +213,7 @@
 \bibcite{MySQL10:online++EXPL}{MySQL}
 \bibcite{MySQL10:online++IMPL}{MYSQL}
 \bibcite{MySQL10:online++YEAR}{2013b}
-\@writefile{toc}{\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{32}}
+\@writefile{toc}{\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{34}}
 \bibcite{MySQL14:online}{MySQL 2016}
 \bibcite{MySQL14:online++EXPL}{MySQL}
 \bibcite{MySQL14:online++IMPL}{MYSQL}
@@ -205,10 +226,14 @@
 \bibcite{Cross69:online++EXPL}{OWASP}
 \bibcite{Cross69:online++IMPL}{OWASP}
 \bibcite{Cross69:online++YEAR}{2016a}
+\bibcite{OWASP38:online}{OWASP 2016}
+\bibcite{OWASP38:online++EXPL}{OWASP}
+\bibcite{OWASP38:online++IMPL}{OWASP}
+\bibcite{OWASP38:online++YEAR}{2016b}
 \bibcite{SQLIn46:online}{OWASP 2016}
 \bibcite{SQLIn46:online++EXPL}{OWASP}
 \bibcite{SQLIn46:online++IMPL}{OWASP}
-\bibcite{SQLIn46:online++YEAR}{2016b}
+\bibcite{SQLIn46:online++YEAR}{2016c}
 \bibcite{PHP:O35:online}{PHP 2016}
 \bibcite{PHP:O35:online++EXPL}{PHP}
 \bibcite{PHP:O35:online++IMPL}{PHP}

@@ -7,11 +7,13 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Exemplo de funcionamento do XSSer. Fonte: owasp.org}}{25}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Vulnerabilidades do site: hackthissite.org. Fonte: Pr\'oprio autor}}{27}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Vulnerabilidades do site:testphp.vulnweb.com. Fonte: Pr\'oprio autor}}{27}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Nome das colunas de um BD. Fonte: Pr\'oprio autor}}{28}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Vulnerabilidades do site: testphp.vulnweb.com. Fonte: Pr\'oprio autor}}{27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Endere\c co vulner\'avel em testphp.vulnweb.com. Fonte: Pr\'oprio autor}}{28}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Nome dos BD. Fonte: Pr\'oprio autor}}{28}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Nome das tabelas no BD. Fonte: Pr\'oprio autor}}{29}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces . Fonte: Pr\'oprio autor}}{29}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces . Fonte: Pr\'oprio autor}}{30}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces . Fonte: Pr\'oprio autor}}{30}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Nome das colunas de um BD. Fonte: Pr\'oprio autor}}{29}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \textit {Dump} do campo \textit {uname} da tabela \textit {users} com \textit {sqlmap}. Fonte: Pr\'oprio autor}}{30}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \textit {Dump} do campo \textit {pass} da tabela \textit {users} com \textit {sqlmap}. Fonte: Pr\'oprio autor}}{30}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \textit {Scripts} inseridos em testes com \textit {XSSer}. Fonte: Pr\'oprio autor}}{31}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Dados estat\'{\i }sticos dos testes com \textit {XSSer}. Fonte: Pr\'oprio autor}}{32}
 \addvspace {10\p@ }
