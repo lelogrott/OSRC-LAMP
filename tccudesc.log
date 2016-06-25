@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.3)  24 JUN 2016 21:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.3)  24 JUN 2016 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -764,67 +764,10 @@ LaTeX Font Warning: Font shape `U/stmry/m/n' undefined
 
  [9] (./introducao.tex
 Cap\'{\i }tulo 1.
-) (./capitulos.tex
-Overfull \hbox (2.67061pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 Introdu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in
--trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
 
+Package acronym Warning: Acronym `web' is not defined on input line 4.
 
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-
-Overfull \hbox (1.69562pt too wide) in paragraph at lines 4--1
-\U/cmr/m/n/12 in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao i
-n-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao in-trodu^^Xc~ao
- []
-
-[10
+) (./capitulos.tex [10
 
 ]
 Cap\'{\i }tulo 2.
@@ -843,22 +786,22 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
  [13] [14]
-[15]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 166.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 166.
 
+[15]
 
 LaTeX Warning: Citation `ongoi15:online' on page 16 undefined on input line 185
 .
 
-[16]
+
 Overfull \hbox (30.84717pt too wide) in paragraph at lines 191--191
 []\OT1/cmr/bx/n/17.28 FUNDAMENTA[][]AO DE ATA-QUES E SOLU[][]OES 
  []
 
-
+[16]
 Overfull \hbox (13.10727pt too wide) in paragraph at lines 216--216
 []\OT1/cmr/bx/n/17.28 FRAMEWORKS E SOLU[][]OES PARA AN[]ALISE
  []
@@ -869,40 +812,40 @@ Overfull \hbox (1.81564pt too wide) in paragraph at lines 244--245
 /12 per-mite an^^Salises de-ta-lha-das so-bre a in-tera^^Xc~ao navegador-
  []
 
-[18]
+
 Overfull \hbox (52.32939pt too wide) in paragraph at lines 257--257
 []\OT1/cmr/bx/n/17.28 NORMAS, RECOMENDA[][]OES E BOAS PR[]ATICAS
  []
 
-[19] [20]
+[18] [19]
 Cap\'{\i }tulo 3.
-[21
+[20
 
-] <imagens/sql-injection.png, id=90, 469.755pt x 212.795pt>
+] <imagens/sql-injection.png, id=87, 469.755pt x 212.795pt>
 File: imagens/sql-injection.png Graphic file (type png)
 
 <use imagens/sql-injection.png>
-Package pdftex.def Info: imagens/sql-injection.png used on input line 330.
+Package pdftex.def Info: imagens/sql-injection.png used on input line 331.
 (pdftex.def)             Requested size: 318.66946pt x 144.35449pt.
- [22 <./imagens/sql-injection.png>]
-<imagens/Diagram-Describing-Blind-XSS-Attack.png, id=97, 1806.75pt x 1205.50375
+ [21 <./imagens/sql-injection.png>]
+<imagens/Diagram-Describing-Blind-XSS-Attack.png, id=93, 1806.75pt x 1205.50375
 pt>
 File: imagens/Diagram-Describing-Blind-XSS-Attack.png Graphic file (type png)
  <use imagens/Diagram-Describing-Blind-XSS-Attack.png>
 Package pdftex.def Info: imagens/Diagram-Describing-Blind-XSS-Attack.png used o
-n input line 356.
+n input line 357.
 (pdftex.def)             Requested size: 364.19664pt x 242.9911pt.
- [23 <./imagens/Diagram-Describing-Blind-XSS-Attack.png>] [24]
+ [22 <./imagens/Diagram-Describing-Blind-XSS-Attack.png>] [23]
 
-LaTeX Warning: Reference `xsser' on page 25 undefined on input line 425.
+LaTeX Warning: Reference `xsser' on page 24 undefined on input line 426.
 
-<imagens/Xsser-url-schema.png, id=105, 501.875pt x 370.38374pt>
+<imagens/Xsser-url-schema.png, id=102, 501.875pt x 370.38374pt>
 File: imagens/Xsser-url-schema.png Graphic file (type png)
 
 <use imagens/Xsser-url-schema.png>
-Package pdftex.def Info: imagens/Xsser-url-schema.png used on input line 429.
+Package pdftex.def Info: imagens/Xsser-url-schema.png used on input line 430.
 (pdftex.def)             Requested size: 364.19664pt x 268.78978pt.
- [25] [26 <./imagens/Xsser-url-schema.png>]
+ [24] [25 <./imagens/Xsser-url-schema.png>]
 Cap\'{\i }tulo 4.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
@@ -910,65 +853,65 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-<imagens/sqlmap_columnsnames_acuart.png, id=113, 271.0125pt x 283.0575pt>
+<imagens/sqlmap_columnsnames_acuart.png, id=110, 271.0125pt x 283.0575pt>
 File: imagens/sqlmap_columnsnames_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_columnsnames_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_columnsnames_acuart.png used on input l
-ine 464.
+ine 470.
 (pdftex.def)             Requested size: 364.19664pt x 380.39642pt.
- [27
+ [26
 
 ]
-<imagens/sqlmap_dbnames_acuart.png, id=119, 1371.1225pt x 361.35pt>
+<imagens/sqlmap_dbnames_acuart.png, id=116, 1371.1225pt x 361.35pt>
 File: imagens/sqlmap_dbnames_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_dbnames_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_dbnames_acuart.png used on input line 4
-77.
+83.
 (pdftex.def)             Requested size: 364.19664pt x 95.97784pt.
 
-<imagens/sqlmap_tablenames2_acuart.png, id=120, 394.47375pt x 232.87pt>
+<imagens/sqlmap_tablenames2_acuart.png, id=117, 394.47375pt x 232.87pt>
 File: imagens/sqlmap_tablenames2_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_tablenames2_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_tablenames2_acuart.png used on input li
-ne 489.
+ne 495.
 (pdftex.def)             Requested size: 364.19664pt x 214.99628pt.
- [28 <./imagens/sqlmap_columnsnames_acuart.png> <./imagens/sqlmap_dbnames_acuar
+ [27 <./imagens/sqlmap_columnsnames_acuart.png> <./imagens/sqlmap_dbnames_acuar
 t.png>]
-<imagens/sqlmap_tablenames_acuart.png, id=127, 1371.1225pt x 770.88pt>
+<imagens/sqlmap_tablenames_acuart.png, id=123, 1371.1225pt x 770.88pt>
 File: imagens/sqlmap_tablenames_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_tablenames_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_tablenames_acuart.png used on input lin
-e 501.
+e 507.
 (pdftex.def)             Requested size: 364.19664pt x 204.75273pt.
 
-<imagens/sqlmap_pass_acuart.png, id=128, 1371.1225pt x 461.725pt>
+<imagens/sqlmap_pass_acuart.png, id=124, 1371.1225pt x 461.725pt>
 File: imagens/sqlmap_pass_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_pass_acuart.png>
-Package pdftex.def Info: imagens/sqlmap_pass_acuart.png used on input line 513.
+Package pdftex.def Info: imagens/sqlmap_pass_acuart.png used on input line 519.
 
 (pdftex.def)             Requested size: 364.19664pt x 122.63835pt.
- [29 <./imagens/sqlmap_tablenames2_acuart.png> <./imagens/sqlmap_tablenames_acu
+ [28 <./imagens/sqlmap_tablenames2_acuart.png> <./imagens/sqlmap_tablenames_acu
 art.png>]
-<imagens/sqlmap_uname_acuart.png, id=134, 1371.1225pt x 443.6575pt>
+<imagens/sqlmap_uname_acuart.png, id=131, 1371.1225pt x 443.6575pt>
 File: imagens/sqlmap_uname_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_uname_acuart.png>
-Package pdftex.def Info: imagens/sqlmap_uname_acuart.png used on input line 525
+Package pdftex.def Info: imagens/sqlmap_uname_acuart.png used on input line 531
 .
 (pdftex.def)             Requested size: 364.19664pt x 117.83945pt.
- Excluding 'comment' comment. [30 <./imagens/sqlmap_pass_acuart.png> <./imagens
+ Excluding 'comment' comment. [29 <./imagens/sqlmap_pass_acuart.png> <./imagens
 /sqlmap_uname_acuart.png>]
 Cap\'{\i }tulo 5.
-) (./tccudesc.bbl [31
+) (./tccudesc.bbl [30
 
-] [32
+] [31
 
-] [33]) (./anexo.tex) (./apendice.tex) [34]
+] [32]) (./anexo.tex) (./apendice.tex) [33]
 (./tccudesc.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -981,13 +924,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16685 strings out of 495004
- 284887 string characters out of 6180663
- 382378 words of memory out of 5000000
- 19448 multiletter control sequences out of 15000+600000
+ 16688 strings out of 495004
+ 284918 string characters out of 6180663
+ 382701 words of memory out of 5000000
+ 19451 multiletter control sequences out of 15000+600000
  23081 words of font info for 90 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 56i,13n,116p,797b,1316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,13n,116p,797b,1318s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
@@ -1000,10 +943,10 @@ sfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tccudesc.pdf (37 pages, 3633116 bytes).
+Output written on tccudesc.pdf (36 pages, 3632217 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
