@@ -381,6 +381,7 @@ foi desenvolvido para necessidades específicas, usuários que não conhecem/utiliz
 
 
 \subsection{FERRAMENTAS PARA ANÁLISE DO LAMP}
+\label{ferramentas}
 
 Ferramentas para análise do \ac{LAMP} são acessórios que facilitam ao se procurar por vulnerabilidades. Nesta seção apresentar-se-á algumas dessas ferramentas, descrevendo-as 
 e informando algumas características específicas, todas as ferramentas aqui apresentadas estão disponibilizadas sem custo e nativamente quando instalado o sistema operacional 
@@ -458,6 +459,22 @@ Também foi realizado os testes com auxílio de ferramentas específicas para cada 
 
 
 \section{SESSÃO DE ATAQUES}
+
+As Fig~\ref{fig:vega_hack} e \ref{fig:vega_acuart} representam as vulnerabilidades encontradas quando utilizado do Vega Scan (ver subseção \ref{ferramentas} para mais detalhes).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/vegascan_hackthissite.png}
+\caption{Vulnerabilidades do site: hackthissite.org. Fonte: Próprio autor}
+\label{fig:vega_hack}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{imagens/vegascan_acuart.png}
+\caption{Vulnerabilidades do site:testphp.vulnweb.com. Fonte: Próprio autor}
+\label{fig:vega_acuart}
+\end{figure}
 
 \begin{lstlisting}[style=BashInputStyle]
     $ sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1%20AND%201=2%20--%20

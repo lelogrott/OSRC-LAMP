@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.3)  24 JUN 2016 21:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.3)  24 JUN 2016 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -837,81 +837,96 @@ n input line 357.
 (pdftex.def)             Requested size: 364.19664pt x 242.9911pt.
  [22 <./imagens/Diagram-Describing-Blind-XSS-Attack.png>] [23]
 
-LaTeX Warning: Reference `xsser' on page 24 undefined on input line 426.
+LaTeX Warning: Reference `xsser' on page 24 undefined on input line 427.
 
 <imagens/Xsser-url-schema.png, id=102, 501.875pt x 370.38374pt>
 File: imagens/Xsser-url-schema.png Graphic file (type png)
 
 <use imagens/Xsser-url-schema.png>
-Package pdftex.def Info: imagens/Xsser-url-schema.png used on input line 430.
+Package pdftex.def Info: imagens/Xsser-url-schema.png used on input line 431.
 (pdftex.def)             Requested size: 364.19664pt x 268.78978pt.
  [24] [25 <./imagens/Xsser-url-schema.png>]
 Cap\'{\i }tulo 4.
+<imagens/vegascan_hackthissite.png, id=110, 1371.1225pt x 770.88pt>
+File: imagens/vegascan_hackthissite.png Graphic file (type png)
+
+<use imagens/vegascan_hackthissite.png>
+Package pdftex.def Info: imagens/vegascan_hackthissite.png used on input line 4
+67.
+(pdftex.def)             Requested size: 364.19664pt x 204.75273pt.
+ [26
+
+]
+<imagens/vegascan_acuart.png, id=114, 1371.1225pt x 770.88pt>
+File: imagens/vegascan_acuart.png Graphic file (type png)
+
+<use imagens/vegascan_acuart.png>
+Package pdftex.def Info: imagens/vegascan_acuart.png used on input line 474.
+(pdftex.def)             Requested size: 364.19664pt x 204.75273pt.
+
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-<imagens/sqlmap_columnsnames_acuart.png, id=110, 271.0125pt x 283.0575pt>
+<imagens/sqlmap_columnsnames_acuart.png, id=115, 271.0125pt x 283.0575pt>
 File: imagens/sqlmap_columnsnames_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_columnsnames_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_columnsnames_acuart.png used on input l
-ine 470.
+ine 487.
 (pdftex.def)             Requested size: 364.19664pt x 380.39642pt.
- [26
-
-]
-<imagens/sqlmap_dbnames_acuart.png, id=116, 1371.1225pt x 361.35pt>
+ [27 <./imagens/vegascan_hackthissite.png> <./imagens/vegascan_acuart.png>]
+<imagens/sqlmap_dbnames_acuart.png, id=123, 1371.1225pt x 361.35pt>
 File: imagens/sqlmap_dbnames_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_dbnames_acuart.png>
-Package pdftex.def Info: imagens/sqlmap_dbnames_acuart.png used on input line 4
-83.
+Package pdftex.def Info: imagens/sqlmap_dbnames_acuart.png used on input line 5
+00.
 (pdftex.def)             Requested size: 364.19664pt x 95.97784pt.
 
-<imagens/sqlmap_tablenames2_acuart.png, id=117, 394.47375pt x 232.87pt>
+<imagens/sqlmap_tablenames2_acuart.png, id=124, 394.47375pt x 232.87pt>
 File: imagens/sqlmap_tablenames2_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_tablenames2_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_tablenames2_acuart.png used on input li
-ne 495.
+ne 512.
 (pdftex.def)             Requested size: 364.19664pt x 214.99628pt.
- [27 <./imagens/sqlmap_columnsnames_acuart.png> <./imagens/sqlmap_dbnames_acuar
+ [28 <./imagens/sqlmap_columnsnames_acuart.png> <./imagens/sqlmap_dbnames_acuar
 t.png>]
-<imagens/sqlmap_tablenames_acuart.png, id=123, 1371.1225pt x 770.88pt>
+<imagens/sqlmap_tablenames_acuart.png, id=131, 1371.1225pt x 770.88pt>
 File: imagens/sqlmap_tablenames_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_tablenames_acuart.png>
 Package pdftex.def Info: imagens/sqlmap_tablenames_acuart.png used on input lin
-e 507.
+e 524.
 (pdftex.def)             Requested size: 364.19664pt x 204.75273pt.
 
-<imagens/sqlmap_pass_acuart.png, id=124, 1371.1225pt x 461.725pt>
+<imagens/sqlmap_pass_acuart.png, id=132, 1371.1225pt x 461.725pt>
 File: imagens/sqlmap_pass_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_pass_acuart.png>
-Package pdftex.def Info: imagens/sqlmap_pass_acuart.png used on input line 519.
+Package pdftex.def Info: imagens/sqlmap_pass_acuart.png used on input line 536.
 
 (pdftex.def)             Requested size: 364.19664pt x 122.63835pt.
- [28 <./imagens/sqlmap_tablenames2_acuart.png> <./imagens/sqlmap_tablenames_acu
+ [29 <./imagens/sqlmap_tablenames2_acuart.png> <./imagens/sqlmap_tablenames_acu
 art.png>]
-<imagens/sqlmap_uname_acuart.png, id=131, 1371.1225pt x 443.6575pt>
+<imagens/sqlmap_uname_acuart.png, id=138, 1371.1225pt x 443.6575pt>
 File: imagens/sqlmap_uname_acuart.png Graphic file (type png)
 
 <use imagens/sqlmap_uname_acuart.png>
-Package pdftex.def Info: imagens/sqlmap_uname_acuart.png used on input line 531
+Package pdftex.def Info: imagens/sqlmap_uname_acuart.png used on input line 548
 .
 (pdftex.def)             Requested size: 364.19664pt x 117.83945pt.
- Excluding 'comment' comment. [29 <./imagens/sqlmap_pass_acuart.png> <./imagens
+ Excluding 'comment' comment. [30 <./imagens/sqlmap_pass_acuart.png> <./imagens
 /sqlmap_uname_acuart.png>]
 Cap\'{\i }tulo 5.
-) (./tccudesc.bbl [30
+) (./tccudesc.bbl [31
 
-] [31
+] [32
 
-] [32]) (./anexo.tex) (./apendice.tex) [33]
+] [33]) (./anexo.tex) (./apendice.tex) [34]
 (./tccudesc.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -924,10 +939,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16688 strings out of 495004
- 284918 string characters out of 6180663
- 382701 words of memory out of 5000000
- 19451 multiletter control sequences out of 15000+600000
+ 16701 strings out of 495004
+ 285285 string characters out of 6180663
+ 382350 words of memory out of 5000000
+ 19462 multiletter control sequences out of 15000+600000
  23081 words of font info for 90 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  56i,13n,116p,797b,1318s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -943,10 +958,10 @@ sfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tccudesc.pdf (36 pages, 3632217 bytes).
+Output written on tccudesc.pdf (37 pages, 3819481 bytes).
 PDF statistics:
- 194 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 204 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
