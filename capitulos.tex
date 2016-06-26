@@ -27,7 +27,7 @@ em todas as etapas do precesso dá ao \ac{LAMP} a confiabilidade e o baixo custo 
 A forma que essa popularização ocorreu pode ser vista na Seção a seguir. 
 
 
-\subsection{HISTÓRICO}
+\subsection{Histórico}
 \label{subsec:historico}
 
 O conceito principal em volta do \ac{LAMP} (um servidor \textit{web} sem custo) foi possível no início de
@@ -43,7 +43,7 @@ em suas páginas \textit{web} \cite{GeipelEmpresas}. Essa popularidade inicial co
 falha é encontrada nele, uma grande quantidade de usuários são afetados.
 
 
-\subsection{APLICABILIDADE}
+\subsection{Aplicabilidade}
 \label{subsec:aplicabilidade}
 
 Sistemas \ac{LAMP} podem ser encontrados em diversos níveis de aplicações. Quem utiliza um sistema operacional com kernel Linux em seu computador pessoal
@@ -59,7 +59,7 @@ diferença de um sistema local
 é a falta de interface gráfica, para alguns usuários experientes isso não é um problema e então a instalação dos componentes se dá de forma muito parecida,
 através de linhas de comando.
 
-\section{FUNCIONAMENTO E COMPONENTES BÁSICOS}
+\section{Funcionamento e componentes básicos}
 \label{sec:componentes}
 
 Para garantir o bom funcionamento do sistema, é necessário a boa comunicação e integração entre todos os componentes do \ac{LAMP}.
@@ -188,7 +188,7 @@ Logo, observa-se o porquê do \ac{PHP} ser aplicado em tantas aplicações, seja po
 integração com os demais componentes do \ac{LAMP}.
 
 
-\section{FUNDAMENTAÇÃO DE ATAQUES E SOLUÇÕES}
+\section{Fundamentação de ataques e soluções}
 \label{sec:fundamentos}
 
 Testes de penetração de servidores \textit{web} não devem ser confundidos com ataques maliciosos. Apesar de possuírem rotinas 
@@ -213,7 +213,7 @@ Testes de penetração são um método de segurança ofensiva, na qual ocorre a repro
 vulnerabilidades na segurança do sistema. Para a execução dos testes existem ferramentas (ou \textit{frameworks}) com configurações predefinidas para auxiliar no decorrer
 do processo.
 
-\section{FRAMEWORKS E SOLUÇÕES PARA ANÁLISE DE VULNERABILIDADES}
+\section{\textit{Frameworks} e soluções para análise de vulnerabilidades}
 \label{sec:frameworks}
 \textit{Frameworks} para análise de vulnerabilidades são ferramentas para facilitar a detecção de vulnerabilidades em determinado 
 sistema/página \textit{web}, também conseguindo prever a efetividade das medidas tomadas para combater as vulnerabilidades encontradas
@@ -254,7 +254,7 @@ arquiteturas \cite{OpenV32:online}:
 
 
 
-\section{NORMAS, RECOMENDAÇÕES E BOAS PRÁTICAS PARA ANÁLISE DE VULNERABILIDADES}
+\section{Normas, recomendações e boas práticas para análise de vulnerabilidades}
 \label{sec:normas}
 
 
@@ -294,15 +294,32 @@ testes de intrusão. Portanto, algumas ferramentas serão descritas e futuramente 
 
 \section{LAMP}
 
+Para facilitar a análise de um sistema, ou um conjunto de soluções, é interessante
+separá-lo em componentes menores. Por exemplo, no LAMP cada elemento tem probabilidade de ter
+uma vulnerabilidade e além dessa vulnerabilidade, como esses elementos
+interagem entre si, há também essas interações a serem consideradas como possíveis
+fatores de risco, tendo em vista que elas podem ser feitas de maneira errônea.
+
+\subsection{Vulnerabilidades}
+
+Como os elementos do LAMP oferecem riscos por si só, uma boa prática para minimizar
+esses riscos é manter todos os componentes devidamente atualizados, pois assim ataques
+já conhecidos serão prevenidos \cite{Top1026:online}. Outra grande parcela, se dá por configuração incorreta
+do LAMP \cite{Top1078:online}. Por isso, sempre recomenda-se instalação por usuários não leigos.
 
 
-\subsection{VULNERABILIDADES}
-\subsubsection{Ameaças em potencial}
-\subsection{MÉTODOS DE EXPLORAÇÃO}
+
+\subsection{Métodos de exploração}
+
+Vários métodos diferentes podem ser utilizados para encontrar uma vulnerabilidade.
+Se as vulnerabilidades mais elementares não forem prevenidas, até mesmo serviços mais básicos
+encontrados no Kali como o \textit{whois} (que pode ser também encontrado \textit{online}) podem ser utilizados
+para encontrar tais vulnerabilidades. Métodos mais avançados para analisar servidores
+LAMP são discutidos na Seção \ref{ferramentas}.
 
 
 
-\subsection{PRINCIPAIS ATAQUES}
+\subsection{Principais ataques}
 \label{principaisataques}
 
 Ataques direcionados a servidores baseados em \ac{LAMP} tem como objetivo explorar as vulnerabilidades das aplicações. Geralmente ataques são confundidos com vulnerabilidades, porém
@@ -380,7 +397,7 @@ foi desenvolvido para necessidades específicas, usuários que não conhecem/utiliz
 \textit{open source} não são todos os usuários que podem contribuir para o seu desenvolvimento (questões de segurança).
 
 
-\subsection{FERRAMENTAS PARA ANÁLISE DO LAMP}
+\subsection{Ferramentas para análise do LAMP}
 \label{ferramentas}
 
 Ferramentas para análise do \ac{LAMP} são acessórios que facilitam ao se procurar por vulnerabilidades. Nesta seção apresentar-se-á algumas dessas ferramentas, descrevendo-as 
@@ -444,13 +461,13 @@ a ser realizado, e ferramenta como um facilitador para que o atacante consiga ac
 para que haja um aproveitamento máximo dos testes de penetração.
 
 
-\chapter{ATAQUES E ANÁLISE}
+\chapter{Ataques e Análise}
 \label{ataques}
 
 Neste capítulo será apresentado os ataques realizados e algumas análises dos mesmos, bem como possíveis soluções para os problemas encontrados. Para a realização dos ataques será 
 utilizado algumas ferramentas auxiliares, como: \textit{Vega}, \textit{sqlmap} e \textit{XSSer} (ver seção~\ref{lampkali} para mais detalhes).
 
-\section{AMBIENTE DE TESTES E PLANO DE TESTES}
+\section{Ambiente de testes e plano de testes}
 
 Todos os testes aqui apresentados foram executados em \textit{sites} próprios para testes de penetração, ou seja, são \textit{sites} próprios para que sejam feitos os devidos 
 testes e com isso aprimorar habilidades sem nenhum tipo de dano a terceiros. Estes \textit{sites} são disponibilizados pela \cite{OWASP38:online},
@@ -459,7 +476,7 @@ são eles: \url{www.testphp.vulnweb.com} e \url{www.hackthissite.org}.
 Também foram realizados testes com auxílio de ferramentas específicas para cada tipo de ataque (comentado em \ref{principaisataques}). 
 
 
-\section{SESSÃO DE ATAQUES}\label{sec:attack}
+\section{Sessão de ataques}\label{sec:attack}
 
 Viabilizada por ferramentas \textit{open-source} já citadas em \ref{ferramentas}, a sessão de ataques seguiu a seguinte ordem lógica: 
 \begin{enumerate}
@@ -621,7 +638,7 @@ Ao final da execução, o \textit{XSSer} fornece dados estatísticos com relação ao
 Diferente da coleta de dados restritos observada em \ref{subsec:sql_injection}, os testes de inserção com \textit{XSSer} modificam a página
 com \textit{scripts} de outra origem que não o servidor de \url{www.hackthissite.org}.
 
-\section{ANÁLISE DOS RESULTADOS}
+\section{Análise dos resultados}\label{sec:analise}
 
 Os ataques realizados em \ref{sec:attack} foram bem sucedidos, a manipulação de dados (vide \ref{subsec:sql_injection}) se mostrou 100\% efetiva
 e a inserção de \textit{scripts} de outra origem (\ac{XSS}) (vide \ref{subsec:xss}) obteve 82\% de sucesso em seus casos de teste 
@@ -633,7 +650,7 @@ para dados que não deveriam ter permissão (\textit{SQL Injection}) ou então mani
 aplicação sem conhecimento do usuário, retransmitir \textit{cookies} e outras funcionalidades.
 
 
-\section{SOLUÇÕES PROPOSTAS}
+\section{Soluções propostas}\label{sec:solutions}
 
 Algumas boas práticas podem ajudar a solucionar problemas com vulnerabilidades. Para \textit{SQL Injection} tem-se alguns tópicos chave 
 \cite{sqlin2}:
@@ -716,17 +733,25 @@ Com exceção de caracteres alfanuméricos, escapar todos os caracteres com valores
 
 
 
-\chapter{CONCLUSÃO}
+\chapter{Conclusão}\label{sec:conclusao}
 
-Conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
- conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
-  conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
-   conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
-    conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
-     conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
-      conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
- conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
-  conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão conclusão
+Ao longo deste trabalho foi possível compreender a importância da
+prática de programação segura em um ambiente \ac{LAMP}.
+Sendo um ambiente completo, gratuito e bem disseminado, sua 
+robustez se torna parte essencial do processo.
+
+Embora seja essencial, não é algo garantido. Esta segurança deve
+ser provida no decorrer do desenvolvimento da aplicação, caso 
+contrário testes realizados neste trabalho concluem que é possível, 
+com o uso de poucas ferramentas, a extração de dados sigilosos e 
+modificação da aplicação por usuários mal intencionados.
+
+Detalhes sobre programação segura contra os ataques abordados neste
+trabalho foram explanados em \ref{sec:solutions}, espera-se então
+a conscientização sobre a importância da programação segura de um ambiente
+com interação de usuários, testes foram feitos para alertar sobre
+a existência das vulnerabilidades e existem soluções para cada uma
+delas.
   
 
 

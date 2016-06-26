@@ -11,7 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia.bib
-I was expecting a `,' or a `}'---line 561 of file bibliografia.bib
+I was expecting a `,' or a `}'---line 559 of file bibliografia.bib
  : 
  : note = {(Accessed on 06/25/2016)}
 (Error may have been on previous line)
@@ -27,45 +27,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 31 entries,
+You've used 33 entries,
             6476 wiz_defined-function locations,
-            1324 strings with 13590 characters,
-and the built_in function-call counts, 18859 in all, are:
-= -- 1427
-> -- 499
+            1333 strings with 13914 characters,
+and the built_in function-call counts, 20045 in all, are:
+= -- 1509
+> -- 529
 < -- 0
-+ -- 220
-- -- 165
-* -- 1115
-:= -- 2685
-add.period$ -- 152
-call.type$ -- 31
-change.case$ -- 252
-chr.to.int$ -- 24
-cite$ -- 31
-duplicate$ -- 942
-empty$ -- 1738
-format.name$ -- 761
-if$ -- 4444
-int.to.chr$ -- 7
++ -- 231
+- -- 175
+* -- 1185
+:= -- 2851
+add.period$ -- 162
+call.type$ -- 33
+change.case$ -- 268
+chr.to.int$ -- 25
+cite$ -- 33
+duplicate$ -- 1002
+empty$ -- 1854
+format.name$ -- 807
+if$ -- 4724
+int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 531
-newline$ -- 193
-num.names$ -- 155
-pop$ -- 688
+missing$ -- 565
+newline$ -- 205
+num.names$ -- 165
+pop$ -- 730
 preamble$ -- 1
-purify$ -- 95
+purify$ -- 101
 quote$ -- 0
-skip$ -- 1167
+skip$ -- 1238
 stack$ -- 1
-substring$ -- 510
-swap$ -- 380
+substring$ -- 552
+swap$ -- 404
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 173
+while$ -- 185
 width$ -- 0
-write$ -- 472
+write$ -- 502
 (There was 1 error message)

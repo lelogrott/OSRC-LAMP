@@ -1,12 +1,14 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Introdução introdução introdução introdução introdução introdução introdução introdução  introdução introdução introdução introdução introdução
- introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução
-  introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução 
-   introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução
-    introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução introdução
-     introdução introdução introdução introdução
-      introdução introdução introdução
-       introdução introdução introdução introdução introdução introdução introdução introdução
-        introdução introdução introdução
+Dentre os servidores \textit{web} o \ac{LAMP} ganha 
+cada vez mais espaço no mercado por oferecer soluções \text{open source}, ou seja, 
+sem custo e adaptáveis à cada aplicação.
+Porém, um dos grandes problemas que afetam servidores utilizando \ac{LAMP} é a
+facilidade com que atacantes conseguem invadir e muitas vezes realizar extração de informações privilegiadas,
+o que deixa pessoas um pouco receosas ao utilizá-lo. Entretanto, neste trabalho apresentam-se testes de invasão em servidores \ac{LAMP}
+(realizados em ambientes controlados e próprios para isso), mostrando como é feita e comprovando a possibilidade de invasão destes
+servidores.
+
+
+

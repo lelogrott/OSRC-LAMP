@@ -94,6 +94,19 @@ ISBN 978-0-596-00670-9.}
 \url{http://www.openvas.org/software.html}.
 (Accessed on 04/09/2016).}
 
+\bibitem[OWASP 2013]{Top1026:online}
+\abntrefinfo{OWASP}{OWASP}{2013a}
+{OWASP. \emph{Top 10 2013-A9-Using Components with Known Vulnerabilities -
+  OWASP}. 2013.
+\url{https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities}.
+(Accessed on 06/26/2016).}
+
+\bibitem[OWASP 2013]{Top1078:online}
+\abntrefinfo{OWASP}{OWASP}{2013b}
+{OWASP. \emph{Top 10 2013-Top 10 - OWASP}. 2013.
+\url{https://www.owasp.org/index.php/Top_10_2013-Top_10}.
+(Accessed on 06/26/2016).}
+
 \bibitem[OWASP 2016]{Cross69:online}
 \abntrefinfo{OWASP}{OWASP}{2016a}
 {OWASP. \emph{Cross-site Scripting (XSS) - OWASP}. 4 2016.
@@ -102,8 +115,8 @@ ISBN 978-0-596-00670-9.}
 
 \bibitem[OWASP 2016]{OWASP38:online}
 \abntrefinfo{OWASP}{OWASP}{2016b}
-{OWASP. \emph{OWASP Vulnerable Web Applications Directory Project - OWASP}.
-  January 2016.
+{OWASP. \emph{OWASP Vulnerable Web Applications Directory Project - OWASP}. 1
+  2016.
 \url{https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project#tab=On-Line_apps}.}
 
 \bibitem[OWASP 2016]{SQLIn46:online}
@@ -114,13 +127,13 @@ ISBN 978-0-596-00670-9.}
 
 \bibitem[OWASP 2016]{sqlin2}
 \abntrefinfo{OWASP}{OWASP}{2016d}
-{OWASP. \emph{SQL Injection Prevention Cheat Sheet - OWASP}. May 2016.
+{OWASP. \emph{SQL Injection Prevention Cheat Sheet - OWASP}. 5 2016.
 \url{https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet}.
 (Accessed on 06/25/2016).}
 
 \bibitem[OWASP 2016]{xss2}
 \abntrefinfo{OWASP}{OWASP}{2016e}
-{OWASP. \emph{XSS (Cross Site Scripting) Prevention Cheat Sheet - OWASP}. March
+{OWASP. \emph{XSS (Cross Site Scripting) Prevention Cheat Sheet - OWASP}. 3
   2016.
 \url{https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet}.
 (Accessed on 06/25/2016).}
